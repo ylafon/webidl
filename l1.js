@@ -1,39 +1,51 @@
 function reg_custom() {
-	respecEvents.sub('end-all', function(){
-		clean_regex();
-});
+    respecEvents.sub('end-all', function () {
+        clean_regex();
+        clean_foo();
+    });
 }
 
 function clean_regex() {
-	function remove_n_children(parent, nb) {
-		for (var i=0; i<parent.childNodes.length; i++) {
-			var n = parent.childNodes[i];
-			if ((n.nodeType == 3) && ( n.data.indexOf("RegExp") >= 0 )) {
-				for (var j=1; j<nb; j++) {
-					parent.removeChild(n.nextSibling);
-				}
-				parent.removeChild(n);
-				break;
-			}
-		}
-	}
-	var tl = document.getElementById('proddef-NonAnyType').getElementsByClassName("prod-lines")[0];
-	remove_n_children(tl, 4);
-
-	var plines = document.getElementById('idl-union').getElementsByClassName("prod-lines");
-	for (var i=0; i<plines.length; i++) {
-		var pline = plines[i];
-		remove_n_children(pline, 3);
-	}
-        plines = document.getElementById('idl-extended-attributes').getElementsByClassName("prod-lines");
-        for (var i=0; i<plines.length; i++) {
-                var pline = plines[i];
-		remove_n_children(pline, 3);
+    function remove_n_children(parent, nb) {
+        for (var i = 0; i < parent.childNodes.length; i++) {
+            var n = parent.childNodes[i];
+            if ((n.nodeType == 3) && ( n.data.indexOf("RegExp") >= 0 )) {
+                for (var j = 1; j < nb; j++) {
+                    parent.removeChild(n.nextSibling);
+                }
+                parent.removeChild(n);
+                break;
+            }
         }
-	tl = document.getElementById('prod-Other').getElementsByClassName("prod-lines")[0];
-	remove_n_children(tl, 2);
+    }
 
-	tl = document.getElementById('prod-NonAnyType').getElementsByClassName("prod-lines")[0];
-	remove_n_children(tl, 4);
+    function remove_span(idname) {
+        var spanlist = $("#" + idname + " .estype");
+        for (var i = 0; i < spanlist.length; i++) {
+            var sp = spanlist[i];
+            if ((sp.firstChild.nodeType == 3) && (sp.firstChild.data.indexOf("RegExp") >= 0)) {
+                sp.parentNode.removeChild(sp.previousSibling);
+                sp.parentNode.removeChild(sp);
+            }
+        }
+    }
+
+    $("#proddef-NonAnyType .prod-lines").each(function(i, val){remove_n_children(val, 4)});
+    $("#idl-union .prod-lines").each(function(i, val){remove_n_children(val, 3)});
+    $("#idl-extended-attributes .prod-lines").each(function(i, val){remove_n_children(val, 3)});
+    $("#prod-Other .prod-lines").each(function(i, val){remove_n_children(val, 2)});
+    $("#prod-NonAnyType .prod-lines").each(function(i, val){remove_n_children(val, 4)});
+
+    remove_span('es-dictionary');
+    remove_span('es-sequence');
+    remove_span('es-union');
+    remove_span('es-interface-call');
+    remove_span('es-user-objects');
+    var p = $("#es-union a[href='#idl-RegExp']")[0].parentNode;
+    p.parentNode.removeChild(p);
 }
 	
+
+function clean_foo(){
+
+}
