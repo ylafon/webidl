@@ -2,10 +2,11 @@ function reg_custom() {
     respecEvents.sub('end-all', function () {
         clean_regex();
         clean_implicitthis();
-        clean_foo();
+        clean_unscopeable();
     });
 }
 
+// RegExp
 function clean_regex() {
     function remove_n_children(parent, nb) {
         for (var i = 0; i < parent.childNodes.length; i++) {
@@ -31,11 +32,21 @@ function clean_regex() {
         }
     }
 
-    $("#proddef-NonAnyType .prod-lines").each(function(i, val){remove_n_children(val, 4)});
-    $("#idl-union .prod-lines").each(function(i, val){remove_n_children(val, 3)});
-    $("#idl-extended-attributes .prod-lines").each(function(i, val){remove_n_children(val, 3)});
-    $("#prod-Other .prod-lines").each(function(i, val){remove_n_children(val, 2)});
-    $("#prod-NonAnyType .prod-lines").each(function(i, val){remove_n_children(val, 4)});
+    $("#proddef-NonAnyType .prod-lines").each(function (i, val) {
+        remove_n_children(val, 4)
+    });
+    $("#idl-union .prod-lines").each(function (i, val) {
+        remove_n_children(val, 3)
+    });
+    $("#idl-extended-attributes .prod-lines").each(function (i, val) {
+        remove_n_children(val, 3)
+    });
+    $("#prod-Other .prod-lines").each(function (i, val) {
+        remove_n_children(val, 2)
+    });
+    $("#prod-NonAnyType .prod-lines").each(function (i, val) {
+        remove_n_children(val, 4)
+    });
 
     remove_span('es-dictionary');
     remove_span('es-sequence');
@@ -46,8 +57,9 @@ function clean_regex() {
     p.parentNode.removeChild(p);
 }
 
+// [ImplicitThis]
 function clean_implicitthis() {
-    $("#idl-interfaces a[href='#ImplicitThis']").each(function(i, val) {
+    $("#idl-interfaces a[href='#ImplicitThis']").each(function (i, val) {
         val.parentNode.removeChild(val.previousSibling);
         val.parentNode.removeChild(val);
     });
@@ -57,6 +69,14 @@ function clean_implicitthis() {
     });
 }
 
-function clean_foo(){
-
+// [Unscopeable]
+function clean_unscopeable() {
+    var p = $("#interface-prototype-object p > a[href='#Unscopeable']")[0].parentNode;
+    // remove the ol with the algorithm
+    while (p.nextSibling.nodeType == 3) {
+        p.parentNode.removeChild(p.nextSibling);
+    }
+    p.parentNode.removeChild(p.nextSibling);
+    // then the paragraph itself
+    p.parentNode.removeChild(p);
 }

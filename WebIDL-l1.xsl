@@ -367,6 +367,9 @@
     <!-- [ImplicitThis]: DONE -->
     <xsl:template match="h:div[@id='ImplicitThis']">
     </xsl:template>
+    <!-- [Unscopeable] -->
+    <xsl:template match="h:div[@id='Unscopeable']">
+    </xsl:template>
     <!-- Regexp: DONE -->
     <xsl:template match="h:div[@id='idl-RegExp']|h:div[@id='es-RegExp']|h:li/h:span[position() = 1 and text()='RegExp']">
         <!-- need to fix "or a native Regex... will be done in js, see l1.js -->
