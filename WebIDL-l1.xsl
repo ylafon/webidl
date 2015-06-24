@@ -357,6 +357,8 @@
 
 
     <!-- Level 1 specific stuff, removal, additions, etc... -->
+    <xsl:template match="h:script[@src='dfn.js']|h:script[@src='section-links.js']">
+    </xsl:template>
 
     <!-- maplike: UNFINISHED -->
     <xsl:template match="h:div[@id='es-maplike']|h:div[@id='idl-maplike']">
@@ -372,7 +374,6 @@
     </xsl:template>
     <!-- Regexp: DONE -->
     <xsl:template match="h:div[@id='idl-RegExp']|h:div[@id='es-RegExp']|h:li/h:span[position() = 1 and text()='RegExp']">
-        <!-- need to fix "or a native Regex... will be done in js, see l1.js -->
     </xsl:template>
     <xsl:template match="h:table[@id='distinguishable-table']">
         <table>
