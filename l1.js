@@ -3,29 +3,31 @@ function reg_custom() {
         clean_regex();
         clean_implicitthis();
         clean_unscopeable();
+        clean_maplike_setlike();
     });
 }
 
-// RegExp
-function clean_regex() {
-    function remove_n_children(parent, nb) {
-        for (var i = 0; i < parent.childNodes.length; i++) {
-            var n = parent.childNodes[i];
-            if ((n.nodeType == 3) && ( n.data.indexOf("RegExp") >= 0 )) {
-                for (var j = 1; j < nb; j++) {
-                    parent.removeChild(n.nextSibling);
-                }
-                parent.removeChild(n);
-                break;
+function remove_prodlines_nodes(parent, matchstring, nb) {
+    for (var i = 0; i < parent.childNodes.length; i++) {
+        var n = parent.childNodes[i];
+        if ((n.nodeType == 3) && ( n.data.indexOf(matchstring) >= 0 )) {
+            for (var j = 1; j < nb; j++) {
+                parent.removeChild(n.nextSibling);
             }
+            parent.removeChild(n);
+            break;
         }
     }
+}
+// RegExp
+function clean_regex() {
+    var matchstring = "RegExp";
 
     function remove_span(idname) {
         var spanlist = $("#" + idname + " .estype");
         for (var i = 0; i < spanlist.length; i++) {
             var sp = spanlist[i];
-            if ((sp.firstChild.nodeType == 3) && (sp.firstChild.data.indexOf("RegExp") >= 0)) {
+            if ((sp.firstChild.nodeType == 3) && (sp.firstChild.data.indexOf(matchstring) >= 0)) {
                 sp.parentNode.removeChild(sp.previousSibling);
                 sp.parentNode.removeChild(sp);
             }
@@ -33,19 +35,19 @@ function clean_regex() {
     }
 
     $("#proddef-NonAnyType .prod-lines").each(function (i, val) {
-        remove_n_children(val, 4)
+        remove_prodlines_nodes(val, matchstring, 4)
     });
     $("#idl-union .prod-lines").each(function (i, val) {
-        remove_n_children(val, 3)
+        remove_prodlines_nodes(val, matchstring, 3)
     });
     $("#idl-extended-attributes .prod-lines").each(function (i, val) {
-        remove_n_children(val, 3)
+        remove_prodlines_nodes(val, matchstring, 3)
     });
     $("#prod-Other .prod-lines").each(function (i, val) {
-        remove_n_children(val, 2)
+        remove_prodlines_nodes(val, matchstring, 2)
     });
     $("#prod-NonAnyType .prod-lines").each(function (i, val) {
-        remove_n_children(val, 4)
+        remove_prodlines_nodes(val, matchstring, 4)
     });
 
     remove_span('es-dictionary');
@@ -79,4 +81,18 @@ function clean_unscopeable() {
     p.parentNode.removeChild(p.nextSibling);
     // then the paragraph itself
     p.parentNode.removeChild(p);
+}
+
+// maplike/setlike
+function clean_maplike_setlike() {
+    var mapstring = "maplike";
+    var setstring = "setlike";
+    $("#proddef-ArgumentNameKeyword .prod-lines").each(function (i, val) {
+        remove_prodlines_nodes(val, mapstring, 2);
+        remove_prodlines_nodes(val, setstring, 2);
+    });
+    $("#idl-operations table.grammar .prod-lines").each(function (i, val) {
+        remove_prodlines_nodes(val, mapstring, 2);
+        remove_prodlines_nodes(val, setstring, 2);
+    });
 }
