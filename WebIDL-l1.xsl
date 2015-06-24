@@ -358,16 +358,18 @@
 
     <!-- Level 1 specific stuff, removal, additions, etc... -->
 
-    <!-- maplike -->
+    <!-- maplike: UNFINISHED -->
     <xsl:template match="h:div[@id='es-maplike']|h:div[@id='idl-maplike']">
     </xsl:template>
-    <!-- setlike -->
+    <!-- setlike: UNFINISHED -->
     <xsl:template match="h:div[@id='es-setlike']|h:div[@id='idl-setlike']">
     </xsl:template>
-
-    <!-- Regexp -->
+    <!-- [ImplicitThis]: DONE -->
+    <xsl:template match="h:div[@id='ImplicitThis']">
+    </xsl:template>
+    <!-- Regexp: DONE -->
     <xsl:template match="h:div[@id='idl-RegExp']|h:div[@id='es-RegExp']|h:li/h:span[position() = 1 and text()='RegExp']">
-        <!-- need to fix "or a native Regex... -->
+        <!-- need to fix "or a native Regex... will be done in js, see l1.js -->
     </xsl:template>
     <xsl:template match="h:table[@id='distinguishable-table']">
         <table>

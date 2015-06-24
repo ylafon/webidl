@@ -1,6 +1,7 @@
 function reg_custom() {
     respecEvents.sub('end-all', function () {
         clean_regex();
+        clean_implicitthis();
         clean_foo();
     });
 }
@@ -44,7 +45,17 @@ function clean_regex() {
     var p = $("#es-union a[href='#idl-RegExp']")[0].parentNode;
     p.parentNode.removeChild(p);
 }
-	
+
+function clean_implicitthis() {
+    $("#idl-interfaces a[href='#ImplicitThis']").each(function(i, val) {
+        val.parentNode.removeChild(val.previousSibling);
+        val.parentNode.removeChild(val);
+    });
+    $("#es-operations a[href='#ImplicitThis']").each(function (i, val) {
+        var li = val.parentNode;
+        li.parentNode.removeChild(li);
+    });
+}
 
 function clean_foo(){
 
