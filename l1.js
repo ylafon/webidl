@@ -101,7 +101,19 @@ function clean_maplike_setlike() {
         p.removeChild(val.previousSibling);
         p.removeChild(val);
     });
+    $("#prod-InterfaceMember a[href='#prod-ReadWriteMaplike']").each(function(i, val) {
+        var p = val.parentNode;
+        p.removeChild(val.previousSibling);
+        p.removeChild(val.previousSibling);
+        p.removeChild(val);
+    });
     $("#proddef-InterfaceMember a[href='#prod-ReadWriteSetlike']").each(function(i, val) {
+        var p = val.parentNode;
+        p.removeChild(val.previousSibling);
+        p.removeChild(val.previousSibling);
+        p.removeChild(val);
+    });
+    $("#prod-InterfaceMember a[href='#prod-ReadWriteSetlike']").each(function(i, val) {
         var p = val.parentNode;
         p.removeChild(val.previousSibling);
         p.removeChild(val.previousSibling);
@@ -134,6 +146,17 @@ function clean_maplike_setlike() {
     p.insertBefore(rep, oa);
     p.removeChild(a);
 
+    // more editing fnu
+    a = $("#es-implements-statements p > a.dfnref[href='#dfn-maplike-declaration']")[0];
+    p = a.parentNode;
+    rep = p.removeChild(a.nextSibling); // ' and '
+    p.removeChild(a.nextSibling);
+    p.removeChild(a.previousSibling);
+    oa = a.previousElementSibling;
+    p.removeChild(oa.previousSibling);
+    p.insertBefore(rep, oa);
+    p.removeChild(a);
+
     $("#es-iterator li > a.dfnref[href='#dfn-maplike-declaration']")[0].parentNode.remove();
     $("#es-iterator li > a.dfnref[href='#dfn-setlike-declaration']")[0].parentNode.remove();
     p = $("#es-iterator p > a.dfnref[href='#dfn-maplike-declaration']")[0].parentNode;
@@ -146,4 +169,18 @@ function clean_maplike_setlike() {
     p = $("#es-forEach p > a.dfnref[href='#dfn-setlike-declaration']")[0].parentNode;
     p.nextElementSibling.remove();
     p.remove();
+
+    a = $("#prod-ReadonlyMemberRest a.sym[href='#prod-ReadWriteMaplike']")[0];
+    a.previousSibling.remove();
+    a.previousSibling.remove();
+    a.remove();
+
+    a = $("#prod-ReadonlyMemberRest a.sym[href='#prod-ReadWriteSetlike']")[0];
+    a.previousSibling.remove();
+    a.previousSibling.remove();
+    a.remove();
+    $("#prod-ArgumentNameKeyword .prod-lines").each(function(i, val) {
+        remove_prodlines_nodes(val, "maplike", 2);
+        remove_prodlines_nodes(val, "setlike", 2);
+    })
 }

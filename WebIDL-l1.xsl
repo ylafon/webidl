@@ -360,10 +360,18 @@
     <xsl:template match="h:script[@src='dfn.js']|h:script[@src='section-links.js']">
     </xsl:template>
 
-    <!-- maplike: UNFINISHED -->
+    <!-- maplike: DONE -->
     <xsl:template match="h:div[@id='es-maplike']|h:div[@id='idl-maplike']">
     </xsl:template>
-    <!-- setlike: UNFINISHED -->
+    <xsl:template match="/h:html/h:body/h:div[@id='appendices']/h:div[@id='idl-grammar']/x:grammar/x:prod[@nt='ReadWriteMaplike']">
+    </xsl:template>
+    <xsl:template match="/h:html/h:body/h:div[@id='appendices']/h:div[@id='idl-grammar']/x:grammar/x:prod[@nt='ReadWriteSetlike']">
+    </xsl:template>
+    <xsl:template match="/h:html/h:body/h:div[@id='appendices']/h:div[@id='idl-grammar']/x:grammar/x:prod[@nt='MaplikeRest']">
+    </xsl:template>
+    <xsl:template match="/h:html/h:body/h:div[@id='appendices']/h:div[@id='idl-grammar']/x:grammar/x:prod[@nt='SetlikeRest']">
+    </xsl:template>
+    <!-- setlike: DONE (with maplike) -->
     <xsl:template match="h:div[@id='es-setlike']|h:div[@id='idl-setlike']">
     </xsl:template>
     <!-- [ImplicitThis]: DONE -->
