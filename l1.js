@@ -95,4 +95,55 @@ function clean_maplike_setlike() {
         remove_prodlines_nodes(val, mapstring, 2);
         remove_prodlines_nodes(val, setstring, 2);
     });
+    $("#proddef-InterfaceMember a[href='#prod-ReadWriteMaplike']").each(function(i, val) {
+        var p = val.parentNode;
+        p.removeChild(val.previousSibling);
+        p.removeChild(val.previousSibling);
+        p.removeChild(val);
+    });
+    $("#proddef-InterfaceMember a[href='#prod-ReadWriteSetlike']").each(function(i, val) {
+        var p = val.parentNode;
+        p.removeChild(val.previousSibling);
+        p.removeChild(val.previousSibling);
+        p.removeChild(val);
+    });
+    // more complex rewriting...
+    var a = $("#idl-iterable a[href='#dfn-maplike-declaration']")[0];
+    var p = a.parentNode;
+    p.removeChild(a.nextSibling);
+    p.removeChild(a.nextSibling);
+    // we eat up to the .
+    while (a.previousSibling.nodeType != 3 || (a.previousSibling.data.indexOf('.') < 0)) {
+        p.removeChild(a.previousSibling);
+    }
+    p.removeChild(a.previousSibling);
+    p.removeChild(a);
+    // text rewriting for Global
+    a = $("#Global a[href='#dfn-maplike-declaration']")[0];
+    p = a.parentNode;
+    p.removeChild(a.nextSibling);
+    p.removeChild(a.nextSibling);
+    // we eat up to the .
+    while (a.previousSibling.nodeType != 3 || (a.previousSibling.data.indexOf('or more than one') < 0)) {
+        p.removeChild(a.previousSibling);
+    }
+    var rep = p.removeChild(a.previousSibling);
+    // now ew remove the text node before and replace it with this one.
+    var oa = a.previousElementSibling;
+    p.removeChild(oa.previousSibling);
+    p.insertBefore(rep, oa);
+    p.removeChild(a);
+
+    $("#es-iterator li > a.dfnref[href='#dfn-maplike-declaration']")[0].parentNode.remove();
+    $("#es-iterator li > a.dfnref[href='#dfn-setlike-declaration']")[0].parentNode.remove();
+    p = $("#es-iterator p > a.dfnref[href='#dfn-maplike-declaration']")[0].parentNode;
+    p.nextElementSibling.remove();
+    p.remove();
+
+    $("#es-forEach li > a.dfnref[href='#dfn-maplike-declaration']")[0].parentNode.remove();
+    $("#es-forEach li > a.dfnref[href='#dfn-setlike-declaration']")[0].parentNode.remove();
+
+    p = $("#es-forEach p > a.dfnref[href='#dfn-setlike-declaration']")[0].parentNode;
+    p.nextElementSibling.remove();
+    p.remove();
 }
