@@ -4,6 +4,7 @@ function reg_custom() {
         clean_implicitthis();
         clean_unscopeable();
         clean_maplike_setlike();
+        clean_style();
     });
 }
 
@@ -182,5 +183,9 @@ function clean_maplike_setlike() {
     $("#prod-ArgumentNameKeyword .prod-lines").each(function(i, val) {
         remove_prodlines_nodes(val, "maplike", 2);
         remove_prodlines_nodes(val, "setlike", 2);
-    })
+    });
+}
+
+function clean_style() {
+    $("link[href='WebIDL.css']").attr("href", "WebIDL-1.css");
 }
