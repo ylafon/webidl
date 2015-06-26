@@ -95,7 +95,7 @@
                 }
             },
             specStatus: '<xsl:value-of select="$options/x:maturity" />' ,
-            shortName: "WebIDL-level-1",
+            shortName: "WebIDL-1",
             //publishDate:  "2014-03-27",
             previousPublishDate: "2012-04-19",
             previousMaturity: "CR",
@@ -201,43 +201,6 @@
         <xsl:text>)</xsl:text>
       </xsl:if>
     </xsl:if>
-  </xsl:template>
-
-  <xsl:template name='monthName'>
-    <xsl:param name='n' select='1'/>
-    <xsl:param name='s' select='"January February March April May June July August September October November December "'/>
-    <xsl:choose>
-      <xsl:when test='string(number($n))="NaN"'>@@</xsl:when>
-      <xsl:when test='$n = 1'>
-        <xsl:value-of select='substring-before($s, " ")'/>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:call-template name='monthName'>
-          <xsl:with-param name='n' select='$n - 1'/>
-          <xsl:with-param name='s' select='substring-after($s, " ")'/>
-        </xsl:call-template>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
-
-  <xsl:template name='date'>
-    <xsl:variable name='date'>
-      <xsl:choose>
-        <xsl:when test='$options/x:maturity="ED"'>
-          <xsl:value-of select='$now'/>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select='substring($options/x:versions/x:this/@href, string-length($options/x:versions/x:this/@href) - 8, 8)'/>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
-    <xsl:value-of select='number(substring($date, 7))'/>
-    <xsl:text> </xsl:text>
-    <xsl:call-template name='monthName'>
-      <xsl:with-param name='n' select='number(substring($date, 5, 2))'/>
-    </xsl:call-template>
-    <xsl:text> </xsl:text>
-    <xsl:value-of select='substring($date, 1, 4)'/>
   </xsl:template>
 
   <xsl:template match='processing-instruction("productions")'>
@@ -417,16 +380,14 @@
   <xsl:template match='h:div[@class="ednote"]'>
     <div>
       <xsl:copy-of select='@*[namespace-uri()="" or namespace-uri="http://www.w3.org/XML/1998/namespace"]'/>
-      <div class='ednoteHeader'>Editorial note</div>
-      <xsl:apply-templates select='node()'/>
+        <xsl:apply-templates select='node()'/>
     </div>
   </xsl:template>
 
   <xsl:template match='h:div[@class="warning"]'>
     <div>
       <xsl:copy-of select='@*[namespace-uri()="" or namespace-uri="http://www.w3.org/XML/1998/namespace"]'/>
-      <div class='warningHeader'>Warning</div>
-      <xsl:apply-templates select='node()'/>
+            <xsl:apply-templates select='node()'/>
     </div>
   </xsl:template>
 
@@ -441,7 +402,6 @@
   <xsl:template match='h:div[@class="note"]'>
     <div>
       <xsl:copy-of select='@*[namespace-uri()="" or namespace-uri="http://www.w3.org/XML/1998/namespace"]'/>
-      <div class='noteHeader'>Note</div>
       <xsl:apply-templates select='node()'/>
     </div>
   </xsl:template>
