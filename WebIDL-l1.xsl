@@ -100,7 +100,7 @@
             previousPublishDate: "2012-04-19",
             previousMaturity: "CR",
             previousURI: "http://www.w3.org/TR/2012/CR-WebIDL-20120419/",
-            edDraftURI: "http://w3c.github.io/webidl/l1.html",
+            edDraftURI: "http://heycam.github.io/webidl/",
             // lcEnd: "3000-01-01",
             // crEnd: "3000-01-01",
             editors: [
@@ -318,6 +318,16 @@
     <xsl:template match="h:h2[text()='Abstract']|h:h2[@id='sotd']">
     </xsl:template>
 
+    <xsl:template match="/h:html/h:body/h:div[2]/h:p[1]">
+        <p>
+            This is the "Level 1" Version of WebIDL, it contains parts of the Editor's copy that
+            are considered stable, implemented and tested.
+            Implementors should defer to the Editor's copy only, as it may contains updated algorithm and definitions;
+            Consumers of this specifications, like specifications authors can point to this specification, if all the definition and properties they need are defined in this specification.
+            Note that this specification will be updated to match changes in the editor's copy until it reaches Recommendation, new development will be followed in the next Level of WebIDL.
+
+        </p>
+    </xsl:template>
 
     <!-- Level 1 specific stuff, removal, additions, etc... -->
     <xsl:template match="h:script[@src='dfn.js']|h:script[@src='section-links.js']">
