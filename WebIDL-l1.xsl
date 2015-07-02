@@ -124,7 +124,7 @@
                 },
             </xsl:for-each>
             ],
-            postProcess: reg_custom(),
+            postProcess: reg_custom,
          //   preProcess: do_something(),
             wg: "Web Applications Working Group",
             wgURI: "http://www.w3.org/2008/webapps/",
@@ -319,7 +319,7 @@
         <xsl:apply-templates/>
     </xsl:template>
 
-    <xsl:template match="h:h2[text()='Abstract']|h:h2[@id='sotd']">
+    <xsl:template match="h:h2[text()='Abstract']|h:h2[@id='sotd']|h:div[@id='conformance']/h:h2|h:div[@id='conformance']/h:p[1]|h:div[@id='conformance']/h:p[2]">
     </xsl:template>
 
     <xsl:template match="/h:html/h:body/h:div[2]/h:p[1]">
@@ -327,7 +327,7 @@
             This is the "Level 1" Version of WebIDL, it contains parts of the main Editor's copy [[WEBIDL]] that
             are considered stable, implemented and tested.
             Implementors should defer to the Editor's copy [[WEBIDL]] only, as it may contains updated algorithm and definitions;
-            Consumers of this specifications, like specifications authors can point to this specification, if all the definition and properties they need are defined in this specification.
+            Consumers of this specifications, like specifications authors, can point to this specification if all the definitions and properties they need are defined in this specification.
             Note that this specification will be updated to match changes in the editor's copy until it reaches Recommendation, new development will be followed in the next Level of WebIDL.
 
         </p>
