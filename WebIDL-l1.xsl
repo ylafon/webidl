@@ -124,8 +124,8 @@
                 },
             </xsl:for-each>
             ],
-            preProcess: reg_custom(),
-         //   preProcess: do_something(),
+            // preProcess: reg_custom,
+            postProcess: [ reg_custom ],
             wg: "Web Applications Working Group",
             wgURI: "http://www.w3.org/2008/webapps/",
     <!--        wgPublicList: '<xsl:value-of select="$options/x:participate/x:mailing-list/@email" />',-->
