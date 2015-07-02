@@ -358,7 +358,7 @@
     <xsl:template match="h:div[@id='Unscopeable']">
     </xsl:template>
     <!-- Regexp: DONE -->
-    <xsl:template match="h:div[@id='idl-RegExp']|h:div[@id='es-RegExp']|h:li/h:span[position() = 1 and text()='RegExp']">
+    <xsl:template match="h:div[@id='idl-RegExp']|h:div[@id='es-RegExp']">
     </xsl:template>
     <xsl:template match="h:table[@id='distinguishable-table']">
         <table>

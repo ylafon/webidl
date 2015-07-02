@@ -57,6 +57,10 @@ function clean_regex() {
     remove_span('es-user-objects');
     var p = $("#es-union a[href='#idl-RegExp']")[0].parentNode;
     p.parentNode.removeChild(p);
+
+    $("#es-interface-call a[href='#idl-RegExp']").each(function (i, val) {
+       val.parentNode.parentNode.parentNode.remove();
+    });
 }
 
 // [ImplicitThis]
