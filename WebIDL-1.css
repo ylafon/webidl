@@ -182,7 +182,7 @@ li {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
-ul > li {
+ul:not(.toc) > li {
   list-style-type: disc;
 }
 ul > li > ul > li {
