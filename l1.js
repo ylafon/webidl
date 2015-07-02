@@ -1,10 +1,12 @@
 function reg_custom() {
-    clean_regex();
-    clean_implicitthis();
-    clean_unscopeable();
-    clean_maplike_setlike();
-    clean_style();
-    clean_head();
+    respecEvents.sub('end-all', function () {
+        clean_regex();
+        clean_implicitthis();
+        clean_unscopeable();
+        clean_maplike_setlike();
+        clean_style();
+        clean_head();
+    });
 }
 
 function remove_prodlines_nodes(parent, matchstring, nb) {

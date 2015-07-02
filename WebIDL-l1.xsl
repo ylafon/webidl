@@ -124,7 +124,7 @@
                 },
             </xsl:for-each>
             ],
-            postProcess: reg_custom,
+            preProcess: reg_custom(),
          //   preProcess: do_something(),
             wg: "Web Applications Working Group",
             wgURI: "http://www.w3.org/2008/webapps/",
