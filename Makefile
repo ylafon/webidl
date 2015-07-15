@@ -1,4 +1,4 @@
-all : index.html v1.html l1-respec.html
+all : index.html l1-respec.html
 
 index.html : index.xml WebIDL.xsl
 	xsltproc --nodtdattr --param now `date +%Y%m%d` WebIDL.xsl index.xml >index.html
@@ -19,6 +19,6 @@ java.html : java.xml WebIDL.xsl index.ids
 	xsltproc --nodtdattr --param now `date +%Y%m%d` WebIDL.xsl java.xml | ./xref.pl -t - index.ids > java.html
 
 clean :
-	rm -f index.html v1.html java.html index.ids index-filtered.xml l1-respec.html
+	rm -f index.html  java.html index.ids index-filtered.xml l1-respec.html
 
 .PHONY : all clean
