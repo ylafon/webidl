@@ -6,8 +6,8 @@ index.html : index.xml WebIDL.xsl
 l1-respec.html: index-filtered.xml WebIDL-l1.xsl
 	xsltproc --nodtdattr --param now `date +%Y%m%d` WebIDL-l1.xsl index-filtered.xml >l1-respec.html
 
-index-filtered.xml: index.xml
-	sed 's/\[\[/[[\\/g' index.xml | sed "s,\(<a\ href=[\"\']#ref-[^\'\"]*[\'\"]>\)\([^<]*\)\(</a>\),\1[\2]\3,g" | sed 's,\[\[ECMA-262,[[!ECMA-262,g' | sed 's,\[\[IEEE-754,[[!IEEE-754,g' | sed 's,\[\[PERLRE,[[!PERLRE,g' | sed 's,\[\[RFC,[[!RFC,g' | sed 's,\[\[TYPEDARRAYS,[[!TYPEDARRAYS,g' | sed 's,\[\[UNICODE,[[!UNICODE,g' > index-filtered.xml
+index-filtered.xml: index.xml filter.sed
+	sed -f filter.sed index.xml > index-filtered.xml
 
 v1.html : v1.xml WebIDL.xsl
 	xsltproc --nodtdattr --param now `date +%Y%m%d` WebIDL.xsl v1.xml >v1.html
