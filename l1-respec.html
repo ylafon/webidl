@@ -277,12 +277,12 @@ window.onload = function() { window.alert("loaded"); };</code></pre></div></div>
           The following conformance classes are defined by this specification:
         </p>
         <dl>
-          <dt><dfn id="dfn-conforming-idl-fragment">conforming IDL fragment</dfn></dt>
+          <dt><dfn id="dfn-conforming-set-of-idl-fragments">conforming set of IDL fragments</dfn></dt>
           <dd>
             <p>
-              An <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> is considered
-              to be a <a class="dfnref" href="#dfn-conforming-idl-fragment">conforming
-                IDL fragment</a> if it satisfies all of the
+              A set of <a class="dfnref" href="#dfn-idl-fragment">IDL fragments</a> is considered
+              to be a <a class="dfnref" href="#dfn-conforming-set-of-idl-fragments">conforming
+                set of IDL fragments</a> if, taken together, they satisfy all of the
               <span class="rfc2119">MUST</span>-,
               <span class="rfc2119">REQUIRED</span>- and <span class="rfc2119">SHALL</span>-level
               criteria in this specification that apply to IDL fragments.
@@ -293,8 +293,8 @@ window.onload = function() { window.alert("loaded"); };</code></pre></div></div>
             <p>
               A user agent is considered to be a
               <a class="dfnref" href="#dfn-conforming-implementation">conforming implementation</a>
-              relative to a <a class="dfnref" href="#dfn-conforming-idl-fragment">conforming
-                IDL fragment</a>  if it satisfies all of the <span class="rfc2119">MUST</span>-,
+              relative to a <a class="dfnref" href="#dfn-conforming-set-of-idl-fragments">conforming
+                set of IDL fragments</a> if it satisfies all of the <span class="rfc2119">MUST</span>-,
               <span class="rfc2119">REQUIRED</span>- and <span class="rfc2119">SHALL</span>-level
               criteria in this specification that apply to implementations for all language
               bindings that the user agent supports.
@@ -305,8 +305,8 @@ window.onload = function() { window.alert("loaded"); };</code></pre></div></div>
             <p>
               A user agent is considered to be a
               <a class="dfnref" href="#dfn-conforming-ecmascript-implementation">conforming ECMAScript implementation</a>
-              relative to a <a class="dfnref" href="#dfn-conforming-idl-fragment">conforming
-                IDL fragment</a>  if it satisfies all of the <span class="rfc2119">MUST</span>-,
+              relative to a <a class="dfnref" href="#dfn-conforming-set-of-idl-fragments">conforming
+                set of IDL fragments</a> if it satisfies all of the <span class="rfc2119">MUST</span>-,
               <span class="rfc2119">REQUIRED</span>- and <span class="rfc2119">SHALL</span>-level
               criteria in this specification that apply to implementations for the ECMAScript
               language binding.
@@ -376,9 +376,9 @@ interface <i>identifier</i> {
           <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface Paint { };
 
 interface SolidColor : Paint {
-  attribute float red;
-  attribute float green;
-  attribute float blue;
+  attribute double red;
+  attribute double green;
+  attribute double blue;
 };
 
 interface Pattern : Paint {
@@ -392,10 +392,10 @@ interface GraphicalWindow {
 
   attribute Paint currentPaint;
 
-  void drawRectangle(float x, float y, float width, float height)<!--
+  void drawRectangle(double x, double y, double width, double height)<!--
     raises(GraphicsException)-->;
 
-  void drawText(float x, float y, DOMString text)<!--
+  void drawText(double x, double y, DOMString text)<!--
     raises(GraphicsException)-->;
 };</code></pre></div></div>
           <p>
@@ -605,13 +605,13 @@ dictionary <i>identifier</i> {
           <div class="example"><div class="exampleHeader">Example</div>
             <p>Therefore, the following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a> is valid:</p>
             <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface B : A {
-  void f(ArrayOfLongs x);
+  void f(SequenceOfLongs x);
 };
 
 interface A {
 };
 
-typedef long[] ArrayOfLongs;</code></pre></div></div>
+typedef sequence&lt;long&gt; SequenceOfLongs;</code></pre></div></div>
           </div>
 
           <div class="example"><div class="exampleHeader">Example</div>
@@ -621,7 +621,7 @@ typedef long[] ArrayOfLongs;</code></pre></div></div>
               are given to definitions and <a class="dfnref" href="#dfn-interface-member">interface members</a>.
             </p>
             <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code"><span class="comment">// Typedef identifier: "number"</span>
-typedef float number;
+typedef double number;
 
 <span class="comment">// Interface identifier: "System"</span>
 interface System {
@@ -631,7 +631,7 @@ interface System {
   object createObject(DOMString _interface);
 
   <span class="comment">// Operation argument identifier: "interface"</span>
-  object[] createObjectArray(DOMString interface);
+  sequence&lt;object&gt; getObjects(DOMString interface);
 
   <span class="comment">// Operation has no identifier; it declares a getter.</span>
   getter DOMString (DOMString keyName);
@@ -972,12 +972,12 @@ partial interface <em>SomeInterface</em> {
             <a class="dfnref" href="#dfn-partial-interface">partial interface</a> definitions, with some
             limitations.  The following extended attributes <span class="rfc2119">MUST NOT</span>
             be specified on partial interface definitions:
-            ,
             <a class="xattr" href="#Constructor">[Constructor]</a>,
             <a class="xattr" href="#ImplicitThis">[ImplicitThis]</a>,
             <!--JAVA
             <a class='xattr' href='#JavaPackage'>[JavaPackage]</a>,
             -->
+            <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>,
             <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>,
             <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a>.
           </p>
@@ -1016,7 +1016,6 @@ partial interface <em>SomeInterface</em> {
 
           <p>
             The following extended attributes are applicable to interfaces:
-            ,
             <a class="xattr" href="#Constructor">[Constructor]</a>,
             <a class="xattr" href="#Exposed">[Exposed]</a>,
             <a class="xattr" href="#Global">[Global]</a>,
@@ -1024,6 +1023,7 @@ partial interface <em>SomeInterface</em> {
             <!--JAVA
             <a class='xattr' href='#JavaPackage'>[JavaPackage]</a>,
             -->
+            <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>,
             <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>,
             <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a>,
             <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>.
@@ -1154,8 +1154,14 @@ node.appendChild(newNode);  <span class="comment">// This will throw a TypeError
               of another <a class="dfnref" href="#dfn-interface-member">interface member</a>
               defined on the same interface.
               The identifier also <span class="rfc2119">MUST NOT</span>
-              be “prototype”.
+              be “length”, “name” or “prototype”.
             </p>
+            <div class="note">
+              <p>
+                These three names are the names of properties that exist on all
+                <span class="estype">Function</span> objects.
+              </p>
+            </div>
             <p>
               The type of a constant (matching <a class="sym" href="#prod-ConstType">ConstType</a>)
               <span class="rfc2119">MUST NOT</span> be any type other than
@@ -1340,7 +1346,7 @@ node.appendChild(newNode);  <span class="comment">// This will throw a TypeError
   const boolean DEBUG = false;
   const octet LF = 10;
   const unsigned long BIT_MASK = 0x0000fc00;
-  const float AVOGADRO = 6.022e23;
+  const double AVOGADRO = 6.022e23;
 };</code></pre></div></div>
             </div>
           </section>
@@ -1741,6 +1747,14 @@ s.union(1, 4, 7);         <span class="comment">// Passing three arguments corre
               corresponding argument omitted.
             </p>
             <pre class="syntax"><i>return-type</i> <i>identifier</i>(<i>type</i> <i>identifier</i>, optional <i>type</i> <i>identifier</i> = <i>value</i>);</pre>
+            <div class="warning">
+              <p>
+                It is strongly suggested not to use <a class="dfnref" href="#dfn-optional-argument-default-value">default value</a>
+                of <span class="idlvalue">true</span> for <span class="estype">boolean</span>-typed arguments,
+                as this can be confusing for authors who might otherwise expect the default
+                conversion of <span class="esvalue">undefined</span> to be used (i.e., <span class="idlvalue">false</span>).
+              </p>
+            </div>
             <p>
               If the type of an argument is a <a href="#idl-dictionary">dictionary type</a>
               or a <a class="dfnref" href="#dfn-union-type">union type</a> that has a
@@ -1819,7 +1833,7 @@ s.union(1, 4, 7);         <span class="comment">// Passing three arguments corre
                 that can be invoked with two different argument list lengths:
               </p>
               <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface ColorCreator {
-  object createColor(float v1, float v2, float v3, optional float alpha);
+  object createColor(double v1, double v2, double v3, optional double alpha);
 };</code></pre></div></div>
               <p>
                 It is equivalent to an <a class="dfnref" href="#dfn-interface">interface</a>
@@ -1827,8 +1841,8 @@ s.union(1, 4, 7);         <span class="comment">// Passing three arguments corre
                 <a class="dfnref" href="#dfn-operation">operations</a>:
               </p>
               <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface ColorCreator {
-  object createColor(float v1, float v2, float v3);
-  object createColor(float v1, float v2, float v3, float alpha);
+  object createColor(double v1, double v2, double v3);
+  object createColor(double v1, double v2, double v3, double alpha);
 };</code></pre></div></div>
             </div>
             <!--
@@ -1911,7 +1925,7 @@ s.union(1, 4, 7);         <span class="comment">// Passing three arguments corre
              "typedef"
             <br /> |
              "unrestricted"
-          </span></td></tr><tr id="proddef-ReturnType"><td><span class="prod-number">[91]</span></td><td><a class="sym" href="#prod-ReturnType">ReturnType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Type">Type</a> <br /> |
+          </span></td></tr><tr id="proddef-ReturnType"><td><span class="prod-number">[89]</span></td><td><a class="sym" href="#prod-ReturnType">ReturnType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Type">Type</a> <br /> |
              "void"</span></td></tr></table>
           </section>
 
@@ -1981,8 +1995,8 @@ s.union(1, 4, 7);         <span class="comment">// Passing three arguments corre
               <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface Dictionary {
   readonly attribute unsigned long propertyCount;
 
-  getter float (DOMString propertyName);
-  setter void (DOMString propertyName, float propertyValue);
+  getter double (DOMString propertyName);
+  setter void (DOMString propertyName, double propertyValue);
 };</code></pre></div></div>
               <p>In language bindings that do not support property getters and setters,
                 objects implementing <span class="idltype">Dictionary</span> will not
@@ -2046,17 +2060,17 @@ dictionary.x = 1;                  <span class='comment'>// Invokes the property
               <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface Dictionary {
   readonly attribute unsigned long propertyCount;
 
-  getter float getProperty(DOMString propertyName);
-  setter void setProperty(DOMString propertyName, float propertyValue);
+  getter double getProperty(DOMString propertyName);
+  setter void setProperty(DOMString propertyName, double propertyValue);
 };</code></pre></div></div>
               <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface Dictionary {
   readonly attribute unsigned long propertyCount;
 
-  float getProperty(DOMString propertyName);
-  void setProperty(DOMString propertyName, float propertyValue);
+  double getProperty(DOMString propertyName);
+  void setProperty(DOMString propertyName, double propertyValue);
 
-  getter float (DOMString propertyName);
-  setter void (DOMString propertyName, float propertyValue);
+  getter double (DOMString propertyName);
+  setter void (DOMString propertyName, double propertyValue);
 };</code></pre></div></div>
             </div>
             <!--
@@ -2157,7 +2171,7 @@ omittable legacycaller <i>return-type</i> <i>identifier</i>(<i>arguments…</i>)
                 </p>
                 <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface NumberQuadrupler {
   <span class="comment">// This operation simply returns four times the given number x.</span>
-  legacycaller float compute(float x);
+  legacycaller double compute(double x);
 };</code></pre></div></div>
                 <p>
                   An ECMAScript implementation supporting this interface would
@@ -2572,7 +2586,7 @@ serializer = { inherit, attribute };</pre>
              <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
              ε</span></td></tr><tr id="proddef-SerializationPatternList"><td><span class="prod-number">[34]</span></td><td><a class="sym" href="#prod-SerializationPatternList">SerializationPatternList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"getter" <br /> |
              <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
-             ε</span></td></tr><tr id="proddef-Identifiers"><td><span class="prod-number">[93]</span></td><td><a class="sym" href="#prod-Identifiers">Identifiers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
+             ε</span></td></tr><tr id="proddef-Identifiers"><td><span class="prod-number">[91]</span></td><td><a class="sym" href="#prod-Identifiers">Identifiers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
              ε</span></td></tr></table>
 
               <div class="example"><div class="exampleHeader">Example</div>
@@ -2584,7 +2598,7 @@ serializer = { inherit, attribute };</pre>
                 <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface Transaction {
   readonly attribute Account from;
   readonly attribute Account to;
-  readonly attribute float amount;
+  readonly attribute double amount;
   readonly attribute DOMString description;
   readonly attribute unsigned long number;
 
@@ -2631,7 +2645,7 @@ interface Account {
                 <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface Transaction {
   readonly attribute Account from;
   readonly attribute Account to;
-  readonly attribute float amount;
+  readonly attribute double amount;
   readonly attribute DOMString description;
   readonly attribute unsigned long number;
 
@@ -2946,9 +2960,9 @@ deleter <i>type</i> (DOMString <i>identifier</i>);</pre>
               <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface Point { /* ... */ };
 
 interface Circle {
-  attribute float cx;
-  attribute float cy;
-  attribute float radius;
+  attribute double cx;
+  attribute double cy;
+  attribute double radius;
 
   static readonly attribute long triangulationCount;
   static Point triangulate(Circle c1, Circle c2, Circle c3);
@@ -3025,7 +3039,7 @@ Point triangulationPoint = CircleUtils.triangulate(circles[0], circles[1], circl
 };
 
 partial interface A {
-  void f(float x);
+  void f(double x);
   void g();
 };
 
@@ -3246,9 +3260,9 @@ partial interface A {
               </p>
               <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface A {
   /* f1 */ void f(DOMString a);
-  /* f2 */ void f(Node a, DOMString b, float... c);
+  /* f2 */ void f(Node a, DOMString b, double... c);
   /* f3 */ void f();
-  /* f4 */ void f(Event a, DOMString b, optional DOMString c, float... d);
+  /* f4 */ void f(Event a, DOMString b, optional DOMString c, double... d);
 };</code></pre></div></div>
               <p>
                 assuming <span class="idltype">Node</span> and <span class="idltype">Event</span>
@@ -3260,12 +3274,12 @@ partial interface A {
               <div class="set">
                 { &lt;f1, (DOMString), (required)&gt;,<br />
                   &lt;f2, (Node, DOMString), (required, required)&gt;,<br />
-                  &lt;f2, (Node, DOMString, float), (required, required, variadic)&gt;,<br />
-                  &lt;f2, (Node, DOMString, float, float), (required, required, variadic, variadic)&gt;,<br />
+                  &lt;f2, (Node, DOMString, double), (required, required, variadic)&gt;,<br />
+                  &lt;f2, (Node, DOMString, double, double), (required, required, variadic, variadic)&gt;,<br />
                   &lt;f3, (), ()&gt;,<br />
                   &lt;f4, (Event, DOMString), (required, required)&gt;,<br />
                   &lt;f4, (Event, DOMString, DOMString), (required, required, optional)&gt;,<br />
-                  &lt;f4, (Event, DOMString, DOMString, float), (required, required, optional, variadic)&gt; }
+                  &lt;f4, (Event, DOMString, DOMString, double), (required, required, optional, variadic)&gt; }
               </div>
             </div>
             <!--
@@ -3308,7 +3322,7 @@ partial interface A {
 <th>callback <br />function</th>
 <th>dictionary</th>
 <th>sequence&lt;<var>T</var>&gt;</th>
-<th><var>T</var>[]</th>
+<th>FrozenArray&lt;<var>T</var>&gt;</th>
 <th>Date</th>
 <th>exception types</th>
 <th>buffer source types</th>
@@ -3360,7 +3374,7 @@ partial interface A {
 <td>(b)</td>
 <td>(b)</td>
 <td>●</td>
-<td>(b)</td>
+<td>●</td>
 <td>●</td>
 <td>●</td>
 <td>●</td>
@@ -3386,7 +3400,7 @@ partial interface A {
 <td></td>
 <td></td>
 <td>●</td>
-<td></td>
+<td>●</td>
 <td>●</td>
 <td>●</td>
 <td>●</td>
@@ -3399,7 +3413,7 @@ partial interface A {
 <td class="belowdiagonal"></td>
 <td></td>
 <td>●</td>
-<td></td>
+<td>●</td>
 <td>●</td>
 <td>●</td>
 <td>●</td>
@@ -3416,7 +3430,7 @@ partial interface A {
 <td>●</td>
 <td>●</td>
 <td>●</td>
-</tr><tr><th><var>T</var>[]</th>
+</tr><tr><th>FrozenArray&lt;<var>T</var>&gt;</th>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
@@ -3520,11 +3534,11 @@ partial interface A {
               </p>
               <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface B {
   void f(DOMString x);
-  void f(float x);
+  void f(double x);
 };</code></pre></div></div>
               <p>
                 since <a class="idltype" href="#idl-DOMString">DOMString</a> and
-                <a class="idltype" href="#idl-float">float</a> are not distinguishable.
+                <a class="idltype" href="#idl-double">double</a> are not distinguishable.
               </p>
             </div>
             <p>
@@ -3539,16 +3553,16 @@ partial interface A {
               <p>The following is invalid:</p>
               <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface B {
   <span class="comment">/* f1 */</span> void f(DOMString w);
-  <span class="comment">/* f2 */</span> void f(long w, float x, Node y, Node z);
-  <span class="comment">/* f3 */</span> void f(float w, float x, DOMString y, Node z);
+  <span class="comment">/* f2 */</span> void f(long w, double x, Node y, Node z);
+  <span class="comment">/* f3 */</span> void f(double w, double x, DOMString y, Node z);
 };</code></pre></div></div>
               <p>
                 For argument count 4, the effective overload set is:
               </p>
               <div class="set">
                 { &lt;f1, (DOMString), (required)&gt;,<br />
-                  &lt;f2, (long, float, Node, Node), (required, required, required, required)&gt;,<br />
-                  &lt;f3, (float, float, DOMString, Node), (required, required, required, required)&gt; }
+                  &lt;f2, (long, double, Node, Node), (required, required, required, required)&gt;,<br />
+                  &lt;f3, (double, double, DOMString, Node), (required, required, required, required)&gt; }
               </div>
               <p>
                 Looking at entries with type list length 4, the
@@ -3845,6 +3859,17 @@ dictionary <i>Derived</i> : <em>Base</em> {
             not have a specified value.  Dictionary members with default values are
             always considered to be present.
           </p>
+          <div class="warning">
+            <p>
+              As with <a class="dfnref" href="#dfn-optional-argument-default-value">operation argument default values</a>,
+              is strongly suggested not to use of <span class="idlvalue">true</span> as the
+              <a class="dfnref" href="#dfn-dictionary-member-default-value">default value</a> for
+              <span class="estype">boolean</span>-typed
+              <a class="dfnref" href="#dfn-dictioanry-member">dictionary members</a>,
+              as this can be confusing for authors who might otherwise expect the default
+              conversion of <span class="esvalue">undefined</span> to be used (i.e., <span class="idlvalue">false</span>).
+            </p>
+          </div>
           <p>
             Each <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a> (matching
             <a class="sym" href="#prod-DictionaryMember">DictionaryMember</a>) is specified
@@ -3877,7 +3902,7 @@ dictionary <i>Derived</i> : <em>Base</em> {
             When a boolean literal token (<code>true</code> or <code>false</code>),
             the <code>null</code> token,
             an <a class="sym" href="#prod-integer">integer</a> token, a
-            <a class="sym" href="#prod-float">float</a> token,
+            <a class="sym" href="#prod-double">double</a> token,
             one of the three special floating point literal values (<code>Infinity</code>,
             <code>-Infinity</code> or <code>NaN</code>),
             a <a class="sym" href="#prod-string">string</a> token or
@@ -3913,8 +3938,8 @@ dictionary <i>Derived</i> : <em>Base</em> {
             <li>the type is a dictionary that <a class="dfnref" href="#dfn-dictionary-inherit">inherits</a> from <var>D</var></li>
             <li>the type is a <a class="dfnref" href="#dfn-nullable">nullable type</a>
             whose <a class="dfnref" href="#dfn-inner-type">inner type</a> includes <var>D</var></li>
-            <li>the type is a <a href="#idl-sequence">sequence type</a> or <a href="#idl-array">array type</a>
-            whose element type includes <var>D</var></li>
+            <li>the type is a <a href="#idl-sequence">sequence type</a> or <a href="#idl-array">array type</a> 
+            whose element type includes <var>D</var></li> 
             <li>the type is a <a class="dnfref" href="#dfn-union-type">union type</a>,
             one of whose <a class="dfnref" href="#dfn-union-member-type">member types</a>
             includes <var>D</var></li>
@@ -4041,8 +4066,8 @@ something.f(dict);</code></pre></div></div>
             </p>
             <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">[Constructor]
 interface Point {
-  attribute float x;
-  attribute float y;
+  attribute double x;
+  attribute double y;
 };
 
 dictionary PaintOptions {
@@ -4052,7 +4077,7 @@ dictionary PaintOptions {
 };
 
 interface GraphicsContext {
-  void drawRectangle(float width, float height, optional PaintOptions options);
+  void drawRectangle(double width, double height, optional PaintOptions options);
 };</code></pre></div></div>
             <p>
               In an ECMAScript implementation of the IDL, an <span class="estype">Object</span>
@@ -4386,6 +4411,19 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             The list of <a class="dfnref" href="#dfn-enumeration-value">enumeration values</a>
             <span class="rfc2119">MUST NOT</span> include duplicates.
           </p>
+          <div class="warning">
+            <p>
+              It is strongly suggested that enumeration values be all lowercase,
+              and that multiple words be separated using dashes or not be
+              separated at all, unless there is a specific reason to use another
+              value naming scheme.  For example, an enumeration value that
+              indicates an object should be created could be named
+              <code>"createobject"</code> or <code>'create-object"</code>.
+              Consider related uses of enumeration values when deciding whether
+              to dash-separate or not separate enumeration value words so that
+              similar APIs are consistent.
+            </p>
+          </div>
           <p>
             The behavior when a string value that is not one a valid enumeration value
             is used when assigning to an <a class="dfnref" href="#dfn-attribute">attribute</a>,
@@ -4420,9 +4458,9 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
 
 interface Meal {
   attribute MealType type;
-  attribute float size;     <span class="comment">// in grams</span>
+  attribute double size;     <span class="comment">// in grams</span>
 
-  void initialize(MealType type, float size);
+  void initialize(MealType type, double size);
 };</code></pre></div></div>
             <p>
               An ECMAScript implementation would restrict the strings that can be
@@ -4540,8 +4578,8 @@ ops.performOperation(function(status) {
               <a href="#idl-sequence">sequence type</a>.
             </p>
             <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface Point {
-  attribute float x;
-  attribute float y;
+  attribute double x;
+  attribute double y;
 };
 
 typedef sequence&lt;Point&gt; Points;
@@ -4721,13 +4759,12 @@ EventTarget et = (EventTarget) n; <span class='comment'>// This should never thr
           <p>
             In a given implementation of a set of <a class="dfnref" href="#dfn-idl-fragment">IDL fragments</a>,
             an object can be described as being a <dfn id="dfn-platform-object">platform object</dfn>, a
-            <dfn id="dfn-user-object">user object</dfn>, or neither.  There are three kinds of
+            <dfn id="dfn-user-object">user object</dfn>, or neither.  There are two kinds of
             object that are considered to be platform objects:
           </p>
           <ul>
             <li>objects that implement a non-<a class="dfnref" href="#dfn-callback-interface">callback</a> <a class="dfnref" href="#dfn-interface">interface</a>;</li>
-            <li>objects representing IDL <a class="dfnref" href="#dfn-DOMException">DOMExceptions</a>;</li>
-            <li>and objects representing IDL <a href="#idl-array">array</a> objects (<a class="dfnref" href="#dfn-platform-array-object">platform array objects</a>).</li>
+            <li>objects representing IDL <a class="dfnref" href="#dfn-DOMException">DOMExceptions</a>.</li>
           </ul>
           <p>
             In a browser, for example,
@@ -4920,23 +4957,23 @@ interface Person {
           </p>
 
           <table class="grammar"><tr id="proddef-Type"><td><span class="prod-number">[73]</span></td><td><a class="sym" href="#prod-Type">Type</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-SingleType">SingleType</a> <br /> |
-             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a></span></td></tr><tr id="proddef-SingleType"><td><span class="prod-number">[74]</span></td><td><a class="sym" href="#prod-SingleType">SingleType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br /> |
-             "any" <a class="sym" href="#prod-TypeSuffixStartingWithArray">TypeSuffixStartingWithArray</a></span></td></tr><tr id="proddef-UnionType"><td><span class="prod-number">[75]</span></td><td><a class="sym" href="#prod-UnionType">UnionType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"(" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> "or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> ")"</span></td></tr><tr id="proddef-UnionMemberType"><td><span class="prod-number">[76]</span></td><td><a class="sym" href="#prod-UnionMemberType">UnionMemberType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br /> |
-             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "any" "[" "]" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a></span></td></tr><tr id="proddef-UnionMemberTypes"><td><span class="prod-number">[77]</span></td><td><a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> <br /> |
-             ε</span></td></tr><tr id="proddef-NonAnyType"><td><span class="prod-number">[78]</span></td><td><a class="sym" href="#prod-NonAnyType">NonAnyType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
+             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="proddef-SingleType"><td><span class="prod-number">[74]</span></td><td><a class="sym" href="#prod-SingleType">SingleType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br /> |
+             "any"</span></td></tr><tr id="proddef-UnionType"><td><span class="prod-number">[75]</span></td><td><a class="sym" href="#prod-UnionType">UnionType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"(" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> "or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> ")"</span></td></tr><tr id="proddef-UnionMemberType"><td><span class="prod-number">[76]</span></td><td><a class="sym" href="#prod-UnionMemberType">UnionMemberType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br /> |
+             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="proddef-UnionMemberTypes"><td><span class="prod-number">[77]</span></td><td><a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> <br /> |
+             ε</span></td></tr><tr id="proddef-NonAnyType"><td><span class="prod-number">[78]</span></td><td><a class="sym" href="#prod-NonAnyType">NonAnyType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
              <a class="sym" href="#prod-PromiseType">PromiseType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "ByteString" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "DOMString" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "USVString" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
+             "ByteString" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "DOMString" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "USVString" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
              "sequence" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "object" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "Date" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "RegExp" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "Error" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "DOMException" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             <a class="sym" href="#prod-BufferRelatedType">BufferRelatedType</a> <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a></span></td></tr><tr><td><span class="prod-number">[80]</span></td><td><a class="sym" href="#prod-ConstType">ConstType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "object" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "Date" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "RegExp" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "Error" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "DOMException" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             <a class="sym" href="#prod-BufferRelatedType">BufferRelatedType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "FrozenArray" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr><td><span class="prod-number">[80]</span></td><td><a class="sym" href="#prod-ConstType">ConstType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
              <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="proddef-PrimitiveType"><td><span class="prod-number">[81]</span></td><td><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-UnsignedIntegerType">UnsignedIntegerType</a> <br /> |
              <a class="sym" href="#prod-UnrestrictedFloatType">UnrestrictedFloatType</a> <br /> |
              "boolean" <br /> |
@@ -4946,10 +4983,7 @@ interface Person {
              "double"</span></td></tr><tr id="proddef-UnsignedIntegerType"><td><span class="prod-number">[84]</span></td><td><a class="sym" href="#prod-UnsignedIntegerType">UnsignedIntegerType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"unsigned" <a class="sym" href="#prod-IntegerType">IntegerType</a> <br /> |
              <a class="sym" href="#prod-IntegerType">IntegerType</a></span></td></tr><tr id="proddef-IntegerType"><td><span class="prod-number">[85]</span></td><td><a class="sym" href="#prod-IntegerType">IntegerType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"short" <br /> |
              "long" <a class="sym" href="#prod-OptionalLong">OptionalLong</a></span></td></tr><tr id="proddef-OptionalLong"><td><span class="prod-number">[86]</span></td><td><a class="sym" href="#prod-OptionalLong">OptionalLong</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"long" <br /> |
-             ε</span></td></tr><tr id="proddef-PromiseType"><td><span class="prod-number">[87]</span></td><td><a class="sym" href="#prod-PromiseType">PromiseType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"Promise" "&lt;" <a class="sym" href="#prod-ReturnType">ReturnType</a> "&gt;"</span></td></tr><tr id="proddef-TypeSuffix"><td><span class="prod-number">[88]</span></td><td><a class="sym" href="#prod-TypeSuffix">TypeSuffix</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"[" "]" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "?" <a class="sym" href="#prod-TypeSuffixStartingWithArray">TypeSuffixStartingWithArray</a> <br /> |
-             ε</span></td></tr><tr id="proddef-TypeSuffixStartingWithArray"><td><span class="prod-number">[89]</span></td><td><a class="sym" href="#prod-TypeSuffixStartingWithArray">TypeSuffixStartingWithArray</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"[" "]" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             ε</span></td></tr><tr id="proddef-Null"><td><span class="prod-number">[90]</span></td><td><a class="sym" href="#prod-Null">Null</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"?" <br /> |
+             ε</span></td></tr><tr id="proddef-PromiseType"><td><span class="prod-number">[87]</span></td><td><a class="sym" href="#prod-PromiseType">PromiseType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"Promise" "&lt;" <a class="sym" href="#prod-ReturnType">ReturnType</a> "&gt;"</span></td></tr><tr id="proddef-Null"><td><span class="prod-number">[88]</span></td><td><a class="sym" href="#prod-Null">Null</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"?" <br /> |
              ε</span></td></tr></table>
 
           <section id="idl-any">
@@ -5604,8 +5638,7 @@ interface Person {
                 are copied rather than having references
                 to them passed around.  Instead of a writable <a class="dfnref" href="#dfn-attribute">attribute</a> of a sequence
                 type, it is suggested that a pair of <a class="dfnref" href="#dfn-operation">operations</a> to get and set the
-                sequence is used.  Another option is to use an <a href="#idl-array">array type</a>,
-                which can be used as the type of an attribute.
+                sequence is used.
               </p>
             </div>
             <p>
@@ -5613,49 +5646,6 @@ interface Person {
               is the concatenation of the type name for <var>T</var> and
               the string “Sequence”.
             </p>
-          </section>
-
-          <section id="idl-array">
-            <h4>Arrays — <var>T</var>[]</h4>
-
-            <p>
-              The <a class="idltype" href="#idl-array"><var>T</var>[]</a> type
-              is a parameterized type.  The values of this type are non-null references to arrays
-              of values of type <var>T</var>.
-              Unlike <a class="dfnref" href="#idl-sequence">sequences</a>,
-              arrays are passed by reference.  Passing an array to a <a class="dfnref" href="#dfn-platform-object">platform object</a>
-              could result in that array being modified by the object.
-              An array returned from a platform object might also be modified by the object,
-              and any modifications to the array performed by user code might be acted upon by the
-              platform object.
-            </p>
-            <p>
-              The element type of an array <span class="rfc2119">MUST NOT</span> be
-              a <a href="#idl-sequence">sequence</a> or <a href="#idl-dictionary">dictionary</a> type.
-            </p>
-            <p>
-              Arrays can either be <dfn id="dfn-fixed-length">fixed length</dfn> or
-              <dfn id="dfn-variable-length">variable length</dfn>.  Fixed length
-              arrays cannot have their length changed by user code after they have been
-              created, while variable length arrays can.  Unless otherwise
-              specified, arrays are fixed length.
-            </p>
-            <p>
-              Arrays can also be designated as being <dfn id="dfn-read-only-array">read only</dfn>.
-              User code cannot modify the values of read only array elements.
-              If an array is read only, then it is also implicitly <a class="dfnref" href="#dfn-fixed-length">fixed length</a>.
-            </p>
-            <p>
-              There is no way to represent a constant array value in IDL.
-            </p>
-            <p>
-              The <a class="dfnref" href="#dfn-type-name">type name</a> of an array type
-              is the concatenation of the type name for <var>T</var> and
-              the string “Array”.
-            </p>
-            <div class="example"><div class="exampleHeader">Example</div>
-              <p>See <a href="#es-array">section <a href="#"></a></a> for an example using array types.</p>
-            </div>
           </section>
 
           <section id="idl-promise">
@@ -5694,8 +5684,8 @@ interface Person {
             <div class="note">
               <p>
                 For example, you might write <code>(Node or DOMString)</code>
-                or <code>(float or float[])</code>.  When applying a
-                <code>[]</code> or <code>?</code> suffix to a
+                or <code>(double or sequence&lt;double&gt;)</code>.  When applying a
+                <code>?</code> suffix to a
                 <a class="dfnref" href="#dfn-union-type">union type</a>
                 as a whole, it is placed after the closing parenthesis,
                 as in <code>(Node or DOMString)?</code>.
@@ -5703,8 +5693,8 @@ interface Person {
               <p>
                 Note that the <a class="dfnref" href="#dfn-union-member-type">member types</a>
                 of a union type do not descend into nested union types.  So for
-                <code>(float or (Date or Event) or (Node or DOMString)?)</code> the member types
-                are <code>float</code>, <code>(Date or Event)</code> and
+                <code>(double or (Date or Event) or (Node or DOMString)?)</code> the member types
+                are <code>double</code>, <code>(Date or Event)</code> and
                 <code>(Node or DOMString)?</code>.
               </p>
             </div>
@@ -5739,10 +5729,10 @@ interface Person {
               <p>
                 For example, the <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a>
                 of the <a class="dfnref" href="#dfn-union-type">union type</a>
-                <code>(Node or (Date or Event) or (XMLHttpRequest or DOMString)? or (float[] or NodeList)[])</code>
+                <code>(Node or (Date or Event) or (XMLHttpRequest or DOMString)? or sequence&lt;(sequence&lt;double&gt; or NodeList)&gt;)</code>
                 are the six types <code>Node</code>, <code>Date</code>, <code>Event</code>,
                 <code>XMLHttpRequest</code>, <code>DOMString</code> and
-                <code>(float[] or NodeList)[]</code>.
+                <code>sequence&lt;(sequence&lt;double&gt; or NodeList)&gt;</code>.
               </p>
             </div>
             <p>
@@ -5807,21 +5797,21 @@ interface Person {
               and joining them with the string “Or”.
             </p>
             <table class="grammar"><tr><td><span class="prod-number">[75]</span></td><td><a class="sym" href="#prod-UnionType">UnionType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"(" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> "or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> ")"</span></td></tr><tr><td><span class="prod-number">[76]</span></td><td><a class="sym" href="#prod-UnionMemberType">UnionMemberType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br /> |
-             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "any" "[" "]" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a></span></td></tr><tr><td><span class="prod-number">[77]</span></td><td><a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> <br /> |
-             ε</span></td></tr><tr><td><span class="prod-number">[78]</span></td><td><a class="sym" href="#prod-NonAnyType">NonAnyType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
+             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr><td><span class="prod-number">[77]</span></td><td><a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> <br /> |
+             ε</span></td></tr><tr><td><span class="prod-number">[78]</span></td><td><a class="sym" href="#prod-NonAnyType">NonAnyType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
              <a class="sym" href="#prod-PromiseType">PromiseType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "ByteString" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "DOMString" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "USVString" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
+             "ByteString" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "DOMString" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "USVString" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
              "sequence" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "object" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "Date" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "RegExp" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "Error" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "DOMException" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             <a class="sym" href="#prod-BufferRelatedType">BufferRelatedType</a> <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a></span></td></tr></table>
+             "object" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "Date" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "RegExp" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "Error" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "DOMException" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             <a class="sym" href="#prod-BufferRelatedType">BufferRelatedType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "FrozenArray" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a></span></td></tr></table>
           </section>
 
           <section id="idl-Date">
@@ -5978,6 +5968,29 @@ interface Person {
               <p>We should include an example of specification text that uses these types and terms.</p>
             </div>
           </section>
+
+          <section id="idl-frozen-array">
+            <h4>Frozen arrays — FrozenArray&lt;<var>T</var>&gt;</h4>
+
+            <p>
+              A <dfn id="dfn-frozen-array-type">frozen array type</dfn> is a parameterized
+              type whose values are references to objects that hold a fixed length array
+              of unmodifiable values.  The values in the array are of type <var>T</var>.
+            </p>
+            <p>
+              Since <span class="idltype">FrozenArray&lt;<var>T</var>&gt;</span> values
+              are references, they are unlike <a href="#idl-sequence">sequence types</a>,
+              which are lists of values that are passed by value.
+            </p>
+            <p>
+              There is no way to represent a constant frozen array value in IDL.
+            </p>
+            <p>
+              The <a class="dfnref" href="#dfn-type-name">type name</a> of a frozen array
+              type is the concatenation of the type name for <var>T</var> and the string
+              “Array”.
+            </p>
+          </section>
         </section>
 
         <section id="idl-extended-attributes">
@@ -6034,7 +6047,7 @@ interface Person {
                 <dfn id="dfn-xattr-argument-list">takes an argument list</dfn>
               </td>
               <td>
-                <code>[Constructor(float x, float y)]</code>
+                <code>[Constructor(double x, double y)]</code>
               </td>
             </tr>
             <tr>
@@ -6137,6 +6150,7 @@ interface Person {
              "ByteString" <br /> |
              "Date" <br /> |
              "DOMString" <br /> |
+             "FrozenArray" <br /> |
              "Infinity" <br /> |
              "NaN" <br /> |
              "RegExp" <br /> |
@@ -6165,8 +6179,8 @@ interface Person {
             <br /> |
              <a class="sym" href="#prod-BufferRelatedType">BufferRelatedType</a>
           </span></td></tr><tr id="proddef-OtherOrComma"><td><span class="prod-number">[72]</span></td><td><a class="sym" href="#prod-OtherOrComma">OtherOrComma</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Other">Other</a> <br /> |
-             ","</span></td></tr><tr id="proddef-IdentifierList"><td><span class="prod-number">[92]</span></td><td><a class="sym" href="#prod-IdentifierList">IdentifierList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a></span></td></tr><tr><td><span class="prod-number">[93]</span></td><td><a class="sym" href="#prod-Identifiers">Identifiers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
-             ε</span></td></tr><tr id="proddef-ExtendedAttributeNoArgs"><td><span class="prod-number">[94]</span></td><td><a class="sym" href="#prod-ExtendedAttributeNoArgs">ExtendedAttributeNoArgs</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="proddef-ExtendedAttributeArgList"><td><span class="prod-number">[95]</span></td><td><a class="sym" href="#prod-ExtendedAttributeArgList">ExtendedAttributeArgList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span></td></tr><tr id="proddef-ExtendedAttributeIdent"><td><span class="prod-number">[96]</span></td><td><a class="sym" href="#prod-ExtendedAttributeIdent">ExtendedAttributeIdent</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="proddef-ExtendedAttributeIdentList"><td><span class="prod-number">[97]</span></td><td><a class="sym" href="#prod-ExtendedAttributeIdentList">ExtendedAttributeIdentList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" "(" <a class="sym" href="#prod-IdentifierList">IdentifierList</a> ")"</span></td></tr><tr id="proddef-ExtendedAttributeNamedArgList"><td><span class="prod-number">[98]</span></td><td><a class="sym" href="#prod-ExtendedAttributeNamedArgList">ExtendedAttributeNamedArgList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span></td></tr></table>
+             ","</span></td></tr><tr id="proddef-IdentifierList"><td><span class="prod-number">[90]</span></td><td><a class="sym" href="#prod-IdentifierList">IdentifierList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a></span></td></tr><tr><td><span class="prod-number">[91]</span></td><td><a class="sym" href="#prod-Identifiers">Identifiers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
+             ε</span></td></tr><tr id="proddef-ExtendedAttributeNoArgs"><td><span class="prod-number">[92]</span></td><td><a class="sym" href="#prod-ExtendedAttributeNoArgs">ExtendedAttributeNoArgs</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="proddef-ExtendedAttributeArgList"><td><span class="prod-number">[93]</span></td><td><a class="sym" href="#prod-ExtendedAttributeArgList">ExtendedAttributeArgList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span></td></tr><tr id="proddef-ExtendedAttributeIdent"><td><span class="prod-number">[94]</span></td><td><a class="sym" href="#prod-ExtendedAttributeIdent">ExtendedAttributeIdent</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="proddef-ExtendedAttributeIdentList"><td><span class="prod-number">[95]</span></td><td><a class="sym" href="#prod-ExtendedAttributeIdentList">ExtendedAttributeIdentList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" "(" <a class="sym" href="#prod-IdentifierList">IdentifierList</a> ")"</span></td></tr><tr id="proddef-ExtendedAttributeNamedArgList"><td><span class="prod-number">[96]</span></td><td><a class="sym" href="#prod-ExtendedAttributeNamedArgList">ExtendedAttributeNamedArgList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span></td></tr></table>
 
         </section>
       </section>
@@ -7578,8 +7592,8 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
 
   sequence&lt;DOMString&gt; getSupportedImageCodecs();
 
-  void drawPolygon(sequence&lt;float&gt; coordinates);
-  sequence&lt;float&gt; getLastDrawnPolygon();
+  void drawPolygon(sequence&lt;double&gt; coordinates);
+  sequence&lt;double&gt; getLastDrawnPolygon();
 
   <span class="comment">// ...</span>
 };</code></pre></div></div>
@@ -7588,7 +7602,7 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
                 object with elements of type <span class="estype">String</span> is used to
                 represent a <span class="idltype">sequence&lt;DOMString&gt;</span>, while an
                 <span class="estype">Array</span> with elements of type <span class="estype">Number</span>
-                represents a <span class="idltype">sequence&lt;float&gt;</span>.  The
+                represents a <span class="idltype">sequence&lt;double&gt;</span>.  The
                 <span class="estype">Array</span> objects are effectively passed by
                 value; every time the <code>getSupportedImageCodecs()</code>
                 function is called a new <span class="estype">Array</span> is
@@ -7622,10 +7636,10 @@ canvas.getSupportedImageCodecs() == canvas.getSupportedImageCodecs();
 <span class="comment">// An Array of Numbers...</span>
 var a = [0, 0, 100, 0, 50, 62.5];
 
-<span class="comment">// ...can be passed to a platform object expecting a sequence&lt;float&gt;.</span>
+<span class="comment">// ...can be passed to a platform object expecting a sequence&lt;double&gt;.</span>
 canvas.drawPolygon(a);
 
-<span class="comment">// Each element will be converted to a float by first calling ToNumber().</span>
+<span class="comment">// Each element will be converted to a double by first calling ToNumber().</span>
 <span class="comment">// So the following call is equivalent to the previous one, except that</span>
 <span class="comment">// "hi" will be alerted before drawPolygon() returns.</span>
 a = [false, '',
@@ -7712,351 +7726,6 @@ alert(b[4]);    <span class="comment">// This would alert "50".</span></code></p
               </div>
             </div>
             -->
-          </section>
-
-          <section id="es-array">
-            <h4>Arrays — <var>T</var>[]</h4>
-
-            <p>
-              IDL array values are represented by references to objects known
-              as <dfn id="dfn-platform-array-object">platform array objects</dfn>, with particular
-              characteristics that allow them to behave similarly to native <span class="estype">Array</span>
-              objects.  All <a class="dfnref" href="#dfn-platform-array-object">platform array objects</a>
-              are <a class="dfnref" href="#dfn-platform-object">platform objects</a>, and
-              thus each is associated with a particular global environment.
-            </p>
-            <div class="note">
-              <p>
-                <a class="dfnref" href="#dfn-platform-array-object">Platform array objects</a> differ
-                from <span class="estype">Array</span> objects in the following ways:
-              </p>
-              <ul>
-                <li>they are never sparse</li>
-                <li>their elements are always data properties</li>
-                <li>an ECMAScript-to-IDL value conversion is always performed when storing an element</li>
-                <li>they stringify with Object.prototype.toString differently</li>
-                <li>their internal <span class="prop">[[\Extensible]]</span> property value is always <span class="esvalue">true</span></li>
-              </ul>
-            </div>
-            <p>
-              The value of the internal <span class="prop">[[\Prototype]]</span> property of a
-              <a class="dfnref" href="#dfn-platform-array-object">platform array object</a>
-              <span class="rfc2119">MUST</span> be <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4)
-              from its associated global environment.
-            </p>
-            <div class="note">
-              <p>
-                Note that some of the functions from the <span class="estype">Array</span> prototype object
-                will not behave on a <a class="dfnref" href="#dfn-fixed-length">fixed length</a>
-                platform array object as they do on an <span class="estype">Array</span> object, since
-                attempting to assign to the “length” property will fail.
-                Similarly, some of the functions from the <span class="estype">Array</span>
-                prototype object will not perform any useful operation on
-                <a class="dfnref" href="#dfn-read-only-array">read only arrays</a>.
-              </p>
-            </div>
-            <p>
-              The <a class="dfnref" href="#dfn-class-string">class string</a> of a
-              platform array object <span class="rfc2119">MUST</span> be
-              the <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a href="#idl-array">array type</a>.
-            </p>
-            <!--
-            <p>
-              Platform array objects <span class='rfc2119'>MUST</span> have a property named “length”
-              whose value is a <span class='estype'>Number</span> that is the length
-              of the array.  If the array is <a class='dfnref' href='#dfn-fixed-length'>fixed length</a>,
-              then this property has attributes <span class='descriptor'>{ [[\Writable]]: <span class='esvalue'>false</span>, [[\Enumerable]]: <span class='esvalue'>false</span>, [[\Configurable]]: <span class='esvalue'>false</span> }</span>.
-              Otherwise, the array is <a class='dfnref' href='#dfn-variable-length'>variable length</a>,
-              and the property has attributes <span class='descriptor'>{ [[\Writable]]: <span class='esvalue'>true</span>, [[\Enumerable]]: <span class='esvalue'>false</span>, [[\Configurable]]: <span class='esvalue'>false</span> }</span>.
-            </p>
-            <p>
-              Platform array objects <span class='rfc2119'>MUST</span> always have a property named
-              <a>ToString</a>(<var>i</var>) for every integer index 0 ≤ <var>i</var> &lt; <var>n</var>,
-              where <var>n</var> is the length of the array.  These properties have attributes
-              <span class='descriptor'>{ [[\Writable]]: <span class='esvalue'>false</span>, [[\Enumerable]]: <span class='esvalue'>true</span>, [[\Configurable]]: <span class='esvalue'>false</span> }</span> if the array is
-              <a class='dfnref' href='#dfn-read-only-array'>read only</a> and
-              <span class='descriptor'>{ [[\Writable]]: <span class='esvalue'>true</span>, [[\Enumerable]]: <span class='esvalue'>true</span>, [[\Configurable]]: <span class='esvalue'>false</span> }</span> otherwise.  The values of these properties
-              <span class='rfc2119'>MUST</span> be the result of <a class='dfnref' href='#dfn-convert-idl-to-ecmascript-value'>converting</a>
-              the value of the array element at the corresponding index to an ECMAScript value.
-            </p>
-            -->
-
-            <p>
-              Platform array objects appear to have a “length” property and a property
-              for each element of the array.  The values and behaviors of these properties are
-              implemented by the internal <span class="prop">[[\GetOwnProperty]]</span>,
-              <span class="prop">[[\DefineOwnProperty]]</span> and <span class="prop">[[\Delete]]</span>
-              methods, which are also defined below.
-            </p>
-
-            <p>
-              Platform array objects cannot be fixed; if <code>Object.freeze</code>, <code>Object.seal</code>
-              or <code>Object.preventExtensions</code> is called on one, the function
-              <span class="rfc2119">MUST</span> <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.
-            </p>
-
-            <p id="es-to-array">
-              An ECMAScript value <var>V</var> is <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL array value of type <span class="idltype"><var>T</var>[]</span> as follows:
-            </p>
-            <ol class="algorithm">
-              <li>If <var>V</var> is a <a class="dfnref" href="#dfn-platform-array-object">platform array object</a>
-                whose element type is <var>T</var>, then return the array that the platform array object
-                represents.</li>
-              <li>Let <var>values</var> be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
-                <var>V</var> to a <a href="#idl-sequence">sequence</a> with element
-                type <var>T</var>.</li>
-              <li>Let <var>n</var> be the length of <var>values</var>.</li>
-              <li>Return a new <a class="dfnref" href="#dfn-fixed-length">fixed length</a>
-                array of length <var>n</var> whose element values are the same as those
-                in <var>values</var>.</li>
-            </ol>
-
-            <p id="array-to-es">
-              An IDL array value <var>V</var> of type <span class="idltype"><var>T</var>[]</span> is
-              <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converted</a> to an
-              ECMAScript value as follows:
-            </p>
-            <ul>
-              <li>If <var>V</var> is already represented by a <a class="dfnref" href="#dfn-platform-array-object">platform array object</a>,
-                then the ECMAScript value is that platform array object.</li>
-              <li>Otherwise, the ECMAScript value is a newly created platform array object that represents <var>V</var>.</li>
-            </ul>
-
-            <div class="example"><div class="exampleHeader">Example</div>
-              <p>
-                The following IDL defines an interface that has an
-                <span class="idltype">unsigned short[]</span> attribute.
-              </p>
-              <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">[Constructor]
-interface LotteryResults {
-  readonly attribute unsigned short[] numbers;
-};</code></pre></div></div>
-              <p>
-                Assuming that the array has a <a class="dfnref" href="#dfn-fixed-length">fixed length</a>
-                of 6, the following ECMAScript code illustrates how the array
-                attribute in the above interface would behave:
-              </p>
-              <div class="block"><div class="blockTitleDiv"><span class="blockTitle">ECMAScript</span></div><div class="blockContent"><pre class="code"><code class="es-code">var results = new LotteryResults();  <span class="comment">// results is a new platform object</span>
-                                     <span class="comment">// implementing the LotteryResults interface.</span>
-
-var a = [4, 8, 15, 16, 23, 42];      <span class="comment">// Numbers will be assigned into the array.</span>
-for (var i = 0; i &lt; 6; i++) {
-  results.numbers[i] = a[i];
-}
-
-results.numbers = a;                 <span class="comment">// This has no effect, since numbers is</span>
-                                     <span class="comment">// read only.</span>
-
-a[0] = 5;                            <span class="comment">// Change the array.</span>
-results.numbers[0];                  <span class="comment">// Evaluates to 4, since results.numbers is</span>
-                                     <span class="comment">// not a reference to 'a'.</span>
-
-results.numbers[0] = 5;              <span class="comment">// Modifies the array stored in the platform</span>
-                                     <span class="comment">// object.</span>
-results.numbers[0];                  <span class="comment">// Now evaluates to 5.</span>
-
-results.numbers[0] = 6.25;           <span class="comment">// Assigns 6 to the first element of the array</span>
-                                     <span class="comment">// since that is how 6.5 is converted to an</span>
-                                     <span class="comment">// unsigned short.</span>
-
-results.numbers.length = 7;          <span class="comment">// Has no effect, since numbers is</span>
-                                     <span class="comment">// fixed length.</span>
-results.numbers[6];                  <span class="comment">// Evaluates to undefined.</span>
-
-results.numbers.slice(0, 2);         <span class="comment">// Evaluates to an Array [6, 8].</span>
-
-results.numbers.push(108);           <span class="comment">// Has no effect, since the definition of</span>
-                                     <span class="comment">// push() relies on calling [[\Put]] on a</span>
-                                     <span class="comment">// non-existent array index property</span>
-                                     <span class="comment">// and on "length", both of which will</span>
-                                     <span class="comment">// be silently ignored.</span>
-
-delete results.numbers[3];           <span class="comment">// Has no effect and evaluates to false,</span>
-                                     <span class="comment">// since the array index properties are</span>
-                                     <span class="comment">// non-configurable.</span></code></pre></div></div>
-              <p>
-                If passing an <span class="estype">Array</span> object to a <a class="dfnref" href="#dfn-platform-object">platform object</a>
-                expecting an IDL array value, a new <a class="dfnref" href="#dfn-platform-array-object">platform array object</a>
-                will be created to represent an IDL array value determined from that <span class="estype">Array</span>.
-                If the <span class="idltype">LotteryResults</span> interface is instead defined as:
-              </p>
-              <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">[Constructor]
-interface LotteryResults {
-  attribute unsigned short[] numbers;
-};</code></pre></div></div>
-              <p>
-                then an <span class="estype">Array</span> object can be assigned to the
-                “numbers” property.  Unless the prose accompanying
-                the interface said otherwise, this would result in a
-                <a class="dfnref" href="#dfn-fixed-length">fixed length</a>
-                array of whatever length the <span class="estype">Array</span>
-                has being assigned to the IDL attribute.
-              </p>
-              <div class="block"><div class="blockTitleDiv"><span class="blockTitle">ECMAScript</span></div><div class="blockContent"><pre class="code"><code class="es-code">var results = new LotteryResults();
-
-results.numbers.length;       <span class="comment">// Evaluates to 6.</span>
-
-var a = [1, 3, 5];
-
-results.numbers = a;          <span class="comment">// Assigns a fixed length IDL array of length 3 to</span>
-                              <span class="comment">// the numbers attribute.</span>
-
-results.numbers;              <span class="comment">// This now evaluates to a platform array object</span>
-                              <span class="comment">// that represents the fixed length IDL array,</span>
-                              <span class="comment">// not the Array object assigned in the previous</span>
-                              <span class="comment">// statement.</span>
-
-results.numbers == a;         <span class="comment">// Evaluates to false.</span>
-
-results.numbers.length;       <span class="comment">// Evaluates to 3.</span>
-
-results.numbers.push(7);      <span class="comment">// Silently ignored in non-strict mode.</span>
-results.numbers.length;       <span class="comment">// So this still evaluates to 3.</span></code></pre></div></div>
-            </div>
-
-            <section id="platform-array-object-getownproperty">
-              <h5>Platform array object [[\GetOwnProperty]] method</h5>
-
-              <p>
-                The internal <span class="prop">[[\GetOwnProperty]]</span> method of every
-                <a class="dfnref" href="#dfn-platform-array-object">platform array object</a>
-                <var>A</var> with element type <var>T</var>
-                <span class="rfc2119">MUST</span> behave as follows when
-                called with property name <var>P</var>:
-              </p>
-
-              <ol class="algorithm">
-                <li>Let <var>length</var> be the length of the IDL array that <var>A</var> represents.</li>
-                <li>If <var>P</var> is “length”, then:
-                  <ol>
-                    <li>Let <var>desc</var> be a newly created <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-property-descriptor-specification-type">Property Descriptor</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.2.4) with no fields.</li>
-                    <li>Set <var>desc</var>.<span class="prop">[[\Value]]</span> to the <span class="estype">Number</span> value for <var>length</var>.</li>
-                    <li>Set <var>desc</var>.<span class="prop">[[\Writable]]</span> to <span class="esvalue">false</span> if <var>A</var> represents a
-                      <a class="dfnref" href="#dfn-read-only-array">read only</a> or <a class="dfnref" href="#dfn-fixed-length">fixed length</a> array, and <span class="esvalue">true</span> otherwise.</li>
-                    <li>Set <var>desc</var>.<span class="prop">[[\Enumerable]]</span> to <span class="esvalue">false</span>.</li>
-                    <li>Set <var>desc</var>.<span class="prop">[[\Configurable]]</span> to <span class="esvalue">false</span>.</li>
-                    <li>Return <var>desc</var>.</li>
-                  </ol>
-                </li>
-                <li>Otherwise, if <var>P</var> is an <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-array-exotic-objects">array index</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.4.2), then:
-                  <ol>
-                    <li>Let <var>index</var> be <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-touint32">ToUint32</a>(<var>P</var>).</li>
-                    <li>If <var>index</var> ≥ <var>length</var>, then return <span class="esvalue">undefined</span>.</li>
-                    <li>Let <var>value</var> be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> the <var>index</var>th element of
-                      the IDL array that <var>A</var> represents to an IDL value of type <var>T</var>.</li>
-                    <li>Let <var>desc</var> be a newly created <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-property-descriptor-specification-type">Property Descriptor</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.2.4) with no fields.</li>
-                    <li>Set <var>desc</var>.<span class="prop">[[\Value]]</span> to <var>value</var>.</li>
-                    <li>Set <var>desc</var>.<span class="prop">[[\Writable]]</span> to <span class="esvalue">false</span> if <var>A</var> represents a <a class="dfnref" href="#dfn-read-only-array">read only array</a>,
-                      and <span class="esvalue">true</span> otherwise.</li>
-                    <li>Set <var>desc</var>.<span class="prop">[[\Enumerable]]</span> and <var>desc</var>.<span class="prop">[[\Configurable]]</span> to <span class="esvalue">true</span>.</li>
-                    <li>Return <var>desc</var>.</li>
-                  </ol>
-                </li>
-                <li>Return the result of calling the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">[[\GetOwnProperty]]</span> internal method</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.1.5) on <var>A</var> passing <var>P</var> as the argument.</li>
-              </ol>
-            </section>
-
-            <section id="platform-array-object-defineownproperty">
-              <h5>Platform array object [[\DefineOwnProperty]] method</h5>
-
-              <p>
-                The internal <span class="prop">[[\DefineOwnProperty]]</span> method of every
-                <a class="dfnref" href="#dfn-platform-array-object">platform array object</a>
-                <var>A</var> with element type <var>T</var>
-                <span class="rfc2119">MUST</span> behave as follows when passed
-                property name <var>P</var>, Property Descriptor <var>Desc</var> and
-                boolean flag <var>Throw</var>.
-                The term “Reject”
-                is used in the same sense as that defined in ECMA-262, namely, to mean “If <var>Throw</var> is
-                <span class="esvalue">true</span>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="esvalue">TypeError</span></a> exception,
-                otherwise return <span class="esvalue">false</span>”.
-              </p>
-
-              <ol class="algorithm">
-                <li>Initialize <var>oldLen</var> to be the length of the IDL array that <var>A</var> represents.</li>
-
-                <li>If <var>P</var> is “length”, then:
-                  <ol>
-                    <li>If the result of calling <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-isdatadescriptor">IsDataDescriptor</a>(<var>Desc</var>) is <span class="esvalue">false</span>, then Reject.</li>
-                    <li>Let <var>newLen</var> be <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-touint32">ToUint32</a>(<var>Desc</var>.<span class="prop">[[\Value]]</span>).</li>
-                    <li>If <var>newLen</var> is not equal to <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-tonumber">ToNumber</a>(<var>Desc</var>.<span class="prop">[[\Value]]</span>), then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">RangeError</span></a> exception.</li>
-                    <li>If <var>A</var> represents a <a class="dfnref" href="#dfn-read-only-array">read only</a> or <a class="dfnref" href="#dfn-fixed-length">fixed length</a> IDL array, then Reject.</li>
-
-                    <li>If <var>newLen</var> &gt; <var>oldLen</var>, then:
-                      <ol>
-                        <li>Let <var>value</var> be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
-                          <span class="esvalue">undefined</span> to type <var>T</var>.</li>
-                        <li>Update the IDL array that <var>A</var> represents to have a length of <var>newLen</var>, and set every
-                          value of the IDL array at indices in the range [<var>oldLen</var>, <var>newLen</var>) to <var>value</var>.</li>
-                      </ol>
-                    </li>
-
-                    <li>Otherwise, if <var>newLen</var> &lt; <var>oldLen</var>, then update the IDL array that <var>A</var> represents to have a length of <var>newLen</var>, discarding elements
-                      at indices in the range [<var>newLen</var>, <var>oldLen</var>).</li>
-
-                    <li>Return <b>true</b>.</li>
-                  </ol>
-                </li>
-
-                <li>Otherwise, if <var>P</var> is an <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-array-exotic-objects">array index</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.4.2), then:
-
-                  <ol>
-                    <li>If the result of calling <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-isdatadescriptor">IsDataDescriptor</a>(<var>Desc</var>) is <span class="esvalue">false</span>, then Reject.</li>
-
-                    <li>Let <var>index</var> be <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-touint32">ToUint32</a>(<var>P</var>).</li>
-                    <li>If <var>index</var> ≥ <var>oldLen</var>, then:
-                      <ol>
-                        <li>If <var>A</var> represents a <a class="dfnref" href="#dfn-read-only-array">read only</a> or <a class="dfnref" href="#dfn-fixed-length">fixed length</a>
-                          IDL array, then Reject.</li>
-                        <li>Let <var>value</var> be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
-                          <span class="esvalue">undefined</span> to type <var>T</var>.</li>
-                        <li>Update the IDL array that <var>A</var> represents to have a length of <var>index</var> + 1, and set every
-                          value of the IDL array at indices in the range [<var>oldLen</var>, <var>index</var>) to <var>value</var>.</li>
-                      </ol>
-                    </li>
-
-                    <li>If <var>A</var> represents a <a class="dfnref" href="#dfn-read-only-array">read only</a> IDL array, then Reject.</li>
-                    <li>Let <var>newValue</var> be the result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
-                      <var>Desc</var>.<span class="prop">[[\Value]]</span> to an IDL value of type <var>T</var>.</li>
-                    <li>Set the <var>index</var>th element of the IDL array that <var>A</var> represents to <var>newValue</var>.</li>
-
-                    <li>Return <b>true</b>.</li>
-                  </ol>
-                </li>
-
-                <li>Set <var>Desc</var>.<span class="prop">[[\Configurable]]</span> to <span class="esvalue">true</span>.</li>
-                <li>Return the result of calling the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-defineownproperty-p-desc">default <span class="prop">[[\DefineOwnProperty]]</span> internal method</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.1.6) on <var>A</var> passing <var>P</var>, <var>Desc</var>, and <var>Throw</var> as arguments.</li>
-              </ol>
-            </section>
-
-            <section id="platform-array-object-delete">
-              <h5>Platform array object [[\Delete]] method</h5>
-
-              <p>
-                The internal <span class="prop">[[\Delete]]</span> method of every
-                <a class="dfnref" href="#dfn-platform-array-object">platform array object</a>
-                <var>A</var> with element type <var>T</var>
-                <span class="rfc2119">MUST</span> behave as follows when passed
-                property name <var>P</var>.
-              </p>
-
-              <ol class="algorithm">
-                <li>If <var>P</var> is “length”, then return <span class="esvalue">false</span>.</li>
-                <li>Let <var>length</var> be the length of the IDL array that <var>A</var> represents.</li>
-                <li>If <var>P</var> is an <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-array-exotic-objects">array index</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.4.2), then:
-                  <ol>
-                    <li>Let <var>index</var> be <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-touint32">ToUint32</a>(<var>P</var>).</li>
-                    <li>If <var>index</var> &lt; <var>length</var>, then <span class="esvalue">false</span>.</li>
-                    <li>Return <span class="esvalue">true</span>.</li>
-                  </ol>
-                </li>
-                <li>If <var>P</var> has an own property with name <var>P</var>, then remove it.</li>
-                <li>Return <span class="esvalue">true</span>.</li>
-              </ol>
-            </section>
-
           </section>
 
           <section id="es-promise">
@@ -8268,9 +7937,6 @@ results.numbers.length;       <span class="comment">// So this still evaluates t
                 a native <span class="estype">Date</span> object or
                 a native <span class="estype">RegExp</span> object, then:
                 <ol>
-                  <li>If <var>types</var> includes an <a href="#idl-array">array type</a>, then return the result of
-                    <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
-                    <var>V</var> to that type.</li>
                   <li>
                     If <var>types</var> includes a <a href="#idl-sequence">sequence type</a>, then
                     <ol>
@@ -8287,6 +7953,26 @@ results.numbers.length;       <span class="comment">// So this still evaluates t
                         return the result of
                         <a class="dfnref" href="#create-sequence-from-iterable">creating a
                         sequence of that type from <var>V</var> and
+                        <var>method</var></a>.
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    If <var>types</var> includes a <a href="#idl-frozen-array">frozen array type</a>, then
+                    <ol>
+                      <li>
+                        Let <var>method</var> be the result of
+                        <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-checkiterable">CheckIterable</a>(<var>V</var>).
+                      </li>
+                      <li>
+                        <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>method</var>).
+                      </li>
+                      <li>
+                        If <var>method</var> is not
+                        <span class="esvalue">undefined</span>,
+                        return the result of
+                        <a class="dfnref" href="#create-frozen-array-from-iterable">creating a
+                        frozen array of that type from <var>V</var> and
                         <var>method</var></a>.
                       </li>
                     </ol>
@@ -8459,7 +8145,9 @@ results.numbers.length;       <span class="comment">// So this still evaluates t
             <ol class="algorithm">
               <li>If <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Object,
                 or <var>V</var> does not have an [[\ArrayBufferData]] <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-object-internal-methods-and-internal-slots">internal slot</a>,
-                then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+                or <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-isdetachedbuffer">IsDetachedBuffer</a>(<var>V</var>) is true,
+                then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.
+              </li>
               <li>Return the IDL <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> value that is a reference to the same object as <var>V</var>.</li>
             </ol>
             <p id="buffer-source-to-es">
@@ -8538,6 +8226,63 @@ results.numbers.length;       <span class="comment">// So this still evaluates t
               <li><a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-detacharraybuffer">DetachArrayBuffer</a>(<var>O</var>).</li>
             </ol>
           </section>
+
+          <section id="es-frozen-array">
+            <h4>Frozen arrays — FrozenArray&lt;<var>T</var>&gt;</h4>
+
+            <p>
+              Values of frozen array types are represented by frozen ECMAScript
+              <span class="estype">Array</span> object references.
+            </p>
+            <p>
+              An ECMAScript value <var>V</var> is
+              <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
+              to an IDL <span class="idltype">FrozenArray&lt;<var>T</var>&gt;</span> value
+              by running the following algorithm:
+            </p>
+            <ol class="algorithm">
+              <li>Let <var>values</var> be the result of
+                <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
+                <var>V</var> to IDL type <span class="idltype">sequence&lt;<var>T</var>&gt;</span>.</li>
+              <li>Return the result of
+                <a class="dfnref" href="#dfn-create-frozen-array">creating a frozen array</a>
+                from <var>values</var>.</li>
+            </ol>
+            <p>
+              To <dfn id="dfn-create-frozen-array">create a frozen array</dfn> from a sequence
+              of values of type <var>T</var>, follow these steps:
+            </p>
+            <ol class="algorithm">
+              <li>Let <var>array</var> be the result of
+                <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
+                the sequence of values to an ECMAScript value.</li>
+              <li>Perform <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-setintegritylevel">SetIntegrityLevel</a>(<var>array</var>, <code>"frozen"</code>).</li>
+              <li>Return <var>array</var>.</li>
+            </ol>
+            <p>
+              The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
+              an IDL <span class="idltype">FrozenArray&lt;<var>T</var>&gt;</span> value to an ECMAScript
+              value is the <span class="estype">Object</span> value that represents a reference
+              to the same object that the IDL <span class="idltype">FrozenArray&lt;<var>T</var>&gt;</span> represents.
+            </p>
+
+            <section id="create-frozen-array-from-iterable">
+              <h5>Creating a frozen array from an iterable</h5>
+              <p>
+                To create an IDL value of type <a class="idltype" href="#idl-sequence">FrozenArray&lt;<var>T</var>&gt;</a> given an
+                iterable <var>iterable</var> and an iterator getter
+                <var>method</var>, perform the following steps:
+              </p>
+              <ol class="algorithm">
+                <li>Let <var>values</var> be the result of
+                  <a class="dfnref" href="#create-sequence-from-iterable">creating
+                    a sequence of type <span class="idltype">sequence&lt;<var>T</var>&gt;</span>
+                    from <var>iterable</var> and <var>method</var></a>.</li>
+                <li>Return the result of <a class="dfnref" href="#dfn-create-frozen-array">creating a frozen
+                    array</a> from <var>values</var>.</li>
+              </ol>
+            </section>
+          </section>
         </section>
 
         <section id="es-extended-attributes">
@@ -8548,8 +8293,6 @@ results.numbers.length;       <span class="comment">// So this still evaluates t
             <a class="dfnref" href="#dfn-extended-attribute">extended attributes</a>
             whose presence affects only the ECMAScript binding.
           </p>
-
-          
 
           <section id="Clamp">
             <h4>[Clamp]</h4>
@@ -8684,12 +8427,12 @@ context.setColorClamped(-1, 255, 257);</code></pre></div></div>
 };
 
 [Constructor,
- Constructor(float radius)]
+ Constructor(double radius)]
 interface Circle {
-  attribute float r;
-  attribute float cx;
-  attribute float cy;
-  readonly attribute float circumference;
+  attribute double r;
+  attribute double cx;
+  attribute double cy;
+  readonly attribute double circumference;
 };</code></pre></div></div>
               <p>
                 An ECMAScript implementation supporting these interfaces would
@@ -9193,6 +8936,83 @@ interface Window {
             </div>
           </section>
 
+          <section id="LegacyArrayClass">
+            <h4>[LegacyArrayClass]</h4>
+
+            <p>
+              If the <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>
+              <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>
+              appears on an <a class="dfnref" href="#dfn-interface">interface</a>
+              that is not defined to <a class="dfnref" href="#dfn-inherit">inherit</a>
+              from another, it indicates that the internal <span class="prop">[[\Prototype]]</span>
+              property of its <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
+              will be the <span class="estype">Array</span> prototype object rather than
+              the <span class="estype">Object</span> prototype object.  This allows
+              <span class="estype">Array</span> methods to be used more easily
+              with objects implementing the interface.
+            </p>
+            <p>
+              The <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a> extended attribute
+              <span class="rfc2119">MUST</span> <a class="dfnref" href="#dfn-xattr-no-arguments">take no arguments</a>.
+              It <span class="rfc2119">MUST NOT</span> be used on an interface that
+              has any <a class="dfnref" href="#dfn-inherited-interfaces">inherited interfaces</a>.
+            </p>
+            <div class="note">
+              <p>
+                Interfaces using <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a> will
+                need to define a “length” <a class="dfnref" href="#dfn-attribute">attribute</a>
+                of type <span class="estype">unsigned long</span> that exposes the length
+                of the array-like object, in order for the inherited <span class="estype">Array</span>
+                methods to operate correctly.  Such interfaces would typically also
+                <a class="dfnref" href="#dfn-support-indexed-properties">support indexed properties</a>,
+                which would provide access to the array elements.
+              </p>
+            </div>
+            <p>
+              See <a href="#interface-prototype-object">section <a href="#"></a></a> for the
+              specific requirements that the use of <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>
+              entails.
+            </p>
+            <div class="example"><div class="exampleHeader">Example</div>
+              <p>
+                The following <a class="dfnref" href="#dfn-idl-fragment">IDL fragment</a>
+                defines two <a class="dfnref" href="#dfn-interface">interfaces</a>
+                that use <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>.
+              </p>
+              <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">[LegacyArrayClass]
+interface ItemList {
+  attribute unsigned long length;
+  getter object getItem(unsigned long index);
+  setter object setItem(unsigned long index, object item);
+};
+
+[LegacyArrayClass]
+interface ImmutableItemList {
+  readonly attribute unsigned long length;
+  getter object getItem(unsigned long index);
+};</code></pre></div></div>
+              <p>
+                In an ECMAScript implementation of the above two interfaces,
+                with appropriate definitions for getItem, setItem and removeItem,
+                <span class="estype">Array</span> methods to inspect and
+                modify the array-like object can be used.
+              </p>
+              <div class="block"><div class="blockTitleDiv"><span class="blockTitle">ECMAScript</span></div><div class="blockContent"><pre class="code"><code class="es-code">var list = getItemList();  <span class="comment">// Obtain an instance of ItemList.</span>
+
+list.concat();             <span class="comment">// Clone the ItemList into an Array.</span>
+list.pop();                <span class="comment">// Remove an item from the ItemList.</span>
+list.unshift({ });         <span class="comment">// Insert an item at index 0.</span></code></pre></div></div>
+              <p>
+                <span class="idltype">ImmutableItemList</span> has a read only
+                length <a class="dfnref" href="#dfn-attribute">attribute</a>
+                and no indexed property <a class="dfnref" href="#dfn-indexed-property-setter">setter</a>.  The
+                mutating <span class="estype">Array</span> methods will generally not
+                succeed on objects implementing <span class="idltype">ImmutableItemList</span>.
+                The exact behavior depends on the definition of <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-properties-of-the-array-prototype-object">the <span class="estype">Array</span> methods
+                  themselves</a> (<a href="#ref-ECMA-262">[[!ECMA-262]]</a>, section 22.1.3).
+              </p>
+            </div>
+          </section>
           <section id="LenientThis">
             <h4>[LenientThis]</h4>
             <p>
@@ -9864,8 +9684,8 @@ counter.value;                                           <span class="comment">/
               extended attribute <span class="rfc2119">MUST NOT</span>
               be used on anything other than a <a class="dfnref" href="#dfn-read-only">read only</a>
               <a class="dfnref" href="#dfn-attribute">attribute</a>
-              whose type is an <a href="#idl-interface">interface type</a>,
-              an <a href="#idl-array">array type</a> or <a class="idltype" href="#idl-object">object</a>.
+              whose type is an <a href="#idl-interface">interface type</a>
+              or <a class="idltype" href="#idl-object">object</a>.
             </p>
             <div class="example"><div class="exampleHeader">Example</div>
               <p>
@@ -10019,7 +9839,7 @@ manager.handler2;            <span class="comment">// Evaluates to null.</span><
               <p>
                 An ECMAScript implementation implementing the <span class="idltype">Dog</span>
                 interface would convert a <span class="esvalue">null</span> value
-                assigned to the “name” property or passed as the
+                assigned to the “owner” property or passed as the
                 argument to the <code>isMemberOfBreed</code> function
                 to the empty string rather than <code>"null"</code>:
               </p>
@@ -10554,7 +10374,8 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
                       following types at position <var>i</var> of its type list,
                       <ul>
                         <li>a <a href="#idl-sequence">sequence type</a></li>
-                        <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> <a href="#idl-sequence">sequence type</a></li>
+                        <li>a <a href="#idl-frozen-array">frozen array type</a></li>
+                        <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> version of any of the above types</li>
                         <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type
                            that has one of the above types in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
 
@@ -10579,7 +10400,6 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
                       a native <span class="estype">RegExp</span> object, and
                       there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list,
                       <ul>
-                        <li>an <a href="#idl-array">array type</a></li>
                         <li>a <a class="dfnref" href="#dfn-callback-interface">callback interface</a> type</li>
                         <li>a <a href="#idl-dictionary">dictionary type</a></li>
                         <li><a class="idltype" href="#idl-object">object</a></li>
@@ -10674,8 +10494,16 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
                       type list of the remaining entry in <var>S</var>.
                     </li>
                     <li>
-                      Append to <var>values</var> the result of
+                      If <var>T</var> is a <a href="#idl-sequence">sequence type</a>, then
+                      append to <var>values</var> the result of
                       <a class="dfnref" href="#create-sequence-from-iterable">creating a sequence
+                      of type <var>T</var> from
+                      <var>V</var> and <var>method</var></a>.
+                    </li>
+                    <li>
+                      Otherwise, <var>T</var> is a <a href="#idl-frozen-array">frozen array type</a>.
+                      Append to <var>values</var> the result of
+                      <a class="dfnref" href="#create-frozen-array-from-iterable">creating a frozen array
                       of type <var>T</var> from
                       <var>V</var> and <var>method</var></a>.
                     </li>
@@ -11101,7 +10929,7 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
               interface, then return the
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               for the inherited interface.</li>
-              <li>Otherwise, if <var>A</var> is declared with the 
+              <li>Otherwise, if <var>A</var> is declared with the <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>
               extended attribute, then return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).</li>
               <li>Otherwise, return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ObjectPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
               (<a href="#ref-ECMA-262">[[!ECMA-262]]</a>, section 15.2.4).</li>
@@ -11196,7 +11024,7 @@ partial interface Window {
               <li>If <var>A</var> is declared to inherit from another interface, then return the
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               for the inherited interface.</li>
-              <li>Otherwise, if <var>A</var> is declared with the 
+              <li>Otherwise, if <var>A</var> is declared with the <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>
               extended attribute, then return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).</li>
               <li>Otherwise, return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ObjectPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).</li>
             </ol>
@@ -11511,7 +11339,7 @@ interface
                           <li>Return <span class="esvalue">undefined</span>.</li>
                         </ol>
                       </li>
-                      <li>If <var>validThis</var> is <span class="esvalue">false</span>, then return.</li>
+                      <li>If <var>validThis</var> is <span class="esvalue">false</span>, then return <span class="esvalue">undefined</span>.</li>
                       <li>If the attribute is declared with a <a class="xattr" href="#PutForwards">[PutForwards]</a>
                         extended attribute, then:
                         <ol>
@@ -11521,7 +11349,7 @@ interface
                           <li>Let <var>A</var> be the attribute identified by the <a class="xattr" href="#PutForwards">[PutForwards]</a> extended attribute.</li>
                           <li>Call the <span class="prop">[[\Put]]</span> method on <var>Q</var>
                             using the identifier of <var>A</var> as the property name and <var>V</var> as the value.</li>
-                          <li>Return.</li>
+                          <li>Return <span class="esvalue">undefined</span>.</li>
                         </ol>
                       </li>
                     </ol>
@@ -12377,7 +12205,7 @@ interface
               an object <var>destination</var> with adder method name <var>adder</var>, perform the following steps:
             </p>
             <ol class="algorithm">
-              <li>If <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values">Type</a>(<var>destination</var>) is not Object, then, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
+              <li>If <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#ecmascript-data-types-and-values">Type</a>(<var>destination</var>) is not Object, then, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
               <li>If <var>iterable</var> is not present, let <var>iterable</var> be <span class="esvalue">undefined</span>.</li>
               <li>If <var>iterable</var> is either <span class="esvalue">undefined</span> or <span class="esvalue">null</span>, then let <var>iter</var> be <span class="esvalue">undefined</span>.</li>
               <li>Else,
@@ -12397,7 +12225,7 @@ interface
                   <li>If <var>next</var> is <span class="esvalue">false</span>, then return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-normalcompletion">NormalCompletion</a>(<var>destination</var>).</li>
                   <li>Let <var>nextItem</var> be <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-iteratorvalue">IteratorValue</a>(<var>next</var>).</li>
                   <li><a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>nextItem</var>).</li>
-                  <li>If <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values">Type</a>(<var>nextItem</var>) is not Object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
+                  <li>If <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#ecmascript-data-types-and-values">Type</a>(<var>nextItem</var>) is not Object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
                   <li>Let <var>k</var> be the result of <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-get-o-p">Get</a>(<var>nextItem</var>, <code>'0'</code>).</li>
                   <li><a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>k</var>).</li>
                   <li>Let <var>v</var> be the result of <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-get-o-p">Get</a>(<var>nextItem</var>, <code>'1'</code>).</li>
@@ -13536,7 +13364,7 @@ C implements A;</code></pre></div></div>
                 <li>Let <var>super</var> be <var>F</var>.[[\GetPrototypeOf]]().</li>
                 <li><a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>super</var>).</li>
                 <li>If <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-isconstructor">IsConstructor</a>(<var>super</var>) is <span class="esvalue">false</span>, throw a <span class="esvalue">TypeError</span> exception.</li>
-                <li>Let <var>O</var> be <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-construct">Construct</a>(<var>super</var>, «<var>‍message</var>», <var>newTarget</var>).</li>
+                <li>Let <var>O</var> be <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-construct">Construct</a>(<var>super</var>, «<var>message</var>», <var>newTarget</var>).</li>
                 <li>If <var>name</var> is not <span class="esvalue">undefined</span>, then
                   <ol>
                     <li>Let <var>name</var> be <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-tostring">ToString</a>(<var>name</var>).</li>
@@ -13731,7 +13559,7 @@ C implements A;</code></pre></div></div>
   <span class="comment">/**
    * Calls computeSquareRoot on m, passing x as its argument.
    */</span>
-  float doComputation(MathUtils m, float x);
+  double doComputation(MathUtils m, double x);
 };
 
 interface MathUtils {
@@ -13739,7 +13567,7 @@ interface MathUtils {
    * If x is negative, throws a <a href="#notsupportederror">NotSupportedError</a>.  Otherwise, returns
    * the square root of x.
    */</span>
-  float computeSquareRoot(float x);
+  double computeSquareRoot(double x);
 };</code></pre></div></div>
             <p>
               If we pass a <span class="idltype">MathUtils</span> object from
@@ -13927,16 +13755,17 @@ d.type = et;
 
         <p>
           It is expected that other specifications that define Web platform interfaces
-          using a <a class="dfnref" href="#dfn-conforming-idl-fragment">conforming
-            IDL fragment</a> will reference this specification.  It is suggested
+          using one or more <a class="dfnref" href="#dfn-idl-fragment">IDL fragments</a>
+          will reference this specification.  It is suggested
           that those specifications include a sentence such as the following,
           to indicate that the IDL is to be interpreted as described in this
           specification:
         </p>
         <blockquote>
           <p>
-            The IDL fragment in Appendix A of this specification must be interpreted
-            as required for <em>conforming IDL fragments</em>, as described in the
+            The IDL fragment in Appendix A of this specification must, in conjunction
+            with the IDL fragments defined in this specification's normative references,
+            be interpreted as required for <em>conforming sets of IDL fragments</em>, as described in the
             “Web IDL” specification. <a class="placeholder" href="data:,">[WEBIDL]</a>
           </p>
         </blockquote>
@@ -14029,7 +13858,8 @@ d.type = et;
           Anton Tayanovskyy,
           Peter Van der Beken,
           Jeff Walden,
-          Allen Wirfs-Brock and
+          Allen Wirfs-Brock,
+          Jeffrey Yasskin and
           Collin Xu.
         </p>
         <p>
@@ -14229,6 +14059,7 @@ d.type = et;
              "ByteString" <br /> |
              "Date" <br /> |
              "DOMString" <br /> |
+             "FrozenArray" <br /> |
              "Infinity" <br /> |
              "NaN" <br /> |
              "RegExp" <br /> |
@@ -14285,23 +14116,23 @@ d.type = et;
              "unrestricted"
           </span></td></tr><tr id="prod-OtherOrComma"><td><span class="prod-number">[72]</span></td><td><a class="sym" href="#proddef-OtherOrComma">OtherOrComma</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Other">Other</a> <br /> |
              ","</span></td></tr><tr id="prod-Type"><td><span class="prod-number">[73]</span></td><td><a class="sym" href="#proddef-Type">Type</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-SingleType">SingleType</a> <br /> |
-             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a></span></td></tr><tr id="prod-SingleType"><td><span class="prod-number">[74]</span></td><td><a class="sym" href="#proddef-SingleType">SingleType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br /> |
-             "any" <a class="sym" href="#prod-TypeSuffixStartingWithArray">TypeSuffixStartingWithArray</a></span></td></tr><tr id="prod-UnionType"><td><span class="prod-number">[75]</span></td><td><a class="sym" href="#proddef-UnionType">UnionType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"(" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> "or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> ")"</span></td></tr><tr id="prod-UnionMemberType"><td><span class="prod-number">[76]</span></td><td><a class="sym" href="#proddef-UnionMemberType">UnionMemberType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br /> |
-             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "any" "[" "]" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a></span></td></tr><tr id="prod-UnionMemberTypes"><td><span class="prod-number">[77]</span></td><td><a class="sym" href="#proddef-UnionMemberTypes">UnionMemberTypes</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> <br /> |
-             ε</span></td></tr><tr id="prod-NonAnyType"><td><span class="prod-number">[78]</span></td><td><a class="sym" href="#proddef-NonAnyType">NonAnyType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
+             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="prod-SingleType"><td><span class="prod-number">[74]</span></td><td><a class="sym" href="#proddef-SingleType">SingleType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br /> |
+             "any"</span></td></tr><tr id="prod-UnionType"><td><span class="prod-number">[75]</span></td><td><a class="sym" href="#proddef-UnionType">UnionType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"(" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> "or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> ")"</span></td></tr><tr id="prod-UnionMemberType"><td><span class="prod-number">[76]</span></td><td><a class="sym" href="#proddef-UnionMemberType">UnionMemberType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-NonAnyType">NonAnyType</a> <br /> |
+             <a class="sym" href="#prod-UnionType">UnionType</a> <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="prod-UnionMemberTypes"><td><span class="prod-number">[77]</span></td><td><a class="sym" href="#proddef-UnionMemberTypes">UnionMemberTypes</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"or" <a class="sym" href="#prod-UnionMemberType">UnionMemberType</a> <a class="sym" href="#prod-UnionMemberTypes">UnionMemberTypes</a> <br /> |
+             ε</span></td></tr><tr id="prod-NonAnyType"><td><span class="prod-number">[78]</span></td><td><a class="sym" href="#proddef-NonAnyType">NonAnyType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-PrimitiveType">PrimitiveType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
              <a class="sym" href="#prod-PromiseType">PromiseType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "ByteString" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "DOMString" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "USVString" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
+             "ByteString" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "DOMString" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "USVString" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
              "sequence" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "object" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "Date" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "RegExp" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "Error" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "DOMException" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             <a class="sym" href="#prod-BufferRelatedType">BufferRelatedType</a> <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a></span></td></tr><tr id="prod-BufferRelatedType"><td><span class="prod-number">[79]</span></td><td><a class="sym" href="#proddef-BufferRelatedType">BufferRelatedType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"ArrayBuffer" <br /> |
+             "object" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "Date" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "RegExp" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "Error" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "DOMException" <a class="sym" href="#prod-Null">Null</a> <br /> |
+             <a class="sym" href="#prod-BufferRelatedType">BufferRelatedType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
+             "FrozenArray" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a></span></td></tr><tr id="prod-BufferRelatedType"><td><span class="prod-number">[79]</span></td><td><a class="sym" href="#proddef-BufferRelatedType">BufferRelatedType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"ArrayBuffer" <br /> |
              "DataView" <br /> |
              "Int8Array" <br /> |
              "Int16Array" <br /> |
@@ -14321,13 +14152,10 @@ d.type = et;
              "double"</span></td></tr><tr id="prod-UnsignedIntegerType"><td><span class="prod-number">[84]</span></td><td><a class="sym" href="#proddef-UnsignedIntegerType">UnsignedIntegerType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"unsigned" <a class="sym" href="#prod-IntegerType">IntegerType</a> <br /> |
              <a class="sym" href="#prod-IntegerType">IntegerType</a></span></td></tr><tr id="prod-IntegerType"><td><span class="prod-number">[85]</span></td><td><a class="sym" href="#proddef-IntegerType">IntegerType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"short" <br /> |
              "long" <a class="sym" href="#prod-OptionalLong">OptionalLong</a></span></td></tr><tr id="prod-OptionalLong"><td><span class="prod-number">[86]</span></td><td><a class="sym" href="#proddef-OptionalLong">OptionalLong</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"long" <br /> |
-             ε</span></td></tr><tr id="prod-PromiseType"><td><span class="prod-number">[87]</span></td><td><a class="sym" href="#proddef-PromiseType">PromiseType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"Promise" "&lt;" <a class="sym" href="#prod-ReturnType">ReturnType</a> "&gt;"</span></td></tr><tr id="prod-TypeSuffix"><td><span class="prod-number">[88]</span></td><td><a class="sym" href="#proddef-TypeSuffix">TypeSuffix</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"[" "]" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             "?" <a class="sym" href="#prod-TypeSuffixStartingWithArray">TypeSuffixStartingWithArray</a> <br /> |
-             ε</span></td></tr><tr id="prod-TypeSuffixStartingWithArray"><td><span class="prod-number">[89]</span></td><td><a class="sym" href="#proddef-TypeSuffixStartingWithArray">TypeSuffixStartingWithArray</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"[" "]" <a class="sym" href="#prod-TypeSuffix">TypeSuffix</a> <br /> |
-             ε</span></td></tr><tr id="prod-Null"><td><span class="prod-number">[90]</span></td><td><a class="sym" href="#proddef-Null">Null</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"?" <br /> |
-             ε</span></td></tr><tr id="prod-ReturnType"><td><span class="prod-number">[91]</span></td><td><a class="sym" href="#proddef-ReturnType">ReturnType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Type">Type</a> <br /> |
-             "void"</span></td></tr><tr id="prod-IdentifierList"><td><span class="prod-number">[92]</span></td><td><a class="sym" href="#proddef-IdentifierList">IdentifierList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a></span></td></tr><tr id="prod-Identifiers"><td><span class="prod-number">[93]</span></td><td><a class="sym" href="#proddef-Identifiers">Identifiers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
-             ε</span></td></tr><tr id="prod-ExtendedAttributeNoArgs"><td><span class="prod-number">[94]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeNoArgs">ExtendedAttributeNoArgs</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-ExtendedAttributeArgList"><td><span class="prod-number">[95]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeArgList">ExtendedAttributeArgList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span></td></tr><tr id="prod-ExtendedAttributeIdent"><td><span class="prod-number">[96]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeIdent">ExtendedAttributeIdent</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-ExtendedAttributeIdentList"><td><span class="prod-number">[97]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeIdentList">ExtendedAttributeIdentList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" "(" <a class="sym" href="#prod-IdentifierList">IdentifierList</a> ")"</span></td></tr><tr id="prod-ExtendedAttributeNamedArgList"><td><span class="prod-number">[98]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeNamedArgList">ExtendedAttributeNamedArgList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span></td></tr></table><div class="note">
+             ε</span></td></tr><tr id="prod-PromiseType"><td><span class="prod-number">[87]</span></td><td><a class="sym" href="#proddef-PromiseType">PromiseType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"Promise" "&lt;" <a class="sym" href="#prod-ReturnType">ReturnType</a> "&gt;"</span></td></tr><tr id="prod-Null"><td><span class="prod-number">[88]</span></td><td><a class="sym" href="#proddef-Null">Null</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"?" <br /> |
+             ε</span></td></tr><tr id="prod-ReturnType"><td><span class="prod-number">[89]</span></td><td><a class="sym" href="#proddef-ReturnType">ReturnType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Type">Type</a> <br /> |
+             "void"</span></td></tr><tr id="prod-IdentifierList"><td><span class="prod-number">[90]</span></td><td><a class="sym" href="#proddef-IdentifierList">IdentifierList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a></span></td></tr><tr id="prod-Identifiers"><td><span class="prod-number">[91]</span></td><td><a class="sym" href="#proddef-Identifiers">Identifiers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
+             ε</span></td></tr><tr id="prod-ExtendedAttributeNoArgs"><td><span class="prod-number">[92]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeNoArgs">ExtendedAttributeNoArgs</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-ExtendedAttributeArgList"><td><span class="prod-number">[93]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeArgList">ExtendedAttributeArgList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span></td></tr><tr id="prod-ExtendedAttributeIdent"><td><span class="prod-number">[94]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeIdent">ExtendedAttributeIdent</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-ExtendedAttributeIdentList"><td><span class="prod-number">[95]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeIdentList">ExtendedAttributeIdentList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" "(" <a class="sym" href="#prod-IdentifierList">IdentifierList</a> ")"</span></td></tr><tr id="prod-ExtendedAttributeNamedArgList"><td><span class="prod-number">[96]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeNamedArgList">ExtendedAttributeNamedArgList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-identifier">identifier</a> "=" <a class="sym" href="#prod-identifier">identifier</a> "(" <a class="sym" href="#prod-ArgumentList">ArgumentList</a> ")"</span></td></tr></table><div class="note">
           <p>
             The <a class="sym" href="#prod-Other">Other</a>
             non-terminal matches any single terminal symbol except for
@@ -14356,6 +14184,27 @@ d.type = et;
           <dt>Current editor’s draft</dt>
           <dd>
             <ul>
+              <li>
+                <p>
+                  Disallowed “length” and “name” from being used as identifiers of
+                  constants.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added a <span class="idltype">FrozenArray&lt;<var>T</var>&gt;</span> type.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Renamed <span class="xattr">[ArrayClass]</span> to <span class="xattr">[LegacyArrayClass]</span>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Removed <span class="idltype"><var>T</var>[]</span> array types.
+                </p>
+              </li>
               <li>
                 <p>
                   Allowed <span class="xattr">[NewObject]</span> to be used on things with
