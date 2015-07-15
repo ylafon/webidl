@@ -41,7 +41,7 @@ function clean_regex() {
         remove_prodlines_nodes(val, matchstring, 3)
     });
     $("#idl-extended-attributes .prod-lines").each(function (i, val) {
-        remove_prodlines_nodes(val, matchstring, 3)
+        remove_prodlines_nodes(val, matchstring, 2)
     });
     $("#prod-Other .prod-lines").each(function (i, val) {
         remove_prodlines_nodes(val, matchstring, 2)
