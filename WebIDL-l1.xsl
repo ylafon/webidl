@@ -386,6 +386,8 @@
     <!-- ArrayClass: DONE -->
     <xsl:template match="h:div[@id='ArrayClass']|h:li/h:a[@href='#ArrayClass']|h:a[@class='xattr' and @href='#ArrayClass']">
     </xsl:template>
+    <xsl:template match="h:div[@id='LegacyArrayClass']|h:li/h:a[@href='#LegacyArrayClass']|h:a[@class='xattr' and @href='#LegacyArrayClass']">
+    </xsl:template>
 
 
     <!-- end of respec customization -->
