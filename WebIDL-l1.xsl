@@ -326,10 +326,9 @@
         <p>
             This is the "Level 1" Version of WebIDL, it contains parts of the main Editor's copy [[WEBIDL]] that
             are considered stable, implemented and tested.
-            Implementors should defer to the Editor's copy [[WEBIDL]] only, as it may contains updated algorithm and definitions;
-            Consumers of this specifications, like specifications authors, can point to this specification if all the definitions and properties they need are defined in this specification.
-            Note that this specification will be updated to match changes in the editor's copy until it reaches Recommendation, new development will be followed in the next Level of WebIDL.
-
+            Implementors should defer to the Editor's copy [[WEBIDL]] only, as it may contain updated algorithm and definitions;
+            This specification is suitable for reference by other specification authors in so far as it wholly contains the syntax definitions used in the citing document.
+            Note that this specification will be updated to match changes in the editor's copy until it reaches Recommendation. New syntax definitions will be added in the next Level of WebIDL.
         </p>
     </xsl:template>
 
