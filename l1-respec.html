@@ -13636,7 +13636,7 @@ try {
 } catch (e) {
   <span class="comment">// The string "abc" is caught here, since as part of the conversion</span>
   <span class="comment">// from the native object to a string, the anonymous function</span>
-  <span class="comment">// was invoked, and none of the [[\DefaultValue]], ToPrimitive or</span>
+  <span class="comment">// was invoked, and none of the [[DefaultValue]], ToPrimitive or</span>
   <span class="comment">// ToString algorithms are defined to catch the exception.</span>
 }
 
@@ -13644,13 +13644,13 @@ try {
   d.type = { toString: { } };
 } catch (e) {
   <span class="comment">// An exception is caught here, since an attempt is made to invoke</span>
-  <span class="comment">// [[\Call]] on the native object that is the value of toString</span>
+  <span class="comment">// [[Call]] on the native object that is the value of toString</span>
   <span class="comment">// property.</span>
 }
 
 d.type = et;
 <span class="comment">// An uncaught NotSupportedError DOMException is thrown here, since the</span>
-<span class="comment">// [[\DefaultValue]] algorithm attempts to get the value of the</span>
+<span class="comment">// [[DefaultValue]] algorithm attempts to get the value of the</span>
 <span class="comment">// "valueOf" property on the ExceptionThrower object.  The exception</span>
 <span class="comment">// propagates out of this block of code.</span></code></pre></div></div>
           </div>
