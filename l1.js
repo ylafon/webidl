@@ -38,7 +38,7 @@ function clean_regex() {
         remove_prodlines_nodes(val, matchstring, 4)
     });
     $("#idl-union .prod-lines").each(function (i, val) {
-        remove_prodlines_nodes(val, matchstring, 3)
+        remove_prodlines_nodes(val, matchstring, 4)
     });
     $("#idl-extended-attributes .prod-lines").each(function (i, val) {
         remove_prodlines_nodes(val, matchstring, 2)
