@@ -168,7 +168,7 @@
             This is the "Level 1" Version of WebIDL, it contains parts of the main Editor's copy [[WEBIDL]] that
             are considered stable, implemented and tested.
             Implementors should defer to the Editor's copy [[WEBIDL]] only, as it may contain updated algorithm and definitions;
-            This specification is suitable for reference by other specification authors in so far as it wholly contains the syntax definitions used in the citing document.
+            this specification is suitable for reference by other specification authors in so far as it wholly contains the syntax definitions used in the citing document.
             Note that this specification will be updated to match changes in the editor's copy until it reaches Recommendation. New syntax definitions will be added in the next Level of WebIDL.
         </p>
       <p>
@@ -3321,13 +3321,11 @@ partial interface A {
 <th>callback <br />function</th>
 <th>dictionary</th>
 <th>sequence&lt;<var>T</var>&gt;</th>
-<th>FrozenArray&lt;<var>T</var>&gt;</th>
 <th>Date</th>
 <th>exception types</th>
 <th>buffer source types</th>
 </tr><tr><th>boolean</th>
 <td></td>
-<td>●</td>
 <td>●</td>
 <td>●</td>
 <td>●</td>
@@ -3350,12 +3348,10 @@ partial interface A {
 <td>●</td>
 <td>●</td>
 <td>●</td>
-<td>●</td>
 </tr><tr><th>string types</th>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td></td>
-<td>●</td>
 <td>●</td>
 <td>●</td>
 <td>●</td>
@@ -3376,13 +3372,11 @@ partial interface A {
 <td>●</td>
 <td>●</td>
 <td>●</td>
-<td>●</td>
 </tr><tr><th>object</th>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -3402,7 +3396,6 @@ partial interface A {
 <td>●</td>
 <td>●</td>
 <td>●</td>
-<td>●</td>
 </tr><tr><th>dictionary</th>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
@@ -3411,7 +3404,6 @@ partial interface A {
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td></td>
-<td>●</td>
 <td>●</td>
 <td>●</td>
 <td>●</td>
@@ -3425,25 +3417,10 @@ partial interface A {
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td></td>
-<td></td>
 <td>●</td>
 <td>●</td>
 <td>●</td>
-</tr><tr><th>FrozenArray&lt;<var>T</var>&gt;</th>
-<td class="belowdiagonal"></td>
-<td class="belowdiagonal"></td>
-<td class="belowdiagonal"></td>
-<td class="belowdiagonal"></td>
-<td class="belowdiagonal"></td>
-<td class="belowdiagonal"></td>
-<td class="belowdiagonal"></td>
-<td class="belowdiagonal"></td>
-<td></td>
-<td>●</td>
-<td>●</td>
-<td>●</td>
-</tr><tr><th>Date</th>
-<td class="belowdiagonal"></td>
+</tr><tr></tr><tr><th>Date</th>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
@@ -3465,11 +3442,9 @@ partial interface A {
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
-<td class="belowdiagonal"></td>
 <td></td>
 <td>●</td>
 </tr><tr><th>buffer source types</th>
-<td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
@@ -5968,28 +5943,7 @@ interface Person {
             </div>
           </section>
 
-          <section id="idl-frozen-array">
-            <h4>Frozen arrays — FrozenArray&lt;<var>T</var>&gt;</h4>
-
-            <p>
-              A <dfn id="dfn-frozen-array-type">frozen array type</dfn> is a parameterized
-              type whose values are references to objects that hold a fixed length array
-              of unmodifiable values.  The values in the array are of type <var>T</var>.
-            </p>
-            <p>
-              Since <span class="idltype">FrozenArray&lt;<var>T</var>&gt;</span> values
-              are references, they are unlike <a href="#idl-sequence">sequence types</a>,
-              which are lists of values that are passed by value.
-            </p>
-            <p>
-              There is no way to represent a constant frozen array value in IDL.
-            </p>
-            <p>
-              The <a class="dfnref" href="#dfn-type-name">type name</a> of a frozen array
-              type is the concatenation of the type name for <var>T</var> and the string
-              “Array”.
-            </p>
-          </section>
+          
         </section>
 
         <section id="idl-extended-attributes">
@@ -8226,62 +8180,7 @@ alert(b[4]);    <span class="comment">// This would alert "50".</span></code></p
             </ol>
           </section>
 
-          <section id="es-frozen-array">
-            <h4>Frozen arrays — FrozenArray&lt;<var>T</var>&gt;</h4>
-
-            <p>
-              Values of frozen array types are represented by frozen ECMAScript
-              <span class="estype">Array</span> object references.
-            </p>
-            <p>
-              An ECMAScript value <var>V</var> is
-              <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <span class="idltype">FrozenArray&lt;<var>T</var>&gt;</span> value
-              by running the following algorithm:
-            </p>
-            <ol class="algorithm">
-              <li>Let <var>values</var> be the result of
-                <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
-                <var>V</var> to IDL type <span class="idltype">sequence&lt;<var>T</var>&gt;</span>.</li>
-              <li>Return the result of
-                <a class="dfnref" href="#dfn-create-frozen-array">creating a frozen array</a>
-                from <var>values</var>.</li>
-            </ol>
-            <p>
-              To <dfn id="dfn-create-frozen-array">create a frozen array</dfn> from a sequence
-              of values of type <var>T</var>, follow these steps:
-            </p>
-            <ol class="algorithm">
-              <li>Let <var>array</var> be the result of
-                <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-                the sequence of values to an ECMAScript value.</li>
-              <li>Perform <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-setintegritylevel">SetIntegrityLevel</a>(<var>array</var>, <code>"frozen"</code>).</li>
-              <li>Return <var>array</var>.</li>
-            </ol>
-            <p>
-              The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
-              an IDL <span class="idltype">FrozenArray&lt;<var>T</var>&gt;</span> value to an ECMAScript
-              value is the <span class="estype">Object</span> value that represents a reference
-              to the same object that the IDL <span class="idltype">FrozenArray&lt;<var>T</var>&gt;</span> represents.
-            </p>
-
-            <section id="create-frozen-array-from-iterable">
-              <h5>Creating a frozen array from an iterable</h5>
-              <p>
-                To create an IDL value of type <a class="idltype" href="#idl-sequence">FrozenArray&lt;<var>T</var>&gt;</a> given an
-                iterable <var>iterable</var> and an iterator getter
-                <var>method</var>, perform the following steps:
-              </p>
-              <ol class="algorithm">
-                <li>Let <var>values</var> be the result of
-                  <a class="dfnref" href="#create-sequence-from-iterable">creating
-                    a sequence of type <span class="idltype">sequence&lt;<var>T</var>&gt;</span>
-                    from <var>iterable</var> and <var>method</var></a>.</li>
-                <li>Return the result of <a class="dfnref" href="#dfn-create-frozen-array">creating a frozen
-                    array</a> from <var>values</var>.</li>
-              </ol>
-            </section>
-          </section>
+          
         </section>
 
         <section id="es-extended-attributes">
