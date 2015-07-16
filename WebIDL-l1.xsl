@@ -327,7 +327,7 @@
             This is the "Level 1" Version of WebIDL, it contains parts of the main Editor's copy [[WEBIDL]] that
             are considered stable, implemented and tested.
             Implementors should defer to the Editor's copy [[WEBIDL]] only, as it may contain updated algorithm and definitions;
-            This specification is suitable for reference by other specification authors in so far as it wholly contains the syntax definitions used in the citing document.
+            this specification is suitable for reference by other specification authors in so far as it wholly contains the syntax definitions used in the citing document.
             Note that this specification will be updated to match changes in the editor's copy until it reaches Recommendation. New syntax definitions will be added in the next Level of WebIDL.
         </p>
     </xsl:template>
@@ -359,6 +359,8 @@
     <!-- Regexp: DONE -->
     <xsl:template match="h:div[@id='idl-RegExp']|h:div[@id='es-RegExp']">
     </xsl:template>
+    <!-- item removal in the #idl-overloading table -->
+    <!-- currently Regexp and FrozenArray<t> -->
     <xsl:template match="h:table[@id='distinguishable-table']">
         <table>
             <xsl:copy-of select='@*[namespace-uri()="" or namespace-uri="http://www.w3.org/XML/1998/namespace"]'/>
@@ -368,11 +370,17 @@
                     <xsl:if test="string()='RegExp'"><xsl:number value="position()"/></xsl:if>
                 </xsl:for-each>
             </xsl:variable>
+            <xsl:variable name="frozenarray" select="h:tr/h:th[1][string()='FrozenArray&lt;T&gt;']"/>
+            <xsl:variable name="frozenarrayidx">
+                <xsl:for-each select="h:tr[1]/*">
+                    <xsl:if test="string()='FrozenArray&lt;T&gt;'"><xsl:number value="position()"/></xsl:if>
+                </xsl:for-each>
+            </xsl:variable>
             <xsl:for-each select="*">
             <tr>
-                <xsl:if test="./h:th[1] != $regex">
+                <xsl:if test="./h:th[1] != $regex and ./h:th[1] != $frozenarray ">
                     <xsl:for-each select="h:th|h:td">
-                           <xsl:if test="position() != $regexidx">
+                           <xsl:if test="position() != $regexidx and position() != $frozenarrayidx">
                                <xsl:apply-templates select='.' />
                                <xsl:text>&#xa;</xsl:text>
                            </xsl:if>
@@ -381,6 +389,9 @@
             </tr>
         </xsl:for-each>
         </table>
+    </xsl:template>
+    <!-- FrozenArray: DONE -->
+    <xsl:template match="h:div[@id='idl-frozen-array']|h:div[@id='es-frozen-array']">
     </xsl:template>
     <!-- ArrayClass: DONE -->
     <xsl:template match="h:div[@id='ArrayClass']|h:li/h:a[@href='#ArrayClass']|h:a[@class='xattr' and @href='#ArrayClass']">

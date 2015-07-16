@@ -3,16 +3,20 @@ function reg_custom() {
     clean_implicitthis();
     clean_unscopeable();
     clean_maplike_setlike();
+    clean_frozen_array();
     clean_style();
     clean_head();
 }
 
-function remove_prodlines_nodes(parent, matchstring, nb) {
+function remove_prodlines_nodes(parent, matchstring, nb_after, nb_before) {
     for (var i = 0; i < parent.childNodes.length; i++) {
         var n = parent.childNodes[i];
         if ((n.nodeType == 3) && ( n.data.indexOf(matchstring) >= 0 )) {
-            for (var j = 1; j < nb; j++) {
+            for (var j = 0; j < nb_after; j++) {
                 parent.removeChild(n.nextSibling);
+            }
+            for (j = 0; j < nb_before; j++) {
+                parent.removeChild(n.previousSibling);
             }
             parent.removeChild(n);
             break;
@@ -35,19 +39,19 @@ function clean_regex() {
     }
 
     $("#proddef-NonAnyType .prod-lines").each(function (i, val) {
-        remove_prodlines_nodes(val, matchstring, 4)
+        remove_prodlines_nodes(val, matchstring, 3, 0)
     });
     $("#idl-union .prod-lines").each(function (i, val) {
-        remove_prodlines_nodes(val, matchstring, 4)
+        remove_prodlines_nodes(val, matchstring, 3, 0)
     });
     $("#idl-extended-attributes .prod-lines").each(function (i, val) {
-        remove_prodlines_nodes(val, matchstring, 2)
+        remove_prodlines_nodes(val, matchstring, 1, 0)
     });
     $("#prod-Other .prod-lines").each(function (i, val) {
-        remove_prodlines_nodes(val, matchstring, 2)
+        remove_prodlines_nodes(val, matchstring, 1, 0)
     });
     $("#prod-NonAnyType .prod-lines").each(function (i, val) {
-        remove_prodlines_nodes(val, matchstring, 4)
+        remove_prodlines_nodes(val, matchstring, 3, 0)
     });
 
     remove_span('es-dictionary');
@@ -92,12 +96,12 @@ function clean_maplike_setlike() {
     var mapstring = "maplike";
     var setstring = "setlike";
     $("#proddef-ArgumentNameKeyword .prod-lines").each(function (i, val) {
-        remove_prodlines_nodes(val, mapstring, 2);
-        remove_prodlines_nodes(val, setstring, 2);
+        remove_prodlines_nodes(val, mapstring, 1, 0);
+        remove_prodlines_nodes(val, setstring, 1, 0);
     });
     $("#idl-operations table.grammar .prod-lines").each(function (i, val) {
-        remove_prodlines_nodes(val, mapstring, 2);
-        remove_prodlines_nodes(val, setstring, 2);
+        remove_prodlines_nodes(val, mapstring, 1, 0);
+        remove_prodlines_nodes(val, setstring, 1, 0);
     });
     $("#proddef-InterfaceMember a[href='#prod-ReadWriteMaplike']").each(function (i, val) {
         var p = val.parentNode;
@@ -184,8 +188,33 @@ function clean_maplike_setlike() {
     a.previousSibling.remove();
     a.remove();
     $("#prod-ArgumentNameKeyword .prod-lines").each(function (i, val) {
-        remove_prodlines_nodes(val, "maplike", 2);
-        remove_prodlines_nodes(val, "setlike", 2);
+        remove_prodlines_nodes(val, "maplike", 1, 0);
+        remove_prodlines_nodes(val, "setlike", 1, 0);
+    });
+}
+
+function clean_frozen_array() {
+    var matchstring = "FrozenArray";
+
+    $("#proddef-NonAnyType .prod-lines").each(function (i, val) {
+        remove_prodlines_nodes(val, matchstring, 3, 1);
+    });
+    $("#prod-NonAnyType .prod-lines").each(function (i, val) {
+        remove_prodlines_nodes(val, matchstring, 3, 1);
+    });
+    $("#idl-union .prod-lines").each(function (i, val) {
+        remove_prodlines_nodes(val, matchstring, 3, 1);
+    });
+    $("#proddef-Other .prod-lines").each(function (i, val) {
+        remove_prodlines_nodes(val, matchstring, 1, 0);
+    });
+    $("#prod-Other .prod-lines").each(function (i, val) {
+        remove_prodlines_nodes(val, matchstring, 1, 0);
+    });
+    var a = $("#es-union a[href='#idl-frozen-array']")[0];
+    a.parentElement.remove();
+    $("#es-interface-call a[href='#idl-frozen-array']").each(function (i, val) {
+        val.parentElement.remove();
     });
 }
 
