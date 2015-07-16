@@ -63,7 +63,8 @@ function clean_regex() {
     p.parentNode.removeChild(p);
 
     $("#es-interface-call a[href='#idl-RegExp']").each(function (i, val) {
-       val.parentNode.parentNode.parentNode.remove();
+        var n = val.parentNode.parentNode.parentNode;
+        n.parentNode.removeChild(n);
     });
 }
 
@@ -165,28 +166,37 @@ function clean_maplike_setlike() {
     p.insertBefore(rep, oa);
     p.removeChild(a);
 
-    $("#es-iterator li > a.dfnref[href='#dfn-maplike-declaration']")[0].parentNode.remove();
-    $("#es-iterator li > a.dfnref[href='#dfn-setlike-declaration']")[0].parentNode.remove();
+    p = $("#es-iterator li > a.dfnref[href='#dfn-maplike-declaration']")[0].parentNode;
+    p.parentNode.removeChild(p);
+    p = $("#es-iterator li > a.dfnref[href='#dfn-setlike-declaration']")[0].parentNode;
+    p.parentNode.removeChild(p);
     p = $("#es-iterator p > a.dfnref[href='#dfn-maplike-declaration']")[0].parentNode;
-    p.nextElementSibling.remove();
-    p.remove();
+    oa = p.parentNode;
+    oa.removeChild(p.nextElementSibling);
+    oa.removeChild(p);
 
-    $("#es-forEach li > a.dfnref[href='#dfn-maplike-declaration']")[0].parentNode.remove();
-    $("#es-forEach li > a.dfnref[href='#dfn-setlike-declaration']")[0].parentNode.remove();
+    p = $("#es-forEach li > a.dfnref[href='#dfn-maplike-declaration']")[0].parentNode;
+    p.parentNode.removeChild(p);
+    p = $("#es-forEach li > a.dfnref[href='#dfn-setlike-declaration']")[0].parentNode;
+    p.parentNode.removeChild(p);
 
     p = $("#es-forEach p > a.dfnref[href='#dfn-setlike-declaration']")[0].parentNode;
-    p.nextElementSibling.remove();
-    p.remove();
+    oa = p.parentNode;
+    oa.removeChild(p.nextElementSibling);
+    oa.removeChild(p);
 
     a = $("#prod-ReadonlyMemberRest a.sym[href='#prod-ReadWriteMaplike']")[0];
-    a.previousSibling.remove();
-    a.previousSibling.remove();
-    a.remove();
+    oa = a.parentNode;
+    oa.removeChild(a.previousSibling);
+    oa.removeChild(a.previousSibling);
+    oa.removeChild(a);
+
 
     a = $("#prod-ReadonlyMemberRest a.sym[href='#prod-ReadWriteSetlike']")[0];
-    a.previousSibling.remove();
-    a.previousSibling.remove();
-    a.remove();
+    oa = a.parentNode;
+    oa.removeChild(a.previousSibling);
+    oa.removeChild(a.previousSibling);
+    oa.removeChild(a);
     $("#prod-ArgumentNameKeyword .prod-lines").each(function (i, val) {
         remove_prodlines_nodes(val, "maplike", 1, 0);
         remove_prodlines_nodes(val, "setlike", 1, 0);
@@ -212,9 +222,11 @@ function clean_frozen_array() {
         remove_prodlines_nodes(val, matchstring, 1, 0);
     });
     var a = $("#es-union a[href='#idl-frozen-array']")[0];
-    a.parentElement.remove();
+    var li = a.parentElement;
+    li.parentElement.removeChild(li);
     $("#es-interface-call a[href='#idl-frozen-array']").each(function (i, val) {
-        val.parentElement.remove();
+        var li = val.parentNode;
+        li.parentNode.removeChild(li);
     });
 }
 
