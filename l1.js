@@ -228,6 +228,17 @@ function clean_frozen_array() {
         var li = val.parentNode;
         li.parentNode.removeChild(li);
     });
+
+    a = $("#idl-dictionaries a[href='#idl-frozen-array']")[0];
+    li = a.parentNode;
+    li.removeChild(a.previousSibling);
+    li.removeChild(a);
+
+    a = $("#idl-ByteString a[href='#idl-frozen-array']")[0];
+    var p = a.parentNode;
+    p.removeChild(a.previousSibling);
+    p.removeChild(a);
+
 }
 
 function clean_style() {
