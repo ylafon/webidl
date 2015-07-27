@@ -16,7 +16,7 @@
     
 
     
-  <meta charset="utf-8" /><meta content="width=device-width,initial-scale=1" name="viewport" /><title>WebIDL Level 1</title><script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common" type="application/ecmascript"></script><script class="remove" type="application/ecmascript" src="l1.js"></script><script class="remove" type="application/ecmascript">
+  <meta charset="utf-8" /><meta content="width=device-width,initial-scale=1" name="viewport" /><script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common" type="application/ecmascript"></script><script class="remove" type="application/ecmascript" src="l1.js"></script><script class="remove" type="application/ecmascript">
             var respecConfig = {
             localBiblio: {
                 "DOM3CORE": {
@@ -204,7 +204,7 @@
           Technical reports published by the W3C that include programming
           language interfaces have typically been described using the
           Object Management Group’s Interface Definition Language (IDL)
-          <a href="#ref-OMGIDL">[[OMGIDL]]</a>.  The IDL provides a means to
+          [[OMGIDL]].  The IDL provides a means to
           describe these interfaces in a language independent manner.  Usually,
           additional language binding appendices are included in such
           documents which detail how the interfaces described with the IDL
@@ -1247,7 +1247,7 @@ node.appendChild(newNode);  <span class="comment">// This will throw a TypeError
                 the value of the <a class="sym" href="#prod-float">float</a> token
                 is the IEEE 754 double-precision floating point number closest to
                 <var>result</var>.
-                <a href="#ref-IEEE-754">[[!IEEE-754]]</a>
+                [[!IEEE-754]]
               </li>
             </ol>
             <p>
@@ -3420,7 +3420,7 @@ partial interface A {
 <td>●</td>
 <td>●</td>
 <td>●</td>
-</tr><tr></tr><tr><th>Date</th>
+</tr><tr><th>Date</th>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
@@ -3432,7 +3432,7 @@ partial interface A {
 <td></td>
 <td>●</td>
 <td>●</td>
-</tr><tr></tr><tr><th>exception types</th>
+</tr><tr><th>exception types</th>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
@@ -4251,7 +4251,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
                 </tr>
                 <tr>
                   <td>"<dfn id="namespaceerror"><code>NamespaceError</code></dfn>"</td>
-                  <td>The operation is not allowed by <cite>Namespaces in XML</cite>. <a href="#ref-XMLNS">[[XMLNS]]</a></td>
+                  <td>The operation is not allowed by <cite>Namespaces in XML</cite>. [[XMLNS]]</td>
                   <td><dfn id="dom-domexception-namespace_err" title="dom-DOMException-NAMESPACE_ERR"><code>NAMESPACE_ERR</code></dfn> (14)</td>
                 </tr>
                 <tr>
@@ -5154,7 +5154,7 @@ interface Person {
             <p>
               The <a class="idltype" href="#idl-float">float</a> type is a floating point numeric
               type that corresponds to the set of finite single-precision 32 bit
-              IEEE 754 floating point numbers.  <a href="#ref-IEEE-754">[[!IEEE-754]]</a>
+              IEEE 754 floating point numbers.  [[!IEEE-754]]
             </p>
             <p>
               <a class="idltype" href="#idl-float">float</a> constant values in IDL are
@@ -5182,7 +5182,7 @@ interface Person {
             <p>
               The <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> type is a floating point numeric
               type that corresponds to the set of all possible single-precision 32 bit
-              IEEE 754 floating point numbers, finite and non-finite.  <a href="#ref-IEEE-754">[[!IEEE-754]]</a>
+              IEEE 754 floating point numbers, finite and non-finite.  [[!IEEE-754]]
             </p>
             <p>
               <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> constant values in IDL are
@@ -5201,7 +5201,7 @@ interface Person {
             <p>
               The <a class="idltype" href="#idl-double">double</a> type is a floating point numeric
               type that corresponds to the set of finite double-precision 64 bit
-              IEEE 754 floating point numbers.  <a href="#ref-IEEE-754">[[!IEEE-754]]</a>
+              IEEE 754 floating point numbers.  [[!IEEE-754]]
             </p>
             <p>
               <a class="idltype" href="#idl-double">double</a> constant values in IDL are
@@ -5220,7 +5220,7 @@ interface Person {
             <p>
               The <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> type is a floating point numeric
               type that corresponds to the set of all possible double-precision 64 bit
-              IEEE 754 floating point numbers, finite and non-finite.  <a href="#ref-IEEE-754">[[!IEEE-754]]</a>
+              IEEE 754 floating point numbers, finite and non-finite.  [[!IEEE-754]]
             </p>
             <p>
               <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> constant values in IDL are
@@ -5239,12 +5239,12 @@ interface Person {
             <p>
               The <a class="idltype" href="#idl-DOMString">DOMString</a> type
               corresponds to the set of all possible sequences of <a class="dfnref" href="#dfn-code-unit">code units</a>.
-              Such sequences are commonly interpreted as UTF-16 encoded strings <a href="#ref-RFC2781">[[!RFC2781]]</a>
+              Such sequences are commonly interpreted as UTF-16 encoded strings [[!RFC2781]]
               although this is not required.
               While <a class="idltype" href="#idl-DOMString">DOMString</a> is defined to be an OMG IDL boxed
               <a class="idltype" href="#idl-sequence">sequence&lt;unsigned short&gt;</a>
               valuetype in <cite><a href="http://www.w3.org/TR/2004/REC-DOM-Level-3-Core-20040407/core.html#ID-C74D1578">DOM Level 3 Core</a></cite>
-              (<a href="#ref-DOM3CORE">[[DOM3CORE]]</a>, section 1.2.1),
+              ([[DOM3CORE]], section 1.2.1),
               this document defines <a class="idltype" href="#idl-DOMString">DOMString</a> to be an intrinsic type so as to avoid
               special casing that sequence type in various situations where a
               string is required.
@@ -5332,7 +5332,7 @@ interface Person {
             <p>
               The <a class="idltype" href="#idl-ByteString">ByteString</a> type
               corresponds to the set of all possible sequences of bytes.
-              Such sequences might be interpreted as UTF-8 encoded strings <a href="#ref-RFC3629">[[!RFC3629]]</a>
+              Such sequences might be interpreted as UTF-8 encoded strings [[!RFC3629]]
               or strings in some other 8-bit-per-code-unit encoding, although this is not required.
             </p>
             <p>
@@ -5356,7 +5356,7 @@ interface Person {
                 with <a class="idltype" href="#idl-octet">octet</a> or <a class="idltype" href="#idl-byte">byte</a>
                 elements <span class="rfc2119">SHOULD</span> be used for holding
                 8 bit data rather than <a class="idltype" href="#idl-ByteString">ByteString</a>.
-                <a href="#ref-TYPEDARRAYS">[[!TYPEDARRAYS]]</a>
+                [[!TYPEDARRAYS]]
               </p>
             </div>
           </section>
@@ -5437,7 +5437,7 @@ interface Person {
               <p>For ECMAScript objects, the <a class="dfnref" href="#dfn-callback-context">callback context</a> is used
               to hold a reference to the
               <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
-              <a href="#ref-HTML">[[HTML]]</a> at the time the <span class="estype">Object</span> value
+              [[HTML]] at the time the <span class="estype">Object</span> value
               is converted to an IDL callback interface type value.  See
               <a href="#es-interface">section <a href="#"></a></a> .</p>
             </div>
@@ -5513,7 +5513,7 @@ interface Person {
               <p>As with <a href="#idl-interface">callback interface types</a>, the <a class="dfnref" href="#dfn-callback-context">callback context</a> is used
               to hold a reference to the
               <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
-              <a href="#ref-HTML">[[HTML]]</a> at the time an ECMAScript <span class="estype">Object</span> value
+              [[HTML]] at the time an ECMAScript <span class="estype">Object</span> value
               is converted to an IDL callback function type value.  See
               <a href="#es-callback-function">section <a href="#"></a></a> .</p>
             </div>
@@ -5629,7 +5629,7 @@ interface Person {
               A <dfn id="dfn-promise-type">promise type</dfn> is a parameterized type
               whose values are references to objects that “is used as a place holder
               for the eventual results of a deferred (and possibly asynchronous) computation
-              result of an asynchronous operation” <a href="#ref-ECMA-262">[[!ECMA-262]]</a>.
+              result of an asynchronous operation” [[!ECMA-262]].
               See <a href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-promise-objects">section 25.4</a>
               of the ECMAScript specification for details on the semantics of promise objects.
             </p>
@@ -6145,7 +6145,7 @@ interface Person {
           This section describes how definitions written with the IDL defined in
           <a href="#idl">section <a href="#"></a></a> correspond to particular constructs
           in ECMAScript, as defined by the <cite>ECMAScript Language Specification 6th Edition</cite>
-          <a href="#ref-ECMA-262">[[!ECMA-262]]</a>.
+          [[!ECMA-262]].
         </p>
         <p>
           Objects defined in this section have internal properties as described in
@@ -6269,7 +6269,7 @@ interface Person {
             <li><a class="dfnref" href="#dfn-named-properties-object">named properties objects</a></li>
           </ul>
           <p>
-            Each <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-code-realms">ECMAScript global environment</a> (<a href="#ref-ECMA-262">[[!ECMA-262]]</a>, section 8.2)
+            Each <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-code-realms">ECMAScript global environment</a> ([[!ECMA-262]], section 8.2)
             <span class="rfc2119">MUST</span> have its own unique set of each of
             the <a class="dfnref" href="#dfn-initial-object">initial objects</a>, created
             before control enters any ECMAScript execution context associated with the
@@ -6922,7 +6922,7 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
             </p>
             <ol class="algorithm">
               <li>Let <var>x</var> be <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-tonumber">ToNumber</a>(<var>V</var>).</li>
-              <li>If <var>x</var> is <span class="esvalue">NaN</span>, then return the IDL <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> value that represents the IEEE 754 NaN value with the bit pattern 0x7fc00000 <a href="#ref-IEEE-754">[[!IEEE-754]]</a>.</li>
+              <li>If <var>x</var> is <span class="esvalue">NaN</span>, then return the IDL <a class="idltype" href="#idl-unrestricted-float">unrestricted float</a> value that represents the IEEE 754 NaN value with the bit pattern 0x7fc00000 [[!IEEE-754]].</li>
               <li>
                 Let <var>S</var> be the set of finite IEEE 754 single-precision floating
                 point values except −0, but with two special values added: 2<sup>128</sup> and
@@ -7011,7 +7011,7 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
             </p>
             <ol class="algorithm">
               <li>Let <var>x</var> be <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-tonumber">ToNumber</a>(<var>V</var>).</li>
-              <li>If <var>x</var> is <span class="esvalue">NaN</span>, then return the IDL <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value that represents the IEEE 754 NaN value with the bit pattern 0x7ff8000000000000 <a href="#ref-IEEE-754">[[!IEEE-754]]</a>.</li>
+              <li>If <var>x</var> is <span class="esvalue">NaN</span>, then return the IDL <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value that represents the IEEE 754 NaN value with the bit pattern 0x7ff8000000000000 [[!IEEE-754]].</li>
               <li>
                 Return the IDL <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a> value
                 that has the same numeric value as <var>x</var>.
@@ -7190,7 +7190,7 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
                 <a href="#es-user-objects">section <a href="#"></a></a>,
                 then return the IDL <a href="#idl-interface">interface type</a> value that represents a reference to that user object,
                 with the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
-                as the <a class="dfnref" href="#dfn-callback-context">callback context</a>. <a href="#ref-HTML">[[HTML]]</a></li>
+                as the <a class="dfnref" href="#dfn-callback-context">callback context</a>. [[HTML]]</li>
               <li><a href="#ecmascript-throw" class="dfnref external">Throw a <span class="esvalue">TypeError</span></a>.</li>
             </ol>
             <p id="interface-to-es">
@@ -7355,7 +7355,7 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
               function type</a> value that represents a reference to the same
               object that <var>V</var> represents,
                 with the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html#incumbent-script">incumbent script</a>
-                as the <a class="dfnref" href="#dfn-callback-context">callback context</a>. <a href="#ref-HTML">[[HTML]]</a>.</li>
+                as the <a class="dfnref" href="#dfn-callback-context">callback context</a>. [[HTML]].</li>
             </ol>
             <p id="callback-function-to-es">
               The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
@@ -8788,7 +8788,7 @@ var requestAnimationFrame = window.requestAnimationFrame ||
                 The <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a>
                 <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a> is intended
                 to be used by the <span class="idltype">Window</span> interface as defined in
-                HTML5 (<a href="#ref-HTML5">[[HTML5]]</a>, section 5.2).  (<a class="xattr" href="#Global">[Global]</a>
+                HTML5 ([[HTML5]], section 5.2).  (<a class="xattr" href="#Global">[Global]</a>
                 is intended to be used by worker global interfaces.)
                 The <span class="idltype">Window</span> interface exposes frames as properties on the <span class="idltype">Window</span>
                 object.  Since the <span class="idltype">Window</span> object also serves as the
@@ -9003,7 +9003,7 @@ var a2 = new Audio('a.flac');   <span class="comment">// Creates an HTMLAudioEle
                 As an example, this extended attribute is suitable for use on
                 the <a href="http://dom.spec.whatwg.org/#dom-document-createelement">createElement</a>
                 operation on the <a href="http://dom.spec.whatwg.org/#document"><span class="idltype">Document</span></a>
-                interface (<a href="#ref-DOM">[[DOM]]</a>, section 6.5),
+                interface ([[DOM]], section 6.5),
                 since a new object should always be returned when
                 it is called.
               </p>
@@ -9514,7 +9514,7 @@ counter.value;                                           <span class="comment">/
                 As an example, this extended attribute is suitable for use on
                 the <a href="http://dom.spec.whatwg.org/#dom-document-implementation">implementation</a>
                 attribute on the <a href="http://dom.spec.whatwg.org/#document"><span class="idltype">Document</span></a>
-                interface (<a href="#ref-DOM">[[DOM]]</a>, section 6.5),
+                interface ([[DOM]], section 6.5),
                 since the same object is always returned for a given
                 <span class="idltype">Document</span> object.
               </p>
@@ -9549,7 +9549,7 @@ counter.value;                                           <span class="comment">/
                 valid use of <a href="#TreatNonNonObjectAsNull" class="xattr">[TreatNonObjectAsNull]</a>
                 is for the <a class="dfnref" href="#dfn-callback-function">callback functions</a> used as the type
                 of <a href="http://www.w3.org/TR/2011/WD-html5-20110525/webappapis.html#event-handler-attributes">event handler IDL attributes</a>
-                (<a href="#ref-HTML5">[[HTML5]]</a>, section 6.1.6.1)
+                ([[HTML5]], section 6.1.6.1)
                 such as <code>onclick</code> and <code>onerror</code>.
               </p>
             </div>
@@ -9977,7 +9977,7 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
                 necessarily the same as that described for <span class='estype'>Function</span> objects in
                 section 13.2.2 of the
                 <cite>ECMAScript Language Specification, 5th Edition</cite>
-                <a href='#ref-ECMA-262'>[[!ECMA-262]]</a>, but it
+                [[!ECMA-262]], but it
                 <span class='rfc2119'>MUST</span> return an object that implements
                 the given interface if it returns normally (that is, if it does not
                 throw an exception).
@@ -10754,7 +10754,7 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
               <li>Otherwise, if <var>A</var> is declared with the 
               extended attribute, then return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).</li>
               <li>Otherwise, return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ObjectPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
-              (<a href="#ref-ECMA-262">[[!ECMA-262]]</a>, section 15.2.4).</li>
+              ([[!ECMA-262]], section 15.2.4).</li>
             </ol>
             <div class="note">
               <p>
@@ -10874,7 +10874,7 @@ partial interface Window {
                 <li>Let <var>object</var> be the sole object from <var>O</var>’s ECMAScript global environment that implements <var>A</var>.
                   <div class="note">
                     <p>For example, if the <a class="dfnref" href="#dfn-interface">interface</a> is the <span class="idltype">Window</span>
-                      interface as defined in HTML5 (<a href="#ref-HTML5">[[HTML5]]</a>, section 5.2), then the sole object
+                      interface as defined in HTML5 ([[HTML5]], section 5.2), then the sole object
                       will be this global environment’s window object.</p>
                   </div>
                 </li>
@@ -10964,7 +10964,7 @@ partial interface Window {
                 for the most derived non-mixin interface that <var>O</var> implements,
                 or, if the object implements no non-mixin interfaces, a reference to the
                 <span class='estype'>Object</span> prototype object
-                (<a href="#ref-ECMA-262">[[!ECMA-262]]</a>, section 15.2.4).</li>
+                ([[!ECMA-262]], section 15.2.4).</li>
             </ul>
             <p>
               If two objects have the same set of <a class='dfnref' href='#dfn-mixin-interface'>mixin interfaces</a>,
@@ -12385,7 +12385,7 @@ C implements A;</code></pre></div></div>
             <div class='note'>
               <p>At the time of writing, the only known justifiable use of named properties that are
               <a href='#dfn-resolved-before-prototype-properties'>resolved before prototype properties</a>
-              is the <span class='esvalue'>Window</span> interface defined in HTML5 (<a href='#ref-HTML5'>[[HTML5]]</a>, section 5.2).</p>
+              is the <span class='esvalue'>Window</span> interface defined in HTML5 ([[HTML5]], section 5.2).</p>
             </div>
             -->
             <p>
@@ -12722,7 +12722,7 @@ C implements A;</code></pre></div></div>
                           <li>Create an own accessor property named <var>P</var> on <var>O</var> whose <span class='prop'>[[\Get]]</span>,
                             <span class='prop'>[[\Set]]</span>, <span class='prop'>[[\Enumerable]]</span> and <span class='prop'>[[\Configurable]]</span>
                             attribute values are described by <var>Desc</var>.  If the value of an attribute field of <var>Desc</var> is absent,
-                            the attribute of the newly created property is set to its default value (<a href='#ref-ECMA-262'>[[!ECMA-262]]</a>, section 8.6.1).</li>
+                            the attribute of the newly created property is set to its default value ([[!ECMA-262]], section 8.6.1).</li>
                         </ol>
                       </li>
                       <li>Otherwise:
@@ -12730,7 +12730,7 @@ C implements A;</code></pre></div></div>
                           <li>Create an own data property named <var>P</var> on <var>O</var> whose <span class='prop'>[[\Value]]</span>,
                             <span class='prop'>[[\Writable]]</span>, <span class='prop'>[[\Enumerable]]</span> and <span class='prop'>[[\Configurable]]</span>
                             attribute values are described by <var>Desc</var>.  If the value of an attribute field of <var>Desc</var> is absent,
-                            the attribute of the newly created property is set to its default value (<a href='#ref-ECMA-262'>[[!ECMA-262]]</a>, section 8.6.1).</li>
+                            the attribute of the newly created property is set to its default value ([[!ECMA-262]], section 8.6.1).</li>
                         </ol>
                       </li>
                       <li>Return <span class='esvalue'>true</span>.</li>
@@ -12966,7 +12966,7 @@ C implements A;</code></pre></div></div>
                   <var>idlarg</var><sub><var>i</var></sub> to an ECMAScript value.
                 </li>
                 <li>Let <var>script</var> be the <a class="dfnref" href="#dfn-callback-context">callback context</a> associated with <var>V</var>.</li>
-                <li>Push <var>script</var> on to the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html">stack of incumbent scripts</a>. <a href="#ref-HTML">[[HTML]]</a></li>
+                <li>Push <var>script</var> on to the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html">stack of incumbent scripts</a>. [[HTML]]</li>
                 <li>Let <var>R</var> be an uninitialized variable.</li>
                 <li>Try running the following step:
                   <ol>
@@ -13016,7 +13016,7 @@ C implements A;</code></pre></div></div>
                 <li>Let <var>O</var> be the ECMAScript object corresponding to <var>V</var>.</li>
                 <li>Let <var>P</var> be the <a class="dfnref" href="#dfn-identifier">identifier</a> of the attribute.</li>
                 <li>Let <var>script</var> be the <a class="dfnref" href="#dfn-callback-context">callback context</a> associated with <var>V</var>.</li>
-                <li>Push <var>script</var> on to the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html">stack of incumbent scripts</a>. <a href="#ref-HTML">[[HTML]]</a></li>
+                <li>Push <var>script</var> on to the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html">stack of incumbent scripts</a>. [[HTML]]</li>
                 <li>Let <var>R</var> be an uninitialized variable.</li>
                 <li>Try running the following step:
                   <ol>
@@ -13055,7 +13055,7 @@ C implements A;</code></pre></div></div>
             <li>Let <var>V</var> be the IDL value to be assigned to the attribute.</li>
             <li>Let <var>W</var> be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> <var>V</var> to an ECMAScript value.</li>
             <li>Let <var>script</var> be the <a class="dfnref" href="#dfn-callback-context">callback context</a> associated with <var>V</var>.</li>
-            <li>Push <var>script</var> on to the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html">stack of incumbent scripts</a>. <a href="#ref-HTML">[[HTML]]</a></li>
+            <li>Push <var>script</var> on to the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html">stack of incumbent scripts</a>. [[HTML]]</li>
             <li>Try running the following step:
               <ol>
                 <li>Invoke the <span class="prop">[[\Put]]</span> method of <var>O</var> with property name <var>P</var> and value <var>W</var>.</li>
@@ -13109,7 +13109,7 @@ C implements A;</code></pre></div></div>
                 </li>
                 <li>Truncate <var>values</var> to have length <var>count</var>.</li>
                 <li>Let <var>script</var> be the <a class="dfnref" href="#dfn-callback-context">callback context</a> associated with <var>V</var>.</li>
-                <li>Push <var>script</var> on to the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html">stack of incumbent scripts</a>. <a href="#ref-HTML">[[HTML]]</a></li>
+                <li>Push <var>script</var> on to the <a class="dfnref external" href="http://www.whatwg.org/specs/web-apps/current-work/multipage/webappapis.html">stack of incumbent scripts</a>. [[HTML]]</li>
                 <li>Try running the following step:
                   <ol>
                     <li>Set <var>R</var> to the result of invoking the <span class="prop">[[\Call]]</span> method of <var>F</var>, providing the <a class="dfnref" href="#dfn-callback-this-value">callback this value</a> as the <span class="esvalue">this</span> value and <var>values</var> as the argument values.</li>
@@ -13703,7 +13703,7 @@ d.type = et;
           are terminal symbols that are matched with the exact text between
           the quotes.  Symbols that begin with a lowercase letter are terminal
           symbols that are matched by the regular expressions (using Perl 5 regular
-          expression syntax <a href="#ref-PERLRE">[[!PERLRE]]</a>) as follows:
+          expression syntax [[!PERLRE]]) as follows:
         </p><table class="grammar">
           <tr>
             <td id="prod-integer" class="sym">integer</td>
@@ -13742,7 +13742,7 @@ d.type = et;
           </tr>
         </table><p>
           The tokenizer operates on a sequence of Unicode characters
-          <a href="#ref-UNICODE">[[!UNICODE]]</a>.
+          [[!UNICODE]].
           When tokenizing, the longest possible match <span class="rfc2119">MUST</span> be used.  For example, if the input
           text is “<span class="input">a1</span>”, it is tokenized as a single <span class="sym">identifier</span>,
           and not as a separate <span class="sym">identifier</span> and <span class="sym">integer</span>.
@@ -13996,7 +13996,7 @@ d.type = et;
           defined in this specification — see
           <a href="#idl-extended-attributes">section <a href="#"></a></a>
           for the syntaxes that are used by these extended attributes.
-        </p></section><section id="references" class="appendix"></section><section id="changes" class="appendix"><h2>Changes</h2><p class="norm">This section is informative.</p><p>
+        </p></section><section id="changes" class="appendix"><h2>Changes</h2><p class="norm">This section is informative.</p><p>
           The following is a list of substantial changes to the document on each publication.
           For the list of changes during the development of the First Edition of this
           specification, see
