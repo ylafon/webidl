@@ -1484,7 +1484,7 @@ node.appendChild(newNode);  <span class="comment">// This will throw a TypeError
             <ol class="algorithm">
               <li>Let <var>S</var> be the sequence of characters matched by the <a class="sym" href="#prod-float">float</a> token.</li>
               <li>Let <var>value</var> be the Mathematical Value that would be obtained if <var>S</var> were
-                parsed as an ECMAScript <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-literals-numeric-literals"><em>NumericLiteral</em></a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 11.8.3).</li>
+                parsed as an ECMAScript <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-literals-numeric-literals"><em>NumericLiteral</em></a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 11.8.3).</li>
               <li>
                 If the <a class="sym" href="#prod-float">float</a> token is being
                 used as the value for a <a class="idltype" href="#idl-float">float</a> or
@@ -4343,7 +4343,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             <li><span class="idltype">URIError</span></li>
           </ul>
           <p>
-            These correspond to all of the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-error-objects">ECMAScript error objects</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 19.5) (apart from
+            These correspond to all of the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-error-objects">ECMAScript error objects</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 19.5) (apart from
             <span class="estype">SyntaxError</span>, which is deliberately omitted as
             it is for use only by the ECMAScript parser).
             The meaning of
@@ -5143,7 +5143,7 @@ interface Person {
             The <dfn id="dfn-buffer-source-type" data-dfn-type="dfn">buffer source types</dfn>
             are <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>,
             <a class="idltype" href="#idl-DataView">DataView</a>,
-            and the <a class="dfnref" href="#dfn-typed-array-types">typed array types</a>.
+            and the <a class="dfnref" href="#dfn-typed-array-type">typed array types</a>.
           </p>
           <p>
             The <a class="idltype" href="#idl-object">object</a> type,
@@ -5591,7 +5591,7 @@ interface Person {
                 strings <span class="rfc2119"><em class="rfc2119" title="SHOULD">SHOULD</em></span> be represented with
                 <a class="idltype" href="#idl-DOMString">DOMString</a> values, even if it is expected
                 that values of the string will always be in ASCII or some
-                8 bit character encoding.  <a href="#idl-sequences">Sequences</a> or <a href="http://www.khronos.org/registry/typedarray/specs/latest/">Typed Arrays</a>
+                8 bit character encoding.  <a href="#idl-sequence">Sequences</a> or <a href="http://www.khronos.org/registry/typedarray/specs/latest/">Typed Arrays</a>
                 with <a class="idltype" href="#idl-octet">octet</a> or <a class="idltype" href="#idl-byte">byte</a>
                 elements <span class="rfc2119"><em class="rfc2119" title="SHOULD">SHOULD</em></span> be used for holding
                 8 bit data rather than <a class="idltype" href="#idl-ByteString">ByteString</a>.
@@ -6032,7 +6032,7 @@ interface Person {
               The <a class="idltype" href="#idl-Date">Date</a> type is a type that
               represents an instant in time with millisecond accuracy.  The instants
               in time that this type can represent are the same that can be represented
-              with <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-date-objects">ECMAScript <span class="estype">Date</span> objects</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 20.3)
+              with <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-date-objects">ECMAScript <span class="estype">Date</span> objects</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 20.3)
               – namely, every millisecond in the 200,000,000 days centered
               around midnight of 1 January, 1970 UTC, except for any millisecond that is part
               of an inserted leap second, because they cannot be represented by this type.
@@ -6420,7 +6420,7 @@ interface Person {
         </p>
         <ul>
           <li>Its <span class="prop">[[Prototype]]</span> internal property is
-          <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%FunctionPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4) unless otherwise specified.</li>
+          <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%FunctionPrototype%</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 6.1.7.4) unless otherwise specified.</li>
           <li>Its <span class="prop">[[Get]]</span> internal property is set as described in <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-get-p-receiver">ECMA-262 section 9.1.8</a>.</li>
           <li>Its <span class="prop">[[Construct]]</span> internal property is set as described in <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-function-@@create">ECMA-262 section 19.2.2.3</a>.</li>
           <li>Its <span class="prop">@@hasInstance</span> property is set as described in <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-function.prototype-@@hasinstance">ECMA-262 section 19.2.3.8</a>, unless otherwise specified.</li>
@@ -7038,7 +7038,7 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
               value is a <span class="estype">Number</span> value that
               represents the closest numeric value to the <a class="idltype" href="#idl-long-long">long long</a>,
               choosing the numeric value with an <em>even significand</em> if there are
-              two <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-number-type">equally close values</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.6).
+              two <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-number-type">equally close values</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 6.1.6).
               If the <a class="idltype" href="#idl-long-long">long long</a> is in the range
               [−2<sup>53</sup>&nbsp;+&nbsp;1,&nbsp;2<sup>53</sup>&nbsp;−&nbsp;1], then the <span class="estype">Number</span>
               will be able to represent exactly the same value as the
@@ -7095,7 +7095,7 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
               value is a <span class="estype">Number</span> value that
               represents the closest numeric value to the <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a>,
               choosing the numeric value with an <em>even significand</em> if there are
-              two <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-number-type">equally close values</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.6).
+              two <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-number-type">equally close values</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 6.1.6).
               If the <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> is less than or equal to 2<sup>53</sup>&nbsp;−&nbsp;1,
               then the <span class="estype">Number</span> will be able to
               represent exactly the same value as the
@@ -7124,7 +7124,7 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
               <li>
                 Let <var>y</var> be the number in <var>S</var> that is closest
                 to <var>x</var>, selecting the number with an
-                <em>even significand</em> if there are two <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-number-type">equally close values</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.6).
+                <em>even significand</em> if there are two <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-number-type">equally close values</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 6.1.6).
                 (The two special values 2<sup>128</sup> and −2<sup>128</sup>
                 are considered to have even significands for this purpose.)
               </li>
@@ -7166,7 +7166,7 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
               <li>
                 Let <var>y</var> be the number in <var>S</var> that is closest
                 to <var>x</var>, selecting the number with an
-                <em>even significand</em> if there are two <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-number-type">equally close values</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.6).
+                <em>even significand</em> if there are two <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-number-type">equally close values</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 6.1.6).
                 (The two special values 2<sup>128</sup> and −2<sup>128</sup>
                 are considered to have even significands for this purpose.)
               </li>
@@ -9754,7 +9754,7 @@ counter.value;                                           <span class="comment">/
                 wish to use this feature are strongly advised to discuss this on the
                 <a href="mailto:public-script-coord@w3.org">public-script-coord@w3.org</a>
                 mailing list before proceeding.  At the time of writing, the only known
-                valid use of <a href="#TreatNonNonObjectAsNull" class="xattr">[TreatNonObjectAsNull]</a>
+                valid use of <a href="#TreatNonObjectAsNull" class="xattr">[TreatNonObjectAsNull]</a>
                 is for the <a class="dfnref" href="#dfn-callback-function">callback functions</a> used as the type
                 of <a href="http://www.w3.org/TR/2011/WD-html5-20110525/webappapis.html#event-handler-attributes">event handler IDL attributes</a>
                 ([<cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>], section 6.1.6.1)
@@ -10133,7 +10133,7 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
               <li>
                 If the interface doesn't inherit from any other interface,
                 the value of <span class="prop">[[Prototype]]</span> is
-                <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%FunctionPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+                <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%FunctionPrototype%</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
               </li>
             </ol>
             <p>
@@ -10930,8 +10930,8 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               for the inherited interface.</li>
               <li>Otherwise, if <var>A</var> is declared with the 
-              extended attribute, then return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).</li>
-              <li>Otherwise, return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ObjectPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+              extended attribute, then return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).</li>
+              <li>Otherwise, return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ObjectPrototype%</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
               ([<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>], section 15.2.4).</li>
             </ol>
             <div class="note"><div class="note-title" aria-level="5" role="heading" id="h-note61"><span>Note</span></div><div class="">
@@ -11004,8 +11004,8 @@ partial interface Window {
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               for the inherited interface.</li>
               <li>Otherwise, if <var>A</var> is declared with the 
-              extended attribute, then return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).</li>
-              <li>Otherwise, return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ObjectPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).</li>
+              extended attribute, then return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).</li>
+              <li>Otherwise, return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ObjectPrototype%</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).</li>
             </ol>
             <p>
               The <a class="dfnref" href="#dfn-class-string">class string</a> of a
@@ -11048,7 +11048,7 @@ partial interface Window {
                     <li>Otherwise, <var>operation</var> was defined with an identifier.  Set <var>value</var> to the result
                       of performing the steps listed in the description of <var>operation</var> with <var>P</var> as the only argument value.</li>
 
-                    <li>Let <var>desc</var> be a newly created <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-property-descriptor-specification-type">Property Descriptor</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.2.4) with no fields.</li>
+                    <li>Let <var>desc</var> be a newly created <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-property-descriptor-specification-type">Property Descriptor</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 6.2.4) with no fields.</li>
                     <li>Set <var>desc</var>.<span class="prop">[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                       <var>value</var> to an ECMAScript value.</li>
                     <li>If the named property is defined to be <a class="dfnref" href="#dfn-unenumerable">unenumerable</a>,
@@ -11060,7 +11060,7 @@ partial interface Window {
                   </ol>
                 </li>
 
-                <li>Return the result of calling the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">[[GetOwnProperty]]</span> internal method</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.1.5) on <var>O</var> passing <var>P</var> as the argument.</li>
+                <li>Return the result of calling the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">[[GetOwnProperty]]</span> internal method</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 9.1.5) on <var>O</var> passing <var>P</var> as the argument.</li>
               </ol>
             </section>
 
@@ -11761,7 +11761,7 @@ interface
               <p>
                 If the interface does not have an <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>
                 but does define an <a class="dfnref" href="#dfn-indexed-property-getter">indexed property getter</a>,
-                then the <span class="estype">Function</span> object is <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ArrayProto_values%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+                then the <span class="estype">Function</span> object is <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ArrayProto_values%</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
               </p>
               
               
@@ -12342,7 +12342,7 @@ C implements A;</code></pre></div></div>
           <ul>
             <li>The name of the property is “toString”.</li>
             <li>The property has attributes <span class="descriptor">{&nbsp;[[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">false</span>&nbsp;}</span>.</li>
-            <li>The value of the property is <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ObjProto_toString%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4), the initial value of Object.prototype.toString.</li>
+            <li>The value of the property is <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ObjProto_toString%</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 6.1.7.4), the initial value of Object.prototype.toString.</li>
           </ul>
 
           <p>
@@ -12570,7 +12570,7 @@ C implements A;</code></pre></div></div>
                       <li>Otherwise, <var>operation</var> was defined with an identifier.  Set <var>value</var> to the result
                         of performing the steps listed in the description of <var>operation</var> with <var>index</var> as the only argument value.</li>
 
-                      <li>Let <var>desc</var> be a newly created <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-property-descriptor-specification-type">Property Descriptor</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.2.4) with no fields.</li>
+                      <li>Let <var>desc</var> be a newly created <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-property-descriptor-specification-type">Property Descriptor</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 6.2.4) with no fields.</li>
                       <li>Set <var>desc</var>.<span class="prop">[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                         <var>value</var> to an ECMAScript value.</li>
                       <li>If <var>O</var> implements an interface with an <a class="dfnref" href="#dfn-indexed-property-setter">indexed property setter</a>, then set
@@ -12599,7 +12599,7 @@ C implements A;</code></pre></div></div>
                   <li>Otherwise, <var>operation</var> was defined with an identifier.  Set <var>value</var> to the result
                     of performing the steps listed in the description of <var>operation</var> with <var>P</var> as the only argument value.</li>
 
-                  <li>Let <var>desc</var> be a newly created <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-property-descriptor-specification-type">Property Descriptor</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.2.4) with no fields.</li>
+                  <li>Let <var>desc</var> be a newly created <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-property-descriptor-specification-type">Property Descriptor</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 6.2.4) with no fields.</li>
                   <li>Set <var>desc</var>.<span class="prop">[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                     <var>value</var> to an ECMAScript value.</li>
                   <li>If <var>O</var> implements an interface with a <a class="dfnref" href="#dfn-named-property-setter">named property setter</a><!-- and
@@ -12615,7 +12615,7 @@ C implements A;</code></pre></div></div>
                 </ol>
               </li>
 
-              <li>Return the result of calling the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">[[GetOwnProperty]]</span> internal method</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.1.5) on <var>O</var> passing <var>P</var> as the argument.</li>
+              <li>Return the result of calling the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">[[GetOwnProperty]]</span> internal method</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 9.1.5) on <var>O</var> passing <var>P</var> as the argument.</li>
             </ol>
           </section>
 
@@ -12749,7 +12749,7 @@ C implements A;</code></pre></div></div>
                 arguments.
               </li>
               <li>
-                Perform steps 3-11 of the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-set-p-v-receiver">default [[Set]] internal method</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.1.9).
+                Perform steps 3-11 of the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-set-p-v-receiver">default [[Set]] internal method</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 9.1.9).
               </li>
             </ol>
           </section>
@@ -12837,7 +12837,7 @@ C implements A;</code></pre></div></div>
               <li>If <var>O</var> does not implement an <a class="dfnref" href="#dfn-interface">interface</a> with the
                 <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
                 then set <var>Desc</var>.<span class="prop">[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
-              <li>Call the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-defineownproperty-p-desc">default <span class="prop">[[DefineOwnProperty]]</span> internal method</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.1.6) on <var>O</var> passing <var>P</var>, <var>Desc</var>, and <var>Throw</var> as arguments.</li>
+              <li>Call the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-defineownproperty-p-desc">default <span class="prop">[[DefineOwnProperty]]</span> internal method</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 9.1.6) on <var>O</var> passing <var>P</var>, <var>Desc</var>, and <var>Throw</var> as arguments.</li>
             </ol>
           </section>
 
@@ -13234,7 +13234,7 @@ C implements A;</code></pre></div></div>
 
             <p>
               The DOMException constructor object <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> be a <a class="dfnref" href="#dfn-function-object">function object</a>
-              but with a <span class="prop">[[Prototype]]</span> value of <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%Error%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+              but with a <span class="prop">[[Prototype]]</span> value of <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%Error%</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
             </p>
             <p>
               For every legacy code listed in the <a href="#idl-error-names-table">error names table</a>,
@@ -13282,7 +13282,7 @@ C implements A;</code></pre></div></div>
 
             <p>
               The DOMException prototype object <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span>
-              have an internal <span class="prop">[[Prototype]]</span> property whose value is <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ErrorPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+              have an internal <span class="prop">[[Prototype]]</span> property whose value is <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ErrorPrototype%</a> (<a href="#bib-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
             </p>
             <p>
               The <a class="dfnref" href="#dfn-class-string">class string</a> of the
