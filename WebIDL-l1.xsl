@@ -48,7 +48,6 @@
       <xsl:apply-templates select='node()'/>
         <meta charset="utf-8" />
         <meta content="width=device-width,initial-scale=1" name="viewport" />
-        <title>WebIDL Level 1</title>
         <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common" type="application/ecmascript">
         </script>
         <script class="remove" type="application/ecmascript" src="l1.js" />
@@ -297,8 +296,6 @@
         <xsl:for-each select='./h:div[@class="section"]'>
             <xsl:choose>
                 <xsl:when test="@id='references'">
-                    <section id='references' class='appendix'>
-                    </section>
                 </xsl:when>
                 <xsl:when test="@id='idl-grammar'">
                     <section id='idl-grammar' class='appendix'>
@@ -377,16 +374,16 @@
                 </xsl:for-each>
             </xsl:variable>
             <xsl:for-each select="*">
-            <tr>
-                <xsl:if test="./h:th[1] != $regex and ./h:th[1] != $frozenarray ">
+            <xsl:if test="./h:th[1] != $regex and ./h:th[1] != $frozenarray ">
+                <tr>
                     <xsl:for-each select="h:th|h:td">
                            <xsl:if test="position() != $regexidx and position() != $frozenarrayidx">
                                <xsl:apply-templates select='.' />
                                <xsl:text>&#xa;</xsl:text>
                            </xsl:if>
                     </xsl:for-each>
-                </xsl:if>
-            </tr>
+                </tr>
+            </xsl:if>
         </xsl:for-each>
         </table>
     </xsl:template>
