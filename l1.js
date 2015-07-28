@@ -185,14 +185,14 @@ function clean_maplike_setlike() {
     oa.removeChild(p.nextElementSibling);
     oa.removeChild(p);
 
-    a = $("#prod-ReadonlyMemberRest a.sym[href='#prod-ReadWriteMaplike']")[0];
+    a = $("#prod-ReadOnlyMemberRest a.sym[href='#prod-ReadWriteMaplike']")[0];
     oa = a.parentNode;
     oa.removeChild(a.previousSibling);
     oa.removeChild(a.previousSibling);
     oa.removeChild(a);
 
 
-    a = $("#prod-ReadonlyMemberRest a.sym[href='#prod-ReadWriteSetlike']")[0];
+    a = $("#prod-ReadOnlyMemberRest a.sym[href='#prod-ReadWriteSetlike']")[0];
     oa = a.parentNode;
     oa.removeChild(a.previousSibling);
     oa.removeChild(a.previousSibling);
@@ -201,6 +201,10 @@ function clean_maplike_setlike() {
         remove_prodlines_nodes(val, "maplike", 1, 0);
         remove_prodlines_nodes(val, "setlike", 1, 0);
     });
+
+    a = $("#es-environment a[href='#dfn-map-size-getter']")[0];
+    li = a.parentNode;
+    li.parentNode.removeChild(li);
 }
 
 function clean_frozen_array() {
@@ -239,9 +243,6 @@ function clean_frozen_array() {
     p.removeChild(a.previousSibling);
     p.removeChild(a);
 
-    a = $("#es-environment a[href='#dfn-map-size-getter']")[0];
-    li = a.parentNode;
-    li.parentNode.removeChild(li);
 
 }
 
