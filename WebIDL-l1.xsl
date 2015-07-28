@@ -197,7 +197,7 @@
       <xsl:if test='$section'>
         <xsl:text> (</xsl:text>
       </xsl:if>
-      <a href='#ref-{$ref}'>[<xsl:value-of select='$ref'/>]</a>
+      [[!<xsl:value-of select='$ref'/>]]
       <xsl:if test='$section'>
         <xsl:text>, section </xsl:text>
         <xsl:value-of select='$section'/>
