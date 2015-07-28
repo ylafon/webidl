@@ -239,6 +239,10 @@ function clean_frozen_array() {
     p.removeChild(a.previousSibling);
     p.removeChild(a);
 
+    a = $("#es-environment a[href='#dfn-map-size-getter']")[0];
+    li = a.parentNode;
+    li.parentNode.removeChild(li);
+
 }
 
 function clean_style() {
