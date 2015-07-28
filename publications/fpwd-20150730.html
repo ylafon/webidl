@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" typeof="bibo:Document " prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#">
-<head><meta lang="en-US" property="dc:language" content="en">
+<head><meta lang="" property="dc:language" content="en">
+    <meta charset="UTF-8">
     <title>WebIDL Level 1</title>
     <style>/* --- ISSUES/NOTES --- */
 div.issue-title, div.note-title , div.ednote-title, div.warning-title {
@@ -69,7 +70,11 @@ input.task-list-item-checkbox {
     vertical-align: middle;
 }
 </style><link rel="stylesheet" href="WebIDL-1.css" type="text/css">
-  <meta charset="utf-8"><meta content="width=device-width,initial-scale=1" name="viewport"><style>/*****************************************************************
+    
+    
+
+    
+  <meta content="width=device-width,initial-scale=1" name="viewport"><style>/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
  *****************************************************************/
@@ -5779,7 +5784,7 @@ interface Person {
               another nullable type, or a <a class="dfnref" href="#dfn-union-type">union type</a>
               that itself has <a class="dfnref" href="#dfn-includes-a-nullable-type">includes a nullable type</a>
               or has a dictionary type as one of its
-              <a class="dfnref" href="#dfn-flattened-union-member-type">flattened member types</a>.
+              <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a>.
             </p>
             <div class="note"><div class="note-title" aria-level="5" role="heading" id="h-note38"><span>Note</span></div><div class="">
               <p>Although dictionary types can in general be nullable, they cannot when used
