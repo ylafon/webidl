@@ -69,10 +69,6 @@ input.task-list-item-checkbox {
     vertical-align: middle;
 }
 </style><link rel="stylesheet" href="WebIDL-1.css" type="text/css">
-    
-    
-
-    
   <meta content="width=device-width,initial-scale=1" name="viewport"><style>/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
@@ -200,11 +196,11 @@ table.simple {
   </p>
   <h1 class="title p-name" id="title" property="dcterms:title">WebIDL Level 1</h1>
   
-  <h2 id="w3c-first-public-working-draft-30-july-2016"><abbr title="World Wide Web Consortium">W3C</abbr> First Public Working Draft <time property="dcterms:issued" class="dt-published" datetime="2016-07-30">30 July 2016</time></h2>
+  <h2 id="w3c-first-public-working-draft-30-july-2015"><abbr title="World Wide Web Consortium">W3C</abbr> First Public Working Draft <time property="dcterms:issued" class="dt-published" datetime="2015-07-30">30 July 2015</time></h2>
   <dl>
     
       <dt>This version:</dt>
-      <dd><a class="u-url" href="http://www.w3.org/TR/2016/WD-WebIDL-1-20160730/">http://www.w3.org/TR/2016/WD-WebIDL-1-20160730/</a></dd>
+      <dd><a class="u-url" href="http://www.w3.org/TR/2015/WD-WebIDL-1-20150730/">http://www.w3.org/TR/2015/WD-WebIDL-1-20150730/</a></dd>
       <dt>Latest published version:</dt>
       <dd><a href="http://www.w3.org/TR/WebIDL-1/">http://www.w3.org/TR/WebIDL-1/</a></dd>
     
@@ -278,7 +274,7 @@ table.simple {
     
       <p class="copyright">
         <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©
-        2016
+        2015
         
         <a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
         (<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
@@ -1291,7 +1287,7 @@ partial interface <em>SomeInterface</em> {
              <a class="sym" href="#prod-Stringifier">Stringifier</a> <br>&nbsp;|
              <a class="sym" href="#prod-StaticMember">StaticMember</a> <br>&nbsp;|
              <a class="sym" href="#prod-Iterable">Iterable</a> <br>&nbsp;|
-             <a class="sym" href="#prod-ReadonlyMember">ReadonlyMember</a> <br>&nbsp;|
+             <a class="sym" href="#prod-ReadOnlyMember">ReadOnlyMember</a> <br>&nbsp;|
              <a class="sym" href="#prod-ReadWriteAttribute">ReadWriteAttribute</a>  </span></td></tr><tr id="proddef-Inheritance"><td><span class="prod-number">[18]</span></td><td><a class="sym" href="#prod-Inheritance">Inheritance</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">":" <a class="sym" href="#prod-identifier">identifier</a> <br>&nbsp;|
              ε</span></td></tr></tbody></table>
 
@@ -1483,7 +1479,9 @@ node.appendChild(newNode);  <span class="comment">// This will throw a TypeError
             <ol class="algorithm">
               <li>Let <var>S</var> be the sequence of characters matched by the <a class="sym" href="#prod-float">float</a> token.</li>
               <li>Let <var>value</var> be the Mathematical Value that would be obtained if <var>S</var> were
-                parsed as an ECMAScript <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-literals-numeric-literals"><em>NumericLiteral</em></a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 11.8.3).</li>
+                parsed as an ECMAScript <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-literals-numeric-literals"><em>NumericLiteral</em></a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 11.8.3).</li>
               <li>
                 If the <a class="sym" href="#prod-float">float</a> token is being
                 used as the value for a <a class="idltype" href="#idl-float">float</a> or
@@ -1744,7 +1742,9 @@ attribute <i>type</i> <i>identifier</i> inherits getter setraises(<i>scoped-name
               <a class="xattr" href="#Unforgeable">[Unforgeable]</a>.
             </p>
 
-            <table class="grammar"><tbody><tr id="proddef-ReadonlyMember"><td><span class="prod-number">[39]</span></td><td><a class="sym" href="#prod-ReadonlyMember">ReadonlyMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <a class="sym" href="#prod-ReadonlyMemberRest">ReadonlyMemberRest</a></span></td></tr><tr id="proddef-ReadWriteAttribute"><td><span class="prod-number">[41]</span></td><td><a class="sym" href="#prod-ReadWriteAttribute">ReadWriteAttribute</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"inherit" <a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br>&nbsp;|
+            <table class="grammar"><tbody><tr id="proddef-ReadOnlyMember"><td><span class="prod-number">[39]</span></td><td><a class="sym" href="#prod-ReadOnlyMember">ReadOnlyMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></span></td></tr><tr id="proddef-ReadOnlyMemberRest"><td><span class="prod-number">[40]</span></td><td><a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br>&nbsp;|
+             <a class="sym" href="#prod-ReadWriteMaplike">ReadWriteMaplike</a> <br>&nbsp;|
+             <a class="sym" href="#prod-ReadWriteSetlike">ReadWriteSetlike</a></span></td></tr><tr id="proddef-ReadWriteAttribute"><td><span class="prod-number">[41]</span></td><td><a class="sym" href="#prod-ReadWriteAttribute">ReadWriteAttribute</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"inherit" <a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br>&nbsp;|
              <a class="sym" href="#prod-AttributeRest">AttributeRest</a></span></td></tr><tr id="proddef-AttributeRest"><td><span class="prod-number">[42]</span></td><td><a class="sym" href="#prod-AttributeRest">AttributeRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"attribute" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-AttributeName">AttributeName</a> ";"</span></td></tr><tr id="proddef-AttributeName"><td><span class="prod-number">[43]</span></td><td><a class="sym" href="#prod-AttributeName">AttributeName</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeNameKeyword">AttributeNameKeyword</a> <br>&nbsp;|
              <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="proddef-AttributeNameKeyword"><td><span class="prod-number">[44]</span></td><td><a class="sym" href="#prod-AttributeNameKeyword">AttributeNameKeyword</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"required"</span></td></tr><tr id="proddef-Inherit"><td><span class="prod-number">[45]</span></td><td><a class="sym" href="#prod-Inherit">Inherit</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"inherit" <br>&nbsp;|
              ε</span></td></tr><tr id="proddef-ReadOnly"><td><span class="prod-number">[46]</span></td><td><a class="sym" href="#prod-ReadOnly">ReadOnly</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <br>&nbsp;|
@@ -4342,7 +4342,9 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             <li><span class="idltype">URIError</span></li>
           </ul>
           <p>
-            These correspond to all of the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-error-objects">ECMAScript error objects</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 19.5) (apart from
+            These correspond to all of the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-error-objects">ECMAScript error objects</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 19.5) (apart from
             <span class="estype">SyntaxError</span>, which is deliberately omitted as
             it is for use only by the ECMAScript parser).
             The meaning of
@@ -5779,7 +5781,7 @@ interface Person {
               another nullable type, or a <a class="dfnref" href="#dfn-union-type">union type</a>
               that itself has <a class="dfnref" href="#dfn-includes-a-nullable-type">includes a nullable type</a>
               or has a dictionary type as one of its
-              <a class="dfnref" href="#dfn-flattened-member-type">flattened member types</a>.
+              <a class="dfnref" href="#dfn-flattened-union-member-type">flattened member types</a>.
             </p>
             <div class="note"><div class="note-title" aria-level="5" role="heading" id="h-note38"><span>Note</span></div><div class="">
               <p>Although dictionary types can in general be nullable, they cannot when used
@@ -6031,7 +6033,9 @@ interface Person {
               The <a class="idltype" href="#idl-Date">Date</a> type is a type that
               represents an instant in time with millisecond accuracy.  The instants
               in time that this type can represent are the same that can be represented
-              with <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-date-objects">ECMAScript <span class="estype">Date</span> objects</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 20.3)
+              with <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-date-objects">ECMAScript <span class="estype">Date</span> objects</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 20.3)
               – namely, every millisecond in the 200,000,000 days centered
               around midnight of 1 January, 1970 UTC, except for any millisecond that is part
               of an inserted leap second, because they cannot be represented by this type.
@@ -6419,7 +6423,9 @@ interface Person {
         </p>
         <ul>
           <li>Its <span class="prop">[[Prototype]]</span> internal property is
-          <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%FunctionPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4) unless otherwise specified.</li>
+          <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%FunctionPrototype%</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 6.1.7.4) unless otherwise specified.</li>
           <li>Its <span class="prop">[[Get]]</span> internal property is set as described in <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-get-p-receiver">ECMA-262 section 9.1.8</a>.</li>
           <li>Its <span class="prop">[[Construct]]</span> internal property is set as described in <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-function-@@create">ECMA-262 section 19.2.2.3</a>.</li>
           <li>Its <span class="prop">@@hasInstance</span> property is set as described in <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-function.prototype-@@hasinstance">ECMA-262 section 19.2.3.8</a>, unless otherwise specified.</li>
@@ -6497,7 +6503,7 @@ interface Person {
             <li><a href="#es-serializer">the <span class="estype">Function</span> objects that correspond to serializers</a></li>
             <li><a href="#es-iterators">the <span class="estype">Function</span> objects that correspond to iterators</a></li>
             <li><a class="dfnref" href="#dfn-default-unforgeable-valueOf-function">default unforgeable valueOf functions</a></li>
-            <li><a class="dfnref" href="#dfn-map-size-getter">map size getters</a></li>
+            
             <li><a class="dfnref" href="#dfn-DOMException-constructor-object">DOMException constructor objects</a></li>
             <li><a class="dfnref" href="#dfn-DOMException-prototype-object">DOMException prototype objects</a></li>
             <li><a class="dfnref" href="#dfn-named-properties-object">named properties objects</a></li>
@@ -7037,7 +7043,9 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
               value is a <span class="estype">Number</span> value that
               represents the closest numeric value to the <a class="idltype" href="#idl-long-long">long long</a>,
               choosing the numeric value with an <em>even significand</em> if there are
-              two <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-number-type">equally close values</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.6).
+              two <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-number-type">equally close values</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 6.1.6).
               If the <a class="idltype" href="#idl-long-long">long long</a> is in the range
               [−2<sup>53</sup>&nbsp;+&nbsp;1,&nbsp;2<sup>53</sup>&nbsp;−&nbsp;1], then the <span class="estype">Number</span>
               will be able to represent exactly the same value as the
@@ -7094,7 +7102,9 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
               value is a <span class="estype">Number</span> value that
               represents the closest numeric value to the <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a>,
               choosing the numeric value with an <em>even significand</em> if there are
-              two <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-number-type">equally close values</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.6).
+              two <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-number-type">equally close values</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 6.1.6).
               If the <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a> is less than or equal to 2<sup>53</sup>&nbsp;−&nbsp;1,
               then the <span class="estype">Number</span> will be able to
               represent exactly the same value as the
@@ -7123,7 +7133,9 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
               <li>
                 Let <var>y</var> be the number in <var>S</var> that is closest
                 to <var>x</var>, selecting the number with an
-                <em>even significand</em> if there are two <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-number-type">equally close values</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.6).
+                <em>even significand</em> if there are two <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-number-type">equally close values</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 6.1.6).
                 (The two special values 2<sup>128</sup> and −2<sup>128</sup>
                 are considered to have even significands for this purpose.)
               </li>
@@ -7165,7 +7177,9 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
               <li>
                 Let <var>y</var> be the number in <var>S</var> that is closest
                 to <var>x</var>, selecting the number with an
-                <em>even significand</em> if there are two <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-number-type">equally close values</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.6).
+                <em>even significand</em> if there are two <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-number-type">equally close values</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 6.1.6).
                 (The two special values 2<sup>128</sup> and −2<sup>128</sup>
                 are considered to have even significands for this purpose.)
               </li>
@@ -10132,7 +10146,9 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
               <li>
                 If the interface doesn't inherit from any other interface,
                 the value of <span class="prop">[[Prototype]]</span> is
-                <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%FunctionPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+                <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%FunctionPrototype%</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 6.1.7.4).
               </li>
             </ol>
             <p>
@@ -10929,8 +10945,12 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               for the inherited interface.</li>
               <li>Otherwise, if <var>A</var> is declared with the 
-              extended attribute, then return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).</li>
-              <li>Otherwise, return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ObjectPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+              extended attribute, then return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 6.1.7.4).</li>
+              <li>Otherwise, return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ObjectPrototype%</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 6.1.7.4).
               ([<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>], section 15.2.4).</li>
             </ol>
             <div class="note"><div class="note-title" aria-level="5" role="heading" id="h-note61"><span>Note</span></div><div class="">
@@ -11003,8 +11023,12 @@ partial interface Window {
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               for the inherited interface.</li>
               <li>Otherwise, if <var>A</var> is declared with the 
-              extended attribute, then return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).</li>
-              <li>Otherwise, return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ObjectPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).</li>
+              extended attribute, then return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 6.1.7.4).</li>
+              <li>Otherwise, return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ObjectPrototype%</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 6.1.7.4).</li>
             </ol>
             <p>
               The <a class="dfnref" href="#dfn-class-string">class string</a> of a
@@ -11047,7 +11071,9 @@ partial interface Window {
                     <li>Otherwise, <var>operation</var> was defined with an identifier.  Set <var>value</var> to the result
                       of performing the steps listed in the description of <var>operation</var> with <var>P</var> as the only argument value.</li>
 
-                    <li>Let <var>desc</var> be a newly created <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-property-descriptor-specification-type">Property Descriptor</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.2.4) with no fields.</li>
+                    <li>Let <var>desc</var> be a newly created <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-property-descriptor-specification-type">Property Descriptor</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 6.2.4) with no fields.</li>
                     <li>Set <var>desc</var>.<span class="prop">[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                       <var>value</var> to an ECMAScript value.</li>
                     <li>If the named property is defined to be <a class="dfnref" href="#dfn-unenumerable">unenumerable</a>,
@@ -11059,7 +11085,9 @@ partial interface Window {
                   </ol>
                 </li>
 
-                <li>Return the result of calling the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">[[GetOwnProperty]]</span> internal method</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.1.5) on <var>O</var> passing <var>P</var> as the argument.</li>
+                <li>Return the result of calling the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">[[GetOwnProperty]]</span> internal method</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 9.1.5) on <var>O</var> passing <var>P</var> as the argument.</li>
               </ol>
             </section>
 
@@ -11760,7 +11788,9 @@ interface
               <p>
                 If the interface does not have an <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>
                 but does define an <a class="dfnref" href="#dfn-indexed-property-getter">indexed property getter</a>,
-                then the <span class="estype">Function</span> object is <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ArrayProto_values%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+                then the <span class="estype">Function</span> object is <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ArrayProto_values%</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 6.1.7.4).
               </p>
               
               
@@ -12341,7 +12371,9 @@ C implements A;</code></pre></div></div>
           <ul>
             <li>The name of the property is “toString”.</li>
             <li>The property has attributes <span class="descriptor">{&nbsp;[[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">false</span>&nbsp;}</span>.</li>
-            <li>The value of the property is <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ObjProto_toString%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4), the initial value of Object.prototype.toString.</li>
+            <li>The value of the property is <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ObjProto_toString%</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 6.1.7.4), the initial value of Object.prototype.toString.</li>
           </ul>
 
           <p>
@@ -12569,7 +12601,9 @@ C implements A;</code></pre></div></div>
                       <li>Otherwise, <var>operation</var> was defined with an identifier.  Set <var>value</var> to the result
                         of performing the steps listed in the description of <var>operation</var> with <var>index</var> as the only argument value.</li>
 
-                      <li>Let <var>desc</var> be a newly created <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-property-descriptor-specification-type">Property Descriptor</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.2.4) with no fields.</li>
+                      <li>Let <var>desc</var> be a newly created <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-property-descriptor-specification-type">Property Descriptor</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 6.2.4) with no fields.</li>
                       <li>Set <var>desc</var>.<span class="prop">[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                         <var>value</var> to an ECMAScript value.</li>
                       <li>If <var>O</var> implements an interface with an <a class="dfnref" href="#dfn-indexed-property-setter">indexed property setter</a>, then set
@@ -12598,7 +12632,9 @@ C implements A;</code></pre></div></div>
                   <li>Otherwise, <var>operation</var> was defined with an identifier.  Set <var>value</var> to the result
                     of performing the steps listed in the description of <var>operation</var> with <var>P</var> as the only argument value.</li>
 
-                  <li>Let <var>desc</var> be a newly created <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-property-descriptor-specification-type">Property Descriptor</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.2.4) with no fields.</li>
+                  <li>Let <var>desc</var> be a newly created <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-property-descriptor-specification-type">Property Descriptor</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 6.2.4) with no fields.</li>
                   <li>Set <var>desc</var>.<span class="prop">[[Value]]</span> to the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a>
                     <var>value</var> to an ECMAScript value.</li>
                   <li>If <var>O</var> implements an interface with a <a class="dfnref" href="#dfn-named-property-setter">named property setter</a><!-- and
@@ -12614,7 +12650,9 @@ C implements A;</code></pre></div></div>
                 </ol>
               </li>
 
-              <li>Return the result of calling the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">[[GetOwnProperty]]</span> internal method</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.1.5) on <var>O</var> passing <var>P</var> as the argument.</li>
+              <li>Return the result of calling the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p">default <span class="prop">[[GetOwnProperty]]</span> internal method</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 9.1.5) on <var>O</var> passing <var>P</var> as the argument.</li>
             </ol>
           </section>
 
@@ -12748,7 +12786,9 @@ C implements A;</code></pre></div></div>
                 arguments.
               </li>
               <li>
-                Perform steps 3-11 of the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-set-p-v-receiver">default [[Set]] internal method</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.1.9).
+                Perform steps 3-11 of the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-set-p-v-receiver">default [[Set]] internal method</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 9.1.9).
               </li>
             </ol>
           </section>
@@ -12836,7 +12876,9 @@ C implements A;</code></pre></div></div>
               <li>If <var>O</var> does not implement an <a class="dfnref" href="#dfn-interface">interface</a> with the
                 <a class="xattr" href="#Global">[Global]</a> or <a class="xattr" href="#PrimaryGlobal">[PrimaryGlobal]</a> <a class="dfnref" href="#dfn-extended-attribute">extended attribute</a>,
                 then set <var>Desc</var>.<span class="prop">[[Configurable]]</span> to <span class="esvalue">true</span>.</li>
-              <li>Call the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-defineownproperty-p-desc">default <span class="prop">[[DefineOwnProperty]]</span> internal method</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 9.1.6) on <var>O</var> passing <var>P</var>, <var>Desc</var>, and <var>Throw</var> as arguments.</li>
+              <li>Call the <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-defineownproperty-p-desc">default <span class="prop">[[DefineOwnProperty]]</span> internal method</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 9.1.6) on <var>O</var> passing <var>P</var>, <var>Desc</var>, and <var>Throw</var> as arguments.</li>
             </ol>
           </section>
 
@@ -13233,7 +13275,9 @@ C implements A;</code></pre></div></div>
 
             <p>
               The DOMException constructor object <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> be a <a class="dfnref" href="#dfn-function-object">function object</a>
-              but with a <span class="prop">[[Prototype]]</span> value of <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%Error%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+              but with a <span class="prop">[[Prototype]]</span> value of <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%Error%</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 6.1.7.4).
             </p>
             <p>
               For every legacy code listed in the <a href="#idl-error-names-table">error names table</a>,
@@ -13281,7 +13325,9 @@ C implements A;</code></pre></div></div>
 
             <p>
               The DOMException prototype object <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span>
-              have an internal <span class="prop">[[Prototype]]</span> property whose value is <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ErrorPrototype%</a> (<a href="#ref-ECMA-262">[ECMA-262]</a>, section 6.1.7.4).
+              have an internal <span class="prop">[[Prototype]]</span> property whose value is <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ErrorPrototype%</a> (
+      [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]
+      , section 6.1.7.4).
             </p>
             <p>
               The <a class="dfnref" href="#dfn-class-string">class string</a> of the
@@ -13864,7 +13910,7 @@ d.type = et;
              <a class="sym" href="#prod-Stringifier">Stringifier</a> <br>&nbsp;|
              <a class="sym" href="#prod-StaticMember">StaticMember</a> <br>&nbsp;|
              <a class="sym" href="#prod-Iterable">Iterable</a> <br>&nbsp;|
-             <a class="sym" href="#prod-ReadonlyMember">ReadonlyMember</a> <br>&nbsp;|
+             <a class="sym" href="#prod-ReadOnlyMember">ReadOnlyMember</a> <br>&nbsp;|
              <a class="sym" href="#prod-ReadWriteAttribute">ReadWriteAttribute</a>  </span></td></tr><tr id="prod-Dictionary"><td><span class="prod-number">[11]</span></td><td><a class="sym" href="#proddef-Dictionary">Dictionary</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"dictionary" <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Inheritance">Inheritance</a> "{" <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> "}" ";"</span></td></tr><tr id="prod-DictionaryMembers"><td><span class="prod-number">[12]</span></td><td><a class="sym" href="#proddef-DictionaryMembers">DictionaryMembers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-DictionaryMember">DictionaryMember</a> <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> <br>&nbsp;|
              ε</span></td></tr><tr id="prod-DictionaryMember"><td><span class="prod-number">[13]</span></td><td><a class="sym" href="#proddef-DictionaryMember">DictionaryMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Required">Required</a> <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Default">Default</a> ";"</span></td></tr><tr id="prod-Required"><td><span class="prod-number">[14]</span></td><td><a class="sym" href="#proddef-Required">Required</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"required" <br>&nbsp;|
              ε</span></td></tr><tr id="prod-PartialDictionary"><td><span class="prod-number">[15]</span></td><td><a class="sym" href="#proddef-PartialDictionary">PartialDictionary</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"dictionary" <a class="sym" href="#prod-identifier">identifier</a> "{" <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> "}" ";"</span></td></tr><tr id="prod-Default"><td><span class="prod-number">[16]</span></td><td><a class="sym" href="#proddef-Default">Default</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"=" <a class="sym" href="#prod-DefaultValue">DefaultValue</a> <br>&nbsp;|
@@ -13892,7 +13938,7 @@ d.type = et;
              ε</span></td></tr><tr id="prod-Stringifier"><td><span class="prod-number">[35]</span></td><td><a class="sym" href="#proddef-Stringifier">Stringifier</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"stringifier" <a class="sym" href="#prod-StringifierRest">StringifierRest</a></span></td></tr><tr id="prod-StringifierRest"><td><span class="prod-number">[36]</span></td><td><a class="sym" href="#proddef-StringifierRest">StringifierRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br>&nbsp;|
              <a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a> <br>&nbsp;|
              ";"</span></td></tr><tr id="prod-StaticMember"><td><span class="prod-number">[37]</span></td><td><a class="sym" href="#proddef-StaticMember">StaticMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"static" <a class="sym" href="#prod-StaticMemberRest">StaticMemberRest</a></span></td></tr><tr id="prod-StaticMemberRest"><td><span class="prod-number">[38]</span></td><td><a class="sym" href="#proddef-StaticMemberRest">StaticMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br>&nbsp;|
-             <a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a></span></td></tr><tr id="prod-ReadonlyMember"><td><span class="prod-number">[39]</span></td><td><a class="sym" href="#proddef-ReadonlyMember">ReadonlyMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <a class="sym" href="#prod-ReadonlyMemberRest">ReadonlyMemberRest</a></span></td></tr><tr id="prod-ReadonlyMemberRest"><td><span class="prod-number">[40]</span></td><td><a class="sym" href="#proddef-ReadonlyMemberRest">ReadonlyMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeRest">AttributeRest</a>  </span></td></tr><tr id="prod-ReadWriteAttribute"><td><span class="prod-number">[41]</span></td><td><a class="sym" href="#proddef-ReadWriteAttribute">ReadWriteAttribute</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"inherit" <a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br>&nbsp;|
+             <a class="sym" href="#prod-ReturnType">ReturnType</a> <a class="sym" href="#prod-OperationRest">OperationRest</a></span></td></tr><tr id="prod-ReadOnlyMember"><td><span class="prod-number">[39]</span></td><td><a class="sym" href="#proddef-ReadOnlyMember">ReadOnlyMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></span></td></tr><tr id="prod-ReadOnlyMemberRest"><td><span class="prod-number">[40]</span></td><td><a class="sym" href="#proddef-ReadOnlyMemberRest">ReadOnlyMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeRest">AttributeRest</a>  </span></td></tr><tr id="prod-ReadWriteAttribute"><td><span class="prod-number">[41]</span></td><td><a class="sym" href="#proddef-ReadWriteAttribute">ReadWriteAttribute</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"inherit" <a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br>&nbsp;|
              <a class="sym" href="#prod-AttributeRest">AttributeRest</a></span></td></tr><tr id="prod-AttributeRest"><td><span class="prod-number">[42]</span></td><td><a class="sym" href="#proddef-AttributeRest">AttributeRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"attribute" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-AttributeName">AttributeName</a> ";"</span></td></tr><tr id="prod-AttributeName"><td><span class="prod-number">[43]</span></td><td><a class="sym" href="#proddef-AttributeName">AttributeName</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeNameKeyword">AttributeNameKeyword</a> <br>&nbsp;|
              <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-AttributeNameKeyword"><td><span class="prod-number">[44]</span></td><td><a class="sym" href="#proddef-AttributeNameKeyword">AttributeNameKeyword</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"required"</span></td></tr><tr id="prod-Inherit"><td><span class="prod-number">[45]</span></td><td><a class="sym" href="#proddef-Inherit">Inherit</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"inherit" <br>&nbsp;|
              ε</span></td></tr><tr id="prod-ReadOnly"><td><span class="prod-number">[46]</span></td><td><a class="sym" href="#proddef-ReadOnly">ReadOnly</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <br>&nbsp;|
