@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" typeof="bibo:Document " prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#">
-<head><meta charset="utf-8"><meta lang="en-US" property="dc:language" content="en">
+<head><meta lang="en-US" property="dc:language" content="en">
     <title>WebIDL Level 1</title>
     <style>/* --- ISSUES/NOTES --- */
 div.issue-title, div.note-title , div.ednote-title, div.warning-title {
@@ -69,7 +69,7 @@ input.task-list-item-checkbox {
     vertical-align: middle;
 }
 </style><link rel="stylesheet" href="WebIDL-1.css" type="text/css">
-  <meta content="width=device-width,initial-scale=1" name="viewport"><style>/*****************************************************************
+  <meta charset="utf-8"><meta content="width=device-width,initial-scale=1" name="viewport"><style>/*****************************************************************
  * ReSpec 3 CSS
  * Robin Berjon - http://berjon.com/
  *****************************************************************/
@@ -1742,9 +1742,7 @@ attribute <i>type</i> <i>identifier</i> inherits getter setraises(<i>scoped-name
               <a class="xattr" href="#Unforgeable">[Unforgeable]</a>.
             </p>
 
-            <table class="grammar"><tbody><tr id="proddef-ReadOnlyMember"><td><span class="prod-number">[39]</span></td><td><a class="sym" href="#prod-ReadOnlyMember">ReadOnlyMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></span></td></tr><tr id="proddef-ReadOnlyMemberRest"><td><span class="prod-number">[40]</span></td><td><a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br>&nbsp;|
-             <a class="sym" href="#prod-ReadWriteMaplike">ReadWriteMaplike</a> <br>&nbsp;|
-             <a class="sym" href="#prod-ReadWriteSetlike">ReadWriteSetlike</a></span></td></tr><tr id="proddef-ReadWriteAttribute"><td><span class="prod-number">[41]</span></td><td><a class="sym" href="#prod-ReadWriteAttribute">ReadWriteAttribute</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"inherit" <a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br>&nbsp;|
+            <table class="grammar"><tbody><tr id="proddef-ReadOnlyMember"><td><span class="prod-number">[39]</span></td><td><a class="sym" href="#prod-ReadOnlyMember">ReadOnlyMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></span></td></tr><tr id="proddef-ReadOnlyMemberRest"><td><span class="prod-number">[40]</span></td><td><a class="sym" href="#prod-ReadOnlyMemberRest">ReadOnlyMemberRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeRest">AttributeRest</a>  </span></td></tr><tr id="proddef-ReadWriteAttribute"><td><span class="prod-number">[41]</span></td><td><a class="sym" href="#prod-ReadWriteAttribute">ReadWriteAttribute</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"inherit" <a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a> <br>&nbsp;|
              <a class="sym" href="#prod-AttributeRest">AttributeRest</a></span></td></tr><tr id="proddef-AttributeRest"><td><span class="prod-number">[42]</span></td><td><a class="sym" href="#prod-AttributeRest">AttributeRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"attribute" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-AttributeName">AttributeName</a> ";"</span></td></tr><tr id="proddef-AttributeName"><td><span class="prod-number">[43]</span></td><td><a class="sym" href="#prod-AttributeName">AttributeName</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-AttributeNameKeyword">AttributeNameKeyword</a> <br>&nbsp;|
              <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="proddef-AttributeNameKeyword"><td><span class="prod-number">[44]</span></td><td><a class="sym" href="#prod-AttributeNameKeyword">AttributeNameKeyword</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"required"</span></td></tr><tr id="proddef-Inherit"><td><span class="prod-number">[45]</span></td><td><a class="sym" href="#prod-Inherit">Inherit</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"inherit" <br>&nbsp;|
              ε</span></td></tr><tr id="proddef-ReadOnly"><td><span class="prod-number">[46]</span></td><td><a class="sym" href="#prod-ReadOnly">ReadOnly</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"readonly" <br>&nbsp;|
