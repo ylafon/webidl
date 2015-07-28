@@ -191,12 +191,24 @@ function clean_maplike_setlike() {
     oa.removeChild(a.previousSibling);
     oa.removeChild(a);
 
+    a = $("#proddef-ReadOnlyMemberRest a.sym[href='#prod-ReadWriteMaplike']")[0];
+    oa = a.parentNode;
+    oa.removeChild(a.previousSibling);
+    oa.removeChild(a.previousSibling);
+    oa.removeChild(a);
 
     a = $("#prod-ReadOnlyMemberRest a.sym[href='#prod-ReadWriteSetlike']")[0];
     oa = a.parentNode;
     oa.removeChild(a.previousSibling);
     oa.removeChild(a.previousSibling);
     oa.removeChild(a);
+
+    a = $("#proddef-ReadOnlyMemberRest a.sym[href='#prod-ReadWriteSetlike']")[0];
+    oa = a.parentNode;
+    oa.removeChild(a.previousSibling);
+    oa.removeChild(a.previousSibling);
+    oa.removeChild(a);
+
     $("#prod-ArgumentNameKeyword .prod-lines").each(function (i, val) {
         remove_prodlines_nodes(val, "maplike", 1, 0);
         remove_prodlines_nodes(val, "setlike", 1, 0);
