@@ -545,7 +545,6 @@ dictionary <i>identifier</i> {
              "iterable"
             <br /> |
              "legacycaller" <br /> |
-             "legacyiterable" <br /> |
              "maplike" <br /> |
              "partial" <br /> |
              "required" <br /> |
@@ -1916,7 +1915,6 @@ s.union(1, 4, 7);         <span class="comment">// Passing three arguments corre
              "iterable"
             <br /> |
              "legacycaller" <br /> |
-             "legacyiterable" <br /> |
              "maplike" <br /> |
              "partial" <br /> |
              "required" <br /> |
@@ -2531,7 +2529,6 @@ serializer = { inherit, attribute };</pre>
                 <dt><a class="idltype" href="#idl-double">double</a></dt>
                 <dt><a class="idltype" href="#idl-boolean">boolean</a></dt>
                 <dt><a class="idltype" href="#idl-DOMString">DOMString</a></dt>
-                <dt><a class="idltype" href="#idl-Date">Date</a></dt>
                 <dd>the same value of the respective type</dd>
                 <dt>an <a class="dfnref" href="#dfn-enumeration">enumeration type</a></dt>
                 <dd>the equivalent <a class="idltype" href="#idl-DOMString">DOMString</a> value</dd>
@@ -2581,8 +2578,8 @@ serializer = { inherit, attribute };</pre>
               </p>
 
               <table class="grammar"><tr id="proddef-Serializer"><td><span class="prod-number">[30]</span></td><td><a class="sym" href="#prod-Serializer">Serializer</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"serializer" <a class="sym" href="#prod-SerializerRest">SerializerRest</a></span></td></tr><tr id="proddef-SerializerRest"><td><span class="prod-number">[31]</span></td><td><a class="sym" href="#prod-SerializerRest">SerializerRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-OperationRest">OperationRest</a> <br /> |
-             "=" <a class="sym" href="#prod-SerializationPattern">SerializationPattern</a> <br /> |
-             ε</span></td></tr><tr id="proddef-SerializationPattern"><td><span class="prod-number">[32]</span></td><td><a class="sym" href="#prod-SerializationPattern">SerializationPattern</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"{" <a class="sym" href="#prod-SerializationPatternMap">SerializationPatternMap</a> "}" <br /> |
+             "=" <a class="sym" href="#prod-SerializationPattern">SerializationPattern</a> ";" <br /> |
+             ";"</span></td></tr><tr id="proddef-SerializationPattern"><td><span class="prod-number">[32]</span></td><td><a class="sym" href="#prod-SerializationPattern">SerializationPattern</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"{" <a class="sym" href="#prod-SerializationPatternMap">SerializationPatternMap</a> "}" <br /> |
              "[" <a class="sym" href="#prod-SerializationPatternList">SerializationPatternList</a> "]" <br /> |
              <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="proddef-SerializationPatternMap"><td><span class="prod-number">[33]</span></td><td><a class="sym" href="#prod-SerializationPatternMap">SerializationPatternMap</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"getter" <br /> |
              "inherit" <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
@@ -3295,7 +3292,6 @@ partial interface A {
               <li><a href='#idl-dictionary'>dictionary types</a></li>
               <li><a href='#idl-sequence'>sequence types</a></li>
               <li><a href='#idl-array'>array types</a></li>
-              <li><span class='idltype'>Date</span></li>
               <li><a class='dfnref' href='#dfn-nullable-type'>nullable</a> versions of the above types</li>
               <li>nullable or non-nullable <a href='#idl-union'>union types</a> whose
                 <a class='dfnref' href='#dfn-flattened-union-member-types'>flattened member types</a>
@@ -3325,12 +3321,10 @@ partial interface A {
 <th>callback <br />function</th>
 <th>dictionary</th>
 <th>sequence&lt;<var>T</var>&gt;</th>
-<th>Date</th>
 <th>exception types</th>
 <th>buffer source types</th>
 </tr><tr><th>boolean</th>
 <td></td>
-<td>●</td>
 <td>●</td>
 <td>●</td>
 <td>●</td>
@@ -3351,12 +3345,10 @@ partial interface A {
 <td>●</td>
 <td>●</td>
 <td>●</td>
-<td>●</td>
 </tr><tr><th>string types</th>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td></td>
-<td>●</td>
 <td>●</td>
 <td>●</td>
 <td>●</td>
@@ -3375,13 +3367,11 @@ partial interface A {
 <td>●</td>
 <td>●</td>
 <td>●</td>
-<td>●</td>
 </tr><tr><th>object</th>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
-<td></td>
 <td></td>
 <td></td>
 <td></td>
@@ -3399,7 +3389,6 @@ partial interface A {
 <td>●</td>
 <td>●</td>
 <td>●</td>
-<td>●</td>
 </tr><tr><th>dictionary</th>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
@@ -3411,21 +3400,7 @@ partial interface A {
 <td>●</td>
 <td>●</td>
 <td>●</td>
-<td>●</td>
 </tr><tr><th>sequence&lt;<var>T</var>&gt;</th>
-<td class="belowdiagonal"></td>
-<td class="belowdiagonal"></td>
-<td class="belowdiagonal"></td>
-<td class="belowdiagonal"></td>
-<td class="belowdiagonal"></td>
-<td class="belowdiagonal"></td>
-<td class="belowdiagonal"></td>
-<td></td>
-<td>●</td>
-<td>●</td>
-<td>●</td>
-</tr><tr><th>Date</th>
-<td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
@@ -3445,11 +3420,9 @@ partial interface A {
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
-<td class="belowdiagonal"></td>
 <td></td>
 <td>●</td>
 </tr><tr><th>buffer source types</th>
-<td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
 <td class="belowdiagonal"></td>
@@ -3729,19 +3702,6 @@ for (let session of sm) {
             </div>
 
             <p>
-              For legacy reasons, it might be needed to expose the iterator in
-              a more restricted way.  The <code>legacyiterable</code> keyword can
-              be used to indicate this.
-            </p>
-            <pre class="syntax">legacyiterable&lt;<var>type</var>&gt;;</pre>
-            <div class="warning">
-              <p>The <code>legacyiterable</code> keyword is intended for use on a limited number
-                of interfaces, such as <span class="idltype">HTMLCollection</span>, where it
-                would not be Web compatible to expose the “entries”, “keys”, and “values”
-                properties.</p>
-            </div>
-
-            <p>
               An interface <span class="rfc2119">MUST NOT</span> have more than one
               <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>.
               The <a class="dfnref" href="#dfn-inherited-interfaces">inherited</a>
@@ -3768,8 +3728,7 @@ for (let session of sm) {
             </p>
             -->
 
-            <table class="grammar"><tr id="proddef-Iterable"><td><span class="prod-number">[59]</span></td><td><a class="sym" href="#prod-Iterable">Iterable</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"iterable" "&lt;" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-OptionalType">OptionalType</a> "&gt;" ";" <br /> |
-             "legacyiterable" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" ";"</span></td></tr><tr id="proddef-OptionalType"><td><span class="prod-number">[60]</span></td><td><a class="sym" href="#prod-OptionalType">OptionalType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-Type">Type</a> <br /> |
+            <table class="grammar"><tr id="proddef-Iterable"><td><span class="prod-number">[59]</span></td><td><a class="sym" href="#prod-Iterable">Iterable</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"iterable" "&lt;" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-OptionalType">OptionalType</a> "&gt;" ";"</span></td></tr><tr id="proddef-OptionalType"><td><span class="prod-number">[60]</span></td><td><a class="sym" href="#prod-OptionalType">OptionalType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-Type">Type</a> <br /> |
              ε</span></td></tr></table>
           </section>
 
@@ -4948,7 +4907,6 @@ interface Person {
              <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
              "sequence" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a> <br /> |
              "object" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "Date" <a class="sym" href="#prod-Null">Null</a> <br /> |
              "RegExp" <a class="sym" href="#prod-Null">Null</a> <br /> |
              "Error" <a class="sym" href="#prod-Null">Null</a> <br /> |
              "DOMException" <a class="sym" href="#prod-Null">Null</a> <br /> |
@@ -5673,8 +5631,8 @@ interface Person {
               <p>
                 Note that the <a class="dfnref" href="#dfn-union-member-type">member types</a>
                 of a union type do not descend into nested union types.  So for
-                <code>(double or (Date or Event) or (Node or DOMString)?)</code> the member types
-                are <code>double</code>, <code>(Date or Event)</code> and
+                <code>(double or (sequence&lt;long&gt; or Event) or (Node or DOMString)?)</code> the member types
+                are <code>double</code>, <code>(sequence&lt;long&gt; or Event)</code> and
                 <code>(Node or DOMString)?</code>.
               </p>
             </div>
@@ -5709,8 +5667,8 @@ interface Person {
               <p>
                 For example, the <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a>
                 of the <a class="dfnref" href="#dfn-union-type">union type</a>
-                <code>(Node or (Date or Event) or (XMLHttpRequest or DOMString)? or sequence&lt;(sequence&lt;double&gt; or NodeList)&gt;)</code>
-                are the six types <code>Node</code>, <code>Date</code>, <code>Event</code>,
+                <code>(Node or (sequence&lt;long&gt; or Event) or (XMLHttpRequest or DOMString)? or sequence&lt;(sequence&lt;double&gt; or NodeList)&gt;)</code>
+                are the six types <code>Node</code>, <code>sequence&lt;long&gt;</code>, <code>Event</code>,
                 <code>XMLHttpRequest</code>, <code>DOMString</code> and
                 <code>sequence&lt;(sequence&lt;double&gt; or NodeList)&gt;</code>.
               </p>
@@ -5786,41 +5744,11 @@ interface Person {
              <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
              "sequence" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a> <br /> |
              "object" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "Date" <a class="sym" href="#prod-Null">Null</a> <br /> |
              "RegExp" <a class="sym" href="#prod-Null">Null</a> <br /> |
              "Error" <a class="sym" href="#prod-Null">Null</a> <br /> |
              "DOMException" <a class="sym" href="#prod-Null">Null</a> <br /> |
              <a class="sym" href="#prod-BufferRelatedType">BufferRelatedType</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
              "FrozenArray" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a></span></td></tr></table>
-          </section>
-
-          <section id="idl-Date">
-            <h4>Date</h4>
-
-            <p>
-              The <a class="idltype" href="#idl-Date">Date</a> type is a type that
-              represents an instant in time with millisecond accuracy.  The instants
-              in time that this type can represent are the same that can be represented
-              with <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-date-objects">ECMAScript <span class="estype">Date</span> objects</a> (
-      [[!ECMA-262]]
-      , section 20.3)
-              – namely, every millisecond in the 200,000,000 days centered
-              around midnight of 1 January, 1970 UTC, except for any millisecond that is part
-              of an inserted leap second, because they cannot be represented by this type.
-            </p>
-            <p>
-              An additional value that this type can represent is one that indicates
-              an indeterminate or undefined time, which we write as
-              <span class="idlvalue">undefined</span>.
-            </p>
-            <p>
-              There is no way to represent a constant <a class="idltype" href="#idl-Date">Date</a>
-              value in IDL.
-            </p>
-            <p>
-              The <a class="dfnref" href="#dfn-type-name">type name</a> of the
-              <a class="idltype" href="#idl-Date">Date</a> type is “Date”.
-            </p>
           </section>
 
           
@@ -6109,7 +6037,6 @@ interface Person {
              "?"
             <br /> |
              "ByteString" <br /> |
-             "Date" <br /> |
              "DOMString" <br /> |
              "FrozenArray" <br /> |
              "Infinity" <br /> |
@@ -7236,7 +7163,7 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
             </p>
             <ol class="algorithm">
               <li>If <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Undefined, Null or Object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-              <li>If <var>V</var> is a native <span class="estype">Date</span> object or a native <span class="estype">RegExp</span> object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
+              <li>If <var>V</var> is a native <span class="estype">RegExp</span> object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
               <li>Let <var>dict</var> be an empty dictionary value of type <var>D</var>;
               every <a class="dfnref" href="#dfn-dictionary-member">dictionary member</a>
               is initially considered to be <a class="dfnref" href="#dfn-present">not present</a>.</li>
@@ -7244,7 +7171,7 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
                 in order from least to most derived.</li>
               <li>For each dictionary <var>dictionary</var> in <var>dictionaries</var>, in order:
                 <ol>
-                  <li>For each dictionary member <var>member</var> declared on <var>dictionary</var>, in order:
+                  <li>For each dictionary member <var>member</var> declared on <var>dictionary</var>, in lexicographical order:
                     <ol>
                       <li>Let <var>key</var> be the <a class="dfnref" href="#dfn-identifier">identifier</a> of <var>member</var>.</li>
                       <li>Let <var>value</var> be an ECMAScript value, depending on <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>):
@@ -7300,7 +7227,7 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
                 in order from least to most derived.</li>
               <li>For each dictionary <var>dictionary</var> in <var>dictionaries</var>, in order:
                 <ol>
-                  <li>For each dictionary member <var>member</var> declared on <var>dictionary</var>, in order:
+                  <li>For each dictionary member <var>member</var> declared on <var>dictionary</var>, in lexicographical order:
                     <ol>
                       <li>Let <var>key</var> be the <a class="dfnref" href="#dfn-identifier">identifier</a> of <var>member</var>.</li>
                       <li>If the dictionary member named <var>key</var> is <a class="dfnref" href="#dfn-present">present</a> in <var>V</var>, then:
@@ -7457,14 +7384,13 @@ iframe.appendChild instanceof w.Function;  <span class="comment">// Evaluates to
                 <span class="estype">TypeError</span></a>.
               </li>
               <li>
-                If <var>V</var> is a native <span class="estype">Date</span> object or
-                a native <span class="estype">RegExp</span> object,
+                If <var>V</var> is a native <span class="estype">RegExp</span> object,
                 <a href="#ecmascript-throw" class="dfnref external">throw a
                 <span class="estype">TypeError</span></a>.
               </li>
               <li>
                 Let <var>method</var> be the result of
-                <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-checkiterable">CheckIterable</a>(<var>V</var>).
+                <a class="external" href="http://www.ecma-international.org/ecma-262/6.0/#sec-getmethod">GetMethod</a>(<var>V</var>, <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-symbols">@@iterator</a>).
               </li>
               <li>
                 <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>method</var>).
@@ -7811,16 +7737,6 @@ alert(b[4]);    <span class="comment">// This would alert "50".</span></code></p
                 </ol>
               </li>
               <li>
-                If <var>V</var> is a native <span class="estype">Date</span> object, then:
-                <ol>
-                  <li>If <var>types</var> includes <a class="idltype" href="#idl-Date">Date</a>, then return the
-                    result of <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
-                    <var>V</var> to <a class="idltype" href="#idl-Date">Date</a>.</li>
-                  <li>If <var>types</var> includes <a class="idltype" href="#idl-object">object</a>, then return the IDL value
-                    that is a reference to the object <var>V</var>.</li>
-                </ol>
-              </li>
-              <li>
                 If <var>V</var> is a native <span class="estype">RegExp</span> object, then:
                 <ol>
                   <li>If <var>types</var> includes <a class="idltype" href="#idl-RegExp">RegExp</a>, then return the
@@ -7895,7 +7811,6 @@ alert(b[4]);    <span class="comment">// This would alert "50".</span></code></p
               </li>
               <li>If <var>V</var> is <span class="esvalue">null</span> or <span class="esvalue">undefined</span>
                 or is any kind of object except for
-                a native <span class="estype">Date</span> object or
                 a native <span class="estype">RegExp</span> object, then:
                 <ol>
                   <li>If <var>types</var> includes a <a href="#idl-dictionary">dictionary type</a>, then return the
@@ -7905,7 +7820,6 @@ alert(b[4]);    <span class="comment">// This would alert "50".</span></code></p
               </li>
               <li>
                 If <var>V</var> is any kind of object except for
-                a native <span class="estype">Date</span> object or
                 a native <span class="estype">RegExp</span> object, then:
                 <ol>
                   <li>
@@ -7913,7 +7827,7 @@ alert(b[4]);    <span class="comment">// This would alert "50".</span></code></p
                     <ol>
                       <li>
                         Let <var>method</var> be the result of
-                        <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-checkiterable">CheckIterable</a>(<var>V</var>).
+                        <a class="external" href="http://www.ecma-international.org/ecma-262/6.0/#sec-getmethod">GetMethod</a>(<var>V</var>, <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-symbols">@@iterator</a>).
                       </li>
                       <li>
                         <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>method</var>).
@@ -7933,7 +7847,7 @@ alert(b[4]);    <span class="comment">// This would alert "50".</span></code></p
                     <ol>
                       <li>
                         Let <var>method</var> be the result of
-                        <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-checkiterable">CheckIterable</a>(<var>V</var>).
+                        <a class="external" href="http://www.ecma-international.org/ecma-262/6.0/#sec-getmethod">GetMethod</a>(<var>V</var>, <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-symbols">@@iterator</a>).
                       </li>
                       <li>
                         <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>method</var>).
@@ -8005,43 +7919,6 @@ alert(b[4]);    <span class="comment">// This would alert "50".</span></code></p
               <span class="esvalue">undefined</span> value.  Otherwise,
               the rules for converting the <a class="dfnref" href="#dfn-specific-type">specific type</a>
               of the IDL union type value as described in this section ().
-            </p>
-          </section>
-
-          <section id="es-Date">
-            <h4>Date</h4>
-
-            <p>
-              IDL <a class="idltype" href="#idl-Date">Date</a> values are represented by
-              ECMAScript <span class="estype">Date</span> objects.
-            </p>
-            <p id="es-to-Date">
-              An ECMAScript value <var>V</var> is
-              <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a>
-              to an IDL <a class="idltype" href="#idl-Date">Date</a> value
-              by running the following algorithm:
-            </p>
-            <ol class="algorithm">
-              <li>If <var>V</var> is not an ECMAScript <span class="estype">Date</span> object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
-              <li>If the time value of <var>V</var> is <span class="esvalue">NaN</span>, then return the <span class="idlvalue">undefined</span> IDL <a class="idltype" href="#idl-Date">Date</a> value.</li>
-              <li>Return the IDL <a class="idltype" href="#idl-Date">Date</a> value that represents the same time value as <var>V</var>.</li>
-            </ol>
-            <p id="Date-to-es">
-              An IDL <a class="idltype" href="#idl-Date">Date</a> value <var>V</var> is <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converted</a>
-              to an ECMAScript value by running the following the algorithm:
-            </p>
-            <ol class="algorithm">
-              <li>If <var>V</var> is the <span class="idlvalue">undefined</span> <a class="idltype" href="#idl-Date">Date</a> value,
-              then return a newly constructed ECMAScript <span class="estype">Date</span> object whose time value is
-              <span class="esvalue">NaN</span>.</li>
-              <li>Otherwise, return a newly constructed ECMAScript <span class="estype">Date</span> object that represents
-              the same millisecond as <var>V</var>.</li>
-            </ol>
-            <p>
-              <a class="dfnref" href="#dfn-platform-object">Platform objects</a> returning an ECMAScript <span class="estype">Date</span> object from <a class="dfnref" href="#dfn-attribute">attributes</a> or
-              <a class="dfnref" href="#dfn-operation">operations</a>
-              do not hold on to a reference to the <span class="estype">Date</span> object.  A script that modifies a <span class="estype">Date</span> object
-              so retrieved cannot affect the platform object it was retrieved from.
             </p>
           </section>
 
@@ -9821,7 +9698,7 @@ interface B5 : A3 {
               </p>
               <div class="block"><div class="blockTitleDiv"><span class="blockTitle">IDL</span></div><div class="blockContent"><pre class="code"><code class="idl-code">interface System {
   [Unforgeable] readonly attribute DOMString username;
-  readonly attribute Date loginTime;
+  readonly attribute long long loginTime;
 };</code></pre></div></div>
               <p>
                 In an ECMAScript implementation of the interface, the username attribute will be exposed as a non-configurable property on the
@@ -9841,7 +9718,7 @@ try {
 
 <span class="comment">// This defineProperty call would succeed, because System.prototype.loginTime</span>
 <span class="comment">// is configurable.</span>
-var forgedLoginTime = new Date(new Date() - 3600000);
+var forgedLoginTime = 5;
 Object.defineProperty(System.prototype, "loginTime", { value: forgedLoginTime });
 
 system.loginTime;  <span class="comment">// So this now evaluates to forgedLoginTime.</span></code></pre></div></div>
@@ -10090,19 +9967,6 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
                     </li>
 
                     <li>
-                      Otherwise: if <var>V</var> is a <span class="estype">Date</span> object and
-                      there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list,
-                      <ul>
-                        <li><a class="idltype" href="#idl-Date">Date</a></li>
-                        <li><a class="idltype" href="#idl-object">object</a></li>
-                        <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> version of either of the above types</li>
-                        <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type
-                           that has one of the above types in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
-                      </ul>
-                      then remove from <var>S</var> all other entries.
-                    </li>
-
-                    <li>
                       Otherwise: if <var>V</var> is a <span class="estype">RegExp</span> object and
                       there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list,
                       <ul>
@@ -10210,7 +10074,6 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
 
                     <li>
                       Otherwise: if <var>V</var> is any kind of object except for
-                      a native <span class="estype">Date</span> object,
                       a native <span class="estype">RegExp</span> object, and
                       there is an entry in <var>S</var> that has one of the
                       following types at position <var>i</var> of its type list,
@@ -10226,7 +10089,7 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
                       <ol>
                         <li>
                           Let <var>method</var> be the result of
-                          <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-checkiterable">CheckIterable</a>(<var>V</var>).
+                          <a class="external" href="http://www.ecma-international.org/ecma-262/6.0/#sec-getmethod">GetMethod</a>(<var>V</var>, <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-symbols">@@iterator</a>).
                         </li>
                         <li>
                           <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>method</var>).
@@ -10238,7 +10101,6 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
 
                     <li>
                       Otherwise: if <var>V</var> is any kind of object except for
-                      a native <span class="estype">Date</span> object,
                       a native <span class="estype">RegExp</span> object, and
                       there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list,
                       <ul>
@@ -11690,7 +11552,7 @@ interface
                 has any of the following:
               </p>
               <ul>
-                <li>an <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a> declared using the <code>iterable</code> keyword (not the <code>legacyiterable</code> keyword)</li>
+                <li>an <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a></li>
                 <li>a <a class="dfnref" href="#dfn-maplike-declaration">maplike declaration</a></li>
                 <li>a <a class="dfnref" href="#dfn-setlike-declaration">setlike declaration</a></li>
               </ul>
@@ -11798,8 +11660,7 @@ interface
 
               <p>
                 If the <a class="dfnref" href="#dfn-interface">interface</a> has an
-                <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>
-                declared using the <code>iterable</code> keyword (not the <code>legacyiterable</code> keyword),
+                <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>,
                 then a property named “entries” <span class="rfc2119">MUST</span> exist
                 with attributes <span class="descriptor">{ [[\Writable]]: <span class="esvalue">true</span>, [[\Enumerable]]: <span class="esvalue">true</span>, [[\Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
@@ -11842,8 +11703,7 @@ interface
 
               <p>
                 If the <a class="dfnref" href="#dfn-interface">interface</a> has an
-                <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>
-                declared using the <code>iterable</code> keyword (not the <code>legacyiterable</code> keyword),
+                <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>,
                 then a property named “keys” <span class="rfc2119">MUST</span> exist
                 with attributes <span class="descriptor">{ [[\Writable]]: <span class="esvalue">true</span>, [[\Enumerable]]: <span class="esvalue">true</span>, [[\Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
@@ -11886,8 +11746,7 @@ interface
 
               <p>
                 If the <a class="dfnref" href="#dfn-interface">interface</a> has an
-                <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>
-                declared using the <code>iterable</code> keyword (not the <code>legacyiterable</code> keyword),
+                <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>,
                 then a property named “values” <span class="rfc2119">MUST</span> exist
                 with attributes <span class="descriptor">{ [[\Writable]]: <span class="esvalue">true</span>, [[\Enumerable]]: <span class="esvalue">true</span>, [[\Configurable]]: <span class="esvalue">true</span> }</span>
                 and whose value is the <a class="dfnref" href="#dfn-function-object">function object</a>
@@ -12943,8 +12802,7 @@ C implements A;</code></pre></div></div>
           <ul>
             <li>
               If the interface is a <a class="dfnref" href="#dfn-single-operation-callback-interface">single operation callback interface</a>
-              (defined below) then any object apart from a native
-              <span class="estype">Date</span> object or native <span class="estype">RegExp</span>
+              (defined below) then any object apart from a native <span class="estype">RegExp</span>
               object is considered to implement the interface.
               The implementation of the operation (or set of overloaded operations) is
               as follows:
@@ -12961,7 +12819,7 @@ C implements A;</code></pre></div></div>
             </li>
             <li>
               Otherwise, the interface is not a <a class="dfnref" href="#dfn-single-operation-callback-interface">single operation callback interface</a>.
-              Any object that is not a native <span class="estype">Date</span> object or a native
+              Any object that is not a native
               <span class="estype">RegExp</span> object is considered to implement the interface.
               For each operation declared on the interface with a given <a class="dfnref" href="#dfn-identifier">identifier</a>, the implementation
               is the result of invoking <span class="prop">[[\Get]]</span> on the object with a
@@ -13859,8 +13717,8 @@ d.type = et;
              "-Infinity" <br /> |
              "Infinity" <br /> |
              "NaN"</span></td></tr><tr id="prod-Serializer"><td><span class="prod-number">[30]</span></td><td><a class="sym" href="#proddef-Serializer">Serializer</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"serializer" <a class="sym" href="#prod-SerializerRest">SerializerRest</a></span></td></tr><tr id="prod-SerializerRest"><td><span class="prod-number">[31]</span></td><td><a class="sym" href="#proddef-SerializerRest">SerializerRest</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-OperationRest">OperationRest</a> <br /> |
-             "=" <a class="sym" href="#prod-SerializationPattern">SerializationPattern</a> <br /> |
-             ε</span></td></tr><tr id="prod-SerializationPattern"><td><span class="prod-number">[32]</span></td><td><a class="sym" href="#proddef-SerializationPattern">SerializationPattern</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"{" <a class="sym" href="#prod-SerializationPatternMap">SerializationPatternMap</a> "}" <br /> |
+             "=" <a class="sym" href="#prod-SerializationPattern">SerializationPattern</a> ";" <br /> |
+             ";"</span></td></tr><tr id="prod-SerializationPattern"><td><span class="prod-number">[32]</span></td><td><a class="sym" href="#proddef-SerializationPattern">SerializationPattern</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"{" <a class="sym" href="#prod-SerializationPatternMap">SerializationPatternMap</a> "}" <br /> |
              "[" <a class="sym" href="#prod-SerializationPatternList">SerializationPatternList</a> "]" <br /> |
              <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-SerializationPatternMap"><td><span class="prod-number">[33]</span></td><td><a class="sym" href="#proddef-SerializationPatternMap">SerializationPatternMap</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"getter" <br /> |
              "inherit" <a class="sym" href="#prod-Identifiers">Identifiers</a> <br /> |
@@ -13887,8 +13745,7 @@ d.type = et;
              ε</span></td></tr><tr id="prod-Argument"><td><span class="prod-number">[55]</span></td><td><a class="sym" href="#proddef-Argument">Argument</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-OptionalOrRequiredArgument">OptionalOrRequiredArgument</a></span></td></tr><tr id="prod-OptionalOrRequiredArgument"><td><span class="prod-number">[56]</span></td><td><a class="sym" href="#proddef-OptionalOrRequiredArgument">OptionalOrRequiredArgument</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"optional" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-ArgumentName">ArgumentName</a> <a class="sym" href="#prod-Default">Default</a> <br /> |
              <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-Ellipsis">Ellipsis</a> <a class="sym" href="#prod-ArgumentName">ArgumentName</a></span></td></tr><tr id="prod-ArgumentName"><td><span class="prod-number">[57]</span></td><td><a class="sym" href="#proddef-ArgumentName">ArgumentName</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ArgumentNameKeyword">ArgumentNameKeyword</a> <br /> |
              <a class="sym" href="#prod-identifier">identifier</a></span></td></tr><tr id="prod-Ellipsis"><td><span class="prod-number">[58]</span></td><td><a class="sym" href="#proddef-Ellipsis">Ellipsis</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"..." <br /> |
-             ε</span></td></tr><tr id="prod-Iterable"><td><span class="prod-number">[59]</span></td><td><a class="sym" href="#proddef-Iterable">Iterable</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"iterable" "&lt;" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-OptionalType">OptionalType</a> "&gt;" ";" <br /> |
-             "legacyiterable" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" ";"</span></td></tr><tr id="prod-OptionalType"><td><span class="prod-number">[60]</span></td><td><a class="sym" href="#proddef-OptionalType">OptionalType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-Type">Type</a> <br /> |
+             ε</span></td></tr><tr id="prod-Iterable"><td><span class="prod-number">[59]</span></td><td><a class="sym" href="#proddef-Iterable">Iterable</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"iterable" "&lt;" <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-OptionalType">OptionalType</a> "&gt;" ";"</span></td></tr><tr id="prod-OptionalType"><td><span class="prod-number">[60]</span></td><td><a class="sym" href="#proddef-OptionalType">OptionalType</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-Type">Type</a> <br /> |
              ε</span></td></tr><tr id="prod-ExtendedAttributeList"><td><span class="prod-number">[65]</span></td><td><a class="sym" href="#proddef-ExtendedAttributeList">ExtendedAttributeList</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"[" <a class="sym" href="#prod-ExtendedAttribute">ExtendedAttribute</a> <a class="sym" href="#prod-ExtendedAttributes">ExtendedAttributes</a> "]" <br /> |
              ε</span></td></tr><tr id="prod-ExtendedAttributes"><td><span class="prod-number">[66]</span></td><td><a class="sym" href="#proddef-ExtendedAttributes">ExtendedAttributes</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"," <a class="sym" href="#prod-ExtendedAttribute">ExtendedAttribute</a> <a class="sym" href="#prod-ExtendedAttributes">ExtendedAttributes</a> <br /> |
              ε</span></td></tr><tr id="prod-ExtendedAttribute"><td><span class="prod-number">[67]</span></td><td><a class="sym" href="#proddef-ExtendedAttribute">ExtendedAttribute</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">
@@ -13929,7 +13786,6 @@ d.type = et;
              "?"
             <br /> |
              "ByteString" <br /> |
-             "Date" <br /> |
              "DOMString" <br /> |
              "FrozenArray" <br /> |
              "Infinity" <br /> |
@@ -13974,7 +13830,6 @@ d.type = et;
              "iterable"
             <br /> |
              "legacycaller" <br /> |
-             "legacyiterable" <br /> |
              "maplike" <br /> |
              "partial" <br /> |
              "required" <br /> |
@@ -13999,7 +13854,6 @@ d.type = et;
              <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Null">Null</a> <br /> |
              "sequence" "&lt;" <a class="sym" href="#prod-Type">Type</a> "&gt;" <a class="sym" href="#prod-Null">Null</a> <br /> |
              "object" <a class="sym" href="#prod-Null">Null</a> <br /> |
-             "Date" <a class="sym" href="#prod-Null">Null</a> <br /> |
              "RegExp" <a class="sym" href="#prod-Null">Null</a> <br /> |
              "Error" <a class="sym" href="#prod-Null">Null</a> <br /> |
              "DOMException" <a class="sym" href="#prod-Null">Null</a> <br /> |
@@ -14056,6 +13910,11 @@ d.type = et;
           <dt>Current editor’s draft</dt>
           <dd>
             <ul>
+              <li>
+                <p>
+                  Removed the Date type.
+                </p>
+              </li>
               <li>
                 <p>
                   Disallowed “length” and “name” from being used as identifiers of
