@@ -173,8 +173,7 @@
         </p>
       <p>
         This document is produced by the
-        <a href="http://www.w3.org/2008/webapps/">Web Applications Working Group</a>, part of the
-        <a href="http://www.w3.org/2006/rwc/Activity">Rich Web Clients Activity</a>
+        <a href="https://www.w3.org/WebPlatform/WG/">Web Platform Working Group</a>
         in the W3C <a href="http://www.w3.org/Interaction/">Interaction Domain</a>.
         Changes made to this document can be found in the specification’s
         commit log on GitHub:
@@ -13864,6 +13863,604 @@ d.type = et;
           defined in this specification — see
           <a href="#idl-extended-attributes">section <a href="#"></a></a>
           for the syntaxes that are used by these extended attributes.
-        </p></section>
+        </p></section><section id="changes" class="appendix"><h2>Changes</h2><p class="norm">This section is informative.</p><p>
+          The following is a list of substantial changes to the document on each publication.
+          For the list of changes during the development of the First Edition of this
+          specification, see
+          <a href="http://heycam.github.io/webidl/v1.html#changes">that document's
+            Changes appendix</a>.
+        </p><dl class="changes">
+          <dt>Current editor’s draft</dt>
+          <dd>
+            <ul>
+              <li>
+                <p>
+                  Removed the Date type.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Disallowed “length” and “name” from being used as identifiers of
+                  constants.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added a <span class="idltype">FrozenArray&lt;<var>T</var>&gt;</span> type.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Renamed <span class="xattr">[ArrayClass]</span> to <span class="xattr">[LegacyArrayClass]</span>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Removed <span class="idltype"><var>T</var>[]</span> array types.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Allowed <span class="xattr">[NewObject]</span> to be used on things with
+                  a promise type.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Fix various cases in which maplike/setlike were operating on the wrong objects.
+                </p>
+                <p>
+                  Disallow maplike, setlike and iterable declarations from appearing more than
+                  once on an interface and its inherited and consequential interfaces.
+                  Also disallow the relevant restricted member names (such as “entries” and “values”)
+                  on the inherited and consequential interfaces.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Allowed stringifier attributes to have type <a class="idltype" href="#idl-USVString">USVString</a>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Gave interface objects, named constructors, and dictionary
+                  constructors a "name" property to match ES6.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Made the "length" property on dictionary constructors
+                  configurable.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added types for <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>, <a class="idltype" href="#idl-DataView">DataView</a>
+                  and typed array objects.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added <a class="idltype" href="#idl-USVString">USVString</a> and allowed string literals in IDL to
+                  be used to give values for all string-typed optional argument and dictionary
+                  member default values.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Made sequences distinguishable from dictionaries, callback
+                  functions, and all interface types.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Removed IDL exceptions, baked in <a class="idltype" href="#idl-DOMException">DOMException</a>,
+                  and added <a class="idltype" href="#idl-Error">Error</a> and <a class="idltype" href="#idl-DOMException">DOMException</a>
+                  as types.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Removed <span class="xattr">[MapLike]</span> and added
+                  iterable, maplike and setlike declarations.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Removed the custom Object.prototype.toString definition and instead
+                  defined class strings to influence the @@toStringTag property
+                  on objects.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added the <span class="xattr">[Unscopeable]</span> extended attribute.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Rewrote ES to IDL sequence conversion so that any iterable is
+                  convertible to a sequence.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added grammar production for <span class="idltype">Promise&lt;<var>T</var>&gt;</span> types
+                  and allowed <var>T</var> to be <a class="idltype" href="#idl-void">void</a>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added a definition to "initialize an object from an iterable",
+                  which behaves like the <span class="estype">Map</span> constructor.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added a default value <code>[]</code> that can be used for
+                  sequence-typed operation argument default values and
+                  dictionary member default values.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added promise types.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added the <span class="xattr">[NewObject]</span> and
+                  <span class="xattr">[SameObject]</span> extended attributes.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Allowed <span class="xattr">[Constructor]</span> to be specified
+                  on dictionaries.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added a <span class="estype">RegExp</span> type.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added iterators that can be declared on interfaces.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added an @@iterator method to objects with indexed
+                  properties.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Updated to ECMAScript 6th Edition.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added serializers.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added a <a class="idltype" href="#idl-ByteString">ByteString</a> type, for representing
+                  8 bit strings without a particular encoding as ECMAScript
+                  <span class="estype">String</span> values.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added static attributes.
+                </p>
+              </li>
+              <!-- below are changes in v1 too -->
+              <li>
+                <p>
+                  Make it clear that an interface can't be exposed in a global
+                  where its parent interface is not exposed.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Allow dictionary-typed trailing-position operation arguments not to
+                  be optional, if and only if the dictionary type has a required
+                  dictionary member.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added a platform object [[\Set]] internal method to handle
+                  named and indexed setters better.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Removed the concept of creators; setters are always also
+                  creators.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Disallowed an interface without [NoInterfaceObject]
+                  inheriting from a [NoInterfaceObject] interface.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Removed indexed deleters.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Made the prototype of an interface object of a non-root
+                  interface be the interface object of its ancestor interface.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Clarified the property attributes of the "prototype" property
+                  of non-callback interface objects.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Made the "length" property on interface objects and named
+                  constructors configurable.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added a way to mark dictionary members as required.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Allowed hyphens in identifiers after the first character.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Fix <span class="xattr">[Exposed]</span> text to make it
+                  clear that the value on the interface, if any, is used as the
+                  value for its members by default.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Fixed the grammar for extended attributes that take an identifier list,
+                  such as <span class="xattr">[Exposed]</span>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Add a term "unenumerable" to allow named properties to be exposed as
+                  properties with [[\Enumerable]] set to false.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added the <span class="xattr">[Exposed]</span> and
+                  <span class="xattr">[PrimaryGlobal]</span> extended attributes and
+                  allowed an identifier to be used with <span class="xattr">[Global]</span>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Removed <span class="xattr">[TreatUndefinedAs]</span>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Renamed [TreatNonCallableAsNull] to [TreatNonObjectAsNull]
+                  and changed its semantics to allow any object.  Changed
+                  callback function invocation to be a no-op when the object is
+                  not callable, which can now happen in the
+                  [TreatNonObjectAsNull] case.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Changed the default this value for callbacks from null to undefined.
+                  </p>
+              </li>
+              <li>
+                <p>
+                  Removed the requirement for named properties objects to be function objects.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Disallowed properties from being defined on a named properties object.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Fixed infinite loop in named property visibility algorithm.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Made stringifiers and serializers not use [[\Get]] or [[\Call]]
+                  for the their attribute or operation delegated behavior.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Allowed trailing optional comma in enum lists.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Disallowed static interface members from being defined on a callback interface.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added a hook to do a security check when invoking an operation
+                  or accessing an attribute.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Defined how callbacks influence the incumbent script.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Changed how callback functions are invoked to support missing
+                  optional arguments.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Renamed <span class="xattr">[NamedPropertiesObject]</span> to
+                  <span class="xattr">[Global]</span>, which now also causes
+                  properties for interface members to appear on the object
+                  itself rather than on the interface prototype object.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Split out <a class="idltype" href="#idl-boolean">boolean</a> from the other
+                  primitive types.  Made <a class="idltype" href="#idl-boolean">boolean</a>,
+                  numeric types and <a class="idltype" href="#idl-DOMString">DOMString</a> distinguishable.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Required a getter to be present on an interface if it has a
+                  setter, creator or delete.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Extended <span class="xattr">[Unforgeable]</span> to apply to operations
+                  and interfaces.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Allowed all operation arguments to be specified as being optional and
+                  changed back to the behavior of <span class="esvalue">undefined</span>
+                  being treated as a missing optional argument value.  Modified the
+                  effective overload set and overload resolution algorithms to
+                  take this into account, as well as allowing an <span class="esvalue">undefined</span>
+                  value passed as the argument value at the distinguishing index to select the overload
+                  with an optional argument at that index.
+                  Also removed <span class="xattr">[TreatUndefinedAs=Missing]</span>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Changed the ECMAScript to IDL dictionary conversion algorithm
+                  to treat a property with the value <span class="esvalue">undefined</span>
+                  as missing.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Removed the ability to put extended attributes after the
+                  <code>typedef</code> keyword, as that feature is unused.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Fixed the <a class="idltype" href="#idl-long-long">long long</a> and <a class="idltype" href="#idl-unsigned-long-long">unsigned long long</a>
+                  conversion algorithms to correctly identify the range of contiguous,
+                  exactly, uniquely representable integers you can get from a <span class="estype">Number</span>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Clarified that <span class="estype">Function</span> objects for
+                  operations and attribute getters and setters are distinct on each
+                  interface they are mixed in to using an implements statement,
+                  and that each copy of the <span class="estype">Function</span> works
+                  only on objects that implement the interface whose interface
+                  prototype object the <span class="estype">Function</span> object
+                  is on.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Mention the named properties object in the list of initial objects.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added back a custom [[\HasInstance]] on interface objects to allow objects
+                  from other windows to be considered instanceof them.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Fixed conversion of <span class="estype">Number</span> values
+                  to <a class="idltype" href="#idl-any">any</a> by using the
+                  conversion algorithm for <a class="idltype" href="#idl-unrestricted-double">unrestricted double</a>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Allowed an identifier to be “prototype” for any construct except
+                  constants and static operations.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Fixed a bug in the user object definition where the internal [[\Call]]
+                  method would be treated as the implementation of an operation even if
+                  the callback interface had more than one operation.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Further tweaked the overload resolution algorithm and union type conversion
+                  algorithm for consistency.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Lifted the restriction on <span class="xattr">[Unforgeable]</span> appearing
+                  on an IDL attribute if another interface inherits from the one the attribute
+                  is declared on, but required that the inheriting interface not have an
+                  attribute with the same identifier.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Made attribute setters throw if no argument was passed to them, instead of
+                  assuming <span class="esvalue">undefined</span>.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Prevented dictionaries from referencing themselves.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Made sequences, arrays and dictionaries undistingishable again, thereby allowing
+                  non-<span class="estype">Array</span> ECMAScript objects to be converted
+                  to sequence and array types.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added a requirement to state what the values of an exception’s fields are
+                  when throwing it.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Changed the “length” property on <span class="estype">Function</span>
+                  objects for IDL operations to return the smallest number of required arguments.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Clarified that dictionaries may not be nullable when used as
+                  the type of an operation argument or dictionary member.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Specify the value of the “length” property on interface objects
+                  that do not have constructors.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Do not treat array index properties as named properties if an object supports
+                  both indexed and named properties.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Require that dictionary type arguments followed by optional arguments
+                  must also be optional, and that such optional arguments always are
+                  assumed to have a default value of an empty dictionary.  Also disallow
+                  dictionary types from being used inside nullable types and from being
+                  considered distinguishable from nullable types.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Always consider dictionary members with default values as present.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Tweak <span class="xattr">[Clamp]</span> algorithms for clarity.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Require exception objects to have [[\Class]] “Error” and suggest that they
+                  have any non-standard properties that native Error objects do.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Fixed a bug in the whitespace token regular expression.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Explicitly disallow dictionaries from being used inside union types
+                  as the type of an attribute or exception field.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Fixed a bug in the definition of distinguishability where a nullable
+                  union type and a non-nullable union type that has a nullable member type
+                  were considered distinguishable.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Disallowed callback interfaces from being used in implements statements.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Renamed “exception types” to “exception names”.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Disallowed non-callback interfaces from inheriting from callback interfaces.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Changed the algorithm for conversion from a platform object with indexed
+                  properties to a sequence type to use its internal knowledge of the
+                  set of property indexes rather than getting the "length" property, which
+                  may not even exist.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Added a warning to prefer the use of <a class="idltype" href="#idl-double">double</a>
+                  to <a class="idltype" href="#idl-float">float</a>, unless there are good
+                  reasons to choose the 32 bit type.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Changed the restriction on operation argument default values
+                  so that all optional arguments to the left of one with a
+                  default value must also have default values.  (Previously,
+                  this was to the right.)
+                </p>
+              </li>
+            </ul>
+          </dd>
+        </dl></section>
   </body>
 </html>
