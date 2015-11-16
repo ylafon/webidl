@@ -391,9 +391,7 @@
     <xsl:template match="h:div[@id='idl-frozen-array']|h:div[@id='es-frozen-array']">
     </xsl:template>
     <!-- ArrayClass: DONE -->
-    <xsl:template match="h:div[@id='ArrayClass']|h:li/h:a[@href='#ArrayClass']|h:a[@class='xattr' and @href='#ArrayClass']">
-    </xsl:template>
-    <xsl:template match="h:div[@id='LegacyArrayClass']|h:li/h:a[@href='#LegacyArrayClass']|h:a[@class='xattr' and @href='#LegacyArrayClass']">
+    <xsl:template match="h:div[@id='LegacyArrayClass']">
     </xsl:template>
 
 

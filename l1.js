@@ -1,4 +1,5 @@
 function reg_custom() {
+    clean_legacy_array_class();
     clean_regex();
     clean_implicitthis();
     clean_unscopeable();
@@ -23,6 +24,20 @@ function remove_prodlines_nodes(parent, matchstring, nb_after, nb_before) {
         }
     }
 }
+
+// LegacyArrayClass
+function clean_legacy_array_class() {
+    $("li > a[href='#LegacyArrayClass']").each(function (i, val) {
+        var container = val.parentNode;
+        container.parentNode.removeChild(container);
+    });
+    $("a[href='#LegacyArrayClass']").each(function (i, val) {
+        var par = val.parentNode;
+        par.removeChild(val.nextSibling);
+        par.removeChild(val);
+    });
+}
+
 // RegExp
 function clean_regex() {
     var matchstring = "RegExp";
