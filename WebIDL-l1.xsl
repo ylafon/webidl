@@ -273,6 +273,7 @@
     <!-- generate section for respec creating ids when missing -->
     <xsl:template match='h:div[@class="section"]'>
         <xsl:choose>
+            <xsl:when test="@id='changes'"></xsl:when>
             <xsl:when test="@id">
                 <section id='{translate(@id, " ", "-")}'>
                         <xsl:apply-templates/>
@@ -393,7 +394,6 @@
     <!-- ArrayClass: DONE -->
     <xsl:template match="h:div[@id='LegacyArrayClass']">
     </xsl:template>
-
 
     <!-- end of respec customization -->
 
