@@ -293,12 +293,12 @@ function clean_section_numbers() {
         // we construct the new id...
         var newid = "h-" + id.toLowerCase();
         var container = document.getElementById(newid);
-        if (container == null) {
-  //          alert("can't find ref to " + newid + "(constructed from " + id + ")");
-        } else {
+        if (container != null) {
             var secno = document.getElementById(newid).firstElementChild.firstElementChild;
             val.appendChild(secno.firstChild.cloneNode());
             val.setAttribute("href", "#" + id);
+        } else {
+            // this should never happen.
         }
     });
 }
