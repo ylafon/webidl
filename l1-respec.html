@@ -874,24 +874,8 @@ public interface B extends A {
               language binding).
             </p>
           </div>
-          <div class="ednote">
-            <p>
-              Perhaps this warning shouldn't apply if you are planning to extend the callback
-              interface in the future.  That's probably a good reason to start off with a single
-              operation callback interface.
-            </p>
-          </div>
-          <div class="ednote">
-            <p>
-              I think we need to support operations not being implemented on a given
-              user object implementing a callback interface.  If specs extending an existing
-              callback interface, we probably want to be able to avoid calling the
-              operations that aren't implemented (and having some default behavior instead).
-              So we should perhaps define a term that means whether the operation is
-              implemented, which in the ECMAScript binding would correspond to checking
-              for the property's existence.
-            </p>
-          </div>
+          
+          
 
           <div class="note">
             <p>
@@ -975,7 +959,7 @@ partial interface <em>SomeInterface</em> {
             <!--JAVA
             <a class='xattr' href='#JavaPackage'>[JavaPackage]</a>,
             -->
-            ,
+            <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>,
             <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>,
             <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a>.
           </p>
@@ -1021,7 +1005,7 @@ partial interface <em>SomeInterface</em> {
             <!--JAVA
             <a class='xattr' href='#JavaPackage'>[JavaPackage]</a>,
             -->
-            ,
+            <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>,
             <a class="xattr" href="#NamedConstructor">[NamedConstructor]</a>,
             <a class="xattr" href="#NoInterfaceObject">[NoInterfaceObject]</a>,
             <a class="xattr" href="#OverrideBuiltins">[OverrideBuiltins]</a>.
@@ -4424,11 +4408,7 @@ meal.type == "noodles";              <span class="comment">// Evaluates to true.
         <section id="idl-callback-functions">
           <h3>Callback functions</h3>
 
-          <div class="ednote">
-            <p>The “Custom DOM Elements” spec wants to use callback function types for
-            platform object provided functions.  Should we rename “callback functions” to
-            just “functions” to make it clear that they can be used for both purposes?</p>
-          </div>
+          
           <p>
             A <dfn id="dfn-callback-function">callback function</dfn> is a definition (matching
             <span class="sym">"callback"</span> <a class="sym" href="#prod-CallbackRest">CallbackRest</a>) used to declare a function type.
@@ -5874,9 +5854,7 @@ interface Person {
               <p>See <a href="#es-buffer-source-types">section <a href="#"></a></a> below for
                 how interacting with buffer source types works in the ECMAScript language binding.</p>
             </div>
-            <div class="ednote">
-              <p>We should include an example of specification text that uses these types and terms.</p>
-            </div>
+            
           </section>
 
           
@@ -6109,11 +6087,7 @@ interface Person {
           at the time it is created, have a property whose name is the <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-symbols">@@toStringTag</a> symbol
           and whose value is the specified string.
         </p>
-        <div class="ednote">
-          <p>Should define whether <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-symbols">@@toStringTag</a> is writable, enumerable and configurable.
-            All <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-symbols">@@toStringTag</a> properties in the ES6 spec are non-writable and non-enumerable,
-            and configurable.</p>
-        </div>
+        
         <p>
           If an object is defined to be a <dfn id="dfn-function-object">function object</dfn>, then
           it has characteristics as follows:
@@ -6127,9 +6101,7 @@ interface Person {
           <li>Its <span class="prop">[[\Construct]]</span> internal property is set as described in <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-function-@@create">ECMA-262 section 19.2.2.3</a>.</li>
           <li>Its <span class="prop">@@hasInstance</span> property is set as described in <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-function.prototype-@@hasinstance">ECMA-262 section 19.2.3.8</a>, unless otherwise specified.</li>
         </ul>
-        <div class="ednote">
-          <p>The list above needs updating for the latest ES6 draft.</p>
-        </div>
+        
         <p id="ecmascript-abstractop">
           Algorithms in this section use the conventions described in <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-algorithm-conventions">ECMA-262
           section 5.2</a>, such as the use of steps and substeps, the use of mathematical
@@ -7640,9 +7612,7 @@ alert(b[4]);    <span class="comment">// This would alert "50".</span></code></p
             </p>
             <ol class="algorithm">
               <li>Let <var>resolve</var> be the original value of <a class="nocite external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%Promise%</a>.resolve.
-                <div class="ednote">
-                  <p>ECMAScript should grow a %Promise_resolve% well-known intrinsic object that can be referenced here.</p>
-                </div>
+                
               </li>
               <li>Let <var>promise</var> be the result of calling <var>resolve</var> with <a class="nocite external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%Promise%</a>
                 as the <span class="esvalue">this</span> value and <var>V</var> as the single argument value.</li>
@@ -7700,9 +7670,7 @@ alert(b[4]);    <span class="comment">// This would alert "50".</span></code></p
               <li>Return the result of calling <var>then</var> with <var>promise</var> as the <span class="esvalue">this</span> value and <var>onFulfilled</var> and <var>onRejected</var>
                 as its two arguments.</li>
             </ol>
-            <div class="ednote">
-              <p>Include an example of how to write spec text using this term.</p>
-            </div>
+            
           </section>
 
           <section id="es-union">
@@ -10633,7 +10601,7 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
               interface, then return the
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               for the inherited interface.</li>
-              <li>Otherwise, if <var>A</var> is declared with the 
+              <li>Otherwise, if <var>A</var> is declared with the <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>
               extended attribute, then return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (
       [[!ECMA-262]]
       , section 6.1.7.4).</li>
@@ -10732,7 +10700,7 @@ partial interface Window {
               <li>If <var>A</var> is declared to inherit from another interface, then return the
               <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>
               for the inherited interface.</li>
-              <li>Otherwise, if <var>A</var> is declared with the 
+              <li>Otherwise, if <var>A</var> is declared with the <a class="xattr" href="#LegacyArrayClass">[LegacyArrayClass]</a>
               extended attribute, then return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects">%ArrayPrototype%</a> (
       [[!ECMA-262]]
       , section 6.1.7.4).</li>
@@ -11632,11 +11600,7 @@ interface
                     <p>The <var>callbackWrapper</var> function simply calls the incoming <var>callbackFn</var>
                       with <var>object</var> as the third argument rather than its internal [[\BackingMap]] or [[\BackingSet]] object.</p>
                   </div>
-                  <div class="ednote">
-                    <p>Can the script author observe that <var>callbackWrapper</var> might be a new function
-                      every time forEach is called?  What's the best way of specifying that there's only
-                      one function that has captured an environment?</p>
-                  </div>
+                  
                 </li>
                 <li>Let <var>forEach</var> be the result of calling the [[\Get]] internal method of
                   <var>backing</var> with “forEach” and <var>backing</var> as arguments.</li>
