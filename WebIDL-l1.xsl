@@ -398,11 +398,11 @@
     <!-- end of respec customization -->
 
 
-  <xsl:template match='h:div[@class="ednote"]'>
+  <xsl:template match='h:div[@class="ednote"]'>       <!--
     <div>
       <xsl:copy-of select='@*[namespace-uri()="" or namespace-uri="http://www.w3.org/XML/1998/namespace"]'/>
         <xsl:apply-templates select='node()'/>
-    </div>
+    </div>                                        -->
   </xsl:template>
 
   <xsl:template match='h:div[@class="warning"]'>
