@@ -125,11 +125,11 @@
             ],
             // preProcess: reg_custom,
             postProcess: [ reg_custom ],
-            wg: "Web Applications Working Group",
-            wgURI: "http://www.w3.org/2008/webapps/",
+            wg: "Web Platform Working Group",
+            wgURI: "http://www.w3.org/WebPlatform/WG/",
     <!--        wgPublicList: '<xsl:value-of select="$options/x:participate/x:mailing-list/@email" />',-->
             wgPublicList: "public-script-coord",
-            wgPatentURI: "http://www.w3.org/2004/01/pp-impl/42538/status",
+            wgPatentURI: "http://www.w3.org/2004/01/pp-impl/83482/status",
             otherLinks: [{
             key: 'Participate',
             data: [{
