@@ -296,6 +296,7 @@
     <xsl:template match="h:div[@id='appendices']">
         <xsl:for-each select='./h:div[@class="section"]'>
             <xsl:choose>
+                <xsl:when test="@id='changes'"></xsl:when>
                 <xsl:when test="@id='references'">
                 </xsl:when>
                 <xsl:when test="@id='idl-grammar'">
