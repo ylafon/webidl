@@ -11,3 +11,4 @@ s,\[\[PERLRE,[[!PERLRE,g
 s,\[\[RFC,[[!RFC,g
 s,\[\[TYPEDARRAYS,[[!TYPEDARRAYS,g
 s,\[\[UNICODE,[[!UNICODE,g
+/<dfn/ s,\ title=,\ data-lt=,g
