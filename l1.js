@@ -285,20 +285,3 @@ function clean_head() {
     }
     $("#respecHeader dd:nth-child(9)").after("<dt>Level 1 Editors:</dt>\n<dd class=\"p-author h-card vcard\" resource=\"_:editor2\"><span property=\"rdf:first\" typeof=\"foaf:Person\"><span property=\"foaf:name\" class=\"p-name fn\">Yves Lafon</span>, W3C, <span class=\"ed_mailto\"><a class=\"u-email email\" property=\"foaf:mbox\" href=\"mailto:ylafon@w3.org\">ylafon@w3.org</a></span></span><span property=\"rdf:rest\" resource=\"rdf:nil\"></span></dd><dd class=\"p-author h-card vcard\" resource=\"_:editor3\"><span property=\"rdf:first\" typeof=\"foaf:Person\"><span property=\"foaf:name\" class=\"p-name fn\">Travis Leithead</span>, Microsoft Corp., <span class=\"ed_mailto\"><a class=\"u-email email\" property=\"foaf:mbox\" href=\"mailto:travis.leithead@microsoft.com\">travis.leithead@microsoft.com</a></span></span><span property=\"rdf:rest\" resource=\"rdf:nil\"></span></dd>");
 }
-
-function clean_section_numbers() {
-    $("a[href='#']").each(function (i, val) {
-        var ref = val.previousElementSibling;
-        var id = ref.getAttribute("href").substring(1);
-        // we construct the new id...
-        var newid = "h-" + id.toLowerCase();
-        var container = document.getElementById(newid);
-        if (container != null) {
-            var secno = document.getElementById(newid).firstElementChild.firstElementChild;
-            val.appendChild(secno.firstChild.cloneNode());
-            val.setAttribute("href", "#" + id);
-        } else {
-            // this should never happen.
-        }
-    });
-}
