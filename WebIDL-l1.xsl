@@ -50,6 +50,7 @@
         <meta content="width=device-width,initial-scale=1" name="viewport" />
         <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c-common" type="application/ecmascript">
         </script>
+        <script class="remove" type="application/ecmascript" src="rs-specnum-links.js" />
         <script class="remove" type="application/ecmascript" src="l1.js" />
         <script class="remove" type="application/ecmascript">
             var respecConfig = {
