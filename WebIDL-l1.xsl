@@ -41,6 +41,11 @@
     </xsl:element>
   </xsl:template>
 
+
+    <xsl:template match="h:link[@rel='stylesheet']">
+        <link rel='stylesheet' href='WebIDL-1.css' type='text/css'/>
+    </xsl:template>
+
     <!-- generate a respec header, including bib entries -->
   <xsl:template match='h:head'>
     <head>
