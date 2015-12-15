@@ -112,6 +112,7 @@
             edDraftURI: "https://heycam.github.io/webidl/",
             // lcEnd: "3000-01-01",
             // crEnd: "3000-01-01",
+	    license: "w3c-software-doc",
             editors: [
             <xsl:for-each select='$options/x:editors/x:person'>
                 {
