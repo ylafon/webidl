@@ -1518,7 +1518,7 @@ node.appendChild(newNode);  <span class="comment">// This will throw a TypeError
               An <dfn id="dfn-attribute" data-dfn-type="dfn">attribute</dfn> is an <a class="dfnref" href="#dfn-interface-member">interface member</a>
               (matching <span class="sym">"static"</span> <a class="sym" href="#prod-AttributeRest">AttributeRest</a>,
               <span class="sym">"stringifier"</span> <a class="sym" href="#prod-AttributeRest">AttributeRest</a>,
-              or <a class="sym" href="#prod-Attribute">Attribute</a>)
+              or <a class="sym" href="#toc">Attribute</a>)
               that is used to declare data fields with a given type and
               <a class="dfnref" href="#dfn-identifier">identifier</a> whose value can
               be retrieved and (in some cases) changed.  There are two kinds of attributes:
@@ -4235,7 +4235,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
             of the exception.
             For a <a class="dfnref" href="#dfn-DOMException">DOMException</a>,
             the <a class="dfnref" href="#dfn-exception-error-name">error name</a> <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span>
-            be one of the names listed in the <a class="dfnref" href="#idl-error-names-table">error names table</a>
+            be one of the names listed in the <a class="dfnref" href="#dfn-error-names-table">error names table</a>
             below.  The table also indicates the <a class="dfnref" href="#dfn-DOMException">DOMException</a>'s integer code
             for that error name, if it has one.
           </p>
@@ -4287,7 +4287,7 @@ ctx.drawRectangle(300, 200, { fillPattern: "red", position: new Point(10, 10) })
               <span class="idltype">SyntaxError</span>:
             </p>
             <blockquote>
-              <p>Let <var>object</var> be a newly <a class="dfnref" href="#dfn-exception-create">created</a> SyntaxError.</p>
+              <p>Let <var>object</var> be a newly <a class="dfnref" href="#toc">created</a> SyntaxError.</p>
             </blockquote>
           </div>
 
@@ -7855,7 +7855,7 @@ alert(b[4]);    <span class="comment">// This would alert "50".</span></code></p
               </li>
               <li>
                 If <var>V</var> is a <a class="dfnref" href="#dfn-platform-object">platform object</a>, but not a
-                <a class="dfnref" href="#dfn-platform-array-object">platform array object</a>, then:
+                <a class="dfnref" href="#toc">platform array object</a>, then:
                 <ol>
                   <li>If <var>types</var> includes an <a href="#idl-interface">interface type</a> that <var>V</var>
                     implements, then return the IDL value that is a reference to the object <var>V</var>.</li>
@@ -10054,7 +10054,7 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
 
                     <li>
                       Otherwise: if <var>V</var> is a <a class="dfnref" href="#dfn-platform-object">platform object</a> – but not a
-                      <a class="dfnref" href="#dfn-platform-array-object">platform array object</a> – and
+                      <a class="dfnref" href="#toc">platform array object</a> – and
                       there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list,
                       <ul>
                         <li>an <a href="#idl-interface">interface type</a> that <var>V</var> implements</li>
@@ -10852,7 +10852,7 @@ partial interface Window {
                 <a class="dfnref" href="#dfn-named-properties-object">named properties object</a>
                 <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> behave as follows when called with object <var>O</var>
                 and property name <var>P</var>.  The term “Reject” is used as defined in
-                <a href="#platform-array-object-defineownproperty">section </a><a href="#"></a> .
+                <a href="#toc">section </a><a href="#"></a> .
               </p>
 
               <ol class="algorithm">
@@ -12545,7 +12545,7 @@ C implements A;</code></pre></div></div>
               <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> behave as follows when called with property name <var>P</var>,
               Property Descriptor <var>Desc</var> and boolean flag <var>Throw</var>.
               The term “Reject” is used as defined in
-              <a href="#platform-array-object-defineownproperty">section </a><a href="#"></a> .
+              <a href="#toc">section </a><a href="#"></a> .
             </p>
 
             <ol class="algorithm">
@@ -13018,7 +13018,7 @@ C implements A;</code></pre></div></div>
       , section 6.1.7.4).
             </p>
             <p>
-              For every legacy code listed in the <a href="#idl-error-names-table">error names table</a>,
+              For every legacy code listed in the <a href="#dfn-error-names-table">error names table</a>,
               there <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> be a property on the DOMException constructor object
               whose name and value are as indicated in the table.  The property has
               attributes <span class="descriptor">{&nbsp;[[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">false</span>&nbsp;}</span>.
@@ -13149,8 +13149,8 @@ C implements A;</code></pre></div></div>
               <a href="#Constructor">constructor</a>,
               <a class="dfnref" href="#dfn-named-constructor">named constructor</a>,
               <a class="dfnref" href="#dfn-stringifier">stringifier</a>,
-              <a href="#es-exception-call">exception constructor</a> or
-              <a class="dfnref" href="#dfn-exception-field-getter">exception field getter</a>.
+              <a href="#toc">exception constructor</a> or
+              <a class="dfnref" href="#toc">exception field getter</a>.
             </li>
             <li>
               If <var>F</var> corresponds to an attribute, operation or stringifier, then return
@@ -13650,7 +13650,7 @@ d.type = et;
              <a class="sym" href="#prod-Iterable">Iterable</a> <br>&nbsp;|
              <a class="sym" href="#prod-ReadOnlyMember">ReadOnlyMember</a> <br>&nbsp;|
              <a class="sym" href="#prod-ReadWriteAttribute">ReadWriteAttribute</a>  </span></td></tr><tr id="prod-Dictionary"><td><span class="prod-number">[11]</span></td><td><a class="sym" href="#proddef-Dictionary">Dictionary</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"dictionary" <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Inheritance">Inheritance</a> "{" <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> "}" ";"</span></td></tr><tr id="prod-DictionaryMembers"><td><span class="prod-number">[12]</span></td><td><a class="sym" href="#proddef-DictionaryMembers">DictionaryMembers</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ExtendedAttributeList">ExtendedAttributeList</a> <a class="sym" href="#prod-DictionaryMember">DictionaryMember</a> <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> <br>&nbsp;|
-             ε</span></td></tr><tr id="prod-DictionaryMember"><td><span class="prod-number">[13]</span></td><td><a class="sym" href="#proddef-DictionaryMember">DictionaryMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-Required">Required</a> <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Default">Default</a> ";"</span></td></tr><tr id="prod-Required"><td><span class="prod-number">[14]</span></td><td><a class="sym" href="#proddef-Required">Required</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"required" <br>&nbsp;|
+             ε</span></td></tr><tr id="prod-DictionaryMember"><td><span class="prod-number">[13]</span></td><td><a class="sym" href="#proddef-DictionaryMember">DictionaryMember</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#toc">Required</a> <a class="sym" href="#prod-Type">Type</a> <a class="sym" href="#prod-identifier">identifier</a> <a class="sym" href="#prod-Default">Default</a> ";"</span></td></tr><tr id="prod-Required"><td><span class="prod-number">[14]</span></td><td><a class="sym" href="#proddef-Required">Required</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"required" <br>&nbsp;|
              ε</span></td></tr><tr id="prod-PartialDictionary"><td><span class="prod-number">[15]</span></td><td><a class="sym" href="#proddef-PartialDictionary">PartialDictionary</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"dictionary" <a class="sym" href="#prod-identifier">identifier</a> "{" <a class="sym" href="#prod-DictionaryMembers">DictionaryMembers</a> "}" ";"</span></td></tr><tr id="prod-Default"><td><span class="prod-number">[16]</span></td><td><a class="sym" href="#proddef-Default">Default</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines">"=" <a class="sym" href="#prod-DefaultValue">DefaultValue</a> <br>&nbsp;|
              ε</span></td></tr><tr id="prod-DefaultValue"><td><span class="prod-number">[17]</span></td><td><a class="sym" href="#proddef-DefaultValue">DefaultValue</a></td><td class="prod-mid">→</td><td class="prod-rhs"><span class="prod-lines"><a class="sym" href="#prod-ConstValue">ConstValue</a> <br>&nbsp;|
              <a class="sym" href="#prod-string">string</a> <br>&nbsp;|
