@@ -54,43 +54,43 @@
       <links>
         <term name='Unicode scalar value' class='external' href='http://www.unicode.org/glossary/#unicode_scalar_value'/>
         <term name='Unicode scalar values' class='external' href='http://www.unicode.org/glossary/#unicode_scalar_value'/>
-        <term name='NumericLiteral' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-literals-numeric-literals' ref='ECMA-262' section='11.8.3'/>
-        <term name='ECMAScript error objects' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-error-objects' ref='ECMA-262' section='19.5'/>
-        <term name='ToBoolean' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-toboolean'/>
-        <term name='ToNumber' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-tonumber'/>
-        <term name='ToUint16' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-touint16'/>
-        <term name='ToInt32' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-toint32'/>
-        <term name='ToUint32' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-touint32'/>
-        <term name='ToString' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-tostring'/>
-        <term name='ToObject' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-toobject'/>
-        <term name='IsAccessorDescriptor' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-isaccessordescriptor'/>
-        <term name='IsDataDescriptor' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-isdatadescriptor'/>
-        <term name='Type' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values'/>
-        <term name='sign' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-algorithm-conventions'/>
-        <term name='floor' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-algorithm-conventions'/>
-        <term name='abs' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-algorithm-conventions'/>
-        <term name='modulo' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-algorithm-conventions'/>
-        <term name='element' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-string-type'/>
-        <term name='IsCallable' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-iscallable'/>
-        <term name='callable' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-iscallable'/>
-        <term name='%ArrayPrototype%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%ArrayProto_values%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%MapPrototype%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%ObjectPrototype%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%SetPrototype%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%Error%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%ErrorPrototype%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%FunctionPrototype%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%ObjProto_toString%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%Promise%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%IteratorPrototype%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='Property Descriptor' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-property-descriptor-specification-type' ref='ECMA-262' section='6.2.4'/>
-        <term name='array index' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-array-exotic-objects' ref='ECMA-262' section='9.4.2'/>
-        <term name='default [[GetOwnProperty]] internal method' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p' ref='ECMA-262' section='9.1.5'/>
-        <term name='default [[DefineOwnProperty]] internal method' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-defineownproperty-p-desc' ref='ECMA-262' section='9.1.6'/>
-        <term name='default [[Set]] internal method' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-set-p-v-receiver' ref='ECMA-262' section='9.1.9'/>
-        <term name='equally close values' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-number-type' ref='ECMA-262' section='6.1.6'/>
-        <term name='internal slot' class='external' href='https://people.mozilla.org/~jorendorff/es6-draft.html#sec-object-internal-methods-and-internal-slots'/>
+        <term name='NumericLiteral' class='external' href='https://tc39.github.io/ecma262/#sec-literals-numeric-literals' ref='ECMA-262' section='11.8.3'/>
+        <term name='ECMAScript error objects' class='external' href='https://tc39.github.io/ecma262/#sec-error-objects' ref='ECMA-262' section='19.5'/>
+        <term name='ToBoolean' class='external' href='https://tc39.github.io/ecma262/#sec-toboolean'/>
+        <term name='ToNumber' class='external' href='https://tc39.github.io/ecma262/#sec-tonumber'/>
+        <term name='ToUint16' class='external' href='https://tc39.github.io/ecma262/#sec-touint16'/>
+        <term name='ToInt32' class='external' href='https://tc39.github.io/ecma262/#sec-toint32'/>
+        <term name='ToUint32' class='external' href='https://tc39.github.io/ecma262/#sec-touint32'/>
+        <term name='ToString' class='external' href='https://tc39.github.io/ecma262/#sec-tostring'/>
+        <term name='ToObject' class='external' href='https://tc39.github.io/ecma262/#sec-toobject'/>
+        <term name='IsAccessorDescriptor' class='external' href='https://tc39.github.io/ecma262/#sec-isaccessordescriptor'/>
+        <term name='IsDataDescriptor' class='external' href='https://tc39.github.io/ecma262/#sec-isdatadescriptor'/>
+        <term name='Type' class='external' href='https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values'/>
+        <term name='sign' class='external' href='https://tc39.github.io/ecma262/#sec-algorithm-conventions'/>
+        <term name='floor' class='external' href='https://tc39.github.io/ecma262/#sec-algorithm-conventions'/>
+        <term name='abs' class='external' href='https://tc39.github.io/ecma262/#sec-algorithm-conventions'/>
+        <term name='modulo' class='external' href='https://tc39.github.io/ecma262/#sec-algorithm-conventions'/>
+        <term name='element' class='external' href='https://tc39.github.io/ecma262/#sec-ecmascript-language-types-string-type'/>
+        <term name='IsCallable' class='external' href='https://tc39.github.io/ecma262/#sec-iscallable'/>
+        <term name='callable' class='external' href='https://tc39.github.io/ecma262/#sec-iscallable'/>
+        <term name='%ArrayPrototype%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%ArrayProto_values%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%MapPrototype%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%ObjectPrototype%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%SetPrototype%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%Error%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%ErrorPrototype%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%FunctionPrototype%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%ObjProto_toString%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%Promise%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%IteratorPrototype%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='Property Descriptor' class='external' href='https://tc39.github.io/ecma262/#sec-property-descriptor-specification-type' ref='ECMA-262' section='6.2.4'/>
+        <term name='array index' class='external' href='https://tc39.github.io/ecma262/#sec-array-exotic-objects' ref='ECMA-262' section='9.4.2'/>
+        <term name='default [[GetOwnProperty]] internal method' class='external' href='https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p' ref='ECMA-262' section='9.1.5'/>
+        <term name='OrdinaryDefineOwnProperty' class='external' href='https://tc39.github.io/ecma262/#sec-ordinarydefineownproperty'/>
+        <term name='default [[Set]] internal method' class='external' href='https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-set-p-v-receiver' ref='ECMA-262' section='9.1.9'/>
+        <term name='equally close values' class='external' href='https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type' ref='ECMA-262' section='6.1.6'/>
+        <term name='internal slot' class='external' href='https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots'/>
         <term name="ReturnIfAbrupt" class='external'
               href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt'/>
         <term name='GetMethod' class='external'
@@ -11174,15 +11174,15 @@ partial interface Window {
               <h5>Named properties object [[DefineOwnProperty]] method</h5>
 
               <p>
-                The internal <span class='prop'>[[DefineOwnProperty]]</span> method of every
+                When the internal <span class='prop'>[[DefineOwnProperty]]</span> method of a
                 <a class='dfnref' href='#dfn-named-properties-object'>named properties object</a>
-                <span class='rfc2119'>MUST</span> behave as follows when called with object <var>O</var>
-                and property name <var>P</var>.  The term “Reject” is used as defined in
-                <a href='#platform-array-object-defineownproperty'>section <?sref platform-array-object-defineownproperty?></a> <?sdir platform-array-object-defineownproperty?>.
+                <var>O</var> is called with property key <var>P</var> and
+                <a>Property Descriptor</a> <var>Desc</var>, the following steps
+                <span class='rfc2119'>MUST</span> be taken:
               </p>
 
               <ol class='algorithm'>
-                <li>Reject.</li>
+                <li>Return <span class="esvalue">false</span>.</li>
               </ol>
             </div>
 
@@ -13539,14 +13539,13 @@ C implements A;</x:codeblock>
             <h4>Platform object [[DefineOwnProperty]] method</h4>
 
             <p>
-              The internal <span class='prop'>[[DefineOwnProperty]]</span> method of every
-              <a class='dfnref' href='#dfn-platform-object'>platform object</a> <var>O</var> that implements an <a class='dfnref' href='#dfn-interface'>interface</a>
-              which <a class='dfnref' href='#dfn-support-indexed-properties'>supports indexed</a> or
-              <a class='dfnref' href='#dfn-support-named-properties'>named properties</a>
-              <span class='rfc2119'>MUST</span> behave as follows when called with property name <var>P</var>,
-              Property Descriptor <var>Desc</var> and boolean flag <var>Throw</var>.
-              The term “Reject” is used as defined in
-              <a href='#platform-array-object-defineownproperty'>section <?sref platform-array-object-defineownproperty?></a> <?sdir platform-array-object-defineownproperty?>.
+              When the internal <span class='prop'>[[DefineOwnProperty]]</span> method of a
+              <a class='dfnref' href='#dfn-platform-object'>platform object</a> <var>O</var> that
+              implements an <a class='dfnref' href='#dfn-interface'>interface</a> which
+              <a class='dfnref' href='#dfn-support-indexed-properties'>supports indexed</a> or
+              <a class='dfnref' href='#dfn-support-named-properties'>named properties</a> is
+              called with property key <var>P</var> and <a>Property Descriptor</a>
+              <var>Desc</var>, the following steps <span class='rfc2119'>MUST</span> be taken:
             </p>
 
             <ol class='algorithm'>
@@ -13554,11 +13553,23 @@ C implements A;</x:codeblock>
                 If <var>O</var> <a class='dfnref' href='#dfn-support-indexed-properties'>supports indexed properties</a> and
                 <var>P</var> is an <a class='dfnref' href='#dfn-array-index-property-name'>array index property name</a>, then:
                 <ol>
-                  <li>If the result of calling <a>IsDataDescriptor</a>(<var>Desc</var>) is <span class='esvalue'>false</span>, then Reject.</li>
-                  <li>If <var>O</var> does not implement an interface with an <a class='dfnref' href='#dfn-indexed-property-setter'>indexed property setter</a>, then Reject.</li>
-                  <li><a href='#invoking-indexed-setter'>Invoke the indexed
-                  property setter</a> with <var>P</var> and <var>Desc</var>.<span class='prop'>[[Value]]</span>.</li>
-                  <li>Return <span class='esvalue'>true</span>.</li>
+                  <li>
+                    If the result of calling <a>IsDataDescriptor</a>(<var>Desc</var>) is
+                    <span class='esvalue'>false</span>, then return
+                    <span class="esvalue">false</span>.
+                  </li>
+                  <li>
+                    If <var>O</var> does not implement an interface with an
+                    <a class='dfnref' href='#dfn-indexed-property-setter'>indexed property
+                    setter</a>, then return <span class="esvalue">false</span>.
+                  </li>
+                  <li>
+                    <a href='#invoking-indexed-setter'>Invoke the indexed property setter</a> with
+                    <var>P</var> and <var>Desc</var>.<span class='prop'>[[Value]]</span>.
+                  </li>
+                  <li>
+                    Return <span class='esvalue'>true</span>.
+                  </li>
                 </ol>
               </li>
 
@@ -13598,16 +13609,29 @@ C implements A;</x:codeblock>
                     <a class='dfnref' href='#dfn-extended-attribute'>extended attribute</a> or <var>O</var> does not have an own property
                     named <var>P</var>, then:
                     <ol>
-                      <li>If <var>creating</var> is false and <var>O</var> does not implement an interface with a <a class='dfnref' href='#dfn-named-property-setter'>named property setter</a>, then Reject.</li>
-                      <li>If <var>O</var> implements an interface with a <a class='dfnref' href='#dfn-named-property-setter'>named property setter</a>, then:
+                      <li>
+                        If <var>creating</var> is false and <var>O</var> does not implement an
+                        interface with a <a class='dfnref' href='#dfn-named-property-setter'>named
+                        property setter</a>, then return <span class="esvalue">false</span>.
+                      </li>
+                      <li>
+                        If <var>O</var> implements an interface with a
+                        <a class='dfnref' href='#dfn-named-property-setter'>named property
+                        setter</a>, then:
                         <ol>
-                          <li>If the result of calling <a>IsDataDescriptor</a>(<var>Desc</var>) is <span class='esvalue'>false</span>, then Reject.</li>
                           <li>
-                            <a href='#invoking-named-setter'>Invoke the named
-                          property setter</a> with <var>P</var> and
-                          <var>Desc</var>.<span class='prop'>[[Value]]</span>.
+                            If the result of calling <a>IsDataDescriptor</a>(<var>Desc</var>) is
+                            <span class='esvalue'>false</span>, then return
+                            <span class="esvalue">false</span>.
                           </li>
-                          <li>Return <span class='esvalue'>true</span>.</li>
+                          <li>
+                            <a href='#invoking-named-setter'>Invoke the named property setter</a>
+                            with <var>P</var> and
+                            <var>Desc</var>.<span class='prop'>[[Value]]</span>.
+                          </li>
+                          <li>
+                            Return <span class='esvalue'>true</span>.
+                          </li>
                         </ol>
                       </li>
                     </ol>
@@ -13615,10 +13639,20 @@ C implements A;</x:codeblock>
                 </ol>
               </li>
 
-              <li>If <var>O</var> does not implement an <a class='dfnref' href='#dfn-interface'>interface</a> with the
-                <a class='xattr' href='#Global'>[Global]</a> or <a class='xattr' href='#PrimaryGlobal'>[PrimaryGlobal]</a> <a class='dfnref' href='#dfn-extended-attribute'>extended attribute</a>,
-                then set <var>Desc</var>.<span class='prop'>[[Configurable]]</span> to <span class='esvalue'>true</span>.</li>
-              <li>Call the <a>default <span class='prop'>[[DefineOwnProperty]]</span> internal method</a> on <var>O</var> passing <var>P</var>, <var>Desc</var>, and <var>Throw</var> as arguments.</li>
+              <li>
+                If <var>O</var> does not implement an
+                <a class='dfnref' href='#dfn-interface'>interface</a> with the
+                <a class='xattr' href='#Global'>[Global]</a> or
+                <a class='xattr' href='#PrimaryGlobal'>[PrimaryGlobal]</a>
+                <a class='dfnref' href='#dfn-extended-attribute'>extended attribute</a>, then set
+                <var>Desc</var>.<span class='prop'>[[Configurable]]</span> to
+                <span class='esvalue'>true</span>.
+              </li>
+
+              <li>
+                Return <a>OrdinaryDefineOwnProperty</a>(<var>O</var>, <var>P</var>,
+                <var>Desc</var>).
+              </li>
             </ol>
           </div>
 
