@@ -10656,6 +10656,8 @@ with (thing) {
             <div id='es-interface-call' class='section'>
               <h5>Interface object [[Call]] method</h5>
 
+	      <div class="warning"><p>The current text currently allows calling XMLHttpRequest() or DOMException() to create an object, but
+	      the consensus is toward mandating using <em>new</em>. See <a href="https://github.com/heycam/webidl/issues/62">Issue 62</a>.</p></div>
               <p>
                 If the <a class='dfnref' href='#dfn-interface'>interface</a> is declared with a
                 <a class='xattr' href='#Constructor'>[Constructor]</a> <a class='dfnref' href='#dfn-extended-attribute'>extended attribute</a>,
