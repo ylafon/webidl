@@ -10274,6 +10274,7 @@ system.loginTime;  <span class="comment">// So this now evaluates to forgedLogin
               of an interface object for a callback interface <span class="rfc2119">MUST</span> be
               the Object.prototype object.
             </p>
+            <div class="warning"><p>The <em>NodeFilter</em> implementations contradicts the paragraph above. This is discussed in <a href="https://github.com/heycam/webidl/issues/78">Issue 78</a>, <a href="https://github.com/heycam/webidl/issues/96">Issue 96</a> and for the <em>NodeFilter</em> specfic case: <a href="https://github.com/heycam/webidl/issues/83">Issue 83</a></p></div>
             <div class="note">
               <p>Remember that interface objects for callback interfaces only exist if they have
               <a class="dfnref" href="#dfn-constant">constants</a> declared on them;
