@@ -54,43 +54,43 @@
       <links>
         <term name='Unicode scalar value' class='external' href='http://www.unicode.org/glossary/#unicode_scalar_value'/>
         <term name='Unicode scalar values' class='external' href='http://www.unicode.org/glossary/#unicode_scalar_value'/>
-        <term name='NumericLiteral' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-literals-numeric-literals' ref='ECMA-262' section='11.8.3'/>
-        <term name='ECMAScript error objects' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-error-objects' ref='ECMA-262' section='19.5'/>
-        <term name='ToBoolean' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-toboolean'/>
-        <term name='ToNumber' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-tonumber'/>
-        <term name='ToUint16' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-touint16'/>
-        <term name='ToInt32' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-toint32'/>
-        <term name='ToUint32' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-touint32'/>
-        <term name='ToString' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-tostring'/>
-        <term name='ToObject' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-toobject'/>
-        <term name='IsAccessorDescriptor' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-isaccessordescriptor'/>
-        <term name='IsDataDescriptor' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-isdatadescriptor'/>
-        <term name='Type' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values'/>
-        <term name='sign' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-algorithm-conventions'/>
-        <term name='floor' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-algorithm-conventions'/>
-        <term name='abs' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-algorithm-conventions'/>
-        <term name='modulo' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-algorithm-conventions'/>
-        <term name='element' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-string-type'/>
-        <term name='IsCallable' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-iscallable'/>
-        <term name='callable' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-iscallable'/>
-        <term name='%ArrayPrototype%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%ArrayProto_values%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%MapPrototype%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%ObjectPrototype%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%SetPrototype%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%Error%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%ErrorPrototype%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%FunctionPrototype%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%ObjProto_toString%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%Promise%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='%IteratorPrototype%' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
-        <term name='Property Descriptor' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-property-descriptor-specification-type' ref='ECMA-262' section='6.2.4'/>
-        <term name='array index' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-array-exotic-objects' ref='ECMA-262' section='9.4.2'/>
-        <term name='default [[GetOwnProperty]] internal method' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p' ref='ECMA-262' section='9.1.5'/>
-        <term name='default [[DefineOwnProperty]] internal method' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-defineownproperty-p-desc' ref='ECMA-262' section='9.1.6'/>
-        <term name='default [[Set]] internal method' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-set-p-v-receiver' ref='ECMA-262' section='9.1.9'/>
-        <term name='equally close values' class='external' href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-number-type' ref='ECMA-262' section='6.1.6'/>
-        <term name='internal slot' class='external' href='https://people.mozilla.org/~jorendorff/es6-draft.html#sec-object-internal-methods-and-internal-slots'/>
+        <term name='NumericLiteral' class='external' href='https://tc39.github.io/ecma262/#sec-literals-numeric-literals' ref='ECMA-262' section='11.8.3'/>
+        <term name='ECMAScript error objects' class='external' href='https://tc39.github.io/ecma262/#sec-error-objects' ref='ECMA-262' section='19.5'/>
+        <term name='ToBoolean' class='external' href='https://tc39.github.io/ecma262/#sec-toboolean'/>
+        <term name='ToNumber' class='external' href='https://tc39.github.io/ecma262/#sec-tonumber'/>
+        <term name='ToUint16' class='external' href='https://tc39.github.io/ecma262/#sec-touint16'/>
+        <term name='ToInt32' class='external' href='https://tc39.github.io/ecma262/#sec-toint32'/>
+        <term name='ToUint32' class='external' href='https://tc39.github.io/ecma262/#sec-touint32'/>
+        <term name='ToString' class='external' href='https://tc39.github.io/ecma262/#sec-tostring'/>
+        <term name='ToObject' class='external' href='https://tc39.github.io/ecma262/#sec-toobject'/>
+        <term name='IsAccessorDescriptor' class='external' href='https://tc39.github.io/ecma262/#sec-isaccessordescriptor'/>
+        <term name='IsDataDescriptor' class='external' href='https://tc39.github.io/ecma262/#sec-isdatadescriptor'/>
+        <term name='Type' class='external' href='https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values'/>
+        <term name='sign' class='external' href='https://tc39.github.io/ecma262/#sec-algorithm-conventions'/>
+        <term name='floor' class='external' href='https://tc39.github.io/ecma262/#sec-algorithm-conventions'/>
+        <term name='abs' class='external' href='https://tc39.github.io/ecma262/#sec-algorithm-conventions'/>
+        <term name='modulo' class='external' href='https://tc39.github.io/ecma262/#sec-algorithm-conventions'/>
+        <term name='element' class='external' href='https://tc39.github.io/ecma262/#sec-ecmascript-language-types-string-type'/>
+        <term name='IsCallable' class='external' href='https://tc39.github.io/ecma262/#sec-iscallable'/>
+        <term name='callable' class='external' href='https://tc39.github.io/ecma262/#sec-iscallable'/>
+        <term name='%ArrayPrototype%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%ArrayProto_values%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%MapPrototype%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%ObjectPrototype%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%SetPrototype%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%Error%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%ErrorPrototype%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%FunctionPrototype%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%ObjProto_toString%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%Promise%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='%IteratorPrototype%' class='external' href='https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects' ref='ECMA-262' section='6.1.7.4'/>
+        <term name='Property Descriptor' class='external' href='https://tc39.github.io/ecma262/#sec-property-descriptor-specification-type' ref='ECMA-262' section='6.2.4'/>
+        <term name='array index' class='external' href='https://tc39.github.io/ecma262/#sec-array-exotic-objects' ref='ECMA-262' section='9.4.2'/>
+        <term name='default [[GetOwnProperty]] internal method' class='external' href='https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-getownproperty-p' ref='ECMA-262' section='9.1.5'/>
+        <term name='OrdinaryDefineOwnProperty' class='external' href='https://tc39.github.io/ecma262/#sec-ordinarydefineownproperty'/>
+        <term name='default [[Set]] internal method' class='external' href='https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-set-p-v-receiver' ref='ECMA-262' section='9.1.9'/>
+        <term name='equally close values' class='external' href='https://tc39.github.io/ecma262/#sec-ecmascript-language-types-number-type' ref='ECMA-262' section='6.1.6'/>
+        <term name='internal slot' class='external' href='https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots'/>
         <term name="ReturnIfAbrupt" class='external'
               href='http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt'/>
         <term name='GetMethod' class='external'
@@ -3583,7 +3583,7 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
             </p>
             <div class='note'>
               <p>In the ECMAScript language binding, an interface that is iterable
-              will have “entries”, “keys”, “values” and <a>@@iterator</a>
+              will have “entries”, “forEach”, “keys”, “values” and <a>@@iterator</a>
               properties on its <a class='dfnref' href='#dfn-interface-prototype-object'>interface prototype object</a>.</p>
             </div>
             <p>
@@ -3596,31 +3596,49 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
               value associated with the key.
             </p>
             <p>
-              Prose accompanying an interface with a <a class='dfnref' href='#dfn-value-iterator'>value iterator</a>
-              <span class='rfc2119'>MUST</span> define what the
-              list of <dfn id='dfn-values-to-iterate-over'>values to iterate over</dfn> is,
-              unless the interface also
-              <a class='dfnref' href='#dfn-support-indexed-properties'>supports indexed properties</a>,
-              in which case the values of the indexed properties are implicitly
-              iterated over.  Prose accompanying an interface with a
+              A <a class='dfnref' href='#dfn-value-iterator'>value iterator</a>
+              <span class='rfc2119'>MUST</span> only be declared on an interface
+              that <a class='dfnref' href='#dfn-support-indexed-properties'>supports indexed properties</a>
+              and has an <a class='dfnref' href='#dfn-integer-type'>integer-typed</a>
+              <a class='dfnref' href='#dfn-attribute'>attribute</a> named “length”.
+              The value-type of the <a class='dfnref' href='#dfn-value-iterator'>value iterator</a>
+              <span class='rfc2119'>MUST</span> be the same as the type returned by
+              the <a class='dfnref' href='#dfn-indexed-property-getter'>indexed property getter</a>.
+              A <a class='dfnref' href='#dfn-value-iterator'>value iterator</a> is implicitly
+              defined to iterate over the object’s indexed properties.
+            </p>
+            <p>
+              A <a class='dfnref' href='#dfn-pair-iterator'>pair iterator</a>
+              <span class='rfc2119'>MUST NOT</span> be declared on an interface
+              that <a class='dfnref' href='#dfn-support-indexed-properties'>supports indexed properties</a>.
+              Prose accompanying an interface with a
               <a class='dfnref' href='#dfn-pair-iterator'>pair iterator</a>
               <span class='rfc2119'>MUST</span> define what the list of
               <dfn id='dfn-value-pairs-to-iterate-over'>value pairs to iterate over</dfn>
               is.
             </p>
-            <div class="note">
-              <p>Interfaces that <a class='dfnref' href='#dfn-support-indexed-properties'>support indexed properties</a>
-                need to have a “length” attribute for the iterator to work correctly.</p>
+            <div class='note'>
+              <p>
+                The ECMAScript forEach method that is generated for a
+                <a class='dfnref' href='#dfn-value-iterator'>value iterator</a>
+                invokes its callback like Array.prototype.forEach does, and the forEach
+                method for a <a class='dfnref' href='#dfn-pair-iterator'>pair iterator</a>
+                invokes its callback like Map.prototype.forEach does.
+              </p>
+              <p>
+                Since <a class='dfnref' href='#dfn-value-iterator'>value iterators</a>
+                are currently allowed only on interfaces that
+                <a class='dfnref' href='#dfn-support-indexed-properties'>support indexed properties</a>,
+                it makes sense to use an Array-like forEach method.
+                There may be a need for <a class='dfnref' href='#dfn-value-iterator'>value iterators</a>
+                (a) on interfaces that do not 
+                <a class='dfnref' href='#dfn-support-indexed-properties'>support indexed properties</a>,
+                or (b) with a forEach method that instead invokes its callback like
+                Set.protoype.forEach (where the key is the same as the value).
+                If you’re creating an API that needs such a forEach method, please send a request to
+                <a href='mailto:public-script-coord@w3.org'>public-script-coord@w3.org</a>.
+              </p>
             </div>
-            <p>
-              The prose is responsible for defining that the list of values
-              or value pairs to iterate over is snapshotted at the time
-              iteration begins, if that is desired.  To handle lists that
-              can change during iteration, the behavior of an
-              iterator defined to to loop through the items in order, starting
-              at index 0, and advancing this index on each iteration.  Iteration ends when
-              the index has gone past the end of the list.
-            </p>
             <div class="note">
               <p>This is how <a>array iterator objects</a> work.
                 For interfaces that <a class='dfnref' href='#dfn-support-indexed-properties'>support indexed properties</a>,
@@ -3630,7 +3648,7 @@ iterable&lt;<i>key-type</i>, <i>value-type</i>&gt;;</pre>
             <p>
               Interfaces with iterable declarations <span class='rfc2119'>MUST NOT</span>
               have any <a class='dfnref' href='#dfn-interface-member'>interface members</a>
-              named “entries”, “keys” or “values”,
+              named “entries”, “forEach”, “keys” or “values”,
               or have any <a class='dfnref' href='#dfn-inherited-interfaces'>inherited</a>
               or <a class='dfnref' href='#dfn-consequential-interfaces'>consequential</a>
               interfaces that have interface members with these names.
@@ -3656,7 +3674,7 @@ interface Session {
               <blockquote>
                 <p>
                   The <a class='dfnref' href='#dfn-values-to-iterate-over'>values to iterate over</a>
-                  are a snapshot of the open <span class='idltype'>Session</span> objects
+                  are the open <span class='idltype'>Session</span> objects
                   on the <span class='idltype'>SessionManager</span> sorted by username.
                 </p>
               </blockquote>
@@ -3694,12 +3712,6 @@ for (;;) {
 for (let session of sm) {
   window.alert(session.username);
 }</x:codeblock>
-              <p>
-                If the <span class='idltype'>SessionManager</span> interface <a class='dfnref' href='#dfn-support-indexed-properties'>supported indexed properties</a>
-                and had an <a class='dfnref' href='#dfn-attribute'>attribute</a> named “length”
-                that reflected the number of session objects, we could avoid defining the
-                <a class='dfnref' href='#dfn-values-to-iterate-over'>values to iterate over</a>.
-              </p>
             </div>
 
             <p>
@@ -10215,19 +10227,6 @@ with (thing) {
                 </li>
 
                 <li>
-                  Otherwise: if <var>V</var> is a <span class='estype'>RegExp</span> object and
-                  there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list,
-                  <ul>
-                    <li><span class='idltype'>RegExp</span></li>
-                    <li><span class='idltype'>object</span></li>
-                    <li>a <a class='dfnref' href='#dfn-nullable-type'>nullable</a> version of either of the above types</li>
-                    <li>a <a class='dfnref' href='#dfn-union-type'>union type</a> or <a class='dfnref' href='#dfn-nullable-type'>nullable</a> union type
-                       that has one of the above types in its <a class='dfnref' href='#dfn-flattened-union-member-types'>flattened member types</a></li>
-                  </ul>
-                  then remove from <var>S</var> all other entries.
-                </li>
-
-                <li>
                   Otherwise: if <var>V</var> is a <a class='dfnref' href='#dfn-DOMException'>DOMException</a> platform object and
                   there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list,
                   <ul>
@@ -10635,6 +10634,7 @@ with (thing) {
               of an interface object for a callback interface <span class='rfc2119'>MUST</span> be
               the Object.prototype object.
             </p>
+            <div class="warning"><p>The <em>NodeFilter</em> implementations contradicts the paragraph above. This is discussed in <a href="https://github.com/heycam/webidl/issues/78">Issue 78</a>, <a href="https://github.com/heycam/webidl/issues/96">Issue 96</a> and for the <em>NodeFilter</em> specfic case: <a href="https://github.com/heycam/webidl/issues/83">Issue 83</a></p></div>
             <div class='note'>
               <p>Remember that interface objects for callback interfaces only exist if they have
               <a class='dfnref' href='#dfn-constant'>constants</a> declared on them;
@@ -10644,6 +10644,8 @@ with (thing) {
             <div id='es-interface-call' class='section'>
               <h5>Interface object [[Call]] method</h5>
 
+	      <div class="warning"><p>The current text currently allows calling XMLHttpRequest() or DOMException() to create an object, but
+	      the consensus is toward mandating using <em>new</em>. See <a href="https://github.com/heycam/webidl/issues/62">Issue 62</a>.</p></div>
               <p>
                 If the <a class='dfnref' href='#dfn-interface'>interface</a> is declared with a
                 <a class='xattr' href='#Constructor'>[Constructor]</a> <a class='dfnref' href='#dfn-extended-attribute'>extended attribute</a>,
@@ -11162,15 +11164,15 @@ partial interface Window {
               <h5>Named properties object [[DefineOwnProperty]] method</h5>
 
               <p>
-                The internal <span class='prop'>[[DefineOwnProperty]]</span> method of every
+                When the internal <span class='prop'>[[DefineOwnProperty]]</span> method of a
                 <a class='dfnref' href='#dfn-named-properties-object'>named properties object</a>
-                <span class='rfc2119'>MUST</span> behave as follows when called with object <var>O</var>
-                and property name <var>P</var>.  The term “Reject” is used as defined in
-                <a href='#platform-array-object-defineownproperty'>section <?sref platform-array-object-defineownproperty?></a> <?sdir platform-array-object-defineownproperty?>.
+                <var>O</var> is called with property key <var>P</var> and
+                <a>Property Descriptor</a> <var>Desc</var>, the following steps
+                <span class='rfc2119'>MUST</span> be taken:
               </p>
 
               <ol class='algorithm'>
-                <li>Reject.</li>
+                <li>Return <span class="esvalue">false</span>.</li>
               </ol>
             </div>
 
@@ -11886,7 +11888,11 @@ interface
                 <li>Otherwise, the property exists solely on the interface’s <a class='dfnref' href='#dfn-interface-prototype-object'>interface prototype object</a>.</li>
               </ul>
               <p>
-                If the interface has an <a class='dfnref' href='#dfn-iterable-declaration'>iterable declaration</a>,
+                If the interface defines an <a class='dfnref' href='#dfn-indexed-property-getter'>indexed property getter</a>,
+                then the <span class='estype'>Function</span> object is <a>%ArrayProto_values%</a>.
+              </p>
+              <p>
+                If the interface has a <a class='dfnref' href='#dfn-pair-iterator'>pair iterator</a>,
                 then the <span class='estype'>Function</span>, when invoked,
                 <span class='rfc2119'>MUST</span> behave as follows:
               </p>
@@ -11910,11 +11916,6 @@ interface
                   for <var>interface</var> with <var>object</var> as its target and iterator kind “value”.</li>
                 <li>Return <var>iterator</var>.</li>
               </ol>
-              <p>
-                If the interface does not have an <a class='dfnref' href='#dfn-iterable-declaration'>iterable declaration</a>
-                but does define an <a class='dfnref' href='#dfn-indexed-property-getter'>indexed property getter</a>,
-                then the <span class='estype'>Function</span> object is <a>%ArrayProto_values%</a>.
-              </p>
               <p>
                 If the interface has a <a class='dfnref' href='#dfn-maplike-declaration'>maplike declaration</a>
                 or <a class='dfnref' href='#dfn-setlike-declaration'>setlike declaration</a>,
@@ -11989,26 +11990,36 @@ interface
                 <li>Otherwise, the property exists solely on the interface’s <a class='dfnref' href='#dfn-interface-prototype-object'>interface prototype object</a>.</li>
               </ul>
               <p>
-                If the interface has an <a class='dfnref' href='#dfn-iterable-declaration'>iterable declaration</a>,
+                If the interface defines an <a class='dfnref' href='#dfn-indexed-property-getter'>indexed property getter</a>,
+                then the <span class='estype'>Function</span> object is
+                the initial value of the “forEach” data property of <a>%ArrayPrototype%</a>.
+              </p>
+              <p>
+                If the interface has a <a class='dfnref' href='#dfn-pair-iterator'>pair iterator</a>,
                 then the <span class='estype'>Function</span> <span class='rfc2119'>MUST</span>
                 have the same behavior as one that would exist assuming the interface had
                 this <a class='dfnref' href='#dfn-operation'>operation</a> instead of the
                 <a class='dfnref' href='#dfn-iterable-declaration'>iterable declaration</a>:
               </p>
-              <x:codeblock language='idl'>void forEach(Function callback, optional any thisArg = undefined);</x:codeblock>
+              <x:codeblock language='idl'>void forEach(Function callback, optional any thisArg);</x:codeblock>
               <p>
                 with the following prose definition:
               </p>
               <ol class='algorithm'>
-                <li>Let <var>values</var> be the list of <a class='dfnref' href='#dfn-values-to-iterate-over'>values to iterate over</a>.</li>
-                <li>Let <var>len</var> be the length of <var>values</var>.</li>
-                <li>Initialize <var>k</var> to 0.</li>
-                <li>While <var>k</var> &lt; <var>len</var>:
+                <li>Let <var>O</var> be the <strong>this</strong> value.</li>
+                <li>Let <var>pairs</var> be the list of <a class='dfnref' href='#dfn-value-pairs-to-iterate-over'>value pairs to iterate over</a>.</li>
+                <li>Let <var>i</var> be 0.</li>
+                <li>While <var>i</var> is less than the length of <var>pairs</var>:
                   <ol>
-                    <li>Let <var>kValue</var> be the value in <var>values</var> at index <var>k</var>.</li>
+                    <li>Let <var>pair</var> be the entry in <var>pairs</var> at index <var>i</var>.</li>
+                    <li>Let <var>key</var> be <var>pair</var>’s key.</li>
+                    <li>Let <var>value</var> be <var>pair</var>’s value.</li>
                     <li><a href='#es-invoking-callback-functions'>Invoke</a> <var>callback</var> with <var>thisArg</var>
+                      (or <span class='esvalue'>undefined</span>, if the argument was not supplied)
                       as the <a class='dfnref' href='#dfn-callback-this-value'>callback this value</a> and
-                      <var>k</var> and <var>value</var> as its arguments.</li>
+                      <var>value</var>, <var>key</var> and <var>O</var> as its arguments.</li>
+                    <li>Update <var>pairs</var> to the current list of <a class='dfnref' href='#dfn-value-pairs-to-iterate-over'>value pairs to iterate over</a>.</li>
+                    <li>Set <var>i</var> to <var>i</var> + 1.</li>
                   </ol>
                 </li>
               </ol>
@@ -12101,7 +12112,13 @@ interface
                 <li>Otherwise, the property exists solely on the interface’s <a class='dfnref' href='#dfn-interface-prototype-object'>interface prototype object</a>.</li>
               </ul>
               <p>
-                The <span class='estype'>Function</span>, when invoked, <span class='rfc2119'>MUST</span> behave as follows:
+                If the interface has a <a class='dfnref' href='#dfn-value-iterator'>value iterator</a>,
+                then the <span class='estype'>Function</span> object is
+                the initial value of the “entries” data property of <a>%ArrayPrototype%</a>.
+              </p>
+              <p>
+                If the interface has a <a class='dfnref' href='#dfn-pair-iterator'>pair iterator</a>,
+                then the <span class='estype'>Function</span>, when invoked, <span class='rfc2119'>MUST</span> behave as follows:
               </p>
               <ol class='algorithm'>
                 <li>Let <var>object</var> be the result of calling <a>ToObject</a> on the <span class='esvalue'>this</span> value.</li>
@@ -12151,7 +12168,13 @@ interface
                 <li>Otherwise, the property exists solely on the interface’s <a class='dfnref' href='#dfn-interface-prototype-object'>interface prototype object</a>.</li>
               </ul>
               <p>
-                The <span class='estype'>Function</span>, when invoked, <span class='rfc2119'>MUST</span> behave as follows:
+                If the interface has a <a class='dfnref' href='#dfn-value-iterator'>value iterator</a>,
+                then the <span class='estype'>Function</span> object is
+                the initial value of the “keys” data property of <a>%ArrayPrototype%</a>.
+              </p>
+              <p>
+                If the interface has a <a class='dfnref' href='#dfn-pair-iterator'>pair iterator</a>,
+                then the <span class='estype'>Function</span>, when invoked, <span class='rfc2119'>MUST</span> behave as follows:
               </p>
               <ol class='algorithm'>
                 <li>Let <var>object</var> be the result of calling <a>ToObject</a> on the <span class='esvalue'>this</span> value.</li>
@@ -12222,6 +12245,15 @@ interface
                 <li>its <em>kind</em>, which is the iteration kind,</li>
                 <li>its <em>index</em>, which is the current index into the values value to be iterated.</li>
               </ol>
+              <div class='note'>
+                <p>
+                  Default iterator objects are only used for <a class='dfnref' href='#dfn-pair-iterator'>pair iterators</a>;
+                  <a class='dfnref' href='#dfn-value-iterator'>value iterators</a>, as they are currently
+                  restricted to iterating over an object’s
+                  <a class='dfnref' href='#dfn-supported-indexed-properties'>supported indexed properties</a>,
+                  use standard ECMAScript Array iterator objects.
+                </p>
+              </div>
               <p>
                 When a <a class='dfnref' href='#dfn-default-iterator-object'>default iterator object</a> is first created,
                 its index is set to 0.
@@ -12242,8 +12274,8 @@ interface
               <p>
                 The <dfn id='dfn-iterator-prototype-object'>iterator prototype object</dfn>
                 for a given <a class='dfnref' href='#dfn-interface'>interface</a>
-                is an object that exists for every interface that has an
-                <a class='dfnref' href='#dfn-iterable-declaration'>iterable declaration</a>.  It serves as the
+                is an object that exists for every interface that has a
+                <a class='dfnref' href='#dfn-pair-iterator'>pair iterator</a>.  It serves as the
                 prototype for <a class='dfnref' href='#dfn-default-iterator-object'>default iterator objects</a>
                 for the interface.
               </p>
@@ -12276,29 +12308,25 @@ interface
                 <li>Let <var>target</var> be <var>object</var>’s target.</li>
                 <li>Let <var>index</var> be <var>object</var>’s index.</li>
                 <li>Let <var>kind</var> be <var>object</var>’s kind.</li>
-                <li>Let <var>values</var> be the list of <a class='dfnref' href='#dfn-values-to-iterate-over'>values to iterate over</a>.
-                  <div class='note'>
-                    <p>Depending on whether prose accompanying the interface defined this to be a snapshot at the time
-                      iteration begins, the list of values might be different from the previous time the <code>next</code>
-                      method was called on this iterator object.</p>
-                  </div>
-                </li>
+                <li>Let <var>values</var> be the list of <a class='dfnref' href='#dfn-value-pairs-to-iterate-over'>value pairs to iterate over</a>.</li>
                 <li>Let <var>len</var> be the length of <var>values</var>.</li>
                 <li>If <var>object</var>’s index is greater than or equal to <var>len</var>, then
                   return <a>CreateIterResultObject</a>(<span class='esvalue'>undefined</span>, <span class='esvalue'>true</span>).</li>
+                <li>Let <var>pair</var> be the entry in <var>values</var> at index <var>index</var>.</li>
                 <li>Let <var>result</var> be a value determined by the value of <var>kind</var>:
                   <dl class='switch'>
                     <dt>key</dt>
                     <dd>
                       <ol class='algorithm'>
-                        <li>Let <var>key</var> be the ECMAScript <span class='estype'>Number</span> value <var>index</var>.</li>
+                        <li>Let <var>idlKey</var> be <var>pair</var>’s key.</li>
+                        <li>Let <var>key</var> be the result of <a class='dfnref' href='#dfn-convert-idl-to-ecmascript-value'>converting</a> <var>idlKey</var> to an ECMAScript value.</li>
                         <li><var>result</var> is <var>key</var>.</li>
                       </ol>
                     </dd>
                     <dt>value</dt>
                     <dd>
                       <ol class='algorithm'>
-                        <li>Let <var>idlValue</var> be the value in <var>values</var> at index <var>index</var>.</li>
+                        <li>Let <var>idlValue</var> be <var>pair</var>’s value.</li>
                         <li>Let <var>value</var> be the result of <a class='dfnref' href='#dfn-convert-idl-to-ecmascript-value'>converting</a> <var>idlValue</var> to an ECMAScript value.</li>
                         <li><var>result</var> is <var>value</var>.</li>
                       </ol>
@@ -12306,8 +12334,9 @@ interface
                     <dt>key+value</dt>
                     <dd>
                       <ol class='algorithm'>
-                        <li>Let <var>key</var> be the ECMAScript <span class='estype'>Number</span> value <var>index</var>.</li>
-                        <li>Let <var>idlValue</var> be the value in <var>values</var> at index <var>index</var>.</li>
+                        <li>Let <var>idlKey</var> be <var>pair</var>’s key.</li>
+                        <li>Let <var>idlValue</var> be <var>pair</var>’s value.</li>
+                        <li>Let <var>key</var> be the result of <a class='dfnref' href='#dfn-convert-idl-to-ecmascript-value'>converting</a> <var>idlKey</var> to an ECMAScript value.</li>
                         <li>Let <var>value</var> be the result of <a class='dfnref' href='#dfn-convert-idl-to-ecmascript-value'>converting</a> <var>idlValue</var> to an ECMAScript value.</li>
                         <li>Let <var>array</var> be the result of performing <a>ArrayCreate</a>(2).</li>
                         <li>Call <a>CreateDataProperty</a>(<var>array</var>, "0", <var>key</var>).</li>
@@ -13500,14 +13529,13 @@ C implements A;</x:codeblock>
             <h4>Platform object [[DefineOwnProperty]] method</h4>
 
             <p>
-              The internal <span class='prop'>[[DefineOwnProperty]]</span> method of every
-              <a class='dfnref' href='#dfn-platform-object'>platform object</a> <var>O</var> that implements an <a class='dfnref' href='#dfn-interface'>interface</a>
-              which <a class='dfnref' href='#dfn-support-indexed-properties'>supports indexed</a> or
-              <a class='dfnref' href='#dfn-support-named-properties'>named properties</a>
-              <span class='rfc2119'>MUST</span> behave as follows when called with property name <var>P</var>,
-              Property Descriptor <var>Desc</var> and boolean flag <var>Throw</var>.
-              The term “Reject” is used as defined in
-              <a href='#platform-array-object-defineownproperty'>section <?sref platform-array-object-defineownproperty?></a> <?sdir platform-array-object-defineownproperty?>.
+              When the internal <span class='prop'>[[DefineOwnProperty]]</span> method of a
+              <a class='dfnref' href='#dfn-platform-object'>platform object</a> <var>O</var> that
+              implements an <a class='dfnref' href='#dfn-interface'>interface</a> which
+              <a class='dfnref' href='#dfn-support-indexed-properties'>supports indexed</a> or
+              <a class='dfnref' href='#dfn-support-named-properties'>named properties</a> is
+              called with property key <var>P</var> and <a>Property Descriptor</a>
+              <var>Desc</var>, the following steps <span class='rfc2119'>MUST</span> be taken:
             </p>
 
             <ol class='algorithm'>
@@ -13515,11 +13543,23 @@ C implements A;</x:codeblock>
                 If <var>O</var> <a class='dfnref' href='#dfn-support-indexed-properties'>supports indexed properties</a> and
                 <var>P</var> is an <a class='dfnref' href='#dfn-array-index-property-name'>array index property name</a>, then:
                 <ol>
-                  <li>If the result of calling <a>IsDataDescriptor</a>(<var>Desc</var>) is <span class='esvalue'>false</span>, then Reject.</li>
-                  <li>If <var>O</var> does not implement an interface with an <a class='dfnref' href='#dfn-indexed-property-setter'>indexed property setter</a>, then Reject.</li>
-                  <li><a href='#invoking-indexed-setter'>Invoke the indexed
-                  property setter</a> with <var>P</var> and <var>Desc</var>.<span class='prop'>[[Value]]</span>.</li>
-                  <li>Return <span class='esvalue'>true</span>.</li>
+                  <li>
+                    If the result of calling <a>IsDataDescriptor</a>(<var>Desc</var>) is
+                    <span class='esvalue'>false</span>, then return
+                    <span class="esvalue">false</span>.
+                  </li>
+                  <li>
+                    If <var>O</var> does not implement an interface with an
+                    <a class='dfnref' href='#dfn-indexed-property-setter'>indexed property
+                    setter</a>, then return <span class="esvalue">false</span>.
+                  </li>
+                  <li>
+                    <a href='#invoking-indexed-setter'>Invoke the indexed property setter</a> with
+                    <var>P</var> and <var>Desc</var>.<span class='prop'>[[Value]]</span>.
+                  </li>
+                  <li>
+                    Return <span class='esvalue'>true</span>.
+                  </li>
                 </ol>
               </li>
 
@@ -13559,16 +13599,29 @@ C implements A;</x:codeblock>
                     <a class='dfnref' href='#dfn-extended-attribute'>extended attribute</a> or <var>O</var> does not have an own property
                     named <var>P</var>, then:
                     <ol>
-                      <li>If <var>creating</var> is false and <var>O</var> does not implement an interface with a <a class='dfnref' href='#dfn-named-property-setter'>named property setter</a>, then Reject.</li>
-                      <li>If <var>O</var> implements an interface with a <a class='dfnref' href='#dfn-named-property-setter'>named property setter</a>, then:
+                      <li>
+                        If <var>creating</var> is false and <var>O</var> does not implement an
+                        interface with a <a class='dfnref' href='#dfn-named-property-setter'>named
+                        property setter</a>, then return <span class="esvalue">false</span>.
+                      </li>
+                      <li>
+                        If <var>O</var> implements an interface with a
+                        <a class='dfnref' href='#dfn-named-property-setter'>named property
+                        setter</a>, then:
                         <ol>
-                          <li>If the result of calling <a>IsDataDescriptor</a>(<var>Desc</var>) is <span class='esvalue'>false</span>, then Reject.</li>
                           <li>
-                            <a href='#invoking-named-setter'>Invoke the named
-                          property setter</a> with <var>P</var> and
-                          <var>Desc</var>.<span class='prop'>[[Value]]</span>.
+                            If the result of calling <a>IsDataDescriptor</a>(<var>Desc</var>) is
+                            <span class='esvalue'>false</span>, then return
+                            <span class="esvalue">false</span>.
                           </li>
-                          <li>Return <span class='esvalue'>true</span>.</li>
+                          <li>
+                            <a href='#invoking-named-setter'>Invoke the named property setter</a>
+                            with <var>P</var> and
+                            <var>Desc</var>.<span class='prop'>[[Value]]</span>.
+                          </li>
+                          <li>
+                            Return <span class='esvalue'>true</span>.
+                          </li>
                         </ol>
                       </li>
                     </ol>
@@ -13576,10 +13629,20 @@ C implements A;</x:codeblock>
                 </ol>
               </li>
 
-              <li>If <var>O</var> does not implement an <a class='dfnref' href='#dfn-interface'>interface</a> with the
-                <a class='xattr' href='#Global'>[Global]</a> or <a class='xattr' href='#PrimaryGlobal'>[PrimaryGlobal]</a> <a class='dfnref' href='#dfn-extended-attribute'>extended attribute</a>,
-                then set <var>Desc</var>.<span class='prop'>[[Configurable]]</span> to <span class='esvalue'>true</span>.</li>
-              <li>Call the <a>default <span class='prop'>[[DefineOwnProperty]]</span> internal method</a> on <var>O</var> passing <var>P</var>, <var>Desc</var>, and <var>Throw</var> as arguments.</li>
+              <li>
+                If <var>O</var> does not implement an
+                <a class='dfnref' href='#dfn-interface'>interface</a> with the
+                <a class='xattr' href='#Global'>[Global]</a> or
+                <a class='xattr' href='#PrimaryGlobal'>[PrimaryGlobal]</a>
+                <a class='dfnref' href='#dfn-extended-attribute'>extended attribute</a>, then set
+                <var>Desc</var>.<span class='prop'>[[Configurable]]</span> to
+                <span class='esvalue'>true</span>.
+              </li>
+
+              <li>
+                Return <a>OrdinaryDefineOwnProperty</a>(<var>O</var>, <var>P</var>,
+                <var>Desc</var>).
+              </li>
             </ol>
           </div>
 

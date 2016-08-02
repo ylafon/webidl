@@ -271,6 +271,15 @@ function clean_frozen_array() {
     p.removeChild(a.previousSibling);
     p.removeChild(a);
 
+    a = $("#es-overloads a[href='#idl-frozen-array']")[0];
+    var li = a.parentNode;
+    var ul = li.parentNode;
+    ul.removeChild(li);
+
+    a = $("#es-overloads a[href='#idl-frozen-array']")[0];
+    var li = a.parentNode;
+    var ul = li.parentNode;
+    ul.removeChild(li);
 
 }
 
