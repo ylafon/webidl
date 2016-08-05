@@ -82,6 +82,12 @@ function clean_regex() {
         var n = val.parentNode.parentNode.parentNode;
         n.parentNode.removeChild(n);
     });
+
+    $("#es-overloadsl a[href='#idl-RegExp']").each(function (i, val) {
+        var n = val.parentNode.parentNode.parentNode;
+        n.parentNode.removeChild(n);
+    });
+
 }
 
 // [ImplicitThis]
