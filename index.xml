@@ -164,9 +164,7 @@
         the web platform to be specified more readily.  How interfaces
         described with Web IDL correspond to constructs within ECMAScript
         execution environments is also detailed in this document.
-        It is expected that this document acts
-        as a guide to implementors of already-published specifications,
-        and that newly published specifications reference this
+        It is expected that newly published specifications reference this
         document to ensure conforming implementations of interfaces
         are interoperable.
       </p>
