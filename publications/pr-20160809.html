@@ -9568,17 +9568,6 @@ system.loginTime;  <span class="comment"><span class="hljs-comment">// So this n
             </li>
 
             <li>
-              Otherwise: if <var>V</var> is a <span class="estype">RegExp</span> object and there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list,
-              <ul>
-                <li><a class="idltype" href="#idl-RegExp">RegExp</a></li>
-                <li><a class="idltype" href="#idl-object">object</a></li>
-                <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> version of either of the above types</li>
-                <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type that has one of the above types in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
-              </ul>
-              then remove from <var>S</var> all other entries.
-            </li>
-
-            <li>
               Otherwise: if <var>V</var> is a <a class="dfnref" href="#dfn-DOMException">DOMException</a> platform object and there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list,
               <ul>
                 <li><a class="idltype" href="#idl-DOMException">DOMException</a></li>
@@ -9638,40 +9627,6 @@ system.loginTime;  <span class="comment"><span class="hljs-comment">// So this n
               Otherwise: if <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(<var>V</var>) is true, and there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list,
               <ul>
                 <li>a <a class="dfnref" href="#dfn-callback-function">callback function</a> type</li>
-                <li><a class="idltype" href="#idl-object">object</a></li>
-                <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> version of any of the above types</li>
-                <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type that has one of the above types in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
-              </ul>
-              then remove from <var>S</var> all other entries.
-            </li>
-
-            <li>
-              Otherwise: if <var>V</var> is any kind of object except for a native <span class="estype">RegExp</span> object, and there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list,
-              <ul>
-                <li>a <a href="#idl-sequence">sequence type</a></li>
-
-                <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> version of any of the above types</li>
-                <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type that has one of the above types in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
-
-              </ul>
-              and after performing the following steps,
-              <ol>
-                <li>
-                  Let <var>method</var> be the result of
-                  <a class="external" href="http://www.ecma-international.org/ecma-262/6.0/#sec-getmethod">GetMethod</a>(<var>V</var>, <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-symbols">@@iterator</a>).
-                </li>
-                <li>
-                  <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>method</var>).
-                </li>
-              </ol>
-              <var>method</var> is not <span class="esvalue">undefined</span>, then remove from <var>S</var> all other entries.
-            </li>
-
-            <li>
-              Otherwise: if <var>V</var> is any kind of object except for a native <span class="estype">RegExp</span> object, and there is an entry in <var>S</var> that has one of the following types at position <var>i</var> of its type list,
-              <ul>
-                <li>a <a class="dfnref" href="#dfn-callback-interface">callback interface</a> type</li>
-                <li>a <a href="#idl-dictionary">dictionary type</a></li>
                 <li><a class="idltype" href="#idl-object">object</a></li>
                 <li>a <a class="dfnref" href="#dfn-nullable-type">nullable</a> version of any of the above types</li>
                 <li>a <a class="dfnref" href="#dfn-union-type">union type</a> or <a class="dfnref" href="#dfn-nullable-type">nullable</a> union type that has one of the above types in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened member types</a></li>
