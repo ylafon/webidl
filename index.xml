@@ -10749,7 +10749,7 @@ with (thing) {
 
             <div id='es-interface-hasinstance' class='section'>
               <h5>Interface object [[HasInstance]] method</h5>
-
+            <div class="warning"><p>The <em>[[HasInstance]]</em> implementations are currently not interoperable and the definition needs update to ES6. This is discussed in <a href="https://github.com/heycam/webidl/issues/129">Issue 129</a></p></div>
               <p>
                 The internal <span class='prop'>[[HasInstance]]</span> method of every
                 <a class='dfnref' href='#dfn-interface-object'>interface object</a>
