@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" typeof="bibo:Document w3p:PR" prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#">
+<html dir="ltr" typeof="bibo:Document w3p:PR" prefix="bibo: http://purl.org/ontology/bibo/ w3p: http://www.w3.org/2001/02pd/rec54#" lang="en">
 <head>
-  <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport">
-  <meta lang="" property="dc:language" content="en">
   <meta charset="utf-8">
+  <meta content="width=device-width,initial-scale=1,shrink-to-fit=no" name="viewport">
+  <meta property="dc:language" content="en" lang="en">
   <style>
     /*
 
@@ -365,18 +365,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   <title>WebIDL Level 1</title>
   <link rel="stylesheet" href="WebIDL-1.css" type="text/css">
 
-
-
-
   <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-PR">
   <!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
-  <meta name="generator" content="ReSpec 4.3.0">
-</head>
+  <meta name="generator" content="ReSpec 4.4.0">
+ </head>
 
 <body class="h-entry" role="document" id="respecDocument">
   <div class="head" role="contentinfo" id="respecHeader">
     <p>
-      <a class="logo" href="https://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C"></a>
+      <a class="logo" href="https://www.w3.org/"><img src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" alt="W3C" height="48" width="72"></a>
     </p>
     <h1 class="title p-name" id="title" property="dcterms:title">WebIDL Level 1</h1>
     <h2 id="w3c-proposed-recommendation-09-august-2016"><abbr title="World Wide Web Consortium">W3C</abbr> Proposed Recommendation <time property="dcterms:issued" class="dt-published" datetime="2016-08-09">09 August 2016</time></h2>
@@ -387,9 +384,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <dd><a href="https://www.w3.org/TR/WebIDL-1/">https://www.w3.org/TR/WebIDL-1/</a></dd>
       <dt>Latest editor's draft:</dt>
       <dd><a href="https://heycam.github.io/webidl/">https://heycam.github.io/webidl/</a></dd>
+      <dt>Implementation report:</dt>
+      <dd><a href="https://www.w3.org/WebPlatform/WG/implementations/webidl-1/report/all.html">https://www.w3.org/WebPlatform/WG/implementations/webidl-1/report/all.html</a></dd>
       <dt>Previous version:</dt>
       <dd><a rel="dcterms:replaces" href="https://www.w3.org/TR/2016/CR-WebIDL-1-20160308/">https://www.w3.org/TR/2016/CR-WebIDL-1-20160308/</a></dd>
-     <dt>Editors:</dt>
+      <dt>Editors:</dt>
       <dd class="p-author h-card vcard" property="bibo:editor" resource="_:editor0"><span property="rdf:first" typeof="foaf:Person"><meta property="foaf:name" content="Cameron McCormack"><a class="u-url url p-name fn" property="foaf:homepage" href="http://mcc.id.au/">Cameron McCormack</a>, Mozilla Corporation, <span class="ed_mailto"><a class="u-email email" property="foaf:mbox" href="mailto:cam@mcc.id.au">cam@mcc.id.au</a></span></span>
         <span property="rdf:rest" resource="_:editor1"></span>
       </dd>
@@ -433,20 +432,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <hr title="Separator for header">
   </div>
 
-
-  <!--
-    <div id='publication-warning'>
-      <strong>This document is in the process of being prepared to be published as a Candidate Recommendation.
-      Please note that it as yet has not been published as a CR and that this document
-      at dev.w3.org is still to be considered an unofficial draft.</strong> <br/> <button onclick="document.body.removeChild(this.parentNode)">Dismiss</button>
-    </div>
-    -->
-
   <section id="abstract" class="introductory" property="dc:abstract">
     <h2 id="h-abstract" resource="#h-abstract"><span property="xhv:role" resource="xhv:heading">Abstract</span></h2>
 
     <p>
-      This document defines an interface definition language, Web IDL, that can be used to describe interfaces that are intended to be implemented in web browsers. Web IDL is an IDL variant with a number of features that allow the behavior of common script objects in the web platform to be specified more readily. How interfaces described with Web IDL correspond to constructs within ECMAScript execution environments is also detailed in this document. It is expected that this document acts as a guide to implementors of already-published specifications, and that newly published specifications reference this document to ensure conforming implementations of interfaces are interoperable.
+      This document defines an interface definition language, Web IDL, that can be used to describe interfaces that are intended to be implemented in web browsers. Web IDL is an IDL variant with a number of features that allow the behavior of common script objects in the web platform to be specified more readily. How interfaces described with Web IDL correspond to constructs within ECMAScript execution environments is also detailed in this document. It is expected that newly published specifications reference this document to ensure conforming implementations of interfaces are interoperable.
     </p>
 
   </section>
@@ -481,6 +471,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <a href="https://www.w3.org/2002/09/wbs/myQuestionnaires">WBS questionnaires</a>. Note that substantive technical comments were expected during the Last Call review period that ended 23 May 2016.
     </p>
     <p>
+      Please see the Working Group's <a href="https://www.w3.org/WebPlatform/WG/implementations/webidl-1/report/all.html">implementation
+              report</a>.
+    </p>
+    <p>
       Publication as a Proposed Recommendation does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.
     </p>
     <p>
@@ -499,46 +493,44 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
   </section>
 
-    
-  
 
 
   <nav id="toc">
     <h2 class="introductory" id="table-of-contents" resource="#table-of-contents"><span property="xhv:role" resource="xhv:heading">Table of Contents</span></h2>
-    <ul class="toc" role="directory">
+    <ol class="toc" role="directory">
       <li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a>
-        <ul class="toc">
+        <ol class="toc">
           <li class="tocline"><a href="#conventions" class="tocxref"><span class="secno">1.1 </span>Typographic conventions</a></li>
-        </ul>
+        </ol>
       </li>
       <li class="tocline"><a href="#conformance" class="tocxref"><span class="secno">2. </span>Conformance</a></li>
       <li class="tocline"><a href="#idl" class="tocxref"><span class="secno">3. </span>Interface definition language</a>
-        <ul class="toc">
+        <ol class="toc">
           <li class="tocline"><a href="#idl-names" class="tocxref"><span class="secno">3.1 </span>Names</a></li>
           <li class="tocline"><a href="#idl-interfaces" class="tocxref"><span class="secno">3.2 </span>Interfaces</a>
-            <ul class="toc">
+            <ol class="toc">
               <li class="tocline"><a href="#idl-constants" class="tocxref"><span class="secno">3.2.1 </span>Constants</a></li>
               <li class="tocline"><a href="#idl-attributes" class="tocxref"><span class="secno">3.2.2 </span>Attributes</a></li>
               <li class="tocline"><a href="#idl-operations" class="tocxref"><span class="secno">3.2.3 </span>Operations</a></li>
               <li class="tocline"><a href="#idl-special-operations" class="tocxref"><span class="secno">3.2.4 </span>Special operations</a>
-                <ul class="toc">
+                <ol class="toc">
                   <li class="tocline"><a href="#idl-legacy-callers" class="tocxref"><span class="secno">3.2.4.1 </span>Legacy callers</a></li>
                   <li class="tocline"><a href="#idl-stringifiers" class="tocxref"><span class="secno">3.2.4.2 </span>Stringifiers</a></li>
                   <li class="tocline"><a href="#idl-serializers" class="tocxref"><span class="secno">3.2.4.3 </span>Serializers</a></li>
                   <li class="tocline"><a href="#idl-indexed-properties" class="tocxref"><span class="secno">3.2.4.4 </span>Indexed properties</a></li>
                   <li class="tocline"><a href="#idl-named-properties" class="tocxref"><span class="secno">3.2.4.5 </span>Named properties</a></li>
-                </ul>
+                </ol>
               </li>
               <li class="tocline"><a href="#idl-static-attributes-and-operations" class="tocxref"><span class="secno">3.2.5 </span>Static attributes and operations</a></li>
               <li class="tocline"><a href="#idl-overloading" class="tocxref"><span class="secno">3.2.6 </span>Overloading</a></li>
               <li class="tocline"><a href="#idl-iterable" class="tocxref"><span class="secno">3.2.7 </span>Iterable declarations</a></li>
-            </ul>
+            </ol>
           </li>
           <li class="tocline"><a href="#idl-dictionaries" class="tocxref"><span class="secno">3.3 </span>Dictionaries</a></li>
           <li class="tocline"><a href="#idl-exceptions" class="tocxref"><span class="secno">3.4 </span>Exceptions</a>
-            <ul class="toc">
+            <ol class="toc">
               <li class="tocline"><a href="#idl-DOMException-error-names" class="tocxref"><span class="secno">3.4.1 </span>Error names</a></li>
-            </ul>
+            </ol>
           </li>
           <li class="tocline"><a href="#idl-enums" class="tocxref"><span class="secno">3.5 </span>Enumerations</a></li>
           <li class="tocline"><a href="#idl-callback-functions" class="tocxref"><span class="secno">3.6 </span>Callback functions</a></li>
@@ -546,7 +538,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           <li class="tocline"><a href="#idl-implements-statements" class="tocxref"><span class="secno">3.8 </span>Implements statements</a></li>
           <li class="tocline"><a href="#idl-objects" class="tocxref"><span class="secno">3.9 </span>Objects implementing interfaces</a></li>
           <li class="tocline"><a href="#idl-types" class="tocxref"><span class="secno">3.10 </span>Types</a>
-            <ul class="toc">
+            <ol class="toc">
               <li class="tocline"><a href="#idl-any" class="tocxref"><span class="secno">3.10.1 </span>any</a></li>
               <li class="tocline"><a href="#idl-boolean" class="tocxref"><span class="secno">3.10.2 </span>boolean</a></li>
               <li class="tocline"><a href="#idl-byte" class="tocxref"><span class="secno">3.10.3 </span>byte</a></li>
@@ -576,16 +568,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <li class="tocline"><a href="#idl-Error" class="tocxref"><span class="secno">3.10.27 </span>Error</a></li>
               <li class="tocline"><a href="#idl-DOMException" class="tocxref"><span class="secno">3.10.28 </span>DOMException</a></li>
               <li class="tocline"><a href="#idl-buffer-source-types" class="tocxref"><span class="secno">3.10.29 </span>Buffer source types</a></li>
-            </ul>
+            </ol>
           </li>
           <li class="tocline"><a href="#idl-extended-attributes" class="tocxref"><span class="secno">3.11 </span>Extended attributes</a></li>
-        </ul>
+        </ol>
       </li>
       <li class="tocline"><a href="#ecmascript-binding" class="tocxref"><span class="secno">4. </span>ECMAScript binding</a>
-        <ul class="toc">
+        <ol class="toc">
           <li class="tocline"><a href="#es-environment" class="tocxref"><span class="secno">4.1 </span>ECMAScript environment</a></li>
           <li class="tocline"><a href="#es-type-mapping" class="tocxref"><span class="secno">4.2 </span>ECMAScript type mapping</a>
-            <ul class="toc">
+            <ol class="toc">
               <li class="tocline"><a href="#es-any" class="tocxref"><span class="secno">4.2.1 </span>any</a></li>
               <li class="tocline"><a href="#es-void" class="tocxref"><span class="secno">4.2.2 </span>void</a></li>
               <li class="tocline"><a href="#es-boolean" class="tocxref"><span class="secno">4.2.3 </span>boolean</a></li>
@@ -611,19 +603,19 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <li class="tocline"><a href="#es-callback-function" class="tocxref"><span class="secno">4.2.23 </span>Callback function types</a></li>
               <li class="tocline"><a href="#es-nullable-type" class="tocxref"><span class="secno">4.2.24 </span>Nullable types — <var>T</var>?</a></li>
               <li class="tocline"><a href="#es-sequence" class="tocxref"><span class="secno">4.2.25 </span>Sequences — sequence&lt;<var>T</var>&gt;</a>
-                <ul class="toc">
+                <ol class="toc">
                   <li class="tocline"><a href="#create-sequence-from-iterable" class="tocxref"><span class="secno">4.2.25.1 </span>Creating a sequence from an iterable</a></li>
-                </ul>
+                </ol>
               </li>
               <li class="tocline"><a href="#es-promise" class="tocxref"><span class="secno">4.2.26 </span>Promise types —&nbsp;Promise&lt;<var>T</var>&gt;</a></li>
               <li class="tocline"><a href="#es-union" class="tocxref"><span class="secno">4.2.27 </span>Union types</a></li>
               <li class="tocline"><a href="#es-Error" class="tocxref"><span class="secno">4.2.28 </span>Error</a></li>
               <li class="tocline"><a href="#es-DOMException" class="tocxref"><span class="secno">4.2.29 </span>DOMException</a></li>
               <li class="tocline"><a href="#es-buffer-source-types" class="tocxref"><span class="secno">4.2.30 </span>Buffer source types</a></li>
-            </ul>
+            </ol>
           </li>
           <li class="tocline"><a href="#es-extended-attributes" class="tocxref"><span class="secno">4.3 </span>ECMAScript-specific extended attributes</a>
-            <ul class="toc">
+            <ol class="toc">
               <li class="tocline"><a href="#Clamp" class="tocxref"><span class="secno">4.3.1 </span>[Clamp]</a></li>
               <li class="tocline"><a href="#Constructor" class="tocxref"><span class="secno">4.3.2 </span>[Constructor]</a></li>
               <li class="tocline"><a href="#EnforceRange" class="tocxref"><span class="secno">4.3.3 </span>[EnforceRange]</a></li>
@@ -640,57 +632,57 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <li class="tocline"><a href="#TreatNonObjectAsNull" class="tocxref"><span class="secno">4.3.14 </span>[TreatNonObjectAsNull]</a></li>
               <li class="tocline"><a href="#TreatNullAs" class="tocxref"><span class="secno">4.3.15 </span>[TreatNullAs]</a></li>
               <li class="tocline"><a href="#Unforgeable" class="tocxref"><span class="secno">4.3.16 </span>[Unforgeable]</a></li>
-            </ul>
+            </ol>
           </li>
           <li class="tocline"><a href="#es-security" class="tocxref"><span class="secno">4.4 </span>Security</a></li>
           <li class="tocline"><a href="#es-overloads" class="tocxref"><span class="secno">4.5 </span>Overload resolution algorithm</a></li>
           <li class="tocline"><a href="#es-interfaces" class="tocxref"><span class="secno">4.6 </span>Interfaces</a>
-            <ul class="toc">
+            <ol class="toc">
               <li class="tocline"><a href="#interface-object" class="tocxref"><span class="secno">4.6.1 </span>Interface object</a>
-                <ul class="toc">
+                <ol class="toc">
                   <li class="tocline"><a href="#es-interface-call" class="tocxref"><span class="secno">4.6.1.1 </span>Interface object [[Call]] method</a></li>
                   <li class="tocline"><a href="#es-interface-hasinstance" class="tocxref"><span class="secno">4.6.1.2 </span>Interface object [[HasInstance]] method</a></li>
-                </ul>
+                </ol>
               </li>
               <li class="tocline"><a href="#named-constructors" class="tocxref"><span class="secno">4.6.2 </span>Named constructors</a></li>
               <li class="tocline"><a href="#es-dictionary-constructors" class="tocxref"><span class="secno">4.6.3 </span>Dictionary constructors</a></li>
               <li class="tocline"><a href="#interface-prototype-object" class="tocxref"><span class="secno">4.6.4 </span>Interface prototype object</a></li>
               <li class="tocline"><a href="#named-properties-object" class="tocxref"><span class="secno">4.6.5 </span>Named properties object</a>
-                <ul class="toc">
+                <ol class="toc">
                   <li class="tocline"><a href="#named-properties-object-getownproperty" class="tocxref"><span class="secno">4.6.5.1 </span>Named properties object [[GetOwnProperty]] method</a></li>
                   <li class="tocline"><a href="#named-properties-object-defineownproperty" class="tocxref"><span class="secno">4.6.5.2 </span>Named properties object [[DefineOwnProperty]] method</a></li>
                   <li class="tocline"><a href="#named-properties-object-delete" class="tocxref"><span class="secno">4.6.5.3 </span>Named properties object [[Delete]] method</a></li>
-                </ul>
+                </ol>
               </li>
               <li class="tocline"><a href="#es-constants" class="tocxref"><span class="secno">4.6.6 </span>Constants</a></li>
               <li class="tocline"><a href="#es-attributes" class="tocxref"><span class="secno">4.6.7 </span>Attributes</a></li>
               <li class="tocline"><a href="#es-operations" class="tocxref"><span class="secno">4.6.8 </span>Operations</a>
-                <ul class="toc">
+                <ol class="toc">
                   <li class="tocline"><a href="#es-stringifier" class="tocxref"><span class="secno">4.6.8.1 </span>Stringifiers</a></li>
                   <li class="tocline"><a href="#es-serializer" class="tocxref"><span class="secno">4.6.8.2 </span>Serializers</a></li>
-                </ul>
+                </ol>
               </li>
               <li class="tocline"><a href="#es-iterators" class="tocxref"><span class="secno">4.6.9 </span>Common iterator behavior</a>
-                <ul class="toc">
+                <ol class="toc">
                   <li class="tocline"><a href="#es-iterator" class="tocxref"><span class="secno">4.6.9.1 </span>@@iterator</a></li>
                   <li class="tocline"><a href="#es-forEach" class="tocxref"><span class="secno">4.6.9.2 </span>forEach</a></li>
-                </ul>
+                </ol>
               </li>
               <li class="tocline"><a href="#es-iterable" class="tocxref"><span class="secno">4.6.10 </span>Iterable declarations</a>
-                <ul class="toc">
+                <ol class="toc">
                   <li class="tocline"><a href="#es-iterable-entries" class="tocxref"><span class="secno">4.6.10.1 </span>entries</a></li>
                   <li class="tocline"><a href="#es-iterable-keys" class="tocxref"><span class="secno">4.6.10.2 </span>keys</a></li>
                   <li class="tocline"><a href="#es-iterable-values" class="tocxref"><span class="secno">4.6.10.3 </span>values</a></li>
                   <li class="tocline"><a href="#es-default-iterator-object" class="tocxref"><span class="secno">4.6.10.4 </span>Default iterator objects</a></li>
                   <li class="tocline"><a href="#es-iterator-prototype-object" class="tocxref"><span class="secno">4.6.10.5 </span>Iterator prototype object</a></li>
-                </ul>
+                </ol>
               </li>
               <li class="tocline"><a href="#initializing-objects-from-iterables" class="tocxref"><span class="secno">4.6.11 </span>Initializing objects from iterables</a></li>
-            </ul>
+            </ol>
           </li>
           <li class="tocline"><a href="#es-implements-statements" class="tocxref"><span class="secno">4.7 </span>Implements statements</a></li>
           <li class="tocline"><a href="#es-platform-objects" class="tocxref"><span class="secno">4.8 </span>Platform objects implementing interfaces</a>
-            <ul class="toc">
+            <ol class="toc">
               <li class="tocline"><a href="#indexed-and-named-properties" class="tocxref"><span class="secno">4.8.1 </span>Indexed and named properties</a></li>
               <li class="tocline"><a href="#getownproperty-guts" class="tocxref"><span class="secno">4.8.2 </span>The PlatformObjectGetOwnProperty abstract operation</a></li>
               <li class="tocline"><a href="#getownproperty" class="tocxref"><span class="secno">4.8.3 </span>Platform object [[GetOwnProperty]] method</a></li>
@@ -701,45 +693,45 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <li class="tocline"><a href="#delete" class="tocxref"><span class="secno">4.8.8 </span>Platform object [[Delete]] method</a></li>
               <li class="tocline"><a href="#call" class="tocxref"><span class="secno">4.8.9 </span>Platform object [[Call]] method</a></li>
               <li class="tocline"><a href="#property-enumeration" class="tocxref"><span class="secno">4.8.10 </span>Property enumeration</a></li>
-            </ul>
+            </ol>
           </li>
           <li class="tocline"><a href="#es-user-objects" class="tocxref"><span class="secno">4.9 </span>User objects implementing callback interfaces</a></li>
           <li class="tocline"><a href="#es-invoking-callback-functions" class="tocxref"><span class="secno">4.10 </span>Invoking callback functions</a></li>
           <li class="tocline"><a href="#es-exceptions" class="tocxref"><span class="secno">4.11 </span>Exceptions</a>
-            <ul class="toc">
+            <ol class="toc">
               <li class="tocline"><a href="#es-DOMException-constructor-object" class="tocxref"><span class="secno">4.11.1 </span>DOMException constructor object</a>
-                <ul class="toc">
+                <ol class="toc">
                   <li class="tocline"><a href="#es-DOMException-call" class="tocxref"><span class="secno">4.11.1.1 </span>DOMException(message, name)</a></li>
-                </ul>
+                </ol>
               </li>
               <li class="tocline"><a href="#es-DOMException-prototype-object" class="tocxref"><span class="secno">4.11.2 </span>DOMException prototype object</a></li>
-            </ul>
+            </ol>
           </li>
           <li class="tocline"><a href="#es-exception-objects" class="tocxref"><span class="secno">4.12 </span>Exception objects</a></li>
           <li class="tocline"><a href="#es-creating-throwing-exceptions" class="tocxref"><span class="secno">4.13 </span>Creating and throwing exceptions</a></li>
           <li class="tocline"><a href="#es-handling-exceptions" class="tocxref"><span class="secno">4.14 </span>Handling exceptions</a></li>
-        </ul>
+        </ol>
       </li>
       <li class="tocline"><a href="#common" class="tocxref"><span class="secno">5. </span>Common definitions</a>
-        <ul class="toc">
+        <ol class="toc">
           <li class="tocline"><a href="#common-ArrayBufferView" class="tocxref"><span class="secno">5.1 </span>ArrayBufferView</a></li>
           <li class="tocline"><a href="#common-BufferSource" class="tocxref"><span class="secno">5.2 </span>BufferSource</a></li>
           <li class="tocline"><a href="#common-DOMTimeStamp" class="tocxref"><span class="secno">5.3 </span>DOMTimeStamp</a></li>
           <li class="tocline"><a href="#common-Function" class="tocxref"><span class="secno">5.4 </span>Function</a></li>
           <li class="tocline"><a href="#common-VoidFunction" class="tocxref"><span class="secno">5.5 </span>VoidFunction</a></li>
-        </ul>
+        </ol>
       </li>
       <li class="tocline"><a href="#extensibility" class="tocxref"><span class="secno">6. </span>Extensibility</a></li>
       <li class="tocline"><a href="#referencing" class="tocxref"><span class="secno">7. </span>Referencing this specification</a></li>
       <li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">8. </span>Acknowledgements</a></li>
       <li class="tocline"><a href="#idl-grammar" class="tocxref"><span class="secno">A. </span>IDL grammar</a></li>
       <li class="tocline"><a href="#references" class="tocxref"><span class="secno">B. </span>References</a>
-        <ul class="toc">
+        <ol class="toc">
           <li class="tocline"><a href="#normative-references" class="tocxref"><span class="secno">B.1 </span>Normative references</a></li>
           <li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">B.2 </span>Informative references</a></li>
-        </ul>
+        </ol>
       </li>
-    </ul>
+    </ol>
   </nav>
 
 
@@ -5744,7 +5736,7 @@ interface Person {
           <div class="">
             <p>For ECMAScript objects, the <a class="dfnref" href="#dfn-callback-context">callback context</a> is used to hold a reference to the
               <a class="dfnref external" href="http://www.w3.org/TR/html/webappapis.html#incumbent-settings-object">incumbent script</a> [
-              <cite><a class="bibref" href="#bib-HTML">HTML</a></cite>] at the time the <span class="estype">Object</span> value is converted to an IDL callback interface type value. See
+              <cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>] at the time the <span class="estype">Object</span> value is converted to an IDL callback interface type value. See
               <a href="#es-interface">section </a><a href="#es-interface">4.2.20 </a> .</p>
           </div>
         </div>
@@ -5806,7 +5798,7 @@ interface Person {
           <div class="">
             <p>As with <a href="#idl-interface">callback interface types</a>, the <a class="dfnref" href="#dfn-callback-context">callback context</a> is used to hold a reference to the
               <a class="dfnref external" href="http://www.w3.org/TR/html/webappapis.html#incumbent-settings-object">incumbent script</a> [
-              <cite><a class="bibref" href="#bib-HTML">HTML</a></cite>] at the time an ECMAScript <span class="estype">Object</span> value is converted to an IDL callback function type value. See
+              <cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>] at the time an ECMAScript <span class="estype">Object</span> value is converted to an IDL callback function type value. See
               <a href="#es-callback-function">section </a><a href="#es-callback-function">4.2.23 </a> .</p>
           </div>
         </div>
@@ -7327,7 +7319,7 @@ iframe.appendChild <span class="hljs-keyword">instanceof</span> w.Function;  </s
           <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
           <li>If <var>V</var> is a <a class="dfnref" href="#dfn-platform-object">platform object</a> that implements <var>I</var>, then return the IDL <a href="#idl-interface">interface type</a> value that represents a reference to that platform object.</li>
           <li>If <var>V</var> is a <a class="dfnref" href="#dfn-user-object">user object</a> that is considered to implement <var>I</var> according to the rules in
-            <a href="#es-user-objects">section </a><a href="#es-user-objects">4.9 </a>, then return the IDL <a href="#idl-interface">interface type</a> value that represents a reference to that user object, with the <a class="dfnref external" href="http://www.w3.org/TR/html/webappapis.html#incumbent-settings-object">incumbent script</a> as the <a class="dfnref" href="#dfn-callback-context">callback context</a>. [<cite><a class="bibref" href="#bib-HTML">HTML</a></cite>]</li>
+            <a href="#es-user-objects">section </a><a href="#es-user-objects">4.9 </a>, then return the IDL <a href="#idl-interface">interface type</a> value that represents a reference to that user object, with the <a class="dfnref external" href="http://www.w3.org/TR/html/webappapis.html#incumbent-settings-object">incumbent script</a> as the <a class="dfnref" href="#dfn-callback-context">callback context</a>. [<cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>]</li>
           <li><a href="#ecmascript-throw" class="dfnref external">Throw a <span class="esvalue">TypeError</span></a>.</li>
         </ol>
         <p id="interface-to-es">
@@ -7461,7 +7453,7 @@ iframe.appendChild <span class="hljs-keyword">instanceof</span> w.Function;  </s
           <li>If the result of calling <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(<var>V</var>) is <span class="esvalue">false</span> and the conversion to an IDL value is not being performed due to <var>V</var> being assigned to an <a class="dfnref" href="#dfn-attribute">attribute</a> whose type is a <a class="dfnref" href="#dfn-nullable-type">nullable</a>
             <a class="dfnref" href="#dfn-callback-function">callback function</a> that is annotated with <a class="xattr" href="#TreatNonObjectAsNull">[TreatNonObjectAsNull]</a>, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="esvalue">TypeError</span></a>.</li>
           <li>Return the IDL <a href="#idl-callback-function">callback
-              function type</a> value that represents a reference to the same object that <var>V</var> represents, with the <a class="dfnref external" href="http://www.w3.org/TR/html/webappapis.html#incumbent-settings-object">incumbent script</a> as the <a class="dfnref" href="#dfn-callback-context">callback context</a>. [<cite><a class="bibref" href="#bib-HTML">HTML</a></cite>].</li>
+              function type</a> value that represents a reference to the same object that <var>V</var> represents, with the <a class="dfnref external" href="http://www.w3.org/TR/html/webappapis.html#incumbent-settings-object">incumbent script</a> as the <a class="dfnref" href="#dfn-callback-context">callback context</a>. [<cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>].</li>
         </ol>
         <p id="callback-function-to-es">
           The result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> an IDL <a href="#idl-callback-function">callback function type</a> value to an ECMAScript value is a reference to the same object that the IDL <a href="#idl-callback-function">callback function type</a> value represents.
@@ -9480,7 +9472,7 @@ system.loginTime;  <span class="comment"><span class="hljs-comment">// So this n
       <div class="note">
         <div class="note-title marker" aria-level="4" role="heading" id="h-note55"><span>Note</span></div>
         <div class="">
-          <p>The expectation is that the HTML specification defines how a security check is performed, and that it will either throw an appropriate exception or return normally. [<cite><a class="bibref" href="#bib-HTML">HTML</a></cite>]</p>
+          <p>The expectation is that the HTML specification defines how a security check is performed, and that it will either throw an appropriate exception or return normally. [<cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>]</p>
         </div>
       </div>
     </section>
@@ -9996,7 +9988,12 @@ system.loginTime;  <span class="comment"><span class="hljs-comment">// So this n
 
         <section id="es-interface-hasinstance" typeof="bibo:Chapter" resource="#es-interface-hasinstance" property="bibo:hasPart">
           <h5 id="h-es-interface-hasinstance" resource="#h-es-interface-hasinstance"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.6.1.2 </span>Interface object [[HasInstance]] method</span></h5>
-
+          <div class="warning">
+            <div class="warning-title marker"><span>Warning</span></div>
+            <div class="">
+              <p>The <em>[[HasInstance]]</em> implementations are currently not interoperable and the definition needs update to ES6. This is discussed in <a href="https://github.com/heycam/webidl/issues/129">Issue 129</a></p>
+            </div>
+          </div>
           <p>
             The internal <span class="prop">[[HasInstance]]</span> method of every
             <a class="dfnref" href="#dfn-interface-object">interface object</a>
@@ -12023,7 +12020,7 @@ C implements A;</code></pre></div>
               <var>idlarg</var><sub><var>i</var></sub> to an ECMAScript value.
             </li>
             <li>Let <var>script</var> be the <a class="dfnref" href="#dfn-callback-context">callback context</a> associated with <var>V</var>.</li>
-            <li>Push <var>script</var> on to the <a class="dfnref external" href="http://www.w3.org/TR/html/webappapis.html#stack-of-script-settings-objects">stack of incumbent scripts</a>. [<cite><a class="bibref" href="#bib-HTML">HTML</a></cite>]</li>
+            <li>Push <var>script</var> on to the <a class="dfnref external" href="http://www.w3.org/TR/html5/webappapis.html#stack-of-script-settings-objects">stack of incumbent scripts</a>. [<cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>]</li>
             <li>Let <var>R</var> be an uninitialized variable.</li>
             <li>Try running the following step:
               <ol>
@@ -12031,7 +12028,7 @@ C implements A;</code></pre></div>
               </ol>
               And then, whether or not an exception was thrown:
               <ol>
-                <li>Pop <var>script</var> off the <a class="dfnref external" href="http://www.w3.org/TR/html/webappapis.html#stack-of-script-settings-objects">stack of incumbent scripts</a>.</li>
+                <li>Pop <var>script</var> off the <a class="dfnref external" href="http://www.w3.org/TR/html5/webappapis.html#stack-of-script-settings-objects">stack of incumbent scripts</a>.</li>
                 <li>If an exception was thrown, end these steps, and allow it to propagate.</li>
               </ol>
             </li>
@@ -12067,7 +12064,7 @@ C implements A;</code></pre></div>
             <li>Let <var>O</var> be the ECMAScript object corresponding to <var>V</var>.</li>
             <li>Let <var>P</var> be the <a class="dfnref" href="#dfn-identifier">identifier</a> of the attribute.</li>
             <li>Let <var>script</var> be the <a class="dfnref" href="#dfn-callback-context">callback context</a> associated with <var>V</var>.</li>
-            <li>Push <var>script</var> on to the <a class="dfnref external" href="http://www.w3.org/TR/html/webappapis.html#stack-of-script-settings-objects">stack of incumbent scripts</a>. [<cite><a class="bibref" href="#bib-HTML">HTML</a></cite>]</li>
+            <li>Push <var>script</var> on to the <a class="dfnref external" href="http://www.w3.org/TR/html5/webappapis.html#stack-of-script-settings-objects">stack of incumbent scripts</a>. [<cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>]</li>
             <li>Let <var>R</var> be an uninitialized variable.</li>
             <li>Try running the following step:
               <ol>
@@ -12075,7 +12072,7 @@ C implements A;</code></pre></div>
               </ol>
               And then, whether or not an exception was thrown:
               <ol>
-                <li>Pop <var>script</var> off the <a class="dfnref external" href="http://www.w3.org/TR/html/webappapis.html#stack-of-script-settings-objects">stack of incumbent scripts</a>.</li>
+                <li>Pop <var>script</var> off the <a class="dfnref external" href="http://www.w3.org/TR/html5/webappapis.html#stack-of-script-settings-objects">stack of incumbent scripts</a>.</li>
                 <li>If an exception was thrown, end these steps, and allow it to propagate.</li>
               </ol>
             </li>
@@ -12104,14 +12101,14 @@ C implements A;</code></pre></div>
         <li>Let <var>V</var> be the IDL value to be assigned to the attribute.</li>
         <li>Let <var>W</var> be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> <var>V</var> to an ECMAScript value.</li>
         <li>Let <var>script</var> be the <a class="dfnref" href="#dfn-callback-context">callback context</a> associated with <var>V</var>.</li>
-        <li>Push <var>script</var> on to the <a class="dfnref external" href="http://www.w3.org/TR/html/webappapis.html#stack-of-script-settings-objects">stack of incumbent scripts</a>. [<cite><a class="bibref" href="#bib-HTML">HTML</a></cite>]</li>
+        <li>Push <var>script</var> on to the <a class="dfnref external" href="http://www.w3.org/TR/html5/webappapis.html#stack-of-script-settings-objects">stack of incumbent scripts</a>. [<cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>]</li>
         <li>Try running the following step:
           <ol>
             <li>Invoke the <span class="prop">[[Put]]</span> method of <var>O</var> with property name <var>P</var> and value <var>W</var>.</li>
           </ol>
           And then, whether or not an exception was thrown:
           <ol>
-            <li>Pop <var>script</var> off the <a class="dfnref external" href="http://www.w3.org/TR/html/webappapis.html#stack-of-script-settings-objects">stack of incumbent scripts</a>.</li>
+            <li>Pop <var>script</var> off the <a class="dfnref external" href="http://www.w3.org/TR/html5/webappapis.html#stack-of-script-settings-objects">stack of incumbent scripts</a>.</li>
             <li>If an exception was thrown, end these steps, and allow it to propagate.</li>
           </ol>
         </li>
@@ -12147,14 +12144,14 @@ C implements A;</code></pre></div>
                 </li>
                 <li>Truncate <var>values</var> to have length <var>count</var>.</li>
                 <li>Let <var>script</var> be the <a class="dfnref" href="#dfn-callback-context">callback context</a> associated with <var>V</var>.</li>
-                <li>Push <var>script</var> on to the <a class="dfnref external" href="http://www.w3.org/TR/html/webappapis.html#stack-of-script-settings-objects">stack of incumbent scripts</a>. [<cite><a class="bibref" href="#bib-HTML">HTML</a></cite>]</li>
+                <li>Push <var>script</var> on to the <a class="dfnref external" href="http://www.w3.org/TR/html5/webappapis.html#stack-of-script-settings-objects">stack of incumbent scripts</a>. [<cite><a class="bibref" href="#bib-HTML5">HTML5</a></cite>]</li>
                 <li>Try running the following step:
                   <ol>
                     <li>Set <var>R</var> to the result of invoking the <span class="prop">[[Call]]</span> method of <var>F</var>, providing the <a class="dfnref" href="#dfn-callback-this-value">callback this value</a> as the <span class="esvalue">this</span> value and <var>values</var> as the argument values.</li>
                   </ol>
                   And then, whether or not an exception was thrown:
                   <ol>
-                    <li>Pop <var>script</var> off the <a class="dfnref external" href="http://www.w3.org/TR/html/webappapis.html#stack-of-script-settings-objects">stack of incumbent scripts</a>.</li>
+                    <li>Pop <var>script</var> off the <a class="dfnref external" href="http://www.w3.org/TR/html5/webappapis.html#stack-of-script-settings-objects">stack of incumbent scripts</a>.</li>
                     <li>If an exception was thrown, end these steps, and allow it to propagate.</li>
                   </ol>
                 </li>
@@ -13461,8 +13458,6 @@ d.type = et;
         <dd>Anne van Kesteren; Aryeh Gregor; Ms2ger; Alex Russell; Robin Berjon. W3C. <a href="https://www.w3.org/TR/dom/" property="dc:references"><cite>W3C DOM4</cite></a>. 19 November 2015. W3C Recommendation. URL: <a href="https://www.w3.org/TR/dom/" property="dc:references">https://www.w3.org/TR/dom/</a>
         </dd><dt id="bib-DOM3CORE">[DOM3CORE]</dt>
         <dd>Arnaud Le Hors; Philippe Le Hégaret; Lauren Wood; Gavin Nicol; Jonathan Robie; Mike Champion; Steven B Byrne et al. W3C. <a href="https://www.w3.org/TR/DOM-Level-3-Core/" property="dc:references"><cite>Document Object Model (DOM) Level 3 Core Specification</cite></a>. 7 April 2004. W3C Recommendation. URL: <a href="https://www.w3.org/TR/DOM-Level-3-Core/" property="dc:references">https://www.w3.org/TR/DOM-Level-3-Core/</a>
-        </dd><dt id="bib-HTML">[HTML]</dt>
-        <dd>Ian Hickson. WHATWG. <a href="https://html.spec.whatwg.org/multipage/" property="dc:references"><cite>HTML Standard</cite></a>. Living Standard. URL: <a href="https://html.spec.whatwg.org/multipage/" property="dc:references">https://html.spec.whatwg.org/multipage/</a>
         </dd><dt id="bib-HTML5">[HTML5]</dt>
         <dd>Ian Hickson; Robin Berjon; Steve Faulkner; Travis Leithead; Erika Doyle Navara; Edward O'Connor; Silvia Pfeiffer. W3C. <a href="https://www.w3.org/TR/html5/" property="dc:references"><cite>HTML5</cite></a>. 28 October 2014. W3C Recommendation. URL: <a href="https://www.w3.org/TR/html5/" property="dc:references">https://www.w3.org/TR/html5/</a>
         </dd><dt id="bib-OMGIDL">[OMGIDL]</dt>
