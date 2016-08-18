@@ -6493,8 +6493,8 @@ interface Person {
         <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%FunctionPrototype%</a> ( [
         <cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>] , section 6.1.7.4) unless otherwise specified.</li>
       <li>Its <span class="prop">[[Get]]</span> internal property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-get-p-receiver">ECMA-262 section 9.1.8</a>.</li>
-      <li>Its <span class="prop">[[Construct]]</span> internal property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-function-@@create">ECMA-262 section 19.2.2.3</a>.</li>
-      <li>Its <span class="prop">@@hasInstance</span> property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-function.prototype-@@hasinstance">ECMA-262 section 19.2.3.8</a>, unless otherwise specified.</li>
+      <li>Its <span class="prop">[[Construct]]</span> internal property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-properties-of-the-function-constructor">ECMA-262 section 19.2.2</a>.</li>
+      <li>Its <span class="prop">@@hasInstance</span> property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-function.prototype-@@hasinstance">ECMA-262 section 19.2.3.6</a>, unless otherwise specified.</li>
     </ul>
 
     <p id="ecmascript-abstractop">
@@ -11056,7 +11056,7 @@ interface
               <p>
                 Default iterator objects are only used for <a class="dfnref" href="#dfn-pair-iterator">pair iterators</a>;
                 <a class="dfnref" href="#dfn-value-iterator">value iterators</a>, as they are currently restricted to iterating over an object’s
-                <a class="dfnref" href="#dfn-supported-indexed-properties">supported indexed properties</a>, use standard ECMAScript Array iterator objects.
+                <a class="dfnref" href="#dfn-support-indexed-properties">supported indexed properties</a>, use standard ECMAScript Array iterator objects.
               </p>
             </div>
           </div>
@@ -13232,7 +13232,7 @@ d.type = et;
         </tr>
         <tr id="prod-BufferRelatedType">
           <td><span class="prod-number">[79]</span></td>
-          <td><a class="sym" href="#proddef-BufferRelatedType">BufferRelatedType</a></td>
+          <td><a class="sym" href="#prod-BufferRelatedType">BufferRelatedType</a></td>
           <td class="prod-mid">→</td>
           <td class="prod-rhs"><span class="prod-lines">"ArrayBuffer" <br>&nbsp;|
              "DataView" <br>&nbsp;|
