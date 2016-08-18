@@ -3951,7 +3951,7 @@ iterable<span class="hljs-tag">&lt;</span><i><span class="hljs-tag"><span class=
         <div class="note">
           <div class="note-title marker" aria-level="5" role="heading" id="h-note24"><span>Note</span></div>
           <div class="">
-            <p>In the ECMAScript language binding, an interface that is iterable will have “entries”, “forEach”, “keys”, “values” and <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-symbols">@@iterator</a> properties on its <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</p>
+            <p>In the ECMAScript language binding, an interface that is iterable will have “entries”, “forEach”, “keys”, “values” and <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> properties on its <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a>.</p>
           </div>
         </div>
         <p>
@@ -3990,7 +3990,7 @@ iterable<span class="hljs-tag">&lt;</span><i><span class="hljs-tag"><span class=
         <div class="note">
           <div class="note-title marker" aria-level="5" role="heading" id="h-note26"><span>Note</span></div>
           <div class="">
-            <p>This is how <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-array-iterator-objects">array iterator objects</a> work. For interfaces that <a class="dfnref" href="#dfn-support-indexed-properties">support indexed properties</a>, the iterator objects returned by “entries”, “keys”, “values” and <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-symbols">@@iterator</a> are actual <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-array-iterator-objects">array iterator objects</a>.</p>
+            <p>This is how <a class="external" href="https://tc39.github.io/ecma262/#sec-array-iterator-objects">array iterator objects</a> work. For interfaces that <a class="dfnref" href="#dfn-support-indexed-properties">support indexed properties</a>, the iterator objects returned by “entries”, “keys”, “values” and <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> are actual <a class="external" href="https://tc39.github.io/ecma262/#sec-array-iterator-objects">array iterator objects</a>.</p>
           </div>
         </div>
         <p>
@@ -4023,7 +4023,7 @@ interface Session {
             </p>
           </blockquote>
           <p>
-            In the ECMAScript language binding, the <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a> for the <span class="idltype">SessionManager</span> <a class="dfnref" href="#dfn-interface">interface</a> has a <code>values</code> method that is a function, which, when invoked, returns an iterator object that itself has a <code>next</code> method that returns the next value to be iterated over. It has <code>values</code> and <code>entries</code> methods that iterate over the indexes of the list of session objects and [index, session object] pairs, respectively. It also has a <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-symbols">@@iterator</a> method that allows a <span class="idltype">SessionManager</span> to be used in a <code>for..of</code> loop:
+            In the ECMAScript language binding, the <a class="dfnref" href="#dfn-interface-prototype-object">interface prototype object</a> for the <span class="idltype">SessionManager</span> <a class="dfnref" href="#dfn-interface">interface</a> has a <code>values</code> method that is a function, which, when invoked, returns an iterator object that itself has a <code>next</code> method that returns the next value to be iterated over. It has <code>values</code> and <code>entries</code> methods that iterate over the indexes of the list of session objects and [index, session object] pairs, respectively. It also has a <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> method that allows a <span class="idltype">SessionManager</span> to be used in a <code>for..of</code> loop:
           </p>
           <div class="block">
             <div class="blockTitleDiv"><span class="blockTitle">ECMAScript</span></div>
@@ -5888,7 +5888,7 @@ interface Person {
         <h4 id="h-idl-promise" resource="#h-idl-promise"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.10.25 </span>Promise types — Promise&lt;<var>T</var>&gt;</span></h4>
 
         <p>
-          A <dfn id="dfn-promise-type" data-dfn-type="dfn">promise type</dfn> is a parameterized type whose values are references to objects that “is used as a place holder for the eventual results of a deferred (and possibly asynchronous) computation result of an asynchronous operation” [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]. See <a href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-promise-objects">section 25.4</a> of the ECMAScript specification for details on the semantics of promise objects.
+          A <dfn id="dfn-promise-type" data-dfn-type="dfn">promise type</dfn> is a parameterized type whose values are references to objects that “is used as a place holder for the eventual results of a deferred (and possibly asynchronous) computation result of an asynchronous operation” [<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>]. See <a href="https://tc39.github.io/ecma262/#sec-promise-objects">section 25.4</a> of the ECMAScript specification for details on the semantics of promise objects.
         </p>
         <p>
           There is no way to represent a promise value in IDL.
@@ -6454,8 +6454,8 @@ interface Person {
       <cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>].
     </p>
     <p>
-      Objects defined in this section have internal properties as described in ECMA-262 <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots">sections 9.1</a> and
-      <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-built-in-function-objects-call-thisargument-argumentslist">9.3.1</a> unless otherwise specified, in which case one or more of the following are redefined in accordance with the rules for exotic objects:
+      Objects defined in this section have internal properties as described in ECMA-262 <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots">sections 9.1</a> and
+      <a class="external" href="https://tc39.github.io/ecma262/#sec-built-in-function-objects-call-thisargument-argumentslist">9.3.1</a> unless otherwise specified, in which case one or more of the following are redefined in accordance with the rules for exotic objects:
       <span class="prop">[[Call]]</span>,
       <span class="prop">[[Set]]</span>,
       <span class="prop">[[DefineOwnProperty]]</span>,
@@ -6482,7 +6482,7 @@ interface Person {
       Unless otherwise specified, the <span class="prop">[[Prototype]]</span> internal property of objects defined in this section is the <span class="esvalue">Object</span> prototype object.
     </p>
     <p>
-      Some objects described in this section are defined to have a <dfn id="dfn-class-string" data-dfn-type="dfn">class string</dfn>, which is the string to include in the string returned from Object.prototype.toString. If an object has a class string, then the object <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span>, at the time it is created, have a property whose name is the <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-symbols">@@toStringTag</a> symbol and whose value is the specified string.
+      Some objects described in this section are defined to have a <dfn id="dfn-class-string" data-dfn-type="dfn">class string</dfn>, which is the string to include in the string returned from Object.prototype.toString. If an object has a class string, then the object <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span>, at the time it is created, have a property whose name is the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@toStringTag</a> symbol and whose value is the specified string.
     </p>
 
     <p>
@@ -6492,13 +6492,13 @@ interface Person {
       <li>Its <span class="prop">[[Prototype]]</span> internal property is
         <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-intrinsic-objects">%FunctionPrototype%</a> ( [
         <cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>] , section 6.1.7.4) unless otherwise specified.</li>
-      <li>Its <span class="prop">[[Get]]</span> internal property is set as described in <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ordinary-object-internal-methods-and-internal-slots-get-p-receiver">ECMA-262 section 9.1.8</a>.</li>
-      <li>Its <span class="prop">[[Construct]]</span> internal property is set as described in <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-function-@@create">ECMA-262 section 19.2.2.3</a>.</li>
-      <li>Its <span class="prop">@@hasInstance</span> property is set as described in <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-function.prototype-@@hasinstance">ECMA-262 section 19.2.3.8</a>, unless otherwise specified.</li>
+      <li>Its <span class="prop">[[Get]]</span> internal property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-ordinary-object-internal-methods-and-internal-slots-get-p-receiver">ECMA-262 section 9.1.8</a>.</li>
+      <li>Its <span class="prop">[[Construct]]</span> internal property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-function-@@create">ECMA-262 section 19.2.2.3</a>.</li>
+      <li>Its <span class="prop">@@hasInstance</span> property is set as described in <a class="external" href="https://tc39.github.io/ecma262/#sec-function.prototype-@@hasinstance">ECMA-262 section 19.2.3.8</a>, unless otherwise specified.</li>
     </ul>
 
     <p id="ecmascript-abstractop">
-      Algorithms in this section use the conventions described in <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-algorithm-conventions">ECMA-262
+      Algorithms in this section use the conventions described in <a class="external" href="https://tc39.github.io/ecma262/#sec-algorithm-conventions">ECMA-262
           section 5.2</a>, such as the use of steps and substeps, the use of mathematical operations, and so on. The
       <a class="external" href="https://tc39.github.io/ecma262/#sec-toboolean">ToBoolean</a>,
       <a class="external" href="https://tc39.github.io/ecma262/#sec-tonumber">ToNumber</a>,
@@ -6509,7 +6509,7 @@ interface Person {
       <a class="external" href="https://tc39.github.io/ecma262/#sec-toobject">ToObject</a>,
       <a class="external" href="https://tc39.github.io/ecma262/#sec-isaccessordescriptor">IsAccessorDescriptor</a> and
       <a class="external" href="https://tc39.github.io/ecma262/#sec-isdatadescriptor">IsDataDescriptor</a> abstract operations and the
-      <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values">Type(<var>x</var>)</a> notation referenced in this section are defined in ECMA-262 sections 6 and 7.
+      <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type(<var>x</var>)</a> notation referenced in this section are defined in ECMA-262 sections 6 and 7.
     </p>
     <p id="ecmascript-throw">
       When an algorithm says to “throw a <b><i>Something</i>Error</b>” then this means to construct a new ECMAScript <b><i>Something</i>Error</b> object and to throw it, just as the algorithms in ECMA-262 do.
@@ -6559,7 +6559,7 @@ interface Person {
         <li><a class="dfnref" href="#dfn-named-properties-object">named properties objects</a></li>
       </ul>
       <p>
-        Each <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-code-realms">ECMAScript global environment</a> ([<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>], section 8.2)
+        Each <a class="external" href="https://tc39.github.io/ecma262/#sec-code-realms">ECMAScript global environment</a> ([<cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>], section 8.2)
         <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> have its own unique set of each of the <a class="dfnref" href="#dfn-initial-object">initial objects</a>, created before control enters any ECMAScript execution context associated with the environment, but after the global object for that environment is created. The <span class="prop">[[Prototype]]</span>s of all initial objects in a given global environment <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> come from that same global environment.
       </p>
       <div class="example">
@@ -7520,10 +7520,10 @@ iframe.appendChild <span class="hljs-keyword">instanceof</span> w.Function;  </s
           </li>
           <li>
             Let <var>method</var> be the result of
-            <a class="external" href="http://www.ecma-international.org/ecma-262/6.0/#sec-getmethod">GetMethod</a>(<var>V</var>, <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-symbols">@@iterator</a>).
+            <a class="external" href="http://www.ecma-international.org/ecma-262/6.0/#sec-getmethod">GetMethod</a>(<var>V</var>, <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a>).
           </li>
           <li>
-            <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>method</var>).
+            <a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>method</var>).
           </li>
           <li>
             If <var>method</var> is <span class="esvalue">undefined</span>,
@@ -7570,18 +7570,18 @@ iframe.appendChild <span class="hljs-keyword">instanceof</span> w.Function;  </s
           <ol class="algorithm">
             <li>
               Let <var>iter</var> be
-              <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-getiterator">GetIterator</a>(<var>iterable</var>, <var>method</var>).
+              <a class="external" href="https://tc39.github.io/ecma262/#sec-getiterator">GetIterator</a>(<var>iterable</var>, <var>method</var>).
             </li>
             <li>
-              <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>iter</var>).
+              <a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>iter</var>).
             </li>
             <li>Initialize <var>i</var> to be 0.</li>
             <li>Repeat
               <ol>
                 <li>
-                  Let <var>next</var> be <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-iteratorstep">IteratorStep</a>(<var>iter</var>).
+                  Let <var>next</var> be <a class="external" href="https://tc39.github.io/ecma262/#sec-iteratorstep">IteratorStep</a>(<var>iter</var>).
                 </li>
-                <li><a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>next</var>).</li>
+                <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>next</var>).</li>
                 <li>
                   If <var>next</var> is <span class="esvalue">false</span>, then return an IDL sequence value of type
                   <a class="idltype" href="#idl-sequence">sequence&lt;<var>T</var>&gt;</a> of length <var>i</var>, where the value of the element at index <var>j</var> is
@@ -7589,9 +7589,9 @@ iframe.appendChild <span class="hljs-keyword">instanceof</span> w.Function;  </s
                 </li>
                 <li>
                   Let <var>nextItem</var> be
-                  <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-iteratorvalue">IteratorValue</a>(<var>next</var>).
+                  <a class="external" href="https://tc39.github.io/ecma262/#sec-iteratorvalue">IteratorValue</a>(<var>next</var>).
                 </li>
-                <li><a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>nextItem</var>).</li>
+                <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>nextItem</var>).</li>
                 <li>
                   Initialize <var>S</var><sub><var>i</var></sub> to the result of
                   <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converting</a>
@@ -7903,10 +7903,10 @@ alert(b[<span class="hljs-number">4</span>]);    <span class="comment"><span cla
                 <ol>
                   <li>
                     Let <var>method</var> be the result of
-                    <a class="external" href="http://www.ecma-international.org/ecma-262/6.0/#sec-getmethod">GetMethod</a>(<var>V</var>, <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-symbols">@@iterator</a>).
+                    <a class="external" href="http://www.ecma-international.org/ecma-262/6.0/#sec-getmethod">GetMethod</a>(<var>V</var>, <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a>).
                   </li>
                   <li>
-                    <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>method</var>).
+                    <a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>method</var>).
                   </li>
                   <li>
                     If <var>method</var> is not
@@ -8017,7 +8017,7 @@ alert(b[<span class="hljs-number">4</span>]);    <span class="comment"><span cla
           <a class="dfnref" href="#dfn-convert-ecmascript-to-idl-value">converted</a> to an IDL <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> value by running the following algorithm:
         </p>
         <ol class="algorithm">
-          <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Object, or <var>V</var> does not have an [[ArrayBufferData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, or <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-isdetachedbuffer">IsDetachedBuffer</a>(<var>V</var>) is true, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.
+          <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>V</var>) is not Object, or <var>V</var> does not have an [[ArrayBufferData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>, or <a class="external" href="https://tc39.github.io/ecma262/#sec-isdetachedbuffer">IsDetachedBuffer</a>(<var>V</var>) is true, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.
           </li>
           <li>Return the IDL <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a> value that is a reference to the same object as <var>V</var>.</li>
         </ol>
@@ -8067,7 +8067,7 @@ alert(b[<span class="hljs-number">4</span>]);    <span class="comment"><span cla
             </ol>
           </li>
           <li>Otherwise, set <var>length</var> to the value of <var>O</var>’s [[ArrayBufferByteLength]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
-          <li>If <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-isdetachedbuffer">IsDetachedBuffer</a>(<var>O</var>), then
+          <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-isdetachedbuffer">IsDetachedBuffer</a>(<var>O</var>), then
             <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span></a>.</li>
           <li>Let <var>data</var> be the value of <var>O</var>’s [[ArrayBufferData]] <a class="external" href="https://tc39.github.io/ecma262/#sec-object-internal-methods-and-internal-slots">internal slot</a>.</li>
           <li>Return a reference to or copy of (as required) the <var>length</var> bytes in <var>data</var> starting at byte offset <var>offset</var>.</li>
@@ -8077,7 +8077,7 @@ alert(b[<span class="hljs-number">4</span>]);    <span class="comment"><span cla
         </p>
         <ol class="algorithm">
           <li>Let <var>O</var> be the ECMAScript object that is the <a class="idltype" href="#idl-ArrayBuffer">ArrayBuffer</a>.</li>
-          <li><a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-detacharraybuffer">DetachArrayBuffer</a>(<var>O</var>).</li>
+          <li><a class="external" href="https://tc39.github.io/ecma262/#sec-detacharraybuffer">DetachArrayBuffer</a>(<var>O</var>).</li>
         </ol>
       </section>
 
@@ -10819,7 +10819,7 @@ interface
 
           </ul>
           <p>
-            then a property <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> exist whose name is the <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-symbols">@@iterator</a> symbol, with attributes <span class="descriptor">{&nbsp;[[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span>&nbsp;}</span>
+            then a property <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> exist whose name is the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> symbol, with attributes <span class="descriptor">{&nbsp;[[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span>&nbsp;}</span>
             and whose value is a <a class="dfnref" href="#dfn-function-object">function object</a>.
           </p>
           <p>
@@ -10857,9 +10857,9 @@ interface
 
 
           <p>
-            The value of the <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-symbols">@@iterator</a> <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.
+            The value of the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> <span class="estype">Function</span> object’s “length” property is the <span class="estype">Number</span> value <span class="esvalue">0</span>.
           </p>
-          <p>The value of the <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-symbols">@@iterator</a> <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “[Symbol.iterator]”.</p>
+          <p>The value of the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> <span class="estype">Function</span> object’s “name” property is the <span class="estype">String</span> value “[Symbol.iterator]”.</p>
         </section>
 
         <section id="es-forEach" typeof="bibo:Chapter" resource="#es-forEach" property="bibo:hasPart">
@@ -11021,7 +11021,7 @@ interface
           <p>
             If the <a class="dfnref" href="#dfn-interface">interface</a> has an
             <a class="dfnref" href="#dfn-iterable-declaration">iterable declaration</a>, then a property named “values” <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> exist with attributes <span class="descriptor">{&nbsp;[[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">true</span>&nbsp;}</span>
-            and whose value is the <a class="dfnref" href="#dfn-function-object">function object</a> that is the value of the <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-well-known-symbols">@@iterator</a> property.
+            and whose value is the <a class="dfnref" href="#dfn-function-object">function object</a> that is the value of the <a class="external" href="https://tc39.github.io/ecma262/#sec-well-known-symbols">@@iterator</a> property.
           </p>
           <p>
             The location of the property is determined as follows:
@@ -11104,7 +11104,7 @@ interface
             <li>Let <var>kind</var> be <var>object</var>’s kind.</li>
             <li>Let <var>values</var> be the list of <a class="dfnref" href="#dfn-value-pairs-to-iterate-over">value pairs to iterate over</a>.</li>
             <li>Let <var>len</var> be the length of <var>values</var>.</li>
-            <li>If <var>object</var>’s index is greater than or equal to <var>len</var>, then return <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-createiterresultobject">CreateIterResultObject</a>(<span class="esvalue">undefined</span>, <span class="esvalue">true</span>).</li>
+            <li>If <var>object</var>’s index is greater than or equal to <var>len</var>, then return <a class="external" href="https://tc39.github.io/ecma262/#sec-createiterresultobject">CreateIterResultObject</a>(<span class="esvalue">undefined</span>, <span class="esvalue">true</span>).</li>
             <li>Let <var>pair</var> be the entry in <var>values</var> at index <var>index</var>.</li>
             <li>Let <var>result</var> be a value determined by the value of <var>kind</var>:
               <dl class="switch">
@@ -11131,15 +11131,15 @@ interface
                     <li>Let <var>idlValue</var> be <var>pair</var>’s value.</li>
                     <li>Let <var>key</var> be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> <var>idlKey</var> to an ECMAScript value.</li>
                     <li>Let <var>value</var> be the result of <a class="dfnref" href="#dfn-convert-idl-to-ecmascript-value">converting</a> <var>idlValue</var> to an ECMAScript value.</li>
-                    <li>Let <var>array</var> be the result of performing <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-arraycreate">ArrayCreate</a>(2).</li>
-                    <li>Call <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-createdataproperty">CreateDataProperty</a>(<var>array</var>, "0", <var>key</var>).</li>
-                    <li>Call <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-createdataproperty">CreateDataProperty</a>(<var>array</var>, "1", <var>value</var>).</li>
+                    <li>Let <var>array</var> be the result of performing <a class="external" href="https://tc39.github.io/ecma262/#sec-arraycreate">ArrayCreate</a>(2).</li>
+                    <li>Call <a class="external" href="https://tc39.github.io/ecma262/#sec-createdataproperty">CreateDataProperty</a>(<var>array</var>, "0", <var>key</var>).</li>
+                    <li>Call <a class="external" href="https://tc39.github.io/ecma262/#sec-createdataproperty">CreateDataProperty</a>(<var>array</var>, "1", <var>value</var>).</li>
                     <li><var>result</var> is <var>array</var>.</li>
                   </ol>
                 </dd>
               </dl>
             </li>
-            <li>Return <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-createiterresultobject">CreateIterResultObject</a>(<var>result</var>, <span class="esvalue">false</span>).</li>
+            <li>Return <a class="external" href="https://tc39.github.io/ecma262/#sec-createiterresultobject">CreateIterResultObject</a>(<var>result</var>, <span class="esvalue">false</span>).</li>
           </ol>
           <p>
             The <a class="dfnref" href="#dfn-class-string">class string</a> of an
@@ -11168,29 +11168,29 @@ interface
           <li>If <var>iterable</var> is either <span class="esvalue">undefined</span> or <span class="esvalue">null</span>, then let <var>iter</var> be <span class="esvalue">undefined</span>.</li>
           <li>Else,
             <ol>
-              <li>Let <var>adder</var> be the result of <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-get-o-p">Get</a>(<var>destination</var>, <var>adder</var>).</li>
-              <li><a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>adder</var>).</li>
+              <li>Let <var>adder</var> be the result of <a class="external" href="https://tc39.github.io/ecma262/#sec-get-o-p">Get</a>(<var>destination</var>, <var>adder</var>).</li>
+              <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>adder</var>).</li>
               <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-iscallable">IsCallable</a>(<var>adder</var>) is <span class="esvalue">false</span>, <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
-              <li>Let <var>iter</var> be the result of <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-getiterator">GetIterator</a>(<var>iterable</var>).</li>
-              <li><a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>iter</var>).</li>
+              <li>Let <var>iter</var> be the result of <a class="external" href="https://tc39.github.io/ecma262/#sec-getiterator">GetIterator</a>(<var>iterable</var>).</li>
+              <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>iter</var>).</li>
             </ol>
           </li>
           <li>If <var>iter</var> is <span class="esvalue">undefined</span>, then return.</li>
           <li>Repeat
             <ol>
-              <li>Let <var>next</var> be the result of <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-iteratorstep">IteratorStep</a>(<var>iter</var>).</li>
-              <li><a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>next</var>).</li>
-              <li>If <var>next</var> is <span class="esvalue">false</span>, then return <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-normalcompletion">NormalCompletion</a>(<var>destination</var>).</li>
-              <li>Let <var>nextItem</var> be <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-iteratorvalue">IteratorValue</a>(<var>next</var>).</li>
-              <li><a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>nextItem</var>).</li>
+              <li>Let <var>next</var> be the result of <a class="external" href="https://tc39.github.io/ecma262/#sec-iteratorstep">IteratorStep</a>(<var>iter</var>).</li>
+              <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>next</var>).</li>
+              <li>If <var>next</var> is <span class="esvalue">false</span>, then return <a class="external" href="https://tc39.github.io/ecma262/#sec-normalcompletion">NormalCompletion</a>(<var>destination</var>).</li>
+              <li>Let <var>nextItem</var> be <a class="external" href="https://tc39.github.io/ecma262/#sec-iteratorvalue">IteratorValue</a>(<var>next</var>).</li>
+              <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>nextItem</var>).</li>
               <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-ecmascript-data-types-and-values">Type</a>(<var>nextItem</var>) is not Object, then <a href="#ecmascript-throw" class="dfnref external">throw a <span class="estype">TypeError</span> exception</a>.</li>
-              <li>Let <var>k</var> be the result of <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-get-o-p">Get</a>(<var>nextItem</var>, <code>'0'</code>).</li>
-              <li><a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>k</var>).</li>
-              <li>Let <var>v</var> be the result of <a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-get-o-p">Get</a>(<var>nextItem</var>, <code>'1'</code>).</li>
-              <li><a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>v</var>).</li>
+              <li>Let <var>k</var> be the result of <a class="external" href="https://tc39.github.io/ecma262/#sec-get-o-p">Get</a>(<var>nextItem</var>, <code>'0'</code>).</li>
+              <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>k</var>).</li>
+              <li>Let <var>v</var> be the result of <a class="external" href="https://tc39.github.io/ecma262/#sec-get-o-p">Get</a>(<var>nextItem</var>, <code>'1'</code>).</li>
+              <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>v</var>).</li>
               <li>Let <var>status</var> be the result of calling the [[Call]] internal method of <var>adder</var> with <var>destination</var> as
                 <var>thisArgument</var> and (<var>k</var>, <var>v</var>) as <var>argumentsList</var>.</li>
-              <li><a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>status</var>).</li>
+              <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>status</var>).</li>
             </ol>
           </li>
         </ol>
@@ -12164,17 +12164,17 @@ C implements A;</code></pre></div>
             <li>Let <var>F</var> be the active function object.</li>
             <li>If NewTarget is <span class="esvalue">undefined</span>, let <var>newTarget</var> be <var>F</var>, else let <var>newTarget</var> be NewTarget.</li>
             <li>Let <var>super</var> be <var>F</var>.[[GetPrototypeOf]]().</li>
-            <li><a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>super</var>).</li>
-            <li>If <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-isconstructor">IsConstructor</a>(<var>super</var>) is <span class="esvalue">false</span>, throw a <span class="esvalue">TypeError</span> exception.</li>
-            <li>Let <var>O</var> be <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-construct">Construct</a>(<var>super</var>, «<var>message</var>», <var>newTarget</var>).</li>
+            <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>super</var>).</li>
+            <li>If <a class="external" href="https://tc39.github.io/ecma262/#sec-isconstructor">IsConstructor</a>(<var>super</var>) is <span class="esvalue">false</span>, throw a <span class="esvalue">TypeError</span> exception.</li>
+            <li>Let <var>O</var> be <a class="external" href="https://tc39.github.io/ecma262/#sec-construct">Construct</a>(<var>super</var>, «<var>message</var>», <var>newTarget</var>).</li>
             <li>If <var>name</var> is not <span class="esvalue">undefined</span>, then
               <ol>
                 <li>Let <var>name</var> be <a class="external" href="https://tc39.github.io/ecma262/#sec-tostring">ToString</a>(<var>name</var>).</li>
-                <li>Let <var>status</var> be <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(<var>O</var>, <code>"name"</code>, PropertyDescriptor<span class="descriptor">{[[Value]]: <var>name</var>, [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span>}</span>).</li>
-                <li><a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>status</var>).</li>
+                <li>Let <var>status</var> be <a class="external" href="https://tc39.github.io/ecma262/#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(<var>O</var>, <code>"name"</code>, PropertyDescriptor<span class="descriptor">{[[Value]]: <var>name</var>, [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span>}</span>).</li>
+                <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>status</var>).</li>
                 <li>Let <var>code</var> be the legacy code indicated in the <a class="dfnref" href="#dfn-error-names-table">error names table</a> for error name <var>name</var>, or <span class="esvalue">0</span> if there is none.</li>
-                <li>Let <var>status</var> be <a class="external" href="https://people.mozilla.org/~jorendorff/es6-draft.html#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(<var>O</var>, <code>"code"</code>, PropertyDescriptor<span class="descriptor">{[[Value]]: <var>code</var>, [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span>}</span>).</li>
-                <li><a class="external" href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>status</var>).</li>
+                <li>Let <var>status</var> be <a class="external" href="https://tc39.github.io/ecma262/#sec-definepropertyorthrow">DefinePropertyOrThrow</a>(<var>O</var>, <code>"code"</code>, PropertyDescriptor<span class="descriptor">{[[Value]]: <var>code</var>, [[Writable]]: <span class="esvalue">true</span>, [[Enumerable]]: <span class="esvalue">false</span>, [[Configurable]]: <span class="esvalue">true</span>}</span>).</li>
+                <li><a class="external" href="https://tc39.github.io/ecma262/#sec-returnifabrupt">ReturnIfAbrupt</a>(<var>status</var>).</li>
               </ol>
             </li>
             <li>Return <var>O</var>.</li>
