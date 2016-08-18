@@ -1881,7 +1881,7 @@ s.union(1, 4, 7);         <span class='comment'>// Passing three arguments corre
               in an operation declaration.
             </p>
             <p>
-              There are seven kinds of special operations.  The table below indicates
+              There are six kinds of special operations.  The table below indicates
               for a given kind of special operation what special keyword
               is used to declare it and what the purpose of the special operation is:
             </p>
@@ -8035,7 +8035,7 @@ alert(b[4]);    <span class='comment'>// This would alert "50".</span></x:codebl
                 or <var>V</var> is not a native <span class='estype'>RegExp</span> object,
                 then set <var>V</var> to be a newly created <span class='estype'>RegExp</span> object created as if by the
                 expression <code>new RegExp(<var>V</var>)</code>, where <code>RegExp</code> is the standard built-in constructor with that name
-                from the <a class='dfnref' href='#dfn-current-global-environemnt'>current global environment</a>.
+                from the <a class='dfnref' href='#dfn-current-global-environment'>current global environment</a>.
                 <div class="note">
                   <p>Note that this can result in an exception being thrown, if <var>V</var>, when converted to a string,
                     does not have valid regular expression syntax.</p>
@@ -14524,6 +14524,8 @@ d.type = et;
           Anne van Kesteren,
           Olav Junker Kjær,
           Magnus Kristiansen,
+          Takeshi Kurosawa,
+          Yves Lafon,
           Travis Leithead,
           Jim Ley,
           Kevin Lindsey,
