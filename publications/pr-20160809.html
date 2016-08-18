@@ -1863,8 +1863,13 @@ node.appendChild(newNode);  <span class="comment"><span class="hljs-comment">// 
         <h4 id="h-idl-attributes" resource="#h-idl-attributes"><span property="xhv:role" resource="xhv:heading"><span class="secno">3.2.2 </span>Attributes</span></h4>
 
         <p>
-          An <dfn id="dfn-attribute" data-dfn-type="dfn">attribute</dfn> is an <a class="dfnref" href="#dfn-interface-member">interface member</a> (matching <span class="sym">"static"</span> <a class="sym" href="#prod-AttributeRest">AttributeRest</a>,
-          <span class="sym">"stringifier"</span> <a class="sym" href="#prod-AttributeRest">AttributeRest</a>, or <a class="sym" href="#prod-Attribute">Attribute</a>) that is used to declare data fields with a given type and
+          An <dfn id="dfn-attribute" data-dfn-type="dfn">attribute</dfn> is an <a class="dfnref" href="#dfn-interface-member">interface member</a>
+               (matching
+               <span class="sym">"inherit"</span> <a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a>,
+               <span class="sym">"static"</span> <a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a>,
+               <span class="sym">"stringifier"</span> <a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a>,
+               or <a class="sym" href="#prod-ReadOnly">ReadOnly</a> <a class="sym" href="#prod-AttributeRest">AttributeRest</a>)
+that is used to declare data fields with a given type and
           <a class="dfnref" href="#dfn-identifier">identifier</a> whose value can be retrieved and (in some cases) changed. There are two kinds of attributes:
         </p>
         <ol>
@@ -4418,7 +4423,7 @@ ctx.drawRectangle(<span class="hljs-number">300</span>, <span class="hljs-number
         The second kind of exception is a <dfn id="dfn-DOMException" data-dfn-type="dfn">DOMException</dfn>, which is an exception that encapsulates a name and an optional integer code, for compatibility with historically defined exceptions in the DOM.
       </p>
       <p>
-        For <a class="dfnref" href="#dfn-simple-exception">simple exceptions</a>, the <a class="dfnref" href="#dfn-exception-error-name">error name</a> is the name of the exception. For a <a class="dfnref" href="#dfn-DOMException">DOMException</a>, the <a class="dfnref" href="#dfn-exception-error-name">error name</a> <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> be one of the names listed in the <a class="dfnref" href="#idl-error-names-table">error names table</a> below. The table also indicates the <a class="dfnref" href="#dfn-DOMException">DOMException</a>'s integer code for that error name, if it has one.
+        For <a class="dfnref" href="#dfn-simple-exception">simple exceptions</a>, the <a class="dfnref" href="#dfn-exception-error-name">error name</a> is the name of the exception. For a <a class="dfnref" href="#dfn-DOMException">DOMException</a>, the <a class="dfnref" href="#dfn-exception-error-name">error name</a> <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> be one of the names listed in the <a class="dfnref" href="#dfn-error-names-table">error names table</a> below. The table also indicates the <a class="dfnref" href="#dfn-DOMException">DOMException</a>'s integer code for that error name, if it has one.
       </p>
       <p>
         There are two <a href="#idl-types">types</a> that can be used to refer to exception objects: <a class="idltype" href="#idl-Error">Error</a>, which encompasses all exceptions, and <a class="idltype" href="#idl-DOMException">DOMException</a> which includes just DOMException objects. This allows for example an <a class="dfnref" href="#dfn-operation">operation</a> to be declared to have a <a class="dfnref" href="#dfn-DOMException">DOMException</a>
@@ -9549,7 +9554,7 @@ system.loginTime;  <span class="comment"><span class="hljs-comment">// So this n
                 <li>a <a class="dfnref" href="#dfn-nullable-type">nullable type</a></li>
                 <li>a <a href="#idl-dictionary">dictionary type</a></li>
                 <li>a <a class="dfnref" href="#dfn-union-type">union type</a> that
-                  <a class="dfnref" href="#dfn-includes-a-nullable-type">includes a nullable type</a> or that has a <a href="#idl-dictionary">dictionary type</a> in its <a class="dfnref" href="#dfn-flattened-union-members-types">flattened members</a></li>
+                  <a class="dfnref" href="#dfn-includes-a-nullable-type">includes a nullable type</a> or that has a <a href="#idl-dictionary">dictionary type</a> in its <a class="dfnref" href="#dfn-flattened-union-member-types">flattened members</a></li>
               </ul>
               then remove from <var>S</var> all other entries.
             </li>
@@ -12147,7 +12152,7 @@ C implements A;</code></pre></div>
           <cite><a class="bibref" href="#bib-ECMA-262">ECMA-262</a></cite>] , section 6.1.7.4).
         </p>
         <p>
-          For every legacy code listed in the <a href="#idl-error-names-table">error names table</a>, there <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> be a property on the DOMException constructor object whose name and value are as indicated in the table. The property has attributes <span class="descriptor">{&nbsp;[[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">false</span>&nbsp;}</span>.
+          For every legacy code listed in the <a href="#dfn-error-names-table">error names table</a>, there <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> be a property on the DOMException constructor object whose name and value are as indicated in the table. The property has attributes <span class="descriptor">{&nbsp;[[Writable]]: <span class="esvalue">false</span>, [[Enumerable]]: <span class="esvalue">true</span>, [[Configurable]]: <span class="esvalue">false</span>&nbsp;}</span>.
         </p>
         <p>
           The DOMException constructor object <span class="rfc2119"><em class="rfc2119" title="MUST">MUST</em></span> also have a property named “prototype” with attributes
@@ -12250,9 +12255,7 @@ C implements A;</code></pre></div>
           <a href="#Constructor">constructor</a>,
           <a class="dfnref" href="#dfn-named-constructor">named constructor</a>,
           <a class="dfnref" href="#dfn-stringifier">stringifier</a>,
-          <a href="#es-exception-call">exception constructor</a> or
-          <a class="dfnref" href="#dfn-exception-field-getter">exception field getter</a>.
-        </li>
+          </li>
         <li>
           If <var>F</var> corresponds to an attribute, operation or stringifier, then return the global environment associated with the
           <a class="dfnref" href="#dfn-interface">interface</a> that definition appears on.
@@ -12264,10 +12267,7 @@ C implements A;</code></pre></div>
           Otherwise, if <var>F</var> is a named constructor for an interface, or is an <a class="dfnref" href="#dfn-interface-object">interface object</a> for an interface that is a constructor, then return the global environment associated with that interface.
         </li>
         <li>
-          Otherwise, if <var>F</var> is an exception field getter, then return the global environment associated with the exception on which the exception field was defined.
-        </li>
-        <li>
-          Otherwise, <var>F</var> is an exception interface object that is a constructor. Return the global environment associated with that exception.
+          Otherwise, <var>F</var> is an exception field getter. Return the global environment associated with the exception on which the exception field was defined.
         </li>
       </ol>
       <p>
